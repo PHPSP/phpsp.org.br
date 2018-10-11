@@ -2,6 +2,7 @@
 createdAt: 2018-03-07
 title: Phasellus lacinia tincidunt mi nec malesuada
 author: deus
+authorEmail: bla3@bla.com
 ---
 Phasellus lacinia tincidunt mi nec malesuada. Morbi non nisl lobortis nisl rutrum aliquam nec eu nisi. Cras vitae ligula at neque lobortis hendrerit. Pellentesque pretium feugiat vehicula. Nullam aliquet orci vitae malesuada suscipit. Sed vestibulum, magna quis posuere scelerisque, felis nisl vulputate purus, vitae mollis velit sem nec odio. Nunc interdum semper massa sit amet finibus. Aliquam ornare metus vitae erat elementum aliquet. Maecenas in tristique enim, non luctus elit. Donec pulvinar luctus leo, ut molestie sem condimentum et. Vivamus viverra ligula tincidunt, viverra nibh eget, euismod felis. Donec ut velit et diam congue tincidunt. Aliquam ac tristique metus, in accumsan ante. Proin congue dignissim sem, nec feugiat leo efficitur at. Donec vitae risus pulvinar, lacinia felis at, venenatis lacus. Sed sit amet purus a turpis iaculis suscipit eu id risus.
 

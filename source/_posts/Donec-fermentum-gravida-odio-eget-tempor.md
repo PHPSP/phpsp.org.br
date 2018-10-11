@@ -2,6 +2,7 @@
 createdAt: 2018-10-01
 title: Donec fermentum gravida odio eget tempor
 author: someone
+authorEmail: bla2@bla.com
 ---
 
 Donec fermentum gravida odio eget tempor. Nunc mi lectus, varius sit amet tortor quis, efficitur pellentesque enim. Aenean a semper mauris. Duis volutpat vulputate odio, a eleifend tortor hendrerit et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Curabitur dictum blandit eleifend. Etiam at leo non nisl dictum viverra id sit amet mauris. Nam nec justo tempor, scelerisque velit non, porta tellus. Vivamus lorem erat, tristique a augue non, auctor ullamcorper elit. Praesent laoreet diam vitae maximus tempus. Maecenas condimentum pretium ex ut vehicula. Etiam mollis mi ac egestas facilisis. Etiam dictum dapibus hendrerit.

@@ -2,6 +2,7 @@
 createdAt: 2018-02-27
 title: "Sed ac mi dui"
 author: alguém
+authorEmail: bla@bla.com
 ---
 
 Sed ac mi dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc in mollis mauris. Maecenas interdum metus at euismod porttitor. Donec ornare, nulla ut vehicula sollicitudin, massa neque laoreet tellus, in accumsan felis lectus nec nibh. Nam eros mauris, fringilla vel facilisis fermentum, finibus id dui. In in magna metus. Mauris blandit odio ipsum, sit amet finibus elit tempor quis. Sed pellentesque mollis tincidunt. Ut sit amet blandit diam, eu sodales mi. Sed posuere lectus nec lacus dictum, nec consectetur justo efficitur. Integer sed gravida massa. Nullam et elementum metus. Pellentesque tincidunt porttitor sapien et scelerisque. Duis imperdiet tempus odio. Nunc varius lacus lorem, a rhoncus augue aliquet a.

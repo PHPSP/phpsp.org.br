@@ -11,6 +11,7 @@ Site estático gerado via [Jigsaw](http://jigsaw.tighten.co);
     createdAt: YYYY-MM-DD
     title: TITULO
     author: SEU NOME
+    authorEmail: SEU EMAIL
     ---
     CONTEÚDO
     Lorem ipsum

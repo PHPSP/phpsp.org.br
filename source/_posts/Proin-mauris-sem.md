@@ -2,6 +2,7 @@
 createdAt: 2018-08-20
 title: Proin mauris sem
 author: outro autor
+authorEmail: bla4@bla.com
 ---
 Proin mauris sem, egestas id eros vitae, molestie convallis nunc. Curabitur sed mi ac massa efficitur elementum. Curabitur interdum urna a metus fermentum, quis sodales quam scelerisque. Sed congue, quam ac suscipit iaculis, lacus lorem vestibulum ipsum, a gravida augue libero sit amet mauris. Ut lacinia quam a lectus finibus, vel accumsan justo suscipit. Mauris ultrices eros id libero consectetur, at egestas lectus venenatis. Aliquam erat volutpat. Donec ex ligula, posuere quis risus ut, vehicula vehicula lectus. In elit orci, suscipit sed ligula eu, lobortis egestas mauris.
 
