@@ -2,20 +2,14 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
-                <img src="{{ $page->asset_prefix }}/assets/images/phpsp/phpsp.png" alt="PHPSP">
+                <img src="{{ $page->asset_prefix }}/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
             </a>
 
-            <a class="navbar-item is-hidden-desktop" href="https://github.com/phpsp" target="_blank">
-                <img src="{{ $page->asset_prefix }}/assets/images/thirdparty/GitHub-Mark-120px-plus.png" title="GitHub">
-            </a>
-
-            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
-                <img src="{{ $page->asset_prefix }}/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png" title="Twitter">
-            </a>
-
-            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vemproslackphpsp" target="_blank">
-                <img src="{{ $page->asset_prefix }}/assets/images/thirdparty/SlackAppIcon.png" title="Slack">
-            </a>
+            @foreach( $page->links_header['mobile'] as $link)
+                <a class="navbar-item is-hidden-desktop" href="{{ $page->links[$link]['url'] }}" target="_blank">
+                    <img src="{{ $page->asset_prefix }}{{ $page->links[$link]['img'] }}" title="{{ $page->links[$link]['title'] }}" alt="{{ $page->links[$link]['title'] }}">
+                </a>
+            @endforeach
 
             <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"  onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
                 <span></span>
@@ -101,26 +95,11 @@
             </div>
 
             <div class="navbar-end">
-                <a class="navbar-item is-hidden-touch is-hidden-desktop-only" href="https://github.com/phpsp" target="_blank">
-                    <img src="{{ $page->asset_prefix }}/assets/images/thirdparty/GitHub-Mark-120px-plus.png" title="GitHub">
-                </a>
-
-                <a class="navbar-item is-hidden-touch is-hidden-desktop-only" href="https://twitter.com/phpsp" target="_blank">
-                    <img src="{{ $page->asset_prefix }}/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png" title="Twitter">
-                </a>
-
-                <a class="navbar-item is-hidden-touch is-hidden-desktop-only" href="https://bit.ly/vemproslackphpsp" target="_blank">
-                    <img src="{{ $page->asset_prefix }}/assets/images/thirdparty/SlackAppIcon.png" title="Slack">
-                </a>
-
-                <a class="navbar-item is-hidden-touch is-hidden-desktop-only" href="https://www.linkedin.com/groups/PHPSP-Grupo-Desenvolvedores-PHP-S%C3%A3o-1808119" target="_blank">
-                    <img src="{{ $page->asset_prefix }}/assets/images/thirdparty/In-2C-128px-TM.png" title="LinkedIn">
-                </a>
-
-                <a class="navbar-item is-hidden-touch is-hidden-desktop-only" href="https://facebook.com/sao.paulo.elephants" target="_blank">
-                    <img src="{{ $page->asset_prefix }}/assets/images/thirdparty/flogo_RGB_HEX-144.png" title="Facebook">
-                </a>
-
+                @foreach( $page->links_header['desktop'] as $link)
+                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only" href="{{ $page->links[$link]['url'] }}" target="_blank">
+                        <img src="{{ $page->asset_prefix }}{{ $page->links[$link]['img'] }}" title="{{ $page->links[$link]['title'] }}" alt="{{ $page->links[$link]['title'] }}">
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
