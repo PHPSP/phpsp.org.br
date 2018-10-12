@@ -92,7 +92,4 @@ return [
             'url'       =>  'https://devnaestrada.com.br/',
         ],
     ],
-    'isPost'        => function ($page) {
-        return isset($page->section) && $page->section === 'post';
-    },
 ];
