@@ -31,7 +31,7 @@ pagination:
                 <h2 class="title is-2">
                     <a class="has-text-grey-dark" href="{{ $page->getUrl() }}blog">Artigos</a>
                 </h2>
-                @include('_partials.content.summary.posts')
+                @include('_partials.content.posts.list')
             </div>
             <div class="column">
                 <h2 class="title is-2">

@@ -11,7 +11,7 @@ pagination:
     <section class="section">
         <div class="content">
             <h1 class="title is-1">{{ $page->title }}</h1>
-            @include('_partials.content.list.posts')
+            @include('_partials.content.posts.grid')
         </div>
 
         @include('_partials.layout.pagination')
