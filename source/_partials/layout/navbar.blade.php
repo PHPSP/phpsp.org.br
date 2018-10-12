@@ -7,11 +7,13 @@
 
             @foreach( $page->links_header['mobile'] as $link)
                 <a class="navbar-item is-hidden-desktop" href="{{ $page->links[$link]['url'] }}" target="_blank">
-                    <img src="{{ $page->asset_prefix }}{{ $page->links[$link]['img'] }}" title="{{ $page->links[$link]['title'] }}" alt="{{ $page->links[$link]['title'] }}">
+                    <img src="{{ $page->asset_prefix }}{{ $page->links[$link]['img'] }}"
+                         title="{{ $page->links[$link]['title'] }}" alt="{{ $page->links[$link]['title'] }}">
                 </a>
             @endforeach
 
-            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"  onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -61,7 +63,7 @@
                     <div id="moreDropdown" class="navbar-dropdown">
                         <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
                           <span>
-                            <strong>PHPSP</strong>
+                            <strong>PHPSP São Paulo</strong>
                             <br>
                             Eventos na cidade de SP
                           </span>
@@ -88,16 +90,45 @@
                     </div>
                 </div>
 
-                <a class="navbar-item" href="/como-contribuir">
-                    <span>Como contribuir</span>
-                </a>
+                {{--<a class="navbar-item" href="/como-contribuir">--}}
+                    {{--<span>Como contribuir</span>--}}
+                {{--</a>--}}
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                        @foreach ($page->projects as $project)
+                            <a class="navbar-item is-white-space-normal" href="{{ $project->url }}" target="_blank">
+                              <span>
+                                <strong>{{ $project->title }}</strong>
+                                <br>
+                                {{ $project->description }}
+                              </span>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
 
             </div>
 
             <div class="navbar-end">
                 @foreach( $page->links_header['desktop'] as $link)
-                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only" href="{{ $page->links[$link]['url'] }}" target="_blank">
-                        <img src="{{ $page->asset_prefix }}{{ $page->links[$link]['img'] }}" title="{{ $page->links[$link]['title'] }}" alt="{{ $page->links[$link]['title'] }}">
+                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="{{ $page->links[$link]['url'] }}" target="_blank">
+                        <img src="{{ $page->asset_prefix }}{{ $page->links[$link]['img'] }}"
+                             title="{{ $page->links[$link]['title'] }}" alt="{{ $page->links[$link]['title'] }}">
                     </a>
                 @endforeach
             </div>

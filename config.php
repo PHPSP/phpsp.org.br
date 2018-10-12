@@ -92,4 +92,21 @@ return [
             'url'       =>  'https://devnaestrada.com.br/',
         ],
     ],
+    'projects'         => [
+        'php-the-right-way' => [
+            'title'         =>  'PHP The Right Way - BR',
+            'description'   =>  'Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web',
+            'url'           =>  'https://github.com/PHPSP/php-the-right-way',
+        ],
+        'quero-palestrar' => [
+            'title'         =>  'Quero Palestrar',
+            'description'   =>  'Repositório de palestrantes e propostas de palestras para eventos de tecnologia',
+            'url'           =>  'https://github.com/PHPSP/quero-palestrar',
+        ],
+        'zf2-documentation-br' => [
+            'title'         =>  'ZF2 docs - BR',
+            'description'   =>  'Tradução da Documentação Oficial do Zend Framework',
+            'url'           =>  'https://github.com/PHPSP/zf2-documentation-br',
+        ],
+    ],
 ];
