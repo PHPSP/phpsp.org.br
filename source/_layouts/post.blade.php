@@ -16,4 +16,10 @@
             @yield('post')
         </div>
     </section>
+    <section class="section">
+        <div class="container">
+            {{--@include('_partials.content.authors.about-card')--}}
+            @include('_partials.content.authors.posts-grid')
+        </div>
+    </section>
 @endsection
