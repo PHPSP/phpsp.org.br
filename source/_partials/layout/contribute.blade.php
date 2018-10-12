@@ -1,5 +1,5 @@
 <?php
-$contributeLink = 'https://github.com/herdphp/phpsp.org.br/blob/master/source/' . $page->contribute_prefix . $page->getFilename() . '.' . $page->getExtension();
+$contributeLink = $page->source_code . 'blob/' . $page->contribute_branch . '/source/' . $page->contribute_prefix . $page->getFilename() . '.' . $page->getExtension();
 ?>
 <div class="container has-text-centered">
     <div class="notification">

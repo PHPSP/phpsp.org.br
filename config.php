@@ -5,6 +5,8 @@ return [
     'title' => 'Grupo de desenvolvedores de PHP do estado de São Paulo',
     'production' => false,
     'contribute_prefix' => '',
+    'contribute_branch' => 'develop',
+    'source_code' => 'https://github.com/herdphp/phpsp.org.br/',
     'collections' => [
         'contents' => [
             'extends' => '_layouts.content',
