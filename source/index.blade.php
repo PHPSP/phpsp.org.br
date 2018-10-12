@@ -23,9 +23,11 @@ pagination:
                     A comunidade se reune frequentemente. Veja qual encontro vai aconcer ao seu redor!
                 </p>
                 <hr>
-                <a href="https://www.meetup.com/php-sp/events/" target="_blank" class="button is-rounded is-medium is-fullwidth">Eventos em São Paulo</a>
+                <a href="https://www.meetup.com/php-sp/events/" target="_blank"
+                   class="button is-rounded is-medium is-fullwidth">Eventos em São Paulo</a>
                 <br>
-                <a href="https://www.meetup.com/PHPSP-Campinas/events" target="_blank" class="button is-rounded is-medium is-fullwidth">Eventos em Campinas</a>
+                <a href="https://www.meetup.com/PHPSP-Campinas/events" target="_blank"
+                   class="button is-rounded is-medium is-fullwidth">Eventos em Campinas</a>
             </div>
             <div class="column">
                 <h2 class="title is-2">
@@ -40,7 +42,10 @@ pagination:
                 <div class="card">
                     <div class="card-content">
                         <p class="subtitle">
-                            Salve pessoal! Além do PHPSP+Pub, encontro mensal do grupo, temos mais eventos sendo construídos com a ajuda da comunidade e dos parceiros. Quer nos ajudar e fazer parte do grupo? Acesse a seção <a href="/como-contribuir/">como contribuir</a> e ajude a evangelizar o PHPSP!
+                            Salve pessoal! Além do PHPSP+Pub, encontro mensal do grupo, temos mais eventos sendo
+                            construídos com a ajuda da comunidade e dos parceiros. Quer nos ajudar e fazer parte do
+                            grupo? Acesse a seção <a href="/como-contribuir/">como contribuir</a> e ajude a evangelizar
+                            o PHPSP!
                         </p>
                     </div>
                     <footer class="card-footer">

@@ -3,7 +3,7 @@
         <a href="{{ $post->getPath() }}">{{ $post->title }}</a>
     </p>
     <p class="subtitle">
-        <small> em </small>
-        <small>{{ date('d\/m\/Y', $post->createdAt) }}</small>
+        <small> em</small>
+        <small> {{ date('d\/m\/Y', $post->createdAt) }}</small>
     </p>
 </article>

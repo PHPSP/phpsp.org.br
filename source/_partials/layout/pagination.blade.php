@@ -16,7 +16,9 @@
 
         @foreach ($pagination->pages as $pageNumber => $path)
             <li>
-                <a class="pagination-link {{ $pagination->currentPage === $pageNumber ? 'is-current' : '' }}" href="{{ $page->baseUrl }}{{ $path }}" aria-label="Goto page {{ $pageNumber }}" {{ $pagination->currentPage === $pageNumber ? 'disabled' : '' }}>{{ $pageNumber }}</a>
+                <a class="pagination-link {{ $pagination->currentPage === $pageNumber ? 'is-current' : '' }}"
+                   href="{{ $page->baseUrl }}{{ $path }}"
+                   aria-label="Goto page {{ $pageNumber }}" {{ $pagination->currentPage === $pageNumber ? 'disabled' : '' }}>{{ $pageNumber }}</a>
             </li>
         @endforeach
 

@@ -1,5 +1,4 @@
 ---
-title: Artigos
 pagination:
     collection: posts
     perPage: 12
@@ -10,7 +9,7 @@ pagination:
 
     <section class="section">
         <div class="content">
-            <h1 class="title is-1">{{ $page->title }}</h1>
+            <h1 class="title is-1">Artigos</h1>
             @include('_partials.content.posts.grid')
         </div>
 

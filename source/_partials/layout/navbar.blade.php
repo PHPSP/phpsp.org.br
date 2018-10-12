@@ -90,10 +90,6 @@
                     </div>
                 </div>
 
-                {{--<a class="navbar-item" href="/como-contribuir">--}}
-                    {{--<span>Como contribuir</span>--}}
-                {{--</a>--}}
-
                 <div class="navbar-item has-dropdown is-hoverable">
                     <span class="navbar-link">Como Contribuir</span>
                     <div id="moreDropdown" class="navbar-dropdown">

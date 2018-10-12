@@ -14,7 +14,8 @@
 
         <hr>
         <p>
-            O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://phpsp.org.br">Comunidade PHPSP</a>. O código deste site esta sob a licença
+            O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://phpsp.org.br">Comunidade PHPSP</a>. O
+            código deste site esta sob a licença
             <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. O conteúdo deste site esta sob a licença
             <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
         </p>

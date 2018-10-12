@@ -1,4 +1,5 @@
-<?php $columns = 3; $count = 0;?>
+<?php $columns = 3;
+$count = 0; ?>
 <div class="tile is-ancestor">
     @foreach ($pagination->items as $post)
         <div class="tile is-parent is-4">

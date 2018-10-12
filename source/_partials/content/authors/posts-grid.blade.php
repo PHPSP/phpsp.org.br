@@ -1,6 +1,6 @@
 <?php $authorPosts = $posts->filter(function ($value, $key) use ($page) {
     return $value->author == $page->author && $value->title != $page->title;
-})->slice(0,6); ?>
+})->slice(0, 6); ?>
 <?php $columns = 3;
 $count = 0; ?>
 @if ($authorPosts->count() > 0)
