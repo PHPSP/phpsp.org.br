@@ -55,6 +55,43 @@ return [
             'github', 'twitter', 'slack', 'linkedin', 'facebook',
         ],
     ],
+    'sponsors'         => [
+        'azure' => [
+            'title'     =>  'Microsoft Azure',
+            'img'       =>  '/assets/images/sponsors/azure.png',
+            'url'       =>  'https://azure.microsoft.com/pt-br/',
+        ],
+        'imasters' => [
+            'title'     =>  'iMasters',
+            'img'       =>  '/assets/images/sponsors/imasters.png',
+            'url'       =>  'https://imasters.com.br/',
+        ],
+        'paypal' => [
+            'title'     =>  'PayPal',
+            'img'       =>  '/assets/images/sponsors/paypal.png',
+            'url'       =>  'https://paypal.com.br/',
+        ],
+        'locaweb' => [
+            'title'     =>  'LocaWeb',
+            'img'       =>  '/assets/images/sponsors/locaweb.png',
+            'url'       =>  'https://www.locaweb.com.br/',
+        ],
+        'phpstorm' => [
+            'title'     =>  'PHPStorm',
+            'img'       =>  '/assets/images/sponsors/phpstorm.png',
+            'url'       =>  'https://www.jetbrains.com/phpstorm/',
+        ],
+        'contaazul' => [
+            'title'     =>  'ContaAzul',
+            'img'       =>  '/assets/images/sponsors/contaazul.png',
+            'url'       =>  'https://contaazul.com/',
+        ],
+        'devnaestrada' => [
+            'title'     =>  'Dev Na Estrada',
+            'img'       =>  '/assets/images/sponsors/devnaestrada.png',
+            'url'       =>  'https://devnaestrada.com.br/',
+        ],
+    ],
     'isPost'        => function ($page) {
         return isset($page->section) && $page->section === 'post';
     },
