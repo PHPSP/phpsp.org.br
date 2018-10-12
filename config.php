@@ -4,6 +4,7 @@ return [
     'baseUrl' => 'http://localhost:3000/',
     'title' => 'Grupo de desenvolvedores de PHP do estado de São Paulo',
     'production' => false,
+    'contribute_prefix' => '',
     'collections' => [
         'contents' => [
             'extends' => '_layouts.content',
@@ -13,6 +14,7 @@ return [
                 return str_slug($page->getFilename());
             },
             'sort' => 'order',
+            'contribute_prefix' => '_contents/',
         ],
         'posts' => [
             'extends' => '_layouts.post',
@@ -22,6 +24,7 @@ return [
                 return 'artigos/' . str_slug($page->getFilename());
             },
             'sort' => '-createdAt',
+            'contribute_prefix' => '_posts/',
         ],
     ],
     'links' => [
