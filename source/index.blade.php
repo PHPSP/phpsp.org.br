@@ -54,6 +54,11 @@ pagination:
                             <a href="https://facebook.com/sao.paulo.elephants">Facebook</a>
                           </span>
                         </p>
+                        <p class="card-footer-item">
+                          <span>
+                            <a href="https://bit.ly/vemproslackphpsp">Slack</a>
+                          </span>
+                        </p>
                     </footer>
                 </div>
             </div>
