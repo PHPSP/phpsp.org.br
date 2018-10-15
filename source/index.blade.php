@@ -23,11 +23,7 @@ pagination:
                     A comunidade se reune frequentemente. Veja qual encontro vai aconcer ao seu redor!
                 </p>
                 <hr>
-                <a href="https://www.meetup.com/php-sp/events/" target="_blank"
-                   class="button is-rounded is-medium is-fullwidth">Eventos em São Paulo</a>
-                <br>
-                <a href="https://www.meetup.com/PHPSP-Campinas/events" target="_blank"
-                   class="button is-rounded is-medium is-fullwidth">Eventos em Campinas</a>
+                <meetup-events url="{{ $page->meetup['baseUrl'] }}"></meetup-events>
             </div>
             <div class="column">
                 <h2 class="title is-2">

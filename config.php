@@ -18,7 +18,6 @@ return [
             'path' => function ($page) {
                 return str_slug($page->getFilename());
             },
-            'sort' => 'order',
             'contribute_prefix' => '_contents/',
         ],
         'posts' => [

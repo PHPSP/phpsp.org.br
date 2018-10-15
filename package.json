@@ -19,5 +19,9 @@
         "webpack-watch": "^0.2.0",
         "yargs": "^4.6.0"
     },
-    "dependencies": {}
+    "dependencies": {
+        "lodash": "^4.17.11",
+        "remove": "^0.1.5",
+        "vue": "^2.5.17"
+    }
 }
