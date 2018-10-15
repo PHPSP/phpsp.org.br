@@ -10638,3 +10638,7 @@ label.panel-block:hover {
 .is-white-space-normal {
   white-space: normal !important;
 }
+
+.has-zebra-content article:nth-child(even) div.message-header {
+  background-color: #0a0a0a !important;
+}

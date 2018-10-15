@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="has-zebra-content">
         <article v-for="item in items" vi-key="item.id" class="message">
             <div class="message-header">
                 <a :href="item.link" target="_blank">{{ item.name }}</a>

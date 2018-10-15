@@ -811,6 +811,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "has-zebra-content" },
     _vm._l(_vm.items, function(item) {
       return _c(
         "article",
