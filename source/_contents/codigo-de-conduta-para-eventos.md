@@ -1,7 +1,6 @@
 ---
 createdAt: 2008-12-16
 title: "Código de Conduta para Eventos"
-order: 4
 ---
 
 # Codigo de Conduta da Comunidade de desenvolvedores PHP do estado de São Paulo

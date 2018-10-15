@@ -1,7 +1,6 @@
 ---
 createdAt: 2008-12-16
 title: "A Comunidade"
-order: 1
 ---
 
 #Intro
