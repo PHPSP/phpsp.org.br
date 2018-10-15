@@ -5,10 +5,10 @@
                 <img src="{{ $page->asset_prefix }}/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
             </a>
 
-            @foreach( $page->links_header['mobile'] as $link)
-                <a class="navbar-item is-hidden-desktop" href="{{ $page->links[$link]['url'] }}" target="_blank">
-                    <img src="{{ $page->asset_prefix }}{{ $page->links[$link]['img'] }}"
-                         title="{{ $page->links[$link]['title'] }}" alt="{{ $page->links[$link]['title'] }}">
+            @foreach( $page->links_header->mobile as $link)
+                <a class="navbar-item is-hidden-desktop" href="{{ $page->links->$link->url }}" target="_blank">
+                    <img src="{{ $page->asset_prefix }}{{ $page->links->$link->img }}"
+                         title="{{ $page->links->$link->title }}" alt="{{ $page->links->$link->title }}">
                 </a>
             @endforeach
 
@@ -120,11 +120,11 @@
             </div>
 
             <div class="navbar-end">
-                @foreach( $page->links_header['desktop'] as $link)
+                @foreach( $page->links_header->desktop as $link)
                     <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
-                       href="{{ $page->links[$link]['url'] }}" target="_blank">
-                        <img src="{{ $page->asset_prefix }}{{ $page->links[$link]['img'] }}"
-                             title="{{ $page->links[$link]['title'] }}" alt="{{ $page->links[$link]['title'] }}">
+                       href="{{ $page->links->$link->url }}" target="_blank">
+                        <img src="{{ $page->asset_prefix }}{{ $page->links->$link->img }}"
+                             title="{{ $page->links->$link->title }}" alt="{{ $page->links->$link->title }}">
                     </a>
                 @endforeach
             </div>

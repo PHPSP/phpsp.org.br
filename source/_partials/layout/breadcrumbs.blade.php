@@ -1,6 +1,6 @@
 <nav class="breadcrumb" aria-label="breadcrumbs">
     <ul>
-        <li><a href="/">PHPSP {{$page->type}}</a></li>
+        <li><a href="/">PHPSP {{ $page->type }}</a></li>
 
         @if ($isPost)
             <li><a href="/artigos">Artigos</a></li>
