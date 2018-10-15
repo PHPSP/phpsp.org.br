@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top">
-<head>
-    @include('_partials.layout.head')
-</head>
+@include('_partials.layout.head')
 
-<body>
 @include('_partials.layout.body')
-</body>
 
-<footer>
-    @include('_partials.layout.footer')
-</footer>
+@include('_partials.layout.footer')
+
 </html>
