@@ -3,7 +3,7 @@
 return [
     'baseUrl' => 'http://localhost:3000/',
     'meetup' => [
-        'baseUrl' => 'https://snq095bs5m.execute-api.us-east-1.amazonaws.com/dev/',
+        'baseUrl' => 'https://yp3o7jx9t2.execute-api.sa-east-1.amazonaws.com/dev/',
     ],
     'production' => false,
     'contribute_branch' => 'develop',
