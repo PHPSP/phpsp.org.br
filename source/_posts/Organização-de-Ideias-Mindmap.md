@@ -1,5 +1,5 @@
 ---
-createdAt: 2018-10-16
+createdAt: 2018-10-19
 title: Organização de Ideias - Mindmap
 author: Airton Zanon
 authorEmail: airtonzanon@gmail.com

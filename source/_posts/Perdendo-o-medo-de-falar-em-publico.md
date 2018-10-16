@@ -1,5 +1,5 @@
 ---
-createdAt: 2018-10-15
+createdAt: 2018-10-12
 title: Perdendo o Medo de Falar em Público
 author: Ivan Rosolen
 authorEmail: ivanrosolen@gmail.com
