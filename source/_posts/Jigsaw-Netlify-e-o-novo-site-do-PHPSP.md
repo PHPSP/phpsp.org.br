@@ -16,7 +16,7 @@ Acreditamos que com isso o site ficará mais rápido e mais fácil de ser gerenc
 O novo site, como mencionado, é estático. Isso significa que no momento de deploy todo o conteúdo é "convertido" em HTML e o conteúdo gerado que fica disponível para todos que acessarem o site. Ou seja, não há conexão ao banco de dados, não há um "backend", o site todo esta disponível no GitHub da comunidade e pode (e deve!) ser atualizado por todos através de um PR.
 
 ##Gerador de site estáticos - Jigsaw
-Por ser uma comunidade de PHP nós optamos por utilizar um gerador de site estáticos feito em PHP, a escolha foi simples e direta! Escolhemos pelo [Jigsaw](http://jigsaw.tighten.co/), que por sua vez é baseado no [Laravel Framework](https://laravel.com/). 
+Por ser uma comunidade de PHP nós optamos por utilizar um gerador de site estáticos feito em PHP, a escolha foi simples e direta! Escolhemos pelo [Jigsaw](http://jigsaw.tighten.co/), que por sua vez é baseado no [Laravel Framework](https://laravel.com/).
 
 O Jigsaw é ao mesmo tempo simples e completo. A curva de aprendizado é rápida e o resultado fantástico.
 
@@ -26,6 +26,6 @@ Mundialmente conhecido como uma excelente ferramenta para deploy de sites estát
 O Netlify ainda possui a funcionalidade de gerar previews para todos os PRs, possibilitando que o resultado final possa ser analisado antes do conteúdo se tornar "oficial".
 
 ##Exemplo
-Acho que o melhor exemplo é o próprio site do phpsp, veja o repositório e se tiver alguma dúvida entre no nosso slack!
+Acho que o melhor exemplo é o próprio site do [PHPSP](https://github.com/herdphp/phpsp.org.br), veja o repositório e se tiver alguma dúvida entre no nosso slack!
 
 Abraços
