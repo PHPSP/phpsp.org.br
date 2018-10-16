@@ -6,6 +6,6 @@
         <small>por</small>
         <strong> {{ $post->author }}</strong>
         <small> em</small>
-        <small> { date('d\/m\/Y', $post->createdAt) }}</small>
+        <small> {{ date('d\/m\/Y', $post->createdAt) }}</small>
     </p>
 </article>
