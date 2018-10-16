@@ -1,9 +1,8 @@
 <div class="card">
     <div class="card-content">
         <p class="subtitle">
-            Salve pessoal! Além do PHPSP+Pub, encontro mensal do grupo, temos mais eventos sendo
-            construídos com a ajuda da comunidade e dos parceiros. Quer nos ajudar e fazer parte do
-            grupo? Acesse a seção <a href="/como-contribuir/">como contribuir</a> e ajude a evangelizar
+            Salve pessoal! Além dos eventos mensais PHPSP+Pub em São Paulo e em Campinas temos mais eventos sendo
+            construídos com a ajuda da comunidade e dos parceiros. Faça parte da comunicade e ajude a evangelizar
             o PHPSP!
         </p>
     </div>
@@ -29,7 +28,8 @@
 <div class="card">
     <div class="card-content">
         <p class="subtitle">
-            Ajude-nos a divulgar mais e mais conteúdos interessantes do mundo PHP, colabore com conteúdos e com projetos!
+            Ajude-nos a divulgar e a criar mais e mais conteúdos interessantes do mundo PHP, colabore com conteúdos e com projetose ajude a evangelizar
+            o PHPSP!
         </p>
     </div>
     <footer class="card-footer">

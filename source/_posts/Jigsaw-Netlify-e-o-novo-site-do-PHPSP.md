@@ -21,7 +21,7 @@ Por ser uma comunidade de PHP nós optamos por utilizar um gerador de site está
 O Jigsaw é ao mesmo tempo simples e completo. A curva de aprendizado é rápida e o resultado fantástico.
 
 ##Servidor - Netlify
-Mundialmente conhecido como uma excelente ferramenta para deploy de sites estáticos o Netlify é super intuitivo e possui a funcionalidade de "escutar" as mudanças no repositório do site e fazer o deployment sempre que pertinente.
+Mundialmente conhecido como uma excelente ferramenta para deploy de sites estáticos o [Netlify](https://www.netlify.com/) é super intuitivo e possui a funcionalidade de "escutar" as mudanças no repositório do site e fazer o deployment sempre que pertinente.
 
 O Netlify ainda possui a funcionalidade de gerar previews para todos os PRs, possibilitando que o resultado final possa ser analisado antes do conteúdo se tornar "oficial".
 
