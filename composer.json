@@ -1,0 +1,16 @@
+{
+  "name": "herdphp/phpsp.org.br",
+  "require": {
+    "tightenco/jigsaw": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+    }
+  },
+  "authors": [
+    {
+      "name": "Joao Paulo Vendramini Martins",
+      "email": "jp.joao@gmail.com"
+    }
+  ]
+}
