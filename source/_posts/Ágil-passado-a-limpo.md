@@ -1,3 +1,10 @@
+---
+createdAt: 2018-10-17
+title: Ágil passado a limpo
+author: Anderson Casimiro
+authorEmail: duodraco@gmail.com
+---
+
 Salve! Já ouviu falar de Scrum? E XP? Kanban? Estes são nomes de práticas ágeis de desenvolvimento de software. A bem da verdade alguns nasceram bem antes de começarmos a usar o termo Ágil para tal. Já havia a preocupação de otimizar os processos de desenvolvimento de software desde 1959 com os Métodos Iterativos e Incrementais e posteriormente com o Desenvolvimento Adaptativo. Várias práticas foram criadas, aprimoradas e discutidas que culminaram no Manifesto para o Desenvolvimento Ágil de Software em 2001.
 
 Autores de diversas práticas já comuns à época, como Jeff Sutherland, Ken Schwaber e Bob Martin assinam essa declaração pública sobre das bases comuns de seus próprios métodos. O Desenvolvimento Ágil tem por definição quatro valores nos quais os autores descrevem de maneira simples a importância de cada peça no processo de desenvolvimento, denotando a valorização dos itens marcados com ênfase a seguir:
