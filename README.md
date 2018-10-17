@@ -4,7 +4,7 @@ PHPSP Website
 Site estático gerado via [Jigsaw](http://jigsaw.tighten.co);
 
 ## Enviando artigos
-* Fazer fork do repositório
+* Fazer fork do repositório;
 * Adicionar um novo arquivo no formato [markdown](https://en.wikipedia.org/wiki/Markdown) na pasta `source/_posts` com o seguinte cabeçalho preenchido:
 > 
     ---
@@ -15,17 +15,18 @@ Site estático gerado via [Jigsaw](http://jigsaw.tighten.co);
     ---
     CONTEÚDO
     Lorem ipsum
-* Enviar um PR para master com o novo conteúdo
+* Enviar um PR para `master` com o novo conteúdo;
 
 ## Desenvolvimento do website local
 Requisitos: PHP7.2 e NPM instalados localmente;
 Passos:
-* Instalar jigsaw localmente:
+* Instalar jigsaw globalmente (TODO: Tentar mudar para não precisar ser global):
 * > $ composer global require tightenco/jigsaw
-* Fazer fork do repositório
-* Rodar composer install;
+* Fazer fork do repositório;
+* Rodar composer install:
 * > $ composer install
-* Rodar NPM install;
+* Rodar NPM install:
 * > $ npm install
-* Reixar o NPM "observando" as mudanças (e gerando o conteúdo estático)
+* Reixar o NPM "observando" as mudanças (e gerando o conteúdo estático):
 * > $ npm run watch
+* Enviar um PR para `develop` com as alterações;
