@@ -9,7 +9,7 @@ return [
     'contribute_branch' => 'develop',
     'title' => 'Grupo de desenvolvedores de PHP do estado de São Paulo',
     'contribute_prefix' => '',
-    'source_code' => 'https://github.com/herdphp/phpsp.org.br/',
+    'source_code' => 'https://github.com/phpsp/phpsp.org.br/',
     'collections' => [
         'contents' => [
             'extends' => '_layouts.content',
