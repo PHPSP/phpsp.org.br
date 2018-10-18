@@ -7,4 +7,7 @@ return [
     ],
     'production' => true,
     'contribute_branch' => 'master',
+    'google_analytics' => [
+        'id' => 'UA-7974451-1',
+    ],
 ];
