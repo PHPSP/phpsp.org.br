@@ -7,6 +7,9 @@ return [
     ],
     'production' => false,
     'contribute_branch' => 'develop',
+    'google_analytics' => [
+        'id' => 'local',
+    ],
     'title' => 'Grupo de desenvolvedores de PHP do estado de São Paulo',
     'contribute_prefix' => '',
     'source_code' => 'https://github.com/phpsp/phpsp.org.br/',
