@@ -1,0 +1,41 @@
+[[redirects]]
+  from = "/php-soap"
+#  to = "artigos/php-soap"
+  to = "https://old.phpsp.org.br/php-soap"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/react-php-conceitos-basicos-eventloop"
+#  to = "artigos/react-php-conceitos-basicos-eventloop"
+  to = "https://old.phpsp.org.br/react-php-conceitos-basicos-eventloop"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/autenticacao-e-criptografia-de-senhas"
+#  to = "artigos/autenticacao-e-criptografia-de-senhas"
+  to = "https://old.phpsp.org.br/autenticacao-e-criptografia-de-senhas"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/php-webdriver"
+#  to = "artigos/php-webdriver"
+  to = "https://old.phpsp.org.br/php-webdriver"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/5-coisas-que-um-programador-php-precisa"
+#  to = "artigos/5-coisas-que-um-programador-php-precisa"
+  to = "https://old.phpsp.org.br/5-coisas-que-um-programador-php-precisa"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/web-apis-xml-ou-json"
+#  to = "artigos/web-apis-xml-ou-json"
+  to = "https://old.phpsp.org.br/web-apis-xml-ou-json"
+  status = 302
+  force = true
