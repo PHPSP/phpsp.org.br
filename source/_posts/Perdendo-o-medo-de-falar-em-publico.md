@@ -5,7 +5,6 @@ author: Ivan Rosolen
 authorEmail: ivanrosolen@gmail.com
 ---
 
-
 *Essa palestra é baseada em minhas experiências pessoais e estudos.*
 
 Surge uma oportunidade de falar em público! Palestrar ou dar um workshop sobre algo que você gosta ou estuda.

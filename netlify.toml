@@ -1,0 +1,23 @@
+[[redirects]]
+  from = "/php-soap"
+  to = "artigos/php-soap"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/react-php-conceitos-basicos-eventloop"
+  to = "artigos/react-php-conceitos-basicos-eventloop"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/5-coisas-que-um-programador-php-precisa"
+  to = "artigos/5-coisas-que-um-programador-php-precisa"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/web-apis-xml-ou-json"
+  to = "artigos/web-apis-xml-ou-json"
+  status = 301
+  force = true
