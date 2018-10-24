@@ -25,7 +25,6 @@
 
 [[redirects]]
   from = "/web-apis-xml-ou-json"
-#  to = "artigos/web-apis-xml-ou-json"
-  to = "https://old.phpsp.org.br/web-apis-xml-ou-json"
-  status = 307
+  to = "artigos/web-apis-xml-ou-json"
+  status = 301
   force = true
