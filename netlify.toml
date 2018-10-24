@@ -1,8 +1,7 @@
 [[redirects]]
   from = "/php-soap"
-#  to = "artigos/php-soap"
-  to = "https://old.phpsp.org.br/php-soap"
-  status = 307
+  to = "artigos/php-soap"
+  status = 301
   force = true
 
 [[redirects]]
