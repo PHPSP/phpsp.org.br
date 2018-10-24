@@ -11,13 +11,6 @@
   force = true
 
 [[redirects]]
-  from = "/autenticacao-e-criptografia-de-senhas"
-#  to = "artigos/autenticacao-e-criptografia-de-senhas"
-  to = "https://old.phpsp.org.br/autenticacao-e-criptografia-de-senhas"
-  status = 307
-  force = true
-
-[[redirects]]
   from = "/php-webdriver"
 #  to = "artigos/php-webdriver"
   to = "https://old.phpsp.org.br/php-webdriver"
