@@ -13,7 +13,7 @@ Com a ideia de modernizar um pouco o site do PHPSP decidimos simplificar o site,
 Acreditamos que com isso o site ficará mais rápido e mais fácil de ser gerenciado por toda a comunidade. Não há mais a necessidade (nem a barreira) de ter conta para gerenciar o conteúdo e nem conhecimentos profindos no template utilizado para conseguir introduzir novas áreas no site.
 
 ##Site Estático?
-O novo site, como mencionado, é estático. Isso significa que no momento de deploy todo o conteúdo é "convertido" em HTML e o conteúdo gerado que fica disponível para todos que acessarem o site. Ou seja, não há conexão ao banco de dados, não há um "backend", o site todo esta disponível no GitHub da comunidade e pode (e deve!) ser atualizado por todos através de um PR.
+O novo site, como mencionado, é estático. Isso significa que no momento de deploy todo o conteúdo é "convertido" em HTML e o conteúdo gerado que fica disponível para todos que acessarem o site. Ou seja, não há conexão ao banco de dados, não há um "backend", o site todo está disponível no GitHub da comunidade e pode (e deve!) ser atualizado por todos através de um PR.
 
 ##Gerador de site estáticos - Jigsaw
 Por ser uma comunidade de PHP nós optamos por utilizar um gerador de site estáticos feito em PHP, a escolha foi simples e direta! Escolhemos pelo [Jigsaw](http://jigsaw.tighten.co/), que por sua vez é baseado no [Laravel Framework](https://laravel.com/).
