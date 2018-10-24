@@ -6,9 +6,8 @@
 
 [[redirects]]
   from = "/react-php-conceitos-basicos-eventloop"
-#  to = "artigos/react-php-conceitos-basicos-eventloop"
-  to = "https://old.phpsp.org.br/react-php-conceitos-basicos-eventloop"
-  status = 307
+  to = "artigos/react-php-conceitos-basicos-eventloop"
+  status = 301
   force = true
 
 [[redirects]]
