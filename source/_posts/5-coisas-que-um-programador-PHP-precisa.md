@@ -40,3 +40,6 @@ Programar vai muito além de simplimente saber escrever códigos. Um programador
 Tenha sempre em mente o que foi dito acima: você escreve para os outros e não para você! Raramente você vai escrever algo para esconder do resto do mundo, ou que não vá precisar da mão de alguém no código, mas se nada disse te convenceu, escreva os códigos pensando que o próximo que for dar manutenção no seu código pode ser um serial killer que sabe onde você mora! E outra; não existe nenhuma medida que diga seu nível em PHP. Atualmente a melhor delas é a Certificação da Zend, mas excluindo ela da lista, o que vai dizer se você é ou não é um bom programador é a opinião dos outros sobre seu código. Pense nisso na próxima vez em que você for programar!
 Notem também que IDEs nem entraram nos pontos, uma porque isso é uma discussão infindável e outra porque uma IDE não vai tornar você um melhor programador, ela com certeza vai te tornar um programador mais produtivo! Então escolha bem a sua!
 Contamos com suas opiniões sobre os asssuntos acima! E vamos indo rumo a des-sobrinhação  do PHP!
+
+---
+Artigo originalmente criado em 17/02/2009.

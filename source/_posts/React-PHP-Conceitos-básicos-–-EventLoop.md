@@ -4,6 +4,7 @@ title: (React PHP) Conceitos básicos - EventLoop
 author: Níckolas Silva
 authorEmail: nawarian@gmail.com
 ---
+
 Este artigo é o primeiro de uma sequência que pretendo publicar aqui. Neste entenderemos o que é [React PHP](http://reactphp.org/) e o que nos possibilita. 
 Outra nota importante é: esta não é uma série introdutória. O foco está em entender como React funciona, deixando de lado introduções didáticas focadas em desenvolver uma aplicação de exemplo.  
 
@@ -277,3 +278,6 @@ Em questão de performance, StreamSelect é a implementação menos perfeita. A
 
 Vimos aqui as funcionalidades básicas do EventLoop, como ele se comporta e como está desacoplado do restante das bibliotecas React.
 Através destas explicações você já será capaz de criar bibliotecas que interajam com o React, assim como desenvolver novas implementações de EventLoops, modificar existentes ou mesmo contribuir com melhorias neste pacote do projeto.
+
+---
+Artigo originalmente criado em 31/12/2015.

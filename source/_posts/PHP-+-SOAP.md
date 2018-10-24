@@ -4,6 +4,7 @@ title: PHP + SOAP
 author: Níckolas Silva
 authorEmail: nawarian@gmail.com
 ---
+
 Desde a versão 5.0.1 do PHP fizeram-se disponíveis as classes e funções para trabalhar com SOAP nativamente. 
 
 O link para o manual é o que segue: [http://php.net/manual/en/book.soap.php](http://php.net/manual/en/book.soap.php). 
@@ -101,3 +102,6 @@ int(25)
 Desta forma já estamos conseguindo trabalhar com o cliente e servidor SOAP. Numa próxima devo apresentar bibliotecas para trabalhar com WSDL no PHP e como utilizar o servidor e cliente Soap com um WSDL Document em mãos.
 
 Espero que tenham gostado.
+
+---
+Artigo originalmente criado em 28/07/2015.
