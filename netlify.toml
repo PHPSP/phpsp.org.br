@@ -19,9 +19,8 @@
 
 [[redirects]]
   from = "/5-coisas-que-um-programador-php-precisa"
-#  to = "artigos/5-coisas-que-um-programador-php-precisa"
-  to = "https://old.phpsp.org.br/5-coisas-que-um-programador-php-precisa"
-  status = 307
+  to = "artigos/5-coisas-que-um-programador-php-precisa"
+  status = 301
   force = true
 
 [[redirects]]
