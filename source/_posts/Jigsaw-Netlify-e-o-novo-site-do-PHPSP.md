@@ -1,6 +1,6 @@
 ---
 createdAt: 2018-10-08
-title: "Jigsaw, Netlify e o novo site do PHPSP"
+title: Jigsaw, Netlify e o novo site do PHPSP
 author: João Paulo
 authorEmail: joao.paulo@phpsp.org.br
 ---
