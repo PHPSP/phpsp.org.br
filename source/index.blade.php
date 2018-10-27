@@ -20,7 +20,7 @@ pagination:
                     <a class="has-text-grey" href="{{ $page->getUrl() }}eventos">Próximos Eventos</a>
                 </h2>
                 <p>
-                    A comunidade se reune frequentemente. Veja qual encontro vai aconcer ao seu redor!
+                    A comunidade se reune frequentemente. Veja qual encontro vai acontecer ao seu redor!
                 </p>
                 @include('_partials.content.events.list')
             </div>
