@@ -77,6 +77,13 @@
                           </span>
                         </a>
 
+                        <a class="navbar-item" href="https://www.meetup.com/PHPSP-Santos/events" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na região de Santos
+                          </span>
+                        </a>
                         <hr class="navbar-divider">
 
                         <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
