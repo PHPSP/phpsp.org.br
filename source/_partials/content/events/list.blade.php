@@ -1,2 +1,1 @@
-
-<meetup-events url="{{ $page->meetup['baseUrl'] }}"></meetup-events>
+<meetup-events url="{{ $page->meetup['baseUrl'] }}" :groups={{ $page->events }}></meetup-events>

@@ -95,6 +95,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             required: true,
             type: String
         },
+        groups: {
+            required: true,
+            type: Array
+        },
         quantity: {
             type: Number,
             default: 3
@@ -112,7 +116,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        var linksArr = [this.url + "call/?group=php-sp&endpoint=events&photo-host=public&page=" + this.quantity + "&status=" + this.status, this.url + "call/?group=phpsp-campinas&endpoint=events&photo-host=public&page=" + this.quantity + "&status=" + this.status];
+        var linksArr = [];
+
+        this.groups.forEach(function (group) {
+            linksArr.push(_this.url + "call/?group=" + group + "&endpoint=events&photo-host=public&page=" + _this.quantity + "&status=" + _this.status);
+        });
 
         var promiseArr = linksArr.map(function (link) {
             return fetch(link).then(function (response) {
@@ -146,7 +154,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 

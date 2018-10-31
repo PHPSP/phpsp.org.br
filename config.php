@@ -73,21 +73,23 @@ return [
         'sao_paulo' => [
             'title' => 'PHPSP São Paulo',
             'description' => 'Eventos na cidade de SP',
-            'meetup' => 'php-sp',
             'link' => 'https://www.meetup.com/php-sp/events/',
         ],
         'campinas' => [
             'title' => 'PHPSP Campinas',
             'description' => 'Eventos na cidade de Campinas',
-            'meetup' => 'phpsp-campinas',
             'link' => 'https://www.meetup.com/phpsp-campinas/events/',
         ],
         'santos' => [
             'title' => 'PHPSP Santos',
             'description' => 'Eventos na cidade de Santos',
-            'meetup' => 'phpsp-santos',
             'link' => 'https://www.meetup.com/phpsp-santos/events/',
         ],
+    ],
+    'events' => [
+        'php-sp',
+        'phpsp-campinas',
+        'phpsp-santos',
     ],
     'sponsors' => [
         'azure' => [
