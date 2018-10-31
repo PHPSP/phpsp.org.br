@@ -61,29 +61,16 @@
                 <div class="navbar-item has-dropdown is-hoverable">
                     <span class="navbar-link">Eventos</span>
                     <div id="moreDropdown" class="navbar-dropdown">
-                        <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                        @foreach ($page->branches as $branch)
+                        <a class="navbar-item" href="{{ $branch->link }}" target="_blank">
                           <span>
-                            <strong>PHPSP São Paulo</strong>
+                            <strong>{{ $branch->title }}</strong>
                             <br>
-                            Eventos na cidade de SP
+                            {{ $branch->description }}
                           </span>
                         </a>
+                        @endforeach
 
-                        <a class="navbar-item" href="https://www.meetup.com/PHPSP-Campinas/events" target="_blank">
-                          <span>
-                            <strong>PHPSP Campinas</strong>
-                            <br>
-                            Eventos na cidade de Campinas
-                          </span>
-                        </a>
-
-                        <a class="navbar-item" href="https://www.meetup.com/PHPSP-Santos/events" target="_blank">
-                          <span>
-                            <strong>PHPSP Santos</strong>
-                            <br>
-                            Eventos na região de Santos
-                          </span>
-                        </a>
                         <hr class="navbar-divider">
 
                         <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
