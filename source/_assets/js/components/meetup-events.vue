@@ -23,6 +23,10 @@
                 required: true,
                 type: String
             },
+            groups: {
+                required: true,
+                type: Array
+            },
             quantity: {
                 type: Number,
                 default: 3
@@ -38,10 +42,13 @@
             }
         },
         mounted() {
-            let linksArr = [
-                `${this.url}call/?group=php-sp&endpoint=events&photo-host=public&page=${this.quantity}&status=${this.status}`,
-                `${this.url}call/?group=phpsp-campinas&endpoint=events&photo-host=public&page=${this.quantity}&status=${this.status}`,
-            ];
+            let linksArr = [];
+
+            this.groups.forEach( group => {
+                linksArr.push(
+                    `${this.url}call/?group=${group}&endpoint=events&photo-host=public&page=${this.quantity}&status=${this.status}`
+                )
+            });
 
             let promiseArr = linksArr.map(link => fetch(link).then(response => response.json()));
 
