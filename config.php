@@ -69,6 +69,28 @@ return [
             'github', 'twitter', 'slack', 'linkedin', 'facebook',
         ],
     ],
+    'branches' => [
+        'sao_paulo' => [
+            'title' => 'PHPSP São Paulo',
+            'description' => 'Eventos na cidade de SP',
+            'link' => 'https://www.meetup.com/php-sp/events/',
+        ],
+        'campinas' => [
+            'title' => 'PHPSP Campinas',
+            'description' => 'Eventos na cidade de Campinas',
+            'link' => 'https://www.meetup.com/phpsp-campinas/events/',
+        ],
+        'santos' => [
+            'title' => 'PHPSP Santos',
+            'description' => 'Eventos na cidade de Santos',
+            'link' => 'https://www.meetup.com/phpsp-santos/events/',
+        ],
+    ],
+    'events' => [
+        'php-sp',
+        'phpsp-campinas',
+        'phpsp-santos',
+    ],
     'sponsors' => [
         'azure' => [
             'title' => 'Microsoft Azure',
