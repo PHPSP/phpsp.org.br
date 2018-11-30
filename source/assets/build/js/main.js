@@ -138,7 +138,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
 
             _this.items = ordered.sort(function (a, b) {
-                return a.time > b.time ? 1 : 0;
+                return a.time > b.time ? 1 : b.time > a.time ? -1 : 0;
             }).slice(0, _this.quantity + 1);
         }).catch(console.log);
     }
