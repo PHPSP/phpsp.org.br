@@ -63,7 +63,7 @@
                             });
                         });
 
-                        this.items = ordered.sort((a, b) => (a.time > b.time) ? 1 : 0).slice(0, this.quantity + 1);
+                        this.items = ordered.sort((a,b) => (a.time > b.time) ? 1 : ((b.time > a.time) ? -1 : 0)).slice(0, this.quantity + 1);
                     }
                 )
                 .catch(console.log);
