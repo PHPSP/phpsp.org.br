@@ -8,20 +8,23 @@
         "watch": "npm run local -- --watch"
     },
     "devDependencies": {
-        "browser-sync": "^2.23.6",
+        "browser-sync": "^2.26.3",
         "browser-sync-webpack-plugin": "^2.0.1",
-        "bulma": "^0.7.1",
+        "bulma": "^0.7.2",
         "cross-env": "^3.2.3",
         "hasbin": "^1.2.3",
-        "laravel-mix": "^2.0.0",
+        "laravel-mix": "^4.0.0",
         "node-cmd": "^3.0.0",
         "on-build-webpack": "^0.1.0",
+        "sass": "^1.17.0",
+        "sass-loader": "7.*",
+        "vue-template-compiler": "^2.6.2",
         "webpack-watch": "^0.2.0",
         "yargs": "^4.6.0"
     },
     "dependencies": {
         "lodash": "^4.17.11",
         "remove": "^0.1.5",
-        "vue": "^2.5.17"
+        "vue": "^2.6.2"
     }
 }
