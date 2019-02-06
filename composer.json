@@ -1,7 +1,7 @@
 {
   "name": "herdphp/phpsp.org.br",
   "require": {
-    "tightenco/jigsaw": "^1.0"
+    "tightenco/jigsaw": "^v1.3.6"
   },
   "autoload": {
     "psr-4": {
@@ -12,5 +12,8 @@
       "name": "Joao Paulo Vendramini Martins",
       "email": "jp.joao@gmail.com"
     }
-  ]
+  ],
+  "require-dev": {
+    "malukenho/mcbumpface": "^0.1.3"
+  }
 }
