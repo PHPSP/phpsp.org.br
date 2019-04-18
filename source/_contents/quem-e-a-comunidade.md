@@ -25,7 +25,6 @@ Quer participar mais da comunidade e não sabe como? Entre em contato com um dos
 |Leonardo Tumadjian 	        |@tumadjian	    |São Paulo                      |
 |Marcel Gonçalves dos Santos	|@marcelgsantos	|São Paulo                      |
 |Mario Rezende	                |@mariorez	    |São Paulo                      |
-|Níckolas Daniel da Silva	    |@nawarian	    |São Paulo                      |
 |Paulo Eduardo	                |@pauloelr	    |São Paulo                      |
 |Ravan Scafi	                |@ravanscafi	|Campinas & São Paulo           |
 |Rodrigo “pokemaobr” Cardoso	|@pokemaobr	    |Campinas & São Paulo           |
