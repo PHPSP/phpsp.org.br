@@ -20,8 +20,6 @@ Site estático gerado via [Jigsaw](http://jigsaw.tighten.co);
 ## Desenvolvimento do website local
 Requisitos: PHP7.2 e NPM instalados localmente;
 Passos:
-* Instalar jigsaw globalmente (TODO: Tentar mudar para não precisar ser global):
-* > $ composer global require tightenco/jigsaw
 * Fazer fork do repositório;
 * Rodar composer install:
 * > $ composer install
