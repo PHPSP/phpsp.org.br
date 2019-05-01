@@ -2,7 +2,7 @@
     <ul>
         <li><a href="/">PHPSP {{ $page->type }}</a></li>
 
-        @if ($isPost)
+        @if ($isPost ?? false)
             <li><a href="/artigos">Artigos</a></li>
         @endif
 
