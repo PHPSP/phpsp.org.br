@@ -6,7 +6,7 @@ authorEmail: nawarian@gmail.com
 ---
 
 Quem me acompanha sabe que há alguns meses passei a integrar a equipe do _Maior Podcast em Linha Reta da América Latina e
-quiçá de Pernambuco_, o podcast de divulgação científica [PODentender](https://podentender.com).
+quiçá de Pernambuco_, o podcast de divulgação científica [PODEntender](https://podentender.com).
 
 Este podcast - como quase todos os outros - é um projeto independente e, naturalmente, de **budget reduzido**. Que me
 trouxe a encontrar um website todo fulêro em cima de **Wordpress**, vários **plugins** estranhos, um **template muito
@@ -77,7 +77,7 @@ A intenção aqui era criar um _spider_ que iria **baixar o site inteiro** e seu
 e enviar ao Github Pages para que pudessemos oferecer este conteúdo num **servidor gratuito**, de **ampla distribuição**
 e que tinha **chances bem menores de cair**.
 
-Foi um de final de semana projeto interessante e que mudou de estrutura duas vezes por uma razão simples: **péssimas
+Foi um projeto de final de semana interessante e que mudou de estrutura duas vezes por uma razão simples: **péssimas
 decisões de design**.
 
 Arrastando já há algumas semanas e sem resultados concretos, **a situação do site começou a ficar cada vez mais
@@ -140,7 +140,7 @@ batia 15 segundos, agora se resolve em 0,8 segundos.
 ![Resultado do Lighthouse apresentando 98/100 em Performance](/assets/images/posts/Case-O-que-fez-o-PODEntender-migrar-do-Wordpress-para-o-Jigsaw/lighthouse-podentender.png)
 
 Com total certeza ainda temos muito o que melhorar no projeto do podcast: funcionalidade, layout, seo. Mas o primeiro
-passo foi concluído e agora, sem que o website esteja em chamas, o PODentender passa a caminhar junto do phpsp.org.br,
+passo foi concluído e agora, sem que o website esteja em chamas, o PODEntender passa a caminhar junto do phpsp.org.br,
 propondo, desenvolvendo e compartilhando plugins e corrigindo problemas específicos da nossa plataforma.
 
 Se você estiver curioso(a) em como os nossos sites foram desenvolvidos ou tiver qualquer sugestão de melhoria, dá uma
