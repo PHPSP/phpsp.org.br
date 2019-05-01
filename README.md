@@ -27,4 +27,4 @@ Passos:
 * > $ npm install
 * Reixar o NPM "observando" as mudanças (e gerando o conteúdo estático):
 * > $ npm run watch
-* Enviar um PR para `develop` com as alterações;
+* Enviar um PR para `master` com as alterações;
