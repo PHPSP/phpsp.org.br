@@ -1,6 +1,11 @@
 @import './node_modules/bulma/bulma.sass';
 @import 'breadcrumb/main';
 
+.container.article {
+  width: 100%;
+  max-width: 982px;
+}
+
 .is-white-space-normal {
   white-space: normal !important;
 }

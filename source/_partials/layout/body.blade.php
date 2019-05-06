@@ -1,6 +1,6 @@
 <body>
 <section id="app" class="section">
-    <div class="container">
+    <div class="container article">
         @include('_partials.layout.navbar')
         @include('_partials.layout.breadcrumbs')
         @yield('body')
