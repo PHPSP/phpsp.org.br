@@ -83,18 +83,95 @@ de um array. Iterações que todos nós poderíamos evitar.
 Assim chegamos ao segundo motivo...
 
 ## Motivo \#2 - Arrays oferecem performance reduzida em diversos casos
-@todo -> Explicar:
+Comecemos por um princípio básico: um parâmetro de função do tipo `object`,
+ou seja, uma instância de classe sempre é passado por referência. Um parâmetro
+de função do tipo `array` sempre é passado por cópia.
 
-- diferentes implementações de coleções
-- benchmarks
+O que isso significa em termos práticos?
+```php
+function arrayFunction(array $param) {
+    $param['pos'] = 1;
+}
+
+function objectFunction(\stdClass $param) {
+    $param->pos = 1;
+}
+
+$array = [];
+arrayFunction($array);
+var_dump($array); // vazio
+
+$object = new \stdClass();
+objectFunction($object);
+var_dump($object); // pos = int(1)
+```
+
+Toda vez que você chamar a função `arrayFunction()` e passar um array, o php irá
+fazer uma cópia do array inteiro para passar para a função. Este array se mantém
+naquele escopo.
+
+Ao passo que ao passar um objeto como parâmetro, não é feita uma cópia, mas
+passada uma referência ao objeto.
+
+Isto significa menos memória consumida.
+
+E daí?
+
+Daí que existem diversas implementações de coleção otimizadas para diversos
+casos diferentes com as quais você pode utilizar menos memória, processamento ou
+os dois.
+
+Vamos ver um exemplo rápido usando o `SplFixedArray`?
+
+O fixed array é um objeto muito interessante para quando você sabe o tamanho
+máximo da sua coleção. E é otimizado para lidar com os dados que espera receber.
+
+Faz aí no seu computador! Eu vou deixar aqui o tempo que levou pra executar no
+meu:
+
+```php
+<?php // array.php
+$tamanho = 1000000;
+$inicio = microtime(true);
+$array = [];
+
+for ($i=0; $i < $tamanho; $i++) {
+  $array[] = null;
+}
+
+echo (microtime(true) - $inicio) . PHP_EOL; // 0.043247938156128
+var_dump(memory_get_peak_usage()); // 33950192
+```
+
+```php
+<?php // SplFixedArray.php
+$tamanho = 1000000;
+$inicio = microtime(true);
+$fixedArray = new SplFixedArray($tamanho);
+
+for ($i=0; $i < $tamanho; $i++) {
+  $fixedArray[$i] = null;
+}
+
+echo (microtime(true) - $inicio) . PHP_EOL; // 0.041646957397461
+var_dump(memory_get_peak_usage()); // 16394864
+```
+
+O `SplFixedArray` neste exemplo roda em menos tempo (a diferença é inexpressiva,
+sejamos justos) e utiliza metade da memória para realizar a mesma ação.
+**Metade!**
 
 O tipo `array` traz consigo diversas responsabilidades: iterar, contar,
 armazenar e acessar por chave.
 
 A analogia do pato se encaixa perfeitamente! Ele anda, voa e nada. Mas não faz
-nenhum dos três direito. **O mesmo acontece com o nosso array**.
+nenhum dos três direito. **O mesmo acontece com o nosso array**. O
+`SplFixedArray` é especializado em criar coleções de tamanho fixo com 16 bytes
+por posição e a classe faz isso muito bem!
 
-Olha bem o porquê de eu te dizer isso:
+E olha só, o `SplFixedArray` tem toda API do `Iterator` bonitinha implementada,
+que é uma API consistente e que segue o mesmo padrão por todos que a
+implementam, diferente de certos tipos de dados por aí... 👀
 
 ## Motivo \#3 - A API nativa de arrays é pouco legível e inconsistente
 @todo -> Explicar:
