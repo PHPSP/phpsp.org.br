@@ -10,7 +10,6 @@ tomando forma e até o presente momento apresenta novidades muito interessantes
 para a linguagem que já foram confirmadas. Dentre elas:
 
 - [Preloading](https://wiki.php.net/rfc/preload)
-- [Null coalescing assignment](https://wiki.php.net/rfc/null_coalesce_equal_operator)
 - [Typed properties](https://wiki.php.net/rfc/typed_properties_v2)
 - [Short closures](https://wiki.php.net/rfc/arrow_functions_v2) (!!)
 
@@ -82,7 +81,14 @@ de um array. Iterações que todos nós poderíamos evitar.
 
 Assim chegamos ao segundo motivo...
 
-## Motivo \#2 - Arrays oferecem performance reduzida em diversos casos
+## Motivo \#2 - A API nativa de arrays é pouco legível, inconsistente e induz ao erro
+@todo -> Explicar:
+
+- como a API é verbosa e ultrapassada
+- array_filter vs. array_map
+- mágicas estranhas com compact(), list()...
+
+## Motivo \#3 - Arrays oferecem performance reduzida em diversos casos
 Comecemos por um princípio básico: um parâmetro de função do tipo `object`,
 ou seja, uma instância de classe sempre é passado por referência. Um parâmetro
 de função do tipo `array` sempre é passado por cópia.
@@ -173,13 +179,6 @@ E olha só, o `SplFixedArray` tem toda API do `Iterator` bonitinha implementada,
 que é uma API consistente e que segue o mesmo padrão por todos que a
 implementam, diferente de certos tipos de dados por aí... 👀
 
-## Motivo \#3 - A API nativa de arrays é pouco legível e inconsistente
-@todo -> Explicar:
-
-- como a API é verbosa e ultrapassada
-- array_filter vs. array_map
-- mágicas estranhas com compact(), list()...
-
 ## Motivo \#4 - Existem abstrações muito mais legíveis e diretas
 
 E aqui eu falo abertamento do pacote [Collection do Laravel](https://laravel.com/docs/5.8/collections).
@@ -243,24 +242,56 @@ seguir:
 
 ## Motivo \#5 - A gente nunca sabe que diabos está dentro de um array
 
-A implementação com Collection nos permite tornar a nossa coleção especializada
+No começo do texto eu já comentei que um array é um saco de bagulhos, certo?
+
+Já a implementação com Collection nos permite tornar a nossa coleção especializada
 em determinado tipo sem muita dor de cabeça. Uma classe `PessoaCollection`, por
 exemplo, nos permite esperar que seus elementos são do tipo `Pessoa` em vez de
 precisarmos testar com `is_string`, `instanceof` ou afins cada um dos seus
 elementos.
 
 É justamente disso que o [Object Calisthenics](http://bit.ly/php-calisthenics)
-fala no exercício de **First class collections**.
+fala no exercício de **First class collections**:
+> Uma classe que contenha uma lista em suas propriedades, não deverá possuir outras propriedades.
 
-@todo -> Explicar:
-- como extender Collection
-- como ter várias estratégias diferentes da mesma collection
- - ex.: PessoaCollection, PessoaObjectStorageCollection, PessoaFixedArrayCollection...
+Em outras palavras: larga de usar `array` pra tudo e cria uma classe pra representar sua coleção de tipo específico!
 
-Aqui eu comento sobre diferentes estratégias para sua collection porque se você
-analisar bem, o Motivo 6 faz todo sentido:
+No caso de Collection tu pode ainda extender a classe e sobrescrever os métodos pertinentes pra garantir os tipos
+internos da coleção, já que o PHP não traz consigo Generics.
 
-## Motivo \#6 - A sua classe não precisa saber como funciona um array!
+No estatista do PODEntender eu [sequer implementei esta checagem](https://github.com/PODEntender/estatista/blob/c9c2ed7de0632cafb4cbc807bdb0c09212484bd6/src/Domain/Model/Post/PostCollection.php)
+porque julguei desnecessária. Ao sobrescrever a classe Collection por um tipo específico, eu simplesmente adoto por
+convenção que os tipos internos serão aqueles.
+
+```php
+class PessoaCollection extends Collection
+{}
+```
+
+Diria ao ver uma classe dessa que `PessoaCollection` é um conjunto de vários objetos do tipo `Pessoa`. Portanto poderia
+tornar esta classe otimizada para a sua necessidade por implementar uma estratégia específica de collection usando o
+`SplObjectStorage`:
+
+```php
+class PessoaCollection extends SplObjectStorageCollection
+{}
+
+class SplObjectStorageCollection extends Collection
+{
+    private SplObjectStorage $storage;
+
+    // Sobrescrever métodos pertinentes
+}
+```
+
+Particularmente eu penso que sobrescrever os métodos da classe Collection é um saco. Faria mais sentido Collection ser
+uma interface em alguns contextos, mas a forma como foi construída requer que não. Paciência, cada projeto entende o que
+é melhor para o seu contexto. 
+
+Todo esse esforço tem uma saída positiva, porém. Para que possamos ter um código cada vez mais testável, é importante
+seguir o princípio da responsabilidade única. E é assim que chegamos ao motivo número 6:
+
+## Motivo \#6 - A sua regra de negócio não precisa saber como funciona um array!
 
 Será que a coleção precisa crescer? Qual o tamanho esperado? Eu preciso colocar
 tudo em memória ou vou usar como stream? Eu acesso por chave numérica ou string?
