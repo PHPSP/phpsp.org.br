@@ -29,13 +29,58 @@ assim que sair, eu vim aqui te contar meus **X motivos para você NUNCA MAIS usa
 arrays a partir do PHP 7.4**!
 
 ## Motivo \#1 - Arrays são uma *péssima* estrutura de dados
-@todo -> Explicar:
+O termo `array` vem do Latim e significa `saco de bagulhos variados que você não
+quer se dar o trabalho de armazenar propriamente`.
 
-- vários tipos no mesmo array
-- array com chave / sem chave
-- tipagem
+Mentira.
 
-Essas características acabam nos levando ao motivo número 2:
+Mas veja, o tipo `array` é uma estrutura altamente permissiva que vai agregar
+qualquer tipo de dado indiscriminadamente. Num mesmo array você consegue
+armazenar inteiros, booleanos, strings, objetos...
+
+Essa estrutura de dados permissiva te torna num(a) eterno(a) namorado(a)
+ciumento(a) e tóxico(a) do seu código, tendo que avaliar cada passo pelo qual
+ele passa. Não seja essa pessoa!
+
+Veja isso:
+```php
+$numeros = ...;
+
+$total = array_sum($numeros);
+```
+
+Não sei quanto a você. Mas eu não consigo confiar que `$numeros` possui apenas
+tipos numéricos.
+Me diga aí, sem executar o código, qual o resultado da soma se números fosse o
+seguinte:
+```php
+$numeros = [0, 10, "1 maçã", false, "duas bananas"];
+```
+
+**Não consegue né, Moisés?**
+
+Além disso os índices dos arrays também são muito permissivos. Num array é
+possível armazenar um valor por chave numérica ou por string. Ou os dois!
+
+```php
+$arrayLindo = [
+    5 => 'cinco',
+    'um',
+    'dois' => '3'
+];
+```
+
+Digaí agora: em qual posição do array está o valor `um`?
+
+Portanto a todo momento em que um `array` se apresenta pra mim, o meu código
+fica automaticamente duas vezes mais defensivo. Para realizar um `array_sum()`,
+por exemplo, eu costumo antes fazer um `array_filter()` que vá retirar todos
+itens cujo retorno de `is_numeric()` seja `false`.
+
+Verificações que eu não precisaria fazer se pudesse confiar nos tipos internos
+de um array. Iterações que todos nós poderíamos evitar.
+
+Assim chegamos ao segundo motivo...
 
 ## Motivo \#2 - Arrays oferecem performance reduzida em diversos casos
 @todo -> Explicar:
