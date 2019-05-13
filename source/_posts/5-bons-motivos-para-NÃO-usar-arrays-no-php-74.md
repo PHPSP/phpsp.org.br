@@ -1,6 +1,6 @@
 ---
 createdAt: 2019-05-12
-title: '6 bons motivos para NÃO usar arrays no PHP 7.4'
+title: '5 bons motivos para NÃO usar arrays no PHP 7.4'
 author: Níckolas Silva
 authorEmail: nawarian@gmail.com
 ---
@@ -21,7 +21,7 @@ e componentes independentes, o Framework (ou partes dele) acaba conquistando at�
 caso.
 
 Animado com a revolução que algumas implementações trouxeram ao blog estático do [PODEntender](https://podentender.com)
-e sedento para atualizar para o php 7.4 assim que sair, eu vim aqui te contar meus **X motivos para você NUNCA MAIS usar
+e sedento para atualizar para o php 7.4 assim que sair, eu vim aqui te contar meus **5 motivos para você NUNCA MAIS usar
 arrays a partir do PHP 7.4** mas que você pode começar a aplicar desde já!
 
 ## Motivo \#1 - Arrays são uma *péssima* estrutura de dados
@@ -73,14 +73,7 @@ poderíamos evitar.
 
 Assim chegamos ao segundo motivo...
 
-## Motivo \#2 - A API nativa de arrays é pouco legível, inconsistente e induz ao erro
-@todo -> Explicar:
-
-- como a API é verbosa e ultrapassada
-- array_filter vs. array_map
-- mágicas estranhas com compact(), list()...
-
-## Motivo \#3 - Arrays oferecem performance reduzida em diversos casos
+## Motivo \#2 - Arrays oferecem performance reduzida em diversos casos
 Comecemos por um princípio básico: um parâmetro de função do tipo `object`, ou seja, uma instância de classe sempre é
 passado por referência. Um parâmetro de função do tipo `array` sempre é passado por cópia.
 
@@ -162,7 +155,7 @@ posição e a classe faz isso muito bem!
 E olha só, o `SplFixedArray` tem toda API do `Iterator` bonitinha implementada, que é uma API consistente e que segue o
 mesmo padrão por todos que a implementam, diferente de certos tipos de dados por aí... 👀
 
-## Motivo \#4 - Existem abstrações muito mais legíveis e diretas
+## Motivo \#3 - Existem abstrações muito mais legíveis e diretas
 
 E aqui eu falo abertamento do pacote [Collection do Laravel](https://laravel.com/docs/5.8/collections). Apesar de não
 ser o pedaço de código mais performático do mundo, ele apresenta uma API muito agradável e é extensível. Portanto a
@@ -215,9 +208,9 @@ Com a API Collection fazemos uma única atribuição, a API é consistente, o c�
 pode optar por implementações diferentes do seu mecanismo de lista que façam mais sentido e possam ser mais eficientes
 no seu caso de uso.
 
-E são exatamente os benefícios da API Collection que contrastam com o motivo 5 a seguir:
+E são exatamente os benefícios da API Collection que contrastam com o motivo 4 a seguir:
 
-## Motivo \#5 - A gente nunca sabe que diabos está dentro de um array
+## Motivo \#4 - A gente nunca sabe que diabos está dentro de um array
 
 No começo do texto eu já comentei que um array é um saco de bagulhos, certo?
 
@@ -264,9 +257,9 @@ uma interface em alguns contextos, mas a forma como foi construída requer que n
 é melhor para o seu contexto. 
 
 Todo esse esforço tem uma saída positiva, porém. Para que possamos ter um código cada vez mais testável, é importante
-seguir o princípio da responsabilidade única. E é assim que chegamos ao motivo número 6:
+seguir o princípio da responsabilidade única. E é assim que chegamos ao motivo número 5:
 
-## Motivo \#6 - A sua regra de negócio não precisa saber como funciona um array!
+## Motivo \#5 - A sua regra de negócio não precisa saber como funciona um array!
 
 Será que a coleção precisa crescer? Qual o tamanho esperado? Eu preciso colocar tudo em memória ou vou usar como stream?
 Eu acesso por chave numérica ou string?
