@@ -22,7 +22,7 @@ caso.
 
 Animado com a revolução que algumas implementações trouxeram ao blog estático do [PODEntender](https://podentender.com)
 e sedento para atualizar para o php 7.4 assim que sair, eu vim aqui te contar meus **X motivos para você NUNCA MAIS usar
-arrays a partir do PHP 7.4**!
+arrays a partir do PHP 7.4** mas que você pode começar a aplicar desde já!
 
 ## Motivo \#1 - Arrays são uma *péssima* estrutura de dados
 O termo `array` vem do Latim e significa `saco de bagulhos variados que você não quer se dar o trabalho de armazenar
@@ -271,14 +271,55 @@ seguir o princípio da responsabilidade única. E é assim que chegamos ao motiv
 Será que a coleção precisa crescer? Qual o tamanho esperado? Eu preciso colocar tudo em memória ou vou usar como stream?
 Eu acesso por chave numérica ou string?
 
-@todo -> Explicar:
+Normalmente a gente não repara nisso, mas coleções por si só possuem um domínio muito específico e importante o
+suficiente para uma boa modelagem. Quando a gente ignora isso, acaba tomando o caminho curto que, como vimos, pode ser
+também tortuoso.
 
-- interface de api
-- testabilidade
-- coleções especializadas
-- mostrar como funciona no podentender
+Ao tratar nossas coleções como os domínios de respeito que são, passamos também a poder depender de interfaces quando se
+trata de sua utilização. Ou melhor dizendo, podemos depender de contratos!
 
-Ah! Mas eu vou ficar criando classe e forçar o php a carregar mais classes atoa? Isso vai aumentar o tempo de execução
+As collections que vimos acima resolvem muita coisa para nós desde seus contratos. Funções como `filter()` e `map()`
+estão sempre presentes. Além de outras muito interessantes como `groupBy()` e por aí vai. Não há bons motivos para que
+executemos todas essas lógicas em nossas classes de negócio. (domínio, services, repositories...)
+
+Além disso, há um ganho em extrair a lógica de coleção que é quase óbvio mas que vale a pena ser citado:
+> Quanto menor o número de responsabilidades, mais simples e diretos serão os testes.
+
+Para finalizar este texto (ufa) eu gostaria de trazer um ultimo exemplo de como a utilização de collections
+especializadas tem se pagado no PODEntender. Se você abrir [este teste aqui](https://github.com/PODEntender/estatista/blob/083231511761cef242e232c743f8febeaef7805e/test/unit/Application/Service/Post/FetchLatestEpisodesTest.php#L26-L43)
+será direcionado para o seguinte snippet:
+
+```php
+public function testExecuteFetchesExactAmount(): void
+{
+    $audioEpisodeCollection = $this->createDefaultAudioEpisodeCollection()
+        ->sortByDesc(function (AudioEpisode $episode) {
+            return $episode->createdAt();
+        });
+
+    $this->postRepository->withAudio()->willReturn($audioEpisodeCollection);
+    
+    $result = $this->fetchLatestEpisodesService->execute(2, null);
+
+    $this->assertEquals(2, $result->count());
+
+    $lastEpisode = $result->first();
+    $episodeBeforeLast = $result->last();
+
+    $this->assertEquals($audioEpisodeCollection->take(2)->first()->guid(), $lastEpisode->guid());
+    $this->assertEquals($audioEpisodeCollection->take(2)->last()->guid(), $episodeBeforeLast->guid());
+}
+```
+
+**Um método de teste, 11 linhas de código. (Que poderiam ser reduzidas para 5 sem muita perda de legibilidade)**
+
+Como o nosso `postRepository` trabalha com Collections, fazer o mock para seu output é relativamente simples e direto.
+As chamadas ao método `assertEquals()` também são muito simples e diretas, pois eu posso aqui confiar no contrato da
+collection e simplesmente dizer ao teste o que eu espero que aconteça **de forma semântica**! 
+
+Ainda assim você pode estar esclamando:
+
+> Ah! Mas eu vou ficar criando classe e forçar o php a carregar mais classes atoa? Isso vai aumentar o tempo de execução
 por uma questão estética!
 
 Não, não e não. Não é atoa, não vai aumentar o tempo de execução e não é uma questão puramente estética.
