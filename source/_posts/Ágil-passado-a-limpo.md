@@ -51,7 +51,3 @@ Kanban, no contexto de desenvolvimento de software, tem por objetivo fundamental
 ---
 
 Metodologias Ágeis, apesar do nome ser ligado a velocidade, muito pouco tem a ver com ela. O Manifesto basicamente descreve itens (ou mantras) que nos tornam mais preparados para possíveis mudanças, evitam impactos negativos causados por conflitos e nos permitem evoluir como parte do processo, como profissionais e como pessoas. Tanto que justamente essa preparação para mudanças nos traz as melhores práticas de trabalho, por vezes alcançadas pela mistura de mais de um método: Um time pode trabalhar em Scrum, usando Kanban, em regime de Pair Programming (uma das práticas do eXtreme Programming, outro método ágil) e descrevendo seus entregáveis numa linha de Conversational Development (assunto para outro dia ;) ).
-
-—
-
-(este post foi publicado originalmente na Biblioteca TOTVS com o título [Entenda o desenvolvimento ágil de software](https://www.totvs.com/biblioteca/artigos/metodologia-agil)).
