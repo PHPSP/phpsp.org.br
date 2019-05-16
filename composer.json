@@ -1,8 +1,10 @@
 {
   "name": "herdphp/phpsp.org.br",
+  "license": "MIT",
+  "description": "PHPSP Website - Site estático gerado via Jigsaw",
   "require": {
     "php": ">=7.2",
-    "tightenco/jigsaw": "^v1.3.6"
+    "tightenco/jigsaw": "^v1.3.8"
   },
   "autoload": {
     "psr-4": {
