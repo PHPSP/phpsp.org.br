@@ -26,7 +26,7 @@ pagination:
             </div>
             <div class="column">
                 <h2 class="title is-2">
-                    <a class="has-text-grey-dark" href="{{ $page->getUrl() }}blog">Artigos</a>
+                    <a class="has-text-grey-dark" href="{{ $page->getUrl() }}artigos">Artigos</a>
                 </h2>
                 @include('_partials.content.posts.list')
             </div>
