@@ -53,7 +53,7 @@ return [
         'linkedin' => [
             'title' => 'LinkedIn',
             'img' => '/assets/images/thirdparty/In-2C-128px-TM.png',
-            'url' => 'https://www.linkedin.com/groups/PHPSP-Grupo-Desenvolvedores-PHP-S%C3%A3o-1808119',
+            'url' => 'https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/',
         ],
         'facebook' => [
             'title' => 'Facebook',
