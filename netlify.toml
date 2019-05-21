@@ -1,8 +1,8 @@
 [context.deploy-preview]
   command = "npm run production && ./vendor/bin/behat -n --stop-on-failure"
 
-  [context.deploy-preview.environment]
-    BEHAT_PARAMS = "{\"extensions\" : {\"Behat\\\\MinkExtension\" : {\"base_url\" : \"$DEPLOY_PRIME_URL\"}}}"
+[context.deploy-preview.environment]
+  BEHAT_PARAMS = "{\"extensions\" : {\"Behat\\\\MinkExtension\" : {\"base_url\" : \"$DEPLOY_PRIME_URL\"}}}"
 
 [[redirects]]
   from = "/php-soap"
