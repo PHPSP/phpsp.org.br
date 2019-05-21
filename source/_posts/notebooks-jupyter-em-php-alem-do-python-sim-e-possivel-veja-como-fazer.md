@@ -6,7 +6,7 @@ authorEmail: rogeriopradoj@gmail.com
 ---
 
 <figure>
-    <img title="Sim, é possível!" src="/assets/images/posts/2019-05-13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer/13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer-01.png" alt="Sim, é possível!">
+    <img title="Sim, é possível!" src="/assets/images/posts/2019-05-13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer/13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer-01.png" alt="Capa do artigo, contendo o título 'Notebooks Jupyter em PHP, além do Python? Sim, é possível: veja como fazer!' em letras brancas, sobre fundo vermelho estilizado com formas geométricas pretas, além do link para o site da publicação original https://rogeriopradoj.com em letras pretas">
     <figcaption>Sim, é possível!</figcaption>
 </figure>
 
@@ -53,7 +53,7 @@ No site oficial, <https://litipk.github.io/Jupyter-PHP-Installer/>, tem mais inf
 * entrar na pasta onde baixou, pelo terminal, e executar: `php jupyter-php-installer.phar install`.
 
 <figure>
-    <img title="Resultado da instalação do Juptyer-notebook" src="/assets/images/posts/2019-05-13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer/13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer-03.png" alt="Resultado da instalação do Juptyer-notebook">
+    <img title="Resultado da instalação do Juptyer-notebook" src="/assets/images/posts/2019-05-13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer/13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer-03.png" alt="Tela de um terminal/prompt de comando com fundo preto, contendo a linha executada para instalação do jupyter-notebook no computador em letras cinzas, e a mensagem de sucesso 'The Jupyter-PHP kernel has been successfully installed.' em letras verdes">
     <figcaption>Resultado da instalação</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ Pronto, é só reiniciar o seu Jupyter, e quando for criar um Notebook, vai ter 
 Aqui vai um exemplo:
 
 <figure>
-    <img title="Um exemplo de Jupyter Notebook usando o kernel PHP" src="/assets/images/posts/2019-05-13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer/13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer-02.png" alt="Um exemplo de Jupyter Notebook usando o kernel PHP">
+    <img title="Um exemplo de Jupyter Notebook usando o kernel PHP" src="/assets/images/posts/2019-05-13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer/13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer-02.png" alt="Tela de um navegador com uma URL de Jupyter Notebook aberta usando o kernel PHP, com alguns exemplos de código PHP sendo executados, como exemplo a função 'echo', de impressão na tela, e a função 'phpversion()', que mostra a versão do PHP que está sendo executada">
     <figcaption>Um exemplo de Jupyter Notebook usando o kernel PHP</figcaption>
 </figure>
 
