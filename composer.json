@@ -17,6 +17,10 @@
     }
   ],
   "require-dev": {
-    "malukenho/mcbumpface": "^0.1.3"
+    "malukenho/mcbumpface": "^0.1.3",
+    "behat/behat": "^v3.5.0",
+    "behat/mink": "^v1.7.1",
+    "behat/mink-goutte-driver": "^v1.2.1",
+    "behat/mink-extension": "^2.3.1"
   }
 }

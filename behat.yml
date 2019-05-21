@@ -1,0 +1,12 @@
+default:
+  suites:
+    integration:
+      paths:
+        - ./tests/integration
+      contexts:
+        - \Behat\MinkExtension\Context\MinkContext
+  extensions:
+    Behat\MinkExtension:
+      sessions:
+        default:
+          goutte: ~
