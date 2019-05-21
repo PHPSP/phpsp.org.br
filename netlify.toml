@@ -1,3 +1,6 @@
+[context.build]
+  command = 'npm run production'
+
 [context.deploy-preview]
   command = 'npm run production && export BEHAT_PARAMS="{\"extensions\" : {\"Behat\\\\MinkExtension\" : {\"base_url\" : \"$DEPLOY_PRIME_URL\"}}}" && ./vendor/bin/behat -n --stop-on-failure'
 
