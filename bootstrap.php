@@ -1,6 +1,8 @@
 <?php
 
 use TightenCo\Jigsaw\Jigsaw;
+use Mni\FrontYAML\Markdown\MarkdownParser;
+use App\CustomMarkdownParser;
 
 /** @var $container \Illuminate\Container\Container */
 /** @var $events \TightenCo\Jigsaw\Events\EventBus */
@@ -15,3 +17,6 @@ use TightenCo\Jigsaw\Jigsaw;
  *     // Your code here
  * });
  */
+
+$container->bind(MarkdownParser::class, CustomMarkdownParser::class);
+
