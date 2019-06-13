@@ -2,11 +2,10 @@
     "private": true,
     "scripts": {
         "build": "webpack --progress --hide-modules --env=$NODE_ENV --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "local": "cross-env NODE_ENV=development yarn build",
         "staging": "cross-env NODE_ENV=staging yarn build",
         "production": "cross-env NODE_ENV=production yarn build",
-        "dev": "yarn local",
-        "watch": "yarn local -- --watch"
+        "dev": "cross-env NODE_ENV=development yarn build",
+        "watch": "yarn dev --watch"
     },
     "devDependencies": {
         "browser-sync": "^2.26.7",
