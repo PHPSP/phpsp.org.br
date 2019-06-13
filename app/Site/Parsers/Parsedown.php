@@ -31,11 +31,7 @@ class Parsedown extends BaseParsedown
 
         // 1. Add target and rel to external links
         if ($this->isExternalUrl($href) && !$isImage) {
-<<<<<<< HEAD
             $link['element']['attributes']['rel'] = 'nofollow';
-=======
-            $link['element']['attributes']['rel'] = 'noopener';
->>>>>>> c2d46236fb3ff65cbe10a51007270c30ac9002dc
         }
 
         return $link;
