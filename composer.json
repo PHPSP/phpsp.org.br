@@ -2,11 +2,12 @@
   "name": "herdphp/phpsp.org.br",
   "require": {
     "php": ">=7.2",
-    "tightenco/jigsaw": "^v1.3.6"
+    "tightenco/jigsaw": "^v1.3.6",
+    "mnapoli/front-yaml": "^1.6.0"
   },
   "autoload": {
     "psr-4": {
-      "App\\": "app/"
+      "Phpsp\\": "app/"
     }
   },
   "authors": [
