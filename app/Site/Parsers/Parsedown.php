@@ -1,11 +1,19 @@
 <?php
 
-namespace App;
+namespace Phpsp\Site\Parsers;
 
-use Parsedown as BaseParsedown;
+use ParsedownExtra as BaseParsedown;
 
-class CustomParsedown extends BaseParsedown
+class Parsedown extends BaseParsedown
 {
+    private $internalHostName;
+
+    public function __construct(string $internalHostName)
+    {
+        parent::__construct();
+        $this->internalHostName = $internalHostName;
+    }
+
     /**
      * Extra link handling
      * @param  array $excerpt
@@ -17,14 +25,12 @@ class CustomParsedown extends BaseParsedown
         if (!isset($link)) {
             return null;
         }
-
         $href = $link['element']['attributes']['href'];
         $ext = strtolower(pathinfo($href, PATHINFO_EXTENSION));
         $isImage = in_array($ext, ['gif', 'jpg', 'jpeg', 'png', 'svg']);
 
         // 1. Add target and rel to external links
         if ($this->isExternalUrl($href) && !$isImage) {
-            $link['element']['attributes']['target'] = '_blank';
             $link['element']['attributes']['rel'] = 'noopener';
         }
 
@@ -37,20 +43,18 @@ class CustomParsedown extends BaseParsedown
      * @param null $internalHostName
      * @return bool
      */
-    protected function isExternalUrl($url, $internalHostName = null)
+    protected function isExternalUrl($url)
     {
-        $components = parse_url($url);
-        $internalHostName = !$internalHostName && isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $internalHostName;
-        // we will treat url like '/relative.php' as relative
-        if (empty($components['host'])) {
+        $parsedUrl = parse_url($url);
+        if (empty($parsedUrl['host'])) {
             return false;
         }
-        // url host looks exactly like the local host
-        if (strcasecmp($components['host'], $internalHostName) === 0) {
+        $parsedInternalHostUrl = parse_url($this->internalHostName);
+        if (strcasecmp($parsedUrl['host'], $parsedInternalHostUrl['host']) === 0) {
             return false;
         }
-
-        $isNotSubdomain = strrpos(strtolower($components['host']), '.' . $internalHostName) !== strlen($components['host']) - strlen('.' . $internalHostName);
+        
+        $isNotSubdomain = strpos(strtolower($parsedUrl['host']), strtolower($parsedInternalHostUrl['host'])) == false;
 
         return $isNotSubdomain;
     }

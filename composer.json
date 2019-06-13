@@ -4,11 +4,12 @@
   "description": "PHPSP Website - Site estático gerado via Jigsaw",
   "require": {
     "php": ">=7.2",
-    "tightenco/jigsaw": "^v1.3.8"
+    "tightenco/jigsaw": "^v1.3.8",
+    "mnapoli/front-yaml": "^1.6.0"
   },
   "autoload": {
     "psr-4": {
-      "App\\": "app/"
+      "Phpsp\\": "app/"
     }
   },
   "authors": [
