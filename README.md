@@ -28,8 +28,8 @@ Passos:
 * Fazer fork do repositório;
 * Rodar composer install:
 * > $ composer install
-* Rodar NPM install:
+* Rodar yarn install:
 * > $ npm install
-* Reixar o NPM "observando" as mudanças (e gerando o conteúdo estático):
-* > $ npm run watch
+* Reixar o yarn "observando" as mudanças (e gerando o conteúdo estático):
+* > $ yarn run watch
 * Enviar um PR para `master` com as alterações;
