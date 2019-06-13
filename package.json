@@ -8,7 +8,7 @@
         "watch": "npm run local -- --watch"
     },
     "devDependencies": {
-        "browser-sync": "^2.26.5",
+        "browser-sync": "^2.26.7",
         "browser-sync-webpack-plugin": "^2.0.1",
         "bulma": "^0.7.2",
         "cross-env": "^3.2.3",
