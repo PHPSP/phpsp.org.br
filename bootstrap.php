@@ -1,6 +1,9 @@
 <?php
 
 use TightenCo\Jigsaw\Jigsaw;
+use Mni\FrontYAML\Markdown\MarkdownParser as BaseParser;
+use Phpsp\Site\Parsers\MarkdownParser;
+use Phpsp\Site\Parsers\Parsedown;
 
 /** @var $container \Illuminate\Container\Container */
 /** @var $events \TightenCo\Jigsaw\Events\EventBus */
@@ -15,3 +18,8 @@ use TightenCo\Jigsaw\Jigsaw;
  *     // Your code here
  * });
  */
+
+$container->bind(BaseParser::class, MarkdownParser::class);
+$container->bind(Parsedown::class, function ($app) {
+    return new Parsedown($app->config['baseUrl']);
+});
