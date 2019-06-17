@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/php:7.2-node-browsers
+      - image: circleci/buildpack-deps
 
     steps:
       - checkout
@@ -12,7 +12,7 @@ jobs:
             - v1-dependencies-{{ checksum "composer.json" }}
             - v1-dependencies-
 
-      - run: composer install --no-interaction --no-progress
+      - run: docker-compose run --rm -T web composer install --no-interaction --no-progress
 
       - save_cache:
           key: v1-dependencies-{{ checksum "composer.json" }}
@@ -23,10 +23,10 @@ jobs:
           keys:
             - node-v1-{{ checksum "package.json" }}
             - node-v1-
-      - run: yarn install
+      - run: docker-compose run --rm -T web yarn install
       - save_cache:
           key: node-v1-{{ checksum "package.json" }}
           paths:
             - node_modules
 
-      - run: yarn production
+      - run: docker-compose run --rm -T web yarn production
