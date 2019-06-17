@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/buildpack-deps
+    working_directory: /var/app
 
     steps:
       - checkout
