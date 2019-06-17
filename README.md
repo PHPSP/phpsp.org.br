@@ -23,13 +23,19 @@ do nosso Slack.
 * Enviar um PR para `master` com o novo conteúdo;
 
 ## Desenvolvimento do website local
-Requisitos: PHP7.2 e NPM instalados localmente;
+Requisitos: PHP7.2 e Yarn instalados localmente;
 Passos:
 * Fazer fork do repositório;
 * Rodar composer install:
-* > $ composer install
-* Rodar NPM install:
-* > $ npm install
-* Reixar o NPM "observando" as mudanças (e gerando o conteúdo estático):
-* > $ npm run watch
+```sh
+composer install
+```
+* Rodar yarn install:
+```sh
+yarn install
+```
+* Deixar o yarn "observando" as mudanças (e gerando o conteúdo estático):
+```sh
+yarn watch
+```
 * Enviar um PR para `master` com as alterações;
