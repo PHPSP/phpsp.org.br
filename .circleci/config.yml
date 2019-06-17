@@ -1,9 +1,7 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/buildpack-deps
-    working_directory: /var/app
+    machine: true
 
     steps:
       - checkout
