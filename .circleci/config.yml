@@ -6,6 +6,7 @@ jobs:
 
     steps:
       - checkout
+      - setup_remote_docker
 
       - restore_cache:
           keys:
