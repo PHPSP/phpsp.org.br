@@ -11,6 +11,7 @@ jobs:
             - v1-dependencies-{{ checksum "composer.json" }}
             - v1-dependencies-
 
+      - run: docker-compose build --build-arg UID=$(id -u) --build-arg GID=$(id -g) web
       - run: docker-compose run --rm -T web composer install --no-interaction --no-progress
 
       - save_cache:
