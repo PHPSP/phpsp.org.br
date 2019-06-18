@@ -23,19 +23,26 @@ do nosso Slack.
 * Enviar um PR para `master` com o novo conteúdo;
 
 ## Desenvolvimento do website local
-Requisitos: PHP7.2 e Yarn instalados localmente;
+Requisitos: Docker e Docker-compose instalados localmente;
+
 Passos:
 * Fazer fork do repositório;
+* Fazer o `build` do container do docker:
+```sh
+docker-compose build
+```
 * Rodar composer install:
 ```sh
-composer install
+docker-compose run --rm web composer install
 ```
 * Rodar yarn install:
 ```sh
-yarn install
+docker-compose run --rm web yarn install
 ```
 * Deixar o yarn "observando" as mudanças (e gerando o conteúdo estático):
 ```sh
-yarn watch
+docker-compose up
 ```
-* Enviar um PR para `master` com as alterações;
+* Abrir a URL http://localhost:3000/ e ver o site rodando :)
+
+* Após fazer suas alterações, enviar um PR para `master` com as alterações;

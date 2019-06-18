@@ -31,6 +31,7 @@ module.exports = {
     browserSync: function(proxy) {
         return new BrowserSyncPlugin({
             notify: false,
+            open: false,
             port: port,
             proxy: proxy,
             server: proxy ? null : { baseDir: 'build_' + env + '/' },
