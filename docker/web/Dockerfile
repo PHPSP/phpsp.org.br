@@ -23,6 +23,7 @@ RUN groupmod -g ${GID} www-data \
   && usermod -u ${UID} -g www-data www-data \
   && mkdir -p /var/app \
   && chown -hR www-data:www-data \
+    /var/www \
     /var/app \
     /usr/local/
 
