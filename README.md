@@ -27,6 +27,31 @@ Requisitos: Docker e Docker-compose instalados localmente;
 
 Passos:
 * Fazer fork do repositório;
+* Inicializar o container;
+* Abrir a URL http://localhost:3000/ e ver o site rodando :)
+* Após fazer suas alterações, enviar um PR para `master` com as alterações;
+
+
+## Inicialização do Container:
+### Básico
+* Utilizar o helper para construir, instalar e rodar o ambiente local:
+```sh
+make install
+```
+* Para encerrar:
+```sh
+make stop
+```
+Uma vez que o ambiente é construído, nas proximas vezes bastar rodar o comando para inicializar
+```sh
+make start
+```
+Para mais comandos utilize o `help`:
+```sh
+make help
+```
+
+### Avançado
 * Fazer o `build` do container do docker:
 ```sh
 docker-compose build
@@ -43,6 +68,3 @@ docker-compose run --rm web yarn install
 ```sh
 docker-compose up
 ```
-* Abrir a URL http://localhost:3000/ e ver o site rodando :)
-
-* Após fazer suas alterações, enviar um PR para `master` com as alterações;
