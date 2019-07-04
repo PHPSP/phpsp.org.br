@@ -8,8 +8,10 @@ use Phpsp\Site\EventHandlers\JigsawHandlerInterface;
 
 class GenerateSitemap implements JigsawHandlerInterface
 {
-    const SITEMAP_POSTS_FILENAME = 'sitemap-posts.xml';
-    const SITEMAP_CONTENTS_FILENAME = 'sitemap-contents.xml';
+    private $sitemaps = [
+        'posts' => 'sitemap-posts.xml',
+        'contents' => 'sitemap-contents.xml',
+    ];
 
     public function handle(Jigsaw $jigsaw): void
     {
@@ -18,10 +20,9 @@ class GenerateSitemap implements JigsawHandlerInterface
         /** @var JigsawAdapter $generator */
         $generator = $jigsaw->app->make(JigsawAdapter::class);
 
-        $postsSitemap = $generator->fromCollection($jigsaw->getCollection('posts'));
-        file_put_contents($output . self::SITEMAP_POSTS_FILENAME, $postsSitemap->saveXML());
-
-        $contentsSitemap = $generator->fromCollection($jigsaw->getCollection('contents'));
-        file_put_contents($output . self::SITEMAP_CONTENTS_FILENAME, $contentsSitemap->saveXML());
+        foreach ($this->sitemaps as $collectionName => $sitemap) {
+            $sitemapXml = $generator->fromCollection($jigsaw->getCollection($collectionName));
+            file_put_contents($output . $sitemap, $sitemapXml->saveXML());
+        }
     }
 }
