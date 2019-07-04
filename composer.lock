@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "551b6ec08a09ca199690b7f28a76bd04",
+    "content-hash": "35ac3bf7066cc2643e7c48375eaf6a0d",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -716,6 +716,54 @@
                 "type"
             ],
             "time": "2015-07-25T16:39:46+00:00"
+        },
+        {
+            "name": "podentender/sitemap-generator",
+            "version": "0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PODEntender/sitemap-generator.git",
+                "reference": "70ccfd1071562b0cd272858b757eb9a83dc1ba87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PODEntender/sitemap-generator/zipball/70ccfd1071562b0cd272858b757eb9a83dc1ba87",
+                "reference": "70ccfd1071562b0cd272858b757eb9a83dc1ba87",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.1",
+                "tightenco/jigsaw": "^1.3"
+            },
+            "suggest": {
+                "tightenco/jigsaw": "Allows using the PODEntender\\SitemapGenerator\\Adapter\\JigsawAdapter"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PODEntender\\SitemapGenerator\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "PODEntender",
+                    "email": "tech@podentender.com"
+                },
+                {
+                    "name": "Níckolas Da Silva",
+                    "email": "nickolas@phpsp.org.br"
+                }
+            ],
+            "description": "A general purpose sitemap generator package for dynamic or static websites",
+            "time": "2019-07-03T17:46:21+00:00"
         },
         {
             "name": "psr/container",

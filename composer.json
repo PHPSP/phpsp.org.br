@@ -5,7 +5,8 @@
   "require": {
     "php": ">=7.2",
     "tightenco/jigsaw": "^v1.3.8",
-    "mnapoli/front-yaml": "^1.6.0"
+    "mnapoli/front-yaml": "^1.6.0",
+    "podentender/sitemap-generator": "^0.0.0"
   },
   "autoload": {
     "psr-4": {
