@@ -1,6 +1,6 @@
 <?php
 
-use TightenCo\Jigsaw\Jigsaw;
+use Phpsp\Site\EventHandlers\AfterBuild\GenerateSitemap;
 use Mni\FrontYAML\Markdown\MarkdownParser as BaseParser;
 use Phpsp\Site\Parsers\MarkdownParser;
 use Phpsp\Site\Parsers\Parsedown;
@@ -23,3 +23,7 @@ $container->bind(BaseParser::class, MarkdownParser::class);
 $container->bind(Parsedown::class, function ($app) {
     return new Parsedown($app->config['baseUrl']);
 });
+
+$events->afterBuild([
+    GenerateSitemap::class,
+]);
