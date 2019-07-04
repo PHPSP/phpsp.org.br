@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35ac3bf7066cc2643e7c48375eaf6a0d",
+    "content-hash": "6381d211f9e5a10c256052a4d74b130b",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -719,16 +719,16 @@
         },
         {
             "name": "podentender/sitemap-generator",
-            "version": "0.0.0",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PODEntender/sitemap-generator.git",
-                "reference": "70ccfd1071562b0cd272858b757eb9a83dc1ba87"
+                "reference": "693e369a4fb1e65a2ce5cda959265959beb70b79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PODEntender/sitemap-generator/zipball/70ccfd1071562b0cd272858b757eb9a83dc1ba87",
-                "reference": "70ccfd1071562b0cd272858b757eb9a83dc1ba87",
+                "url": "https://api.github.com/repos/PODEntender/sitemap-generator/zipball/693e369a4fb1e65a2ce5cda959265959beb70b79",
+                "reference": "693e369a4fb1e65a2ce5cda959265959beb70b79",
                 "shasum": ""
             },
             "require": {
@@ -763,7 +763,7 @@
                 }
             ],
             "description": "A general purpose sitemap generator package for dynamic or static websites",
-            "time": "2019-07-03T17:46:21+00:00"
+            "time": "2019-07-04T18:18:27+00:00"
         },
         {
             "name": "psr/container",
