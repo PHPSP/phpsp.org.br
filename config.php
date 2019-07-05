@@ -1,5 +1,7 @@
 <?php
 
+use TightenCo\Jigsaw\PageVariable;
+
 return [
     'baseUrl' => 'http://localhost:3000/',
     'meetup' => [
@@ -22,6 +24,17 @@ return [
                 return str_slug($page->getFilename());
             },
             'contribute_prefix' => '_contents/',
+            'sitemap' => [
+                'location' => function (PageVariable $page) {
+                    // Adiciona o sufixo "/" para evitar redirecionamentos
+                    return $page->getUrl() . '/';
+                },
+                'lastModified' => function (PageVariable $page) {
+                    $date = new DateTime();
+                    return $date->setTimestamp($page->createdAt);
+                },
+                'changeFrequency' => 'yearly',
+            ],
         ],
         'posts' => [
             'extends' => '_layouts.post',
@@ -32,6 +45,17 @@ return [
             },
             'sort' => '-createdAt',
             'contribute_prefix' => '_posts/',
+            'sitemap' => [
+                'location' => function (PageVariable $page) {
+                    // Adiciona o sufixo "/" para evitar redirecionamentos
+                    return $page->getUrl() . '/';
+                },
+                'lastModified' => function (PageVariable $page) {
+                    $date = new DateTime();
+                    return $date->setTimestamp($page->createdAt);
+                },
+                'changeFrequency' => 'monthly',
+            ],
         ],
     ],
     'links' => [
