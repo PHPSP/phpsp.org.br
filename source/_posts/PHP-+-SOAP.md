@@ -2,7 +2,7 @@
 createdAt: 2018-10-22
 title: PHP + SOAP
 author: Níckolas Silva
-authorEmail: nawarian@gmail.com
+authorEmail: nickolas@nawarian.xyz
 ---
 
 Desde a versão 5.0.1 do PHP fizeram-se disponíveis as classes e funções para trabalhar com SOAP nativamente. 

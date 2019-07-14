@@ -2,7 +2,7 @@
 createdAt: 2018-10-10
 title: (React PHP) Conceitos básicos - EventLoop
 author: Níckolas Silva
-authorEmail: nawarian@gmail.com
+authorEmail: nickolas@nawarian.xyz
 ---
 
 Este artigo é o primeiro de uma sequência que pretendo publicar aqui. Neste entenderemos o que é [React PHP](http://reactphp.org/) e o que nos possibilita. 

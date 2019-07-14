@@ -2,7 +2,7 @@
 createdAt: 2019-05-01
 title: 'Case: O que fez o PODEntender migrar do Wordpress para o Jigsaw'
 author: Níckolas Silva
-authorEmail: nawarian@gmail.com
+authorEmail: nickolas@nawarian.xyz
 ---
 
 Quem me acompanha sabe que há alguns meses passei a integrar a equipe do _Maior Podcast em Linha Reta da América Latina e
