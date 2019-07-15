@@ -22,6 +22,27 @@ do nosso Slack.
     Lorem ipsum
 * Enviar um PR para `master` com o novo conteúdo;
 
+## Convenções e metadados em arquivos markdown
+
+Todo post em `.md` contém algumas convenções e metadados que você pode aproveitar enquanto escreve seu artigo:
+
+* Gravatar
+
+Através do metadado `authorEmail` iremos procurar um avatar disponível no site [Gravatar](https://gravatar.com) para exibição.
+
+* Canonical
+
+Se por qualquer motivo (um re-post, por exemplo) você desejar alterar a url canônica do seu post, você pode utilizar o metadado
+`canonicalHref` apontando para a url original. Veja o exemplo abaixo:
+
+```markdown
+---
+createdAt: 2019-05-12
+...
+canonicalHref: 'https://meublog.com.br/post-original'
+---
+```
+
 ## Desenvolvimento do website local
 Requisitos: Docker e Docker-compose instalados localmente;
 
