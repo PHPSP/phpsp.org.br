@@ -2,7 +2,7 @@
 createdAt: 2019-05-12
 title: '5 bons motivos para NÃO usar arrays no PHP 7.4'
 author: Níckolas Silva
-authorEmail: nawarian@gmail.com
+authorEmail: nickolas@nawarian.xyz
 ---
 
 A versão do php que ainda está por vir, a `7.4`, está cada vez mais rapidamente tomando forma e até o presente momento
