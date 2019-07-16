@@ -15,7 +15,19 @@ ENV PATH="$(yarn global bin):$PATH"
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # End Composer installation
 
-# Start creation pf non-root user
+# Start Project dependencies installation
+RUN apt-get update -qq \
+  && apt-get install -qq --no-install-recommends \
+    git \
+    zip \
+    unzip \
+    libzip-dev \
+  && docker-php-ext-install \
+    zip \
+  && apt-get clean
+# End Project dependencies installation
+
+# Start creation of non-root user
 ARG UID=1000
 ARG GID=1000
 
