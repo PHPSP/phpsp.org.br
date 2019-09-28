@@ -19,7 +19,7 @@ Você pode gerar conteúdo para o blog criando artigos com informações sobre o
 Utilizamos o http://www.meetup.com/php-sp, https://www.meetup.com/phpsp-campinas, e o https://www.facebook.com/sao.paulo.elephants para divulgar os eventos. O compartilhamento deles ajuda a comunidade a ficar conhecida e atrair novos participantes e/ou colaboradores.
 
 #Participar do chat no Slack para interagir com a comunidade
-Hoje a principal forma de conversa online entre entre os membros da comunidade é o Slack (para quem conhecia o IRC, o formato é bem parecido). Quer se cadastrar? Acesse https://bit.ly/vemproslackphpsp.
+Hoje a principal forma de conversa online entre entre os membros da comunidade é o Slack (para quem conhecia o IRC, o formato é bem parecido). Quer se cadastrar? Acesse [este link](https://join.slack.com/t/phpsp/shared_invite/enQtMzI2NjQxNTM4Mzg3LTA4ODU1NWI3ZDYzZWJjZmMzYjczZTc1YTc1ZWUwZjViMTExYzE3MGY3NDljZDYyMTdmNjMxMmM2MTE4ZWJhNmE).
 
 #Participação nos eventos presenciais e online
 Quando mais você participar, mais você se torna ativo! O PHPSP é totalmente comunitário, não há um gerente ou uma equipe principal. O que existem são Evangelistas que contribuem ativamente promovendo a toda comunidade. Geralmente o Evento mensal PHPSP + Hangouts é usado para discussão da comunidade e tomada de decisões, além de ser onde reportamos publicamente tudo que acontece com o PHP na Via Láctea. (Em breve expandido para nossa galáxia vizinha Nuvens de Magalhães :P)
