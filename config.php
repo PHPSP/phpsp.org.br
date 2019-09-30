@@ -72,7 +72,7 @@ return [
         'slack' => [
             'title' => 'Slack',
             'img' => '/assets/images/thirdparty/SlackAppIcon.png',
-            'url' => 'https://bit.ly/vemproslackphpsp',
+            'url' => 'https://join.slack.com/t/phpsp/shared_invite/enQtMzI2NjQxNTM4Mzg3LTA4ODU1NWI3ZDYzZWJjZmMzYjczZTc1YTc1ZWUwZjViMTExYzE3MGY3NDljZDYyMTdmNjMxMmM2MTE4ZWJhNmE',
         ],
         'linkedin' => [
             'title' => 'LinkedIn',
