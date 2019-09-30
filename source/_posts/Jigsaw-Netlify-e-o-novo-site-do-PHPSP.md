@@ -26,6 +26,6 @@ Mundialmente conhecido como uma excelente ferramenta para deploy de sites estát
 O Netlify ainda possui a funcionalidade de gerar previews para todos os PRs, possibilitando que o resultado final possa ser analisado antes do conteúdo se tornar "oficial".
 
 ##Exemplo
-Acho que o melhor exemplo é o próprio site do [PHPSP](https://github.com/PHPSP/phpsp.org.br), veja o repositório e se tiver alguma dúvida entre no nosso [Slack](http://bit.ly/vemproslackphpsp)!
+Acho que o melhor exemplo é o próprio site do [PHPSP](https://github.com/PHPSP/phpsp.org.br), veja o repositório e se tiver alguma dúvida entre no nosso [Slack](https://join.slack.com/t/phpsp/shared_invite/enQtMzI2NjQxNTM4Mzg3LTA4ODU1NWI3ZDYzZWJjZmMzYjczZTc1YTc1ZWUwZjViMTExYzE3MGY3NDljZDYyMTdmNjMxMmM2MTE4ZWJhNmE)!
 
 Abraços
