@@ -3,6 +3,7 @@ createdAt: 2018-10-12
 title: Perdendo o Medo de Falar em Público
 author: Ivan Rosolen
 authorEmail: ivanrosolen@gmail.com
+canonicalHref: 'https://speakerdeck.com/ivanrosolen/perdendo-o-medo-de-falar-em-publico'
 ---
 
 *Essa palestra é baseada em minhas experiências pessoais e estudos.*

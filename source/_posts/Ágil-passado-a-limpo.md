@@ -3,6 +3,7 @@ createdAt: 2018-10-17
 title: Ágil passado a limpo
 author: Anderson Casimiro
 authorEmail: duodraco@gmail.com
+canonicalHref: 'https://duodra.co/ágil-passado-a-limpo-eeb47d0c9bb'
 ---
 
 Salve! Já ouviu falar de Scrum? E XP? Kanban? Estes são nomes de práticas ágeis de desenvolvimento de software. A bem da verdade alguns nasceram bem antes de começarmos a usar o termo Ágil para tal. Já havia a preocupação de otimizar os processos de desenvolvimento de software desde 1959 com os Métodos Iterativos e Incrementais e posteriormente com o Desenvolvimento Adaptativo. Várias práticas foram criadas, aprimoradas e discutidas que culminaram no Manifesto para o Desenvolvimento Ágil de Software em 2001.
