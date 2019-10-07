@@ -3,6 +3,7 @@ createdAt: 2019-05-13
 title: 'Notebooks Jupyter em PHP, além do Python? Sim, é possível: veja como fazer!'
 author: Rogério Prado de Jesus
 authorEmail: rogeriopradoj@gmail.com
+canonicalHref: 'https://rogeriopradoj.com/2019/05/13/notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer//'
 ---
 
 <figure>
