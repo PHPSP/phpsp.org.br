@@ -73,7 +73,7 @@ Não conta pra ninguém, mas esta publicação também é pra contar no meu Hack
 Seja melhorando a engine do site ou escrevendo conteúdo novo, deixe seu pull request no PHPSP que a comunidade consegue manter um SLA
 bem decente de resposta ;)
 
-Aqui tem um [exemplo de Pull Request para adicionar um post novo](#link-para-este-pr). (Recursividade rulezz)
+Aqui tem um [exemplo de Pull Request para adicionar um post novo](https://github.com/PHPSP/phpsp.org.br/pull/73). (Recursividade rulezz)
 
 ## Awesome PHP
 
