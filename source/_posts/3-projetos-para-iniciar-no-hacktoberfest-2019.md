@@ -36,6 +36,8 @@ Github. Vamos dar uma resumida aqui:
 
 - **Apenas os 50 mil primeiros participantes receberão uma camiseta**
 - Apenas pull requests abertos em Outubro no Github
+- Só vale Pull Request no Github
+- Pull Requests anteriores a Outubro não contam
 - Issues ou Commits não valem! Apenas Pull Requests
 - Você pode contribuir com seus próprios repositórios, mas essa não é a ideia .-.
 - O Pull Request não precisa ser mergeado pra contar. Mas se tu fizer spam, a galera vai pegar e o aí PR não conta mais
