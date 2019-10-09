@@ -14,7 +14,6 @@ Quer participar mais da comunidade e não sabe como? Entre em contato com um dos
 |-------------------------------|---------------|-------------------------------|
 |Airton Zanon                   |@airtonzanon	|Noroeste Paulista & São Paulo  |
 |Ariana Kataoka                 |@ariskataoka	|São Paulo                      |
-|Bruno Ricardo                  |@brunoric	    |Campinas & São Paulo           |
 |Diego Pires                    |@diegopires	|São Paulo                      |
 |Gabriel Couto                  |@gabrielrcouto	|Campinas & São Paulo           |
 |Gustavo Pereira                |@gustavosteam	|Santos                         |
