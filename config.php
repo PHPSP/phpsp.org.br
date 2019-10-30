@@ -84,13 +84,18 @@ return [
             'img' => '/assets/images/thirdparty/flogo_RGB_HEX-144.png',
             'url' => 'https://facebook.com/sao.paulo.elephants',
         ],
+        'telegram' => [
+            'title' => 'Telegram',
+            'img' => '/assets/images/thirdparty/telegram.png',
+            'url' => 'https://t.me/phpsp',
+        ],
     ],
     'links_header' => [
         'mobile' => [
-            'github', 'twitter', 'slack',
+            'twitter', 'slack', 'telegram',
         ],
         'desktop' => [
-            'github', 'twitter', 'slack', 'linkedin', 'facebook',
+            'github', 'twitter', 'slack', 'linkedin', 'facebook', 'telegram',
         ],
     ],
     'branches' => [
