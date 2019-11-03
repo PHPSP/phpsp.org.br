@@ -14,7 +14,7 @@ TDD têm várias técnicas a serem utilizadas, este post apresenta algumas
 delas. Se você está procurando se aprofundar mais no assunto, tem um livro
 bom pra ti: **_"Test Driven Development: By Example"_, por Kent Beck**.
 
-Todo código escrito aqui está disponível no [repositório do github thephp.website]({{ $page->get('github') . '/tree/master/code/1-real-life-tdd-with-php/archive-org-client' }}).
+Todo código escrito aqui está disponível no [repositório do github thephp.website](https://github.com/nawarian/The-PHP-Website/tree/master/code/1-real-life-tdd-with-php/archive-org-client).
 
 # Test-Driven Development na vida real com PHP
 
