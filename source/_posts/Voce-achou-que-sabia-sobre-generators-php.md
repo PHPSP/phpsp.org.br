@@ -1,5 +1,5 @@
 ---
-createdAt: 2019-11-19
+createdAt: 2019-12-11
 title: Você achou que sabia sobre Generators no PHP
 author: Níckolas Silva
 authorEmail: nickolas@nawarian.xyz
