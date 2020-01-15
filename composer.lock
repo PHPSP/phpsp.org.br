@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cacb12a0bd70572bc0f02e2c55447b1",
+    "content-hash": "d67c1c7a18e229041681c5610ee0a67c",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1822,28 +1822,27 @@
     "packages-dev": [
         {
             "name": "malukenho/mcbumpface",
-            "version": "0.1.3",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/malukenho/mcbumpface.git",
-                "reference": "f20c46a7ae697fcb41a18893c4013eb9a1751d6c"
+                "reference": "6a1d8f8c66fda5c6952068c61e321ea360c0369d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/malukenho/mcbumpface/zipball/f20c46a7ae697fcb41a18893c4013eb9a1751d6c",
-                "reference": "f20c46a7ae697fcb41a18893c4013eb9a1751d6c",
+                "url": "https://api.github.com/repos/malukenho/mcbumpface/zipball/6a1d8f8c66fda5c6952068c61e321ea360c0369d",
+                "reference": "6a1d8f8c66fda5c6952068c61e321ea360c0369d",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0.0",
-                "php": "^7.1"
+                "php": "^7.2"
             },
             "require-dev": {
                 "composer/composer": "^1.6.3",
-                "doctrine/coding-standard": "^4.0",
+                "doctrine/coding-standard": "^7.0",
                 "ext-zip": "*",
-                "infection/infection": "^0.7.1",
-                "mikey179/vfsstream": "^1.6",
+                "infection/infection": "^0.15.0",
                 "phpunit/phpunit": "^7.0.0"
             },
             "type": "composer-plugin",
@@ -1866,7 +1865,7 @@
                 }
             ],
             "description": "Bumping into packages",
-            "time": "2018-12-28T13:39:52+00:00"
+            "time": "2020-01-07T15:44:45+00:00"
         }
     ],
     "aliases": [],
