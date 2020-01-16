@@ -1,4 +1,4 @@
-FROM php:7.2-stretch
+FROM php:7.4-apache
 
 # Start Node.js installation
 COPY --from=node:stretch /usr/local/bin/node /usr/local/bin/node
