@@ -1,6 +1,6 @@
 ---
 createdAt: 2020-01-25
-title: PHPSP + PUN Janeiro 2020
+title: PHPSP + PUB Janeiro 2020
 author: José Filho (Zé)
 authorEmail: jose.filho@phpsp.org.br
 ---
@@ -18,13 +18,13 @@ Nesta edição tivemos assuntos muito bacanas e é isso que vim trazer hoje, bor
 
 Cada assunto que rolou, sem sombra de dúvidas, valeria por sí só um post dedicado! A ideia é trazer um resumão (bem resumão mesmo) do que rolou, não vou conseguir entrar a fundo em nenhum assunto aqui mas assim quem não pôde ir pode ao menos levantar os tópicos que a comunidade vem discutindo, quem não conhece pode ter uma idéia de como é o evento e quem conhece e faltou pode se arrepender de ter perdido uma roda de discussão muito massa!
 
-**Espero vê-lo no próximo!**
+**Espero te ver no próximo!**
 
 Um dos temas que sempre acaba surgindo na roda é sobre frameworks e é claro que nessa edição não podia faltar!
 # Frameworks
 Nosso amigo *Rodrigo Soares* introduziu sua pergunta **"Que framework vocês usam no dia a dia?"** e apesar de parecer trivial respondê-la, rolou um papo bem bacana, a grande maioria respondeu sobre o [Laravel](https://github.com/laravel/laravel) mas o ponto chave da discussão foram os toques de como escolher seu framework e o porque cada um usava aquele que foi escolhido!
 # Generators
-Depois de um assunto polêmico, porque não botar lenha na fogueira e trazer a discussão para um lado mais técnico e enriquecer o dicionário de buzzwords da galera? Nesse sentido eu fiz a seguinte pergunta: **"Você faz uso de generators? Qual a frequência que você vê necessidade em usar esse tipo de coisa?"** aproveitando a presença do *[@Nawarian](https://twitter.com/nawarian)* nesta edição (que escreveu um post muito massa sobre [generators](https://phpsp.org.br/artigos/voce-achou-que-sabia-sobre-generators-php/)) tentei entender se a galera está habituada com esse tipo de estrutura e o mais legal é que uma parte da galera não sabia o que eram generators. Foi ai que convidei o Nawarian a fazer uma introdução sobre a estrutura e foi só sucesso! O pessoal que não sabia o que era saiu com uma visão mais aberta e a galera que já conhecia pôde compartilhar como e porque/qual momento esse tipo de estrutura se faz necessário, o assunto rendeu e o pessoal curtiu bastante!
+Depois de um assunto polêmico, porque não botar lenha na fogueira e trazer a discussão para um lado mais técnico e enriquecer o dicionário de buzzwords da galera? Nesse sentido eu fiz a seguinte pergunta: **"Você faz uso de generators? Qual a frequência que você vê necessidade em usar esse tipo de coisa?"** aproveitando a presença do *[@Nawarian](https://twitter.com/nawarian)* nesta edição (que escreveu um post muito massa sobre [generators](https://phpsp.org.br/artigos/voce-achou-que-sabia-sobre-generators-php/)) tentei entender se a galera está habituada com esse tipo de estrutura e o mais legal é que uma parte da galera não sabia o que eram generators. Foi ai que convidei o Nawarian a fazer uma introdução sobre a estrutura e foi só sucesso! O pessoal que não sabia o que era saiu com uma visão mais aberta e a galera que já conhecia pôde compartilhar como e porquê/qual momento esse tipo de estrutura se faz necessário, o assunto rendeu e o pessoal curtiu bastante!
 # Startups ou empresas "consolidadas"
 Na nossa área temos a oportunidade de trabalhar em diversos nichos, não dá pra negar, e muitas vezes quando estamos procurando o primeiro emprego ou até mesmo procurando aquela mudança de ares, uma dúvida vêm à cabeça: **melhor ir para uma startup ou uma empresa já "consolidada"?** E essa também foi a dúvida do nosso amigo *Davi*!
 
