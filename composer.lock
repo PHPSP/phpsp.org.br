@@ -1845,16 +1845,16 @@
     "packages-dev": [
         {
             "name": "malukenho/mcbumpface",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/malukenho/mcbumpface.git",
-                "reference": "6a1d8f8c66fda5c6952068c61e321ea360c0369d"
+                "reference": "727f7e91161380d05105392942a3ae521b23a0bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/malukenho/mcbumpface/zipball/6a1d8f8c66fda5c6952068c61e321ea360c0369d",
-                "reference": "6a1d8f8c66fda5c6952068c61e321ea360c0369d",
+                "url": "https://api.github.com/repos/malukenho/mcbumpface/zipball/727f7e91161380d05105392942a3ae521b23a0bd",
+                "reference": "727f7e91161380d05105392942a3ae521b23a0bd",
                 "shasum": ""
             },
             "require": {
@@ -1862,11 +1862,11 @@
                 "php": "^7.2"
             },
             "require-dev": {
-                "composer/composer": "^1.6.3",
-                "doctrine/coding-standard": "^7.0",
+                "composer/composer": "^1.9.2",
+                "doctrine/coding-standard": "^7.0.2",
                 "ext-zip": "*",
                 "infection/infection": "^0.15.0",
-                "phpunit/phpunit": "^7.0.0"
+                "phpunit/phpunit": "^8.5.2"
             },
             "type": "composer-plugin",
             "extra": {
@@ -1888,7 +1888,7 @@
                 }
             ],
             "description": "Bumping into packages",
-            "time": "2020-01-07T15:44:45+00:00"
+            "time": "2020-01-27T16:53:32+00:00"
         }
     ],
     "aliases": [],
