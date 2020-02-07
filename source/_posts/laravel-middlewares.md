@@ -60,7 +60,7 @@ Uma coisa que você pode ter notado é que além dos dois parâmetros que eu com
 
 Vamos criar um middleware nosso pra entender melhor como essa parada funciona.
 
-## Criando seu próprio middleware no Laravel
+## Criando você mesmo um middleware no Laravel
 
 Pra por a mão na massa vamos criar um middleware de [HoneyPot](https://pt.wikipedia.org/wiki/Honeypot) bem simples mas que vai te dar uma ideia do poder do middleware.
 
@@ -69,6 +69,7 @@ Pra criar um middleware no Laravel pode ser tanto via `artisan` ou criado você 
 Os middlewares ficam por default no namesapce `App\Http\Middleware` e é lá que vamos criar nossa classe. Vai ficar algo tipo assim:
 
 ```
+// seu_projeto/app/Http/Middleware/HoneyPot.php
 <?php
 namespace App\Http\Middleware;
 
@@ -108,7 +109,7 @@ Pois calma lá! Pra essa bruxaria funcionar precisamos tomar mais alguns passos 
 
 ## Registrando um middleware
 
-Como podemos ver [aqui](https://laravel.com/docs/6.x/middleware#registering-middleware) há basicamente duas formas para se registrar um middleware: globalmente e atribuindo a rotas. Já dá pra imaginar pra que cada um serve, né? Middlewares globais serão executados em toda request que entrar pro Laravel, middlewares de rotas serão executados cada vez que a rota atribuída a ele for chamada. Aqui vamos usar a atribuição por rotas:
+Como podemos ver na [documentação oficial](https://laravel.com/docs/6.x/middleware#registering-middleware) do Laravel há basicamente duas formas para se registrar um middleware: globalmente e/ou atribuindo a rotas. Já dá pra imaginar pra que cada um serve, né? Middlewares globais serão executados em toda request que entrar pro Laravel, middlewares de rotas serão executados cada vez que a rota atribuída a ele for chamada. Aqui vamos usar a atribuição por rotas:
 
 ```
 // Classe App\Http\Kernel
