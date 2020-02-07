@@ -64,7 +64,7 @@ Vamos criar um middleware nosso pra entender melhor como essa parada funciona.
 
 Pra por a mão na massa vamos criar um middleware de [HoneyPot](https://pt.wikipedia.org/wiki/Honeypot) bem simples mas que vai te dar uma ideia do poder do middleware.
 
-Pra criar um middleware no Laravel pode ser tanto via `artisan` ou criado você mesmo a classe e registrando-a. Vamo criar na mão memo e já era!
+Pra criar um middleware no Laravel pode ser tanto via `artisan` ou criando você mesmo a classe e registrando-a. Vamo criar na mão memo e já era!
 
 Os middlewares ficam por default no namesapce `App\Http\Middleware` e é lá que vamos criar nossa classe. Vai ficar algo tipo assim:
 
