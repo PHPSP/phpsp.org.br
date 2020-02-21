@@ -31,7 +31,7 @@ Ao relatar um bug procure ser impessoal, destacar o ponto falho bem como o cená
 
 Essa associação é muito comum, uma vez que é pela mão do profissional de QA que passa a maioria dos bugs e é este profissional que tem, em sua fase de descoberta, a responsabilidade de procurar e reportar bugs.
 
-Pode não parecer óbvio para todos mas o profissinal de QA está também muito atrelado ao desenvolvimento e ao produto do que você imagina.
+Pode não parecer óbvio para todos mas o profissinal de QA também está muito mais atrelado ao desenvolvimento e ao produto do que você imagina.
 
 Com o passar do tempo é natural que o profissional de QA entenda melhor que ninguém os fluxos da aplicação e a importância destes para o negócio, também é muito comum -principalmente QA focado em automação, por saber um pouco mais de código mesmo- que este profissional se preocupe em como algo é desenvolvido ou como será corrigido e este com certeza é o melhor dos mundos!
 
