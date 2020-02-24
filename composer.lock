@@ -1845,16 +1845,16 @@
     "packages-dev": [
         {
             "name": "malukenho/mcbumpface",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/malukenho/mcbumpface.git",
-                "reference": "5fff614e027d17f2e00f09ac1c2d4e301fd7aac3"
+                "reference": "b75a705b16fdb2adb20165ae58205349675ab6e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/malukenho/mcbumpface/zipball/5fff614e027d17f2e00f09ac1c2d4e301fd7aac3",
-                "reference": "5fff614e027d17f2e00f09ac1c2d4e301fd7aac3",
+                "url": "https://api.github.com/repos/malukenho/mcbumpface/zipball/b75a705b16fdb2adb20165ae58205349675ab6e1",
+                "reference": "b75a705b16fdb2adb20165ae58205349675ab6e1",
                 "shasum": ""
             },
             "require": {
@@ -1889,7 +1889,7 @@
                 }
             ],
             "description": "Bumping into packages",
-            "time": "2020-02-13T15:58:54+00:00"
+            "time": "2020-02-20T14:45:13+00:00"
         }
     ],
     "aliases": [],
