@@ -1,6 +1,6 @@
 ---
 createdAt: 2020-02-02
-title: PHP Annotations: Mágica ou puramente código?
+title: PHP Annotations - Mágica ou puramente código?
 author: Joel Medeiros
 authorEmail: jooelmedeiros+phpsp@gmail.com
 ---
