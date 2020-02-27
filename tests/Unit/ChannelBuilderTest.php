@@ -3,7 +3,6 @@
 namespace Tests\Unit;
 
 use DOMDocument;
-use DOMNameList;
 use Phpsp\Site\Builder\ChannelBuilder;
 use PHPUnit\Framework\TestCase;
 use SimpleXMLElement;
