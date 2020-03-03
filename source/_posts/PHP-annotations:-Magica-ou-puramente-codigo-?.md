@@ -267,7 +267,13 @@ Trago um exemplo simples utilizando a biblioteca doctrine annotations, para ente
 
 ### Criando sua própria Annotation
 
-De início, definiremos uma classe o qual será a annotation: 
+Primeiro passo precisamos instalar a biblioteca [doctrine annotations](https://github.com/doctrine/annotations) em nosso projeto, sugiro a utilização de [composer](https://getcomposer.org/doc/00-intro.md) para isso:
+
+```
+composer require doctrine/annotations
+```
+
+Após instalada, criaremos uma classe o qual será a annotation:
 
 ```php
 namespace App\Annotation;
@@ -350,6 +356,17 @@ class AnimalTextTemplate
 }
 
 ```
+Note que os valores declarados dentro dos parentes `(label="Characteristic 1", tag="characteristic1")` são os mesmos parametros recebidos no construtor da annotation.
+
+```php
+// App/Annotation/Template.php
+
+public function __construct(array $values)
+{
+    $this->label = $values['label'];
+    $this->tag = $values['tag'];
+}
+```
 
 O último passo é extrair os metadados dos atributos da classe (propriedades e métodos), para isso é utilizada a [ReflectionClass](https://www.php.net/manual/pt_BR/class.reflectionclass.php) que tem função de reportar as informações de uma classe, ou seja, trazer um relatório da classe em objeto, deixando acessível todos os metadados da classe.
 
@@ -365,6 +382,9 @@ $reflectionClass->getMethods();
 Por fim, cada método pode possuir mais de uma annotation, a classe  `AnnotationReader` é utilziada para fazer a distinção de qual metadado(annotation) deve ser buscado.
 
 ```php
+
+use Doctrine\Common\Annotations\AnnotationReader;
+
 $annotationReader = new AnnotationReader();
 $annotationReader->getMethodAnnotation($reflectionMethod, Template::class);
 ```
@@ -372,6 +392,9 @@ $annotationReader->getMethodAnnotation($reflectionMethod, Template::class);
 Juntando todas as partes temos o seguinte código:
 
 ```php
+
+use Doctrine\Common\Annotations\AnnotationReader;
+
 $reflectionClass = new \ReflectionClass(AnimalTextTemplate::class);
 $annotationReader = new AnnotationReader();
 
@@ -523,6 +546,8 @@ array(2) {
 No primeiro índice temos todas as metatags capturadas, no segundo, as tags nominadas. Com isso, é possível acessar a classe o qual definiu essas tags para extrair os metadados:
 
 ```php
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @param array $metadataKeys
  * @return ArrayCollection
@@ -567,6 +592,8 @@ object(Doctrine\Common\Collections\ArrayCollection)#2 (1) {
 Com esses dados, podemos fazer uma simples regra de substituição de parametros e aplicar na string do usuário:
 
 ```php
+use Doctrine\Common\Collections\ArrayCollection;
+
 $metatags = $this->getMetatags($input);
 $findBy = $metatags[0];
 $metadataKeys = $metatags[1];
