@@ -34,7 +34,7 @@ Dentro do PHP Internals já houveram diversas discussões sobre incluir uma engi
 
 Pegadinha do malandro iê-ié!
 
- Engana-se quem pensou que com o PHP não é possível utilizar as "mágicas" das annotations pelo fato de não ter uma engine nativa rodando em seu servidor, o PHP utiliza reflactions para tal mágica" e através de um parser consegue extrair os metadados.
+ Engana-se quem pensou que com o PHP não é possível utilizar as "mágicas" das annotations pelo fato de não ter uma engine nativa rodando em seu servidor, o PHP utiliza reflactions para tal "mágica" e através de um parser consegue extrair os metadados.
 
 ### O que é uma reflection? 
 
@@ -192,7 +192,7 @@ Bom agora que você entende o que é annotation e como elas funcionam, eis que s
 
 Prós
 
-* Não afeta a semântica do programa, ou seja, você pode injetar comportamentos em um objeto sem ter que extender, implementar ou instanciar um novo objeito. 
+* Não afeta a semântica do programa, ou seja, você pode injetar comportamentos em um objeto sem ter que extender, implementar ou instanciar um novo objeto. 
 
 * É performático pois usa o cache do sistema, como vimos anteriormente, como é interpretado em tempo de execução e é armazenado em cache, temos um ganho considerável de performance.
 
@@ -271,6 +271,7 @@ De início, definiremos uma classe o qual será a annotation:
 
 ```php
 namespace App\Annotation;
+
 
 /**
  * Class Template
@@ -596,7 +597,7 @@ string(50) "The quick brown fox jumps over the lazy dog typing"
 O *PHP não possui* uma engine nativa de Annotations, mas a necessidade de uma é dispensável visto que temos acesso a todos os metadados de uma classe através da `ReflectionClass`, a função dos parsers nesse contexto é vital para que esses dados possam ser utilizados em nossos códigos.
 A vasta quantidade de bibliotecas para Docblock parsers disponíveis leva a compreender a decisão do PHP Internals de recusar a implantação de uma engine nativa para annotations.
 
-O uso de annotations é amplamente discutido em diversas comunidades e difundido por diversas ferramentas, mas seu uso não se limite apenas a essas "magias" das ferramentas, entendendo o seu uso e aplicabilidade serve também para resolver problemas do dia-a-dia. 
+O uso de annotations é amplamente discutido em diversas comunidades e difundido por diversas ferramentas, mas seu uso não se limita apenas a essas "magias" das ferramentas, entendendo o seu uso e aplicabilidade serve também para resolver problemas do dia-a-dia. 
 
 
 O código desse artigo encontra-se disponível em:
