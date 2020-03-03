@@ -5,8 +5,9 @@ author: Joel Medeiros
 authorEmail: jooelmedeiros+phpsp@gmail.com
 ---
 
-Nós como desenvolvedores buscamos a melhor forma de escrever código, para isso, utilizamos ferramentas, bibliotecas e pacotes para auxiliar nesse processo, mas não buscamos entender o que acontece nas entranhas do código. 
-Com a facilidade de um `composer require` ou `npm install` frameworks e bibliotecas estão prontos para uso e não precisamos nos preocupar em como uma funcionalidade está sendo abstraída, em contrapartida, essa artigo busca entender como annotations funcionam dentro do PHP.
+Nós como desenvolvedores buscamos a melhor forma de escrever código, para isso, utilizamos ferramentas, bibliotecas e pacotes para auxiliar nesse processo, mas nem sempre buscamos entender o que acontece nas entranhas do código.
+
+Com a facilidade de um `composer require` ou `npm install`, frameworks e bibliotecas que estão prontos para uso, não precisamos nos preocupar em como uma funcionalidade está sendo abstraída ou quais implementações ela segue, com isso, esse artigo busca desmistificar e compreender uma funcionalidade que é totalmente abstraída por bibliotecas e frameworks mas criticada por parte da comunidade, as *Mágicas Annotations*.
 
 ### Antes de tudo, afinal o que é uma annotation? 
 
@@ -307,9 +308,9 @@ class Template
 }
 ```
 
-Na classe Template é definido que é uma annotation através do docblock `@Annotation` em seguida definimos que essa annotation recebe dois parametros `label` e `tag`.  
+Na classe Template é definido que é uma annotation através do docblock `@Annotation`, esse doc-block é o que diz para a biblioteca qual classe deve ser usada como annotation, em seguida definimos que essa annotation recebe dois parametros `label` e `tag`.  
 
-Após definir uma annotation é necessário outra classe que utilize suas annotations:
+Após definir a annotation é necessário criar outra classe que utilize essa annotation:
 ```php
 namespace App\Template;
 
@@ -452,7 +453,7 @@ Annotations como dito anteriormente, tem um vasto mundo de uso, em minha experi�
 
 #### Possibilidade de uso
 
-Dada uma interface com um campo de texto livre, foi disponibilizado para o usuário diversos campos dinâmicos, esses, são o retorno do método anterior. 
+Dada uma interface com um campo de texto livre, foi disponibilizado para o usuário diversos campos dinâmicos, esse é o retorno do método anterior, o qual representa em `label` o campo que é exibido para o usuário, e em `tag` o valor que será incluído no texto realmente. 
 
 ```
 array(4) {
