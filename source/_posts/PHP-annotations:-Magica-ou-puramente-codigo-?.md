@@ -2,7 +2,7 @@
 createdAt: 2020-02-02
 title: PHP Annotations - Mágica ou puramente código?
 author: Joel Medeiros
-authorEmail: jooelmedeiros+phpsp@gmail.com
+authorEmail: jooelmedeiros+articles@gmail.com
 ---
 
 Nós como desenvolvedores buscamos a melhor forma de escrever código, para isso, utilizamos ferramentas, bibliotecas e pacotes para auxiliar nesse processo, mas nem sempre buscamos entender o que acontece nas entranhas do código.
