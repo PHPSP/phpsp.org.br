@@ -14,7 +14,7 @@ class RSSFeedBuilder
         $rss = $dom->appendChild($dom->createElement('rss'));
         $channelBuilder = new ChannelBuilder();
         $channel = $channelBuilder->title('PHPSP')
-            ->description('Um blog massa')
+            ->description('Grupo de desenvolvedores de PHP do estado de São Paulo')
             ->link('https://phpsp.org.br')
             ->language('pt-BR')
             ->toDOMElement($dom);
