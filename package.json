@@ -16,7 +16,7 @@
         "laravel-mix": "^5.0.1",
         "node-cmd": "^3.0.0",
         "on-build-webpack": "^0.1.0",
-        "sass": "^1.25.0",
+        "sass": "^1.26.2",
         "sass-loader": "8.*",
         "vue-template-compiler": "2.6.11",
         "yargs": "^15.1.0"
