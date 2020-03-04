@@ -16,6 +16,6 @@ class GenerateRssFeed implements JigsawHandlerInterface
         $dom = $builder->build($jigsaw->getCollection('posts'));
         $dom->formatOutput = true;
         
-        file_put_contents('source/feed.xml', $dom->saveXML());
+        file_put_contents($jigsaw->getDestinationPath() . DIRECTORY_SEPARATOR . '/feed.xml', $dom->saveXML());
     }
 }

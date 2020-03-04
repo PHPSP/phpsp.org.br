@@ -2,6 +2,7 @@
 
 namespace Phpsp\Site\Builder;
 
+use DateTimeImmutable;
 use DOMDocument;
 use Phpsp\Site\Builder\ChannelBuilder;
 
@@ -23,6 +24,8 @@ class RSSFeedBuilder
             $item = $itemBuilder->url($post->_meta->url->first())
                 ->title($post->title)
                 ->description($post->description ?? substr(strip_tags($post->getContent()), 0, 200))
+                ->author($post->author)
+                ->pubDate(date(DATE_RSS, $post->createdAt))
                 ->guid($post->_meta->url->first())
                 ->toDOMElement($dom);
             $channel->appendChild($item);
