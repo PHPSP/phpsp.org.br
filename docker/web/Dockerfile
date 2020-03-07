@@ -1,8 +1,8 @@
 FROM php:7.2-stretch
 
 # Start Node.js installation
-COPY --from=node:stretch /usr/local/bin/node /usr/local/bin/node
-COPY --from=node:stretch "/opt/yarn-v*" /opt/yarn
+COPY --from=node:12-stretch /usr/local/bin/node /usr/local/bin/node
+COPY --from=node:12-stretch "/opt/yarn-v*" /opt/yarn
 
 RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarn \
