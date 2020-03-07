@@ -20,6 +20,6 @@
     }
   ],
   "require-dev": {
-    "malukenho/mcbumpface": "^1.0.0"
+    "malukenho/mcbumpface": "^1.1.2"
   }
 }

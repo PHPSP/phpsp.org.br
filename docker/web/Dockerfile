@@ -1,4 +1,4 @@
-FROM php:7.2-stretch
+FROM php:7.4-zts-buster
 
 # Start Node.js installation
 COPY --from=node:12-stretch /usr/local/bin/node /usr/local/bin/node
