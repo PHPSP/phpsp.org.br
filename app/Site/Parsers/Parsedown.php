@@ -3,6 +3,7 @@
 namespace Phpsp\Site\Parsers;
 
 use ParsedownExtra as BaseParsedown;
+use function preg_replace;
 
 class Parsedown extends BaseParsedown
 {
@@ -26,6 +27,9 @@ class Parsedown extends BaseParsedown
             return null;
         }
         $href = $link['element']['attributes']['href'];
+        $href = preg_replace("/[{'@}]+/i", '@', $href);
+        $link['element']['attributes']['href'] = $href;
+
         $ext = strtolower(pathinfo($href, PATHINFO_EXTENSION));
         $isImage = in_array($ext, ['gif', 'jpg', 'jpeg', 'png', 'svg']);
 
@@ -53,7 +57,7 @@ class Parsedown extends BaseParsedown
         if (strcasecmp($parsedUrl['host'], $parsedInternalHostUrl['host']) === 0) {
             return false;
         }
-        
+
         $isNotSubdomain = strpos(strtolower($parsedUrl['host']), strtolower($parsedInternalHostUrl['host'])) == false;
 
         return $isNotSubdomain;
