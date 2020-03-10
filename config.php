@@ -3,6 +3,7 @@
 use TightenCo\Jigsaw\PageVariable;
 
 return [
+    'language' => 'pt-BR',
     'baseUrl' => 'http://localhost:3000/',
     'meetup' => [
         'baseUrl' => 'https://yp3o7jx9t2.execute-api.sa-east-1.amazonaws.com/dev/',
