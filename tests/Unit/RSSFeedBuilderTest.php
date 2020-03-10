@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Phpsp\Site\Builder\RSSFeedBuilder;
 use PHPUnit\Framework\TestCase;
 use SimpleXMLElement;
+use TightenCo\Jigsaw\Jigsaw;
 
 class RSSFeedBuilderTest extends TestCase
 {
@@ -35,13 +36,20 @@ class RSSFeedBuilderTest extends TestCase
                 ]
             ]
         ];
-
-        $dom = (new RSSFeedBuilder())->build($posts);
+        $jigsaw = $this->createMock(Jigsaw::class);
+        $jigsaw->app = (object)[
+            'config'    => [
+                'baseUrl'   => 'https://phpsp.org.br',
+                'title'     => 'Grupo de desenvolvedores de PHP do estado de São Paulo',
+                'language'  => 'pt-BR'
+            ]
+        ];
+        $dom = (new RSSFeedBuilder($jigsaw))
+            ->build($posts);
         $reader = new SimpleXMLElement($dom->saveXML());
 
         $this->assertObjectHasAttribute('channel', $reader);
         $this->assertObjectHasAttribute('item', $reader->channel);
         $this->assertCount(2, $reader->channel->item);
     }
-    
 }
