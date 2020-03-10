@@ -1,8 +1,8 @@
-FROM php:7.2-stretch
+FROM php:7.4-zts-buster
 
 # Start Node.js installation
-COPY --from=node:stretch /usr/local/bin/node /usr/local/bin/node
-COPY --from=node:stretch "/opt/yarn-v*" /opt/yarn
+COPY --from=node:12-stretch /usr/local/bin/node /usr/local/bin/node
+COPY --from=node:12-stretch "/opt/yarn-v*" /opt/yarn
 
 RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarn \
@@ -18,12 +18,12 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Start Project dependencies installation
 RUN apt-get update -qq \
   && apt-get install -qq --no-install-recommends \
-    git \
-    zip \
-    unzip \
-    libzip-dev \
+  git \
+  zip \
+  unzip \
+  libzip-dev \
   && docker-php-ext-install \
-    zip \
+  zip \
   && apt-get clean
 # End Project dependencies installation
 
@@ -35,9 +35,9 @@ RUN groupmod -g ${GID} www-data \
   && usermod -u ${UID} -g www-data www-data \
   && mkdir -p /var/app \
   && chown -hR www-data:www-data \
-    /var/www \
-    /var/app \
-    /usr/local/
+  /var/www \
+  /var/app \
+  /usr/local/
 
 USER www-data:www-data
 # End creation of non-root user
