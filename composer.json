@@ -21,6 +21,7 @@
     }
   ],
   "require-dev": {
-    "malukenho/mcbumpface": "^1.1.2"
+    "malukenho/mcbumpface": "^1.1.2",
+    "phpunit/phpunit": "^9.0.1"
   }
 }

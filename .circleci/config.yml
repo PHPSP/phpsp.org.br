@@ -19,6 +19,9 @@ jobs:
           paths:
             - ./vendor
 
+      - run: docker-compose run --rm -T web ./vendor/bin/phpunit tests/
+      
+
       - restore_cache:
           keys:
             - node-v1-{{ checksum "package.json" }}
