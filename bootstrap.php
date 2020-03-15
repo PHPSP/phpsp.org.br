@@ -1,6 +1,7 @@
 <?php
 
 use Phpsp\Site\EventHandlers\AfterBuild\GenerateSitemap;
+use Phpsp\Site\EventHandlers\AfterBuild\GenerateRssFeed;
 use Mni\FrontYAML\Markdown\MarkdownParser as BaseParser;
 use Phpsp\Site\Parsers\MarkdownParser;
 use Phpsp\Site\Parsers\Parsedown;
@@ -26,4 +27,5 @@ $container->bind(Parsedown::class, function ($app) {
 
 $events->afterBuild([
     GenerateSitemap::class,
+    GenerateRssFeed::class,
 ]);

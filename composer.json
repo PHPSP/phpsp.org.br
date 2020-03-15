@@ -13,7 +13,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Phpsp\\": "app/"
+      "Phpsp\\": "app/",
+      "Tests\\": "tests/"
     }
   },
   "authors": [
@@ -23,6 +24,7 @@
     }
   ],
   "require-dev": {
-    "malukenho/mcbumpface": "^1.1.2"
+    "malukenho/mcbumpface": "^1.1.2",
+    "phpunit/phpunit": "^9.0.1"
   }
 }
