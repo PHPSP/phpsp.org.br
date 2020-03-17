@@ -5,7 +5,7 @@ author: Joel Medeiros
 authorEmail: jooelmedeiros+articles@gmail.com
 ---
 
-Nós como desenvolvedores buscamos a melhor forma de escrever código, para isso, utilizamos ferramentas, bibliotecas e pacotes para auxiliar nesse processo, mas nem sempre buscamos entender o que acontece nas entranhas do desses códigos terceiros.
+Nós como desenvolvedores buscamos a melhor forma de escrever código, para isso, utilizamos ferramentas, bibliotecas e pacotes para auxiliar nesse processo, mas nem sempre buscamos entender o que acontece nas entranhas desses códigos terceiros.
 
 Com a facilidade de um `composer require`, `brew install` ou `npm install` para instalar frameworks e bibliotecas que estão prontos para uso, não precisamos nos preocupar em como uma funcionalidade está sendo abstraída ou quais implementações ela segue, com isso, esse artigo busca desmistificar e compreender uma funcionalidade que é totalmente abstraída por bibliotecas e frameworks mas criticada por parte da comunidade, as *Mágicas Annotations*.
 
@@ -50,9 +50,9 @@ Engana-se quem pensou que o PHP não possui uma forma manipular metadata, pelo f
 
 > "É o processo na qual um programa de computador pode observar e modificar sua própria estrutura e comportamento em tempo de execução". — [Wikipedia](https://en.wikipedia.org/wiki/Reflection_(computer_programming))  
 
-Muitas linguagens que tem a funcionalidade de Reflection em seu core, possuem as três principais formas de seu uso, instrospeção de tipo, invocação dinâmica e visualização de metadata, essa última é um tópico importante para ender como annotations funcionam dentro do PHP. Muita informação né? Vou simplificar para ficar mais claro:
+Muitas linguagens que tem a funcionalidade de Reflection em seu core, possuem as três principais formas de seu uso, são elas instrospeção de tipo, invocação dinâmica e visualização de metadata, essa última é um tópico importante para entender como annotations funcionam dentro do PHP. Muita informação né? Vou simplificar para ficar mais claro:
 
-#### Introspeção de tipo
+#### Introspecção de tipo
 
 É a habilidade de um programa examinar a si mesmo, por exemplo, quando você precisa validar o tipo de um objeto ou variável estaticamente.
 
@@ -130,7 +130,7 @@ var_dump($myClass->getA());
 ```
 
 #### Visualização de metadata
-É a capacidade de ler metadados de qualquer tipo de documento, como classes, tipos de parametros, atributos, métodos e seus parametros. Para PHP essa é a coisa mais importante que você precisa saber quando falamos sobre annotations, isso é usado para a leitura de metadados em `docblocks`:
+É a capacidade de ler metadados de qualquer tipo de documento, como classes, tipos de parâmetros, atributos, métodos e seus parametros. Para PHP essa é a coisa mais importante que você precisa saber quando falamos sobre annotations, isso é usado para a leitura de metadados em `docblocks`:
 
 ```php
 /** 
@@ -156,7 +156,7 @@ string(55) "/**
 ```
 
 ### Como Annotations funcionam no PHP?
-Agora que você conhece os três principais tipos de Reflections (E espero que você tenha lido todos eles rs), no PHP , **visualização de metadata** é usado para reproduzir a funcionalidade de Annotations, através da aplicação parsers baseados em expressões regulares, para transformar linguagem natural em linguagem computacional, ou seja, transforma metadados em variáveis, propriedades e classes por exemplo. Vejamos um simples exemplo da aplicação de expressões regulares para extrair metadata com PHP:
+Agora que você conhece os três principais tipos de Reflections (E espero que você tenha lido todos eles rs), no PHP , **visualização de metadata** é usado para reproduzir a funcionalidade de Annotations, através da aplicação de parsers baseados em expressões regulares, para transformar linguagem natural em linguagem computacional, ou seja, transforma metadados em variáveis, propriedades e classes por exemplo. Vejamos um simples exemplo da aplicação de expressões regulares para extrair metadata com PHP:
 
 ```php
 /** 
@@ -204,7 +204,7 @@ array(2) {
   }
 }
 ```
-> **NOTE**: Cada index do array `$match` tem um pedações de uma annotation e cada um é chamado de `token`, que pode representar a chamada um método, configuração ou documentação. Esse processo de extrair informações de metadados e normalizá-los é chamado de **tokenização**.
+> **NOTE**: Cada index do array `$match` tem uma parte de uma annotation e cada um é chamado de `token`, que pode representar a chamada de um método, configuração ou documentação. Esse processo de extrair informações de metadados e normalizá-los é chamado de **tokenização**.
 
 Você pode estar pensando, "Mas que trabalhão para usar annotations!", não se preocupe, PHP tem uma ótima comunidade que já criou diversas bibliotecas para fazer esse trabalho para nós, eis algumas:
 
@@ -304,7 +304,7 @@ Contras
 
 * Por não afetar a semântica e poder injetar comportamentos em um objeto é mais difícil de debug e testes, devido ao fato de que se testa o objeto que usa as annotations e não é possível testar as annotations, portanto, tenha atenção de quais comportamentos você está inserindo em seus objetos para que no futuro isso não cause problemas de manutenabilidade.
 
-* A alteração de "comentários" não deveria alterar o funcionamento de um software, com um olhar desapercebido ou inesperiente é possível confundir comentários com annotations e causar problemas ao software.
+* A alteração de "comentários" não deveria alterar o funcionamento de um software, com um olhar desapercebido ou inexperiente é possível confundir comentários com annotations e causar problemas ao software.
 > Pensando nisso, [na mais recente RFC relacionada a Annotations (2020)](https://wiki.php.net/rfc/attributes_v2), a mesma funcionalidade é chamada de **attribute** por Benjamin Eberlei, onde propõe a utilização da formatação `<<...>>` ao invés da tradicional `/**...*/`, que segundo ele, reduz a confusão de comentários em código para iniciantes.
 
 ### Como usar annotations?
