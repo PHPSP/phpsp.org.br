@@ -65,6 +65,11 @@ return [
             'img' => '/assets/images/thirdparty/GitHub-Mark-120px-plus.png',
             'url' => 'https://github.com/phpsp',
         ],
+        'rss' => [
+            'title' => 'RSS',
+            'img' => '/assets/images/thirdparty/rss.png',
+            'url' => 'https://phpsp.org.br/feed.xml',
+        ],
         'twitter' => [
             'title' => 'Twitter',
             'img' => '/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png',
@@ -93,10 +98,10 @@ return [
     ],
     'links_header' => [
         'mobile' => [
-            'twitter', 'slack', 'telegram',
+            'rss', 'twitter', 'slack', 'telegram',
         ],
         'desktop' => [
-            'github', 'twitter', 'slack', 'linkedin', 'facebook', 'telegram',
+            'rss', 'github', 'twitter', 'slack', 'linkedin', 'facebook', 'telegram',
         ],
     ],
     'branches' => [
