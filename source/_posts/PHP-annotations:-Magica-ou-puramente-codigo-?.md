@@ -44,7 +44,7 @@ Dentro do PHP Internals já houveram diversas discussões sobre incluir uma engi
 
 Pegadinha do malandro iê-ié!
 
-Engana-se quem pensou que o PHP não possui uma forma manipular metadata, pelo fato de não ter uma engine nativa, essa "mágica" é feita por meio de Reflactions e parsers para conseguir extrair os metadados.
+Engana-se quem pensou que o PHP não possui uma forma manipular metadata, pelo fato de não ter uma engine nativa, essa "mágica" é feita por meio de Reflections e parsers para conseguir extrair os metadados.
 
 ### O que é uma Reflection?   
 
