@@ -5,25 +5,34 @@ author: Joel Medeiros
 authorEmail: jooelmedeiros+articles@gmail.com
 ---
 
-Nós como desenvolvedores buscamos a melhor forma de escrever código, para isso, utilizamos ferramentas, bibliotecas e pacotes para auxiliar nesse processo, mas nem sempre buscamos entender o que acontece nas entranhas do código.
+Nós como desenvolvedores buscamos a melhor forma de escrever código, para isso, utilizamos ferramentas, bibliotecas e pacotes para auxiliar nesse processo, mas nem sempre buscamos entender o que acontece nas entranhas desses códigos terceiros.
 
-Com a facilidade de um `composer require` ou `npm install`, frameworks e bibliotecas que estão prontos para uso, não precisamos nos preocupar em como uma funcionalidade está sendo abstraída ou quais implementações ela segue, com isso, esse artigo busca desmistificar e compreender uma funcionalidade que é totalmente abstraída por bibliotecas e frameworks mas criticada por parte da comunidade, as *Mágicas Annotations*.
+Com a facilidade de um `composer require`, `brew install` ou `npm install` para instalar frameworks e bibliotecas que estão prontos para uso, não precisamos nos preocupar em como uma funcionalidade está sendo abstraída ou quais implementações ela segue, com isso, esse artigo busca desmistificar e compreender uma funcionalidade que é totalmente abstraída por bibliotecas e frameworks mas criticada por parte da comunidade, as *Mágicas Annotations*.
 
-### Antes de tudo, afinal o que é uma annotation? 
+### Antes de tudo, afinal o que é uma annotation?
 
 Uma definição que trago para computação é:
 
-> "Alguma coisa que descreve o aspecto de um sujeito através de metadados em tempo de execução. Ou seja, os efeitos de uma annotation sobre uma classe, método ou objeto somente são apenas no tempo em que é execudado" — Baseado em ["Annotations in PHP: They Exist" - Rafael Dohms](https://www.slideshare.net/rdohms/annotations-in-php-they-exist/)
+> "Alguma coisa que descreve o aspecto de um sujeito através de metadados em tempo de execução. Ou seja, os efeitos de uma Annotation sobre uma classe, método ou objeto somente são apenas no tempo em que é execudado" — Baseado em ["Annotations in PHP: They Exist" - Rafael Dohms](https://www.slideshare.net/rdohms/annotations-in-php-they-exist/)  
 
+Annotations também são conhecidas como `Decorators` e `Attributes` por outras linguagens como Python, Javascript, C# e Rust, na presente data, o PHP chama isso de `Annotations`.  
 Dessa forma, diferente do que muitos pensam, podemos afirmar que annotations não são comentários e sim **metadados**.
+Leia até o final para entender por que Annotations são **metadados** e não comentários como muitos pensam.
 
 ### Qual o uso para Annotations?
+No início, o XML era muito utilizado pelas linguagens de programação para mapeamento de metadados e comunicação entre máquinas na web, e em algum momento, desenvolvedores buscaram algum jeito fácil de ler metadados no código, e não apenas ter atributos de configurações, mas também transformar arquivos com metadados em objetos e parâmetros.  Com isso, no início do século, começaram a aparecer em diversas linguagens com essa funcionalidade, como por exemplo: 
+- Java que teve sua primeira [Request For Comments (RFC) a JSR-175](https://jcp.org/en/jsr/detail?id=175) datada de 2002 com discussão `A Metadata Facility for the Java Programming Language` e posteriormente aprovada e implementada em 2004;
+- Python em 2003 teve início da discussão de `Decorators for functions` com a [PEP 318](https://www.python.org/dev/peps/pep-0318/) e aprovada e implementada em 2004; 
+- Rust teve atributos modelados como atributos em 2012 seguindo a [ECMA-335](https://www.ecma-international.org/publications/standards/Ecma-335.htm);
+- C# com o .NET core 1.1 adicionou a interface para atributos em 2016; 
 
-Hoje é utilizado para duas coisas:
- 1. Documentação
- 2. Alterar o comportamento de um objeto em tempo de execução.
+Hoje é utilizado para algumas coisas:
+ 1. Configuração
+ 2. Documentação de código  
+ 3. Alterar o comportamento de um objeto em tempo de execução.  
 
-Para que uma linguagem de programação possa utilizar dos recursos de uma annotation é necessário que ela tenha uma **engine** rodando em seu servidor. Por exemplo a linguagem Java possui o JAPE (Java Annotation Patterns Engine) que baseado em expressões regulares traduz annotations em código. 
+### Como funciona?
+Para que uma linguagem de programação possa utilizar dos recursos de uma annotation é necessário que ela tenha uma **engine** rodando "por debaixo dos panos" interpretando linguagem natural em instruções computacionais. Por exemplo a linguagem Java possui o JAPE (Java Annotation Patterns Engine) que é baseado em expressões regulares, que consiste em um conjunto de fases, cada uma das quais consiste em um conjunto de padrões e ações para "traduzir" linguagem natural em instruções da linguagem, como por exemplo definir um método com depreciado, sobrescrever uma classe, suprimir alertas e etc.
 
 Já o PHP não tem uma engine nativa para leitura de annotations :(
 
@@ -35,17 +44,17 @@ Dentro do PHP Internals já houveram diversas discussões sobre incluir uma engi
 
 Pegadinha do malandro iê-ié!
 
- Engana-se quem pensou que com o PHP não é possível utilizar as "mágicas" das annotations pelo fato de não ter uma engine nativa rodando em seu servidor, o PHP utiliza reflactions para tal "mágica" e através de um parser consegue extrair os metadados.
+Engana-se quem pensou que o PHP não possui uma forma manipular metadata, pelo fato de não ter uma engine nativa, essa "mágica" é feita por meio de Reflactions e parsers para conseguir extrair os metadados.
 
-### O que é uma reflection? 
+### O que é uma Reflection?   
 
-> "É o processo na qual um programa de computador pode observar e modificar sua própria estrutura e comportamento em tempo de execução". — [Wikipédia](https://en.wikipedia.org/wiki/Reflection_(computer_programming\))
+> "É o processo na qual um programa de computador pode observar e modificar sua própria estrutura e comportamento em tempo de execução". — [Wikipedia](https://en.wikipedia.org/wiki/Reflection_(computer_programming))  
 
-O PHP assim como em outras linguagens, tem três principais usos de reflactions:
+Muitas linguagens que tem a funcionalidade de Reflection em seu core, possuem as três principais formas de seu uso, são elas instrospeção de tipo, invocação dinâmica e visualização de metadata, essa última é um tópico importante para entender como annotations funcionam dentro do PHP. Muita informação né? Vou simplificar para ficar mais claro:
 
-#### Introspeção de tipo
+#### Introspecção de tipo
 
-É quando você precisa validar o tipo de um objeto ou variável estaticamente.
+É a habilidade de um programa examinar a si mesmo, por exemplo, quando você precisa validar o tipo de um objeto ou variável estaticamente.
 
 ```php
 public function test($a): void {
@@ -73,30 +82,55 @@ public void test(Object a) {
 
 ```
 
-#### Informações de informações
+#### Invocação dinâmica
+O processo de acessar dinamicamente propriedades, métodos ou a classe de um objeto modificando o seu comportamento em tempo de execução:
 
-Ou seja, dados sobre tipos, como por exemplo tipos parametrizados de classes, atributos, métodos e seus parâmetros, invocação dinâmica e etc ...
+```java
+public class MyClass {
+    private String a = "Some value";
+}
 
+Class<?> myClass = MyClass.class;
+Object reflectionClass = myClass.newInstance();
+
+Field reflectionProperty = reflectionClass.getClass().
+            getDeclaredField("a");
+
+reflectionProperty.setAccessible(true);
+reflectionProperty.set(MyClass, "My modified parameter")
+
+System.out.println((String) reflectionProperty.get(reflectionClass));
+// My modified parameter
+```
 
 ```php
-/**
- * An example class with parametrized types 
- */
 class MyClass {
-    public array $a;
-    
+    private $a = 'Some value';
+
     /**
-     * @param array $a
+     * @return string
      */
-    public  function setA(array $a):void {
-        $this->a = $a;
+    public function getA(): string {
+        return $this->a;
     }
 }
+
+$myClass = new MyClass();
+$reflectionProperty = new ReflectionProperty(MyClass::class, 'a');
+
+/* It changes MyClass behavior in runtime */
+$reflectionProperty->setAccessible(true);
+$reflectionProperty->setValue(
+	$myClass, 
+	'My modified parameter'
+);
+ 
+var_dump($myClass->getA()); 
+// string(21) "My modified parameter"
 ```
 
 #### Visualização de metadata
-
-Esse é o ponto onde o PHP utiliza para a leitura de metadados dos docblocks. 
+É a capacidade de ler metadados de qualquer tipo de documento, como classes, tipos de parâmetros, atributos, métodos e seus parametros. Para PHP essa é a coisa mais importante que você precisa saber quando falamos sobre annotations, isso é usado para a leitura de metadados em `docblocks`:
 
 ```php
 /** 
@@ -121,9 +155,19 @@ string(55) "/**
 */"
 ```
 
-A partir disso, são aplicados parsers que através de expressões regulares podem transformar esse conteúdo em parâmetros: 
+### Como Annotations funcionam no PHP?
+Agora que você conhece os três principais tipos de Reflections (E espero que você tenha lido todos eles rs), no PHP , **visualização de metadata** é usado para reproduzir a funcionalidade de Annotations, através da aplicação de parsers baseados em expressões regulares, para transformar linguagem natural em linguagem computacional, ou seja, transforma metadados em variáveis, propriedades e classes por exemplo. Vejamos um simples exemplo da aplicação de expressões regulares para extrair metadata com PHP:
 
 ```php
+/** 
+* A test class
+*
+* @param  foo bar
+* @return baz
+*/
+class TestClass{}
+
+$reflectionClass = new ReflectionClass('TestClass');
 $reflectionClassDocBlock = $reflectionClass->getDocComment();
 
 preg_match_all(
@@ -160,8 +204,9 @@ array(2) {
   }
 }
 ```
+> **NOTE**: Cada index do array `$match` tem uma parte de uma annotation e cada um é chamado de `token`, que pode representar a chamada de um método, configuração ou documentação. Esse processo de extrair informações de metadados e normalizá-los é chamado de **tokenização**.
 
-O PHP possui diversas bibliotecas de parse de Docblock, eis algumas:
+Você pode estar pensando, "Mas que trabalhão para usar annotations!", não se preocupe, PHP tem uma ótima comunidade que já criou diversas bibliotecas para fazer esse trabalho para nós, eis algumas:
 
 [Doctrine Annotations](https://github.com/doctrine/annotations)
 
@@ -169,9 +214,8 @@ O PHP possui diversas bibliotecas de parse de Docblock, eis algumas:
 
 [PHP Annotations](https://github.com/php-annotations)
 
-### Mas afinal das contas, qual a diferença entre blocos de comentários e annotations?
-
-Analisando o core do PHP vemos duas diferenças, quando escrevemos comentários em uma única linha é interpretado como `T_COMMENT`, este é ignorado pela engine de cache do PHP, o `opcache`.
+### Então são apenas comentários?
+Analisando o core do PHP vemos duas diferenças em comentários, quando escrevemos comentários em uma única linha é interpretado como `T_COMMENT`, este é ignorado pela engine de cache do PHP, o `opcache`.
 
 `T_COMMENT:`
 ```php
@@ -179,7 +223,7 @@ Analisando o core do PHP vemos duas diferenças, quando escrevemos comentários 
 /* It is a comment */
 ```
 
-Agora, quando temos um comentário multinível, é interpretado como `T_DOC_COMMENT`, este é lido e armazenado no cache do sistema, logo, pode ser lido em runtime. 
+E quando temos um comentário multinível, é interpretado como `T_DOC_COMMENT`, este é lido e armazenado no cache do sistema, logo, pode ser lido em tempo de execução através do método `ReflectionClass::getDocComment()`.
 
 `T_DOC_COMMENT:`
 ```php
@@ -187,23 +231,6 @@ Agora, quando temos um comentário multinível, é interpretado como `T_DOC_COMM
  * It is a doc comment
 */
 ```
-Bom agora que você entende o que é annotation e como elas funcionam, eis que surge a pergunta: 
-
-### Por que usar annotations?
-
-Prós
-
-* Não afeta a semântica do programa, ou seja, você pode injetar comportamentos em um objeto sem ter que extender, implementar ou instanciar um novo objeto. 
-
-* É performático pois usa o cache do sistema, como vimos anteriormente, como é interpretado em tempo de execução e é armazenado em cache, temos um ganho considerável de performance.
-
-* É fácil de ler o código, pois sem querer (ou querendo) você cria uma documentação do seu código dentro dos docblocks, além de poder utilizar ferramentas que leem docblocks para gerar páginas de documentação como [PHPDocumentor](https://github.com/phpDocumentor/phpDocumentor).
-
-* Ajuda em processos de refactoring segregando informações estáticas e ajuda a atingir algumas práticas de clean code.
-
-Contras
-
-* Por não afetar a semântica e poder injetar comportamentos em um objeto é mais difícil de debug e testes, devido ao fato de que se testa o objeto que usa as annotations e não é possível testar as annotations, portanto, tenha atenção de quais comportamentos você está inserindo em seus objetos para que no futuro isso não cause problemas de manutenabilidade.
 
 ### Quem usa annotations? 
 [PHPUnit](https://github.com/sebastianbergmann/phpunit)
@@ -259,11 +286,32 @@ class BlogController extends AbstractController
 }
 ```
 
+Bom agora que você entende o que são annotations, como elas funcionam e quem as usa, eis que surge a pergunta: 
+
+### Por que usar annotations?
+
+Prós
+
+* Não afeta a semântica do software, ou seja, você pode injetar comportamentos em um objeto sem ter que extender, implementar ou instanciar um novo objeto.
+
+* É performático pois usa o cache do sistema, como vimos anteriormente, tudo é armazenado em cache e lido em tempo de execução, logo, temos um ganho considerável de performance em relação a leitura de arquivos em disco por exemplo.
+
+* É fácil de ler o código, pois sem querer (ou querendo) você cria uma documentação do seu código dentro dos docblocks, além de poder utilizar ferramentas que leem docblocks para gerar páginas de documentação como [PHPDocumentor](https://github.com/phpDocumentor/phpDocumentor).
+
+* Ajuda em processos de refatoração de código segregando informações estáticas e ajuda a atingir algumas práticas de clean code.
+
+Contras
+
+* Por não afetar a semântica e poder injetar comportamentos em um objeto é mais difícil de debug e testes, devido ao fato de que se testa o objeto que usa as annotations e não é possível testar as annotations, portanto, tenha atenção de quais comportamentos você está inserindo em seus objetos para que no futuro isso não cause problemas de manutenabilidade.
+
+* A alteração de "comentários" não deveria alterar o funcionamento de um software, com um olhar desapercebido ou inexperiente é possível confundir comentários com annotations e causar problemas ao software.
+> Pensando nisso, [na mais recente RFC relacionada a Annotations (2020)](https://wiki.php.net/rfc/attributes_v2), a mesma funcionalidade é chamada de **attribute** por Benjamin Eberlei, onde propõe a utilização da formatação `<<...>>` ao invés da tradicional `/**...*/`, que segundo ele, reduz a confusão de comentários em código para iniciantes.
+
 ### Como usar annotations?
 
 O PHP oferece apenas uma forma de consumo de metadata, o `doc-comments` como explicado anteriormente, mas há uma vasta quantidade de bibliotecas que são utilizadas para fazer o parser desses metadados e serem utilizados como por exemplo para representar mapeamento de objetos relacionados (ORM). 
 
-Trago um exemplo simples utilizando a biblioteca doctrine annotations, para entender em detalhes como o PHP interpreta annotations e também como aplicar isso no dia-a-dia. O objetivo desse exemplo é, extrair informações de annotations de uma classe.
+Trago um exemplo simples utilizando a biblioteca [doctrine annotations](https://github.com/doctrine/annotations), para entender como aplicar ao nosso dia-a-dia. O objetivo desse exemplo é, extrair informações de annotations de uma classe.
 
 
 ### Criando sua própria Annotation
@@ -635,15 +683,34 @@ https://github.com/joelmedeiros/useful-annotations
 
 ### Referências
 
-[Rafael Dohms - PHP Annotations: They Exist!](https://www.youtube.com/watch?v=oDVspbFgDCo)
+[Attribute Interface - C#](https://docs.microsoft.com/pt-br/dotnet/api/system.runtime.interopservices._attribute?view=netframework-4.8)
+
+[Attributes - Rust](https://doc.rust-lang.org/reference/attributes.html)
+
+[Annotations in PHP: They Exist - Rafael Dohms](https://www.slideshare.net/rdohms/annotations-in-php-they-exist/138-Reflection)  
+
+[ECMA-335 - Common Language Infrastructure (CLI)](https://www.ecma-international.org/publications/standards/Ecma-335.htm)
+
+[How Do Annotations Work in Java? - Yashwant Golecha](https://dzone.com/articles/how-annotations-work-java)
+
+[Java Annotations](https://www.javatpoint.com/java-annotation)
+
+[Java Reflection - Private Fields and Methods](http://tutorials.jenkov.com/java-reflection/private-fields-and-methods.html)
+
+[JSR-175 - JSR 175: A Metadata Facility for the Java Programming Language](https://jcp.org/en/jsr/detail?id=175)
 
 [PHP RFC: Annotations 2.0](https://wiki.php.net/rfc/annotations_v2)
 
-[Understanding annotations
-](https://php-annotations.readthedocs.io/en/latest/UsingAnnotations.html)
+[PHP RFC: Attributes 2.0](https://wiki.php.net/rfc/attributes_v2)
 
-[Rafael Dohms - Annotations in PHP: They Exist](https://www.slideshare.net/rdohms/annotations-in-php-they-exist/138-Reflection)
+[PHP: Annotations are an Abomination](https://r.je/php-annotations-are-an-abomination)
+
+[PEP 318 - Decorators for Functions and Methods](https://www.python.org/dev/peps/pep-0318/)
+
+[Reflections - Rafael Uchôa](https://pt.slideshare.net/rafaeluchoa/reflections-15781359)
 
 [Should we use PHP Annotations?](https://medium.com/a-young-devoloper/should-we-use-php-annotations-4efafea23334)
+
+[Understanding annotations](https://php-annotations.readthedocs.io/en/latest/UsingAnnotations.html)
 
 [USING ANNOTATIONS IN PHP WITH DOCTRINE ANNOTATION READER](http://masnun.com/2012/08/12/using-annotations-in-php-with-doctrine-annotation-reader.html)
