@@ -22,3 +22,7 @@ Todo mundo que tiver interesse em fazer algum tipo de apresentação durante ess
 Em breve os eventos serão anunciados na área de próximos eventos aqui no site e também em nossas redes sociais. Fique ligado!
 
 Juntos saíremos dessa melhores do que entramos =)
+
+E se você ou a sua empresa querem auxiliar de alguma forma, [entre com contato com a gente](https://bit.ly/patrocine-o-phpsp-live) para darmos inicio a essa parceria!
+
+Abraços!
