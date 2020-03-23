@@ -17,7 +17,7 @@ Os eventos Live serão no formato de palestras ministradas ao vivo e com duraç�
 
 E para  fazer o evento acontecer nós precisamos de vocês! 
 
-Todo mundo que tiver interesse em fazer algum tipo de apresentação durante essa pandemia, [preencha esse formulário](https://forms.gle/Tr7op78tDiHQKejJ6)! Não há restriçẽs de temas, nem de palestrantes. Essa é, inclusive, uma excelente oportunidade para iniciar a vida de palestrante do conforto do lar!
+Todo mundo que tiver interesse em fazer algum tipo de apresentação durante essa pandemia, [preencha esse formulário](https://palestre-no-phpsp-live)! Não há restrições de temas, nem de palestrantes. Essa é, inclusive, uma excelente oportunidade para iniciar a vida de palestrante do conforto do lar!
 
 Em breve os eventos serão anunciados na área de próximos eventos aqui no site e também em nossas redes sociais. Fique ligado!
 
