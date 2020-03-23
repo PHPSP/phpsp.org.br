@@ -11,7 +11,9 @@ Esse sentimento de isolamento além do saudável gerou algumas conversas interes
 
 Pensando nisso criamos um formulário pra começar a planejar eventos rápidos e constantes de compartilhamento de conteúdo. A ideia é realizar uma série de eventos para que todos possam aproveitar esse tempo a mais que temos em casa para aprender, compartilhar e conviver mais (ainda que virtualmente).
 
-![Logomarca PHPSP + Live.](/assets/images/posts/php-live-pandemia-2020/phpsp-live.png)
+<p align="center">
+  <img alt="Logo marca do PHPSP + Live" src="/assets/images/posts/php-live-pandemia-2020/phpsp-live.png">
+</p>
 
 Assim nasce o PHPSP Live como uma iniciativa da comunidade para trazer conteúdo online e gratuito, promover interação e estreitar o relacionamento da comunidade no momento em que vivemos a pandemia do COVID-19.
 
