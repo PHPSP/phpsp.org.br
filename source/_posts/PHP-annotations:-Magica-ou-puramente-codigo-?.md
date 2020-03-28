@@ -221,15 +221,19 @@ Analisando o core do PHP vemos duas diferenças em comentários, quando escrevem
 ```php
 // It is a comment
 /* It is a comment */
+# It is a comment
+/*
+ * It still is a comment
+ */
 ```
 
 E quando temos um comentário multinível, é interpretado como `T_DOC_COMMENT`, este é lido e armazenado no cache do sistema, logo, pode ser lido em tempo de execução através do método `ReflectionClass::getDocComment()`.
 
 `T_DOC_COMMENT:`
 ```php
-/*
+/**
  * It is a doc comment
-*/
+ */
 ```
 
 ### Quem usa annotations? 
