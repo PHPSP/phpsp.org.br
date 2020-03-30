@@ -78,7 +78,7 @@ return [
         'slack' => [
             'title' => 'Slack',
             'img' => '/assets/images/thirdparty/SlackAppIcon.png',
-            'url' => 'http://bit.ly/vem-pro-slack-phpsp',
+            'url' => 'https://bit.ly/vem-pro-slack-phpsp',
         ],
         'linkedin' => [
             'title' => 'LinkedIn',
