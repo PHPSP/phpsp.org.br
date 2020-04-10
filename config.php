@@ -88,7 +88,7 @@ return [
         'facebook' => [
             'title' => 'Facebook',
             'img' => '/assets/images/thirdparty/flogo_RGB_HEX-144.png',
-            'url' => 'https://facebook.com/sao.paulo.elephants',
+            'url' => 'https://facebook.com/phpsp',
         ],
         'telegram' => [
             'title' => 'Telegram',

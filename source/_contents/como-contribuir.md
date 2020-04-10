@@ -16,7 +16,7 @@ Existem vários projetos que criamos e mantemos, e a contribuição em qualquer 
 Você pode gerar conteúdo para o blog criando artigos com informações sobre o universo PHP, tutoriais etc.
 
 #Divulgação de eventos utilizando as redes sociais
-Utilizamos o http://www.meetup.com/php-sp, https://www.meetup.com/phpsp-campinas, e o https://www.facebook.com/sao.paulo.elephants para divulgar os eventos. O compartilhamento deles ajuda a comunidade a ficar conhecida e atrair novos participantes e/ou colaboradores.
+Utilizamos o http://www.meetup.com/php-sp, https://www.meetup.com/phpsp-campinas, e o https://www.facebook.com/phpsp para divulgar os eventos. O compartilhamento deles ajuda a comunidade a ficar conhecida e atrair novos participantes e/ou colaboradores.
 
 #Participar do chat no Slack para interagir com a comunidade
 Hoje a principal forma de conversa online entre entre os membros da comunidade é o Slack (para quem conhecia o IRC, o formato é bem parecido). Quer se cadastrar? Acesse [este link](https://join.slack.com/t/phpsp/shared_invite/enQtMzI2NjQxNTM4Mzg3LTA4ODU1NWI3ZDYzZWJjZmMzYjczZTc1YTc1ZWUwZjViMTExYzE3MGY3NDljZDYyMTdmNjMxMmM2MTE4ZWJhNmE).
