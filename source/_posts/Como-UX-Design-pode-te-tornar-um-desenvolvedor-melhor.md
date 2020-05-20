@@ -28,7 +28,7 @@ feita tal tarefa para atende-los e resolver suas frustrações de forma adequada
 
 <p align="center">
   <img alt="Devemos zelar pela experiência dos nossos usuários" src="/assets/images/posts/Como-UX-Design-pode-te-tornar-um-desenvolvedor-melhor/experiencia-usuario.png">
-  
+  <br/>
   <small>Devemos zelar pela experiência dos nossos usuários.</small>
 </p>
 
@@ -39,7 +39,7 @@ para conseguir criar soluções que façam sentido para eles.
 
 <p align="center">
   <img alt="Percepções diferentes a respeito de um mesmo problema" src="/assets/images/posts/Como-UX-Design-pode-te-tornar-um-desenvolvedor-melhor/percepcao.png">
-  
+  <br/>
   <small>Percepções diferentes a respeito de um mesmo problema.</small>
 </p>
 
@@ -71,15 +71,16 @@ resolve o real problema do usuário, não vai gerar mais problemas depois, e se 
 resolvido.
 
 Eu já vi muitas soluções que resolvem um monte de problemas e dão um monte de dados para o usuário final, mas sem pensar
-se aquela solução realmente vai ser efetiva, e se aquele monte de dados fazem de fato algum sentido para o usuário final.
+se aquela solução realmente vai ser efetiva, e se aquele monte de dados fazem de fato algum sentido para o usuário final 
+(ou seja, foram transformados em informação).
 Isso no fim acaba gerando mais problemas e mais soluções que no fim não satisfazem e não chegam em lugar nenhum. E é
 assim que muitos desenvolvedores trabalham hoje, propondo um monte de soluções de problemas mas sem pensar no usuário
 final do produto. E se uma solução que para todo um time de desenvolvimento possa parecer perfeita, para os usuários for
 horrível e não fizer sentido nenhum?
 
 Para quebrar essa mentalidade, precisamos entender que o que agrega valor às organizações não é resolver um monte de
-problemas, ou fornecer um monte de informação, e sim trazer soluções e conhecimento que agregam valor ao usuário final
-do produto. E para isso, precisamos entender o nosso usuário, entender seu modelo mental de como são os processos a
+problemas, ou fornecer um monte de dados e informações, e sim trazer soluções e conhecimento que agregam valor ao usuário
+final do produto. E para isso, precisamos entender o nosso usuário, entender seu modelo mental de como são os processos a
 respeito do contexto do nosso produto, e ter um processo de criação e desenvolvimento que os envolva de forma efetiva na
 criação e manutenção deste produto. A prioridade de uma organização deve ser o cliente, não importa o quanto revolucionário
 seja o produto, se o cliente não quer ele vai fracassar.
@@ -105,7 +106,7 @@ esforço no aprendizado do negócio no qual estamos atuando.
 
 <p align="center">
   <img alt="Softwares são reflexos dos processos de uma empresa" src="/assets/images/posts/Como-UX-Design-pode-te-tornar-um-desenvolvedor-melhor/reflexo-processos-empresa.png">
-  
+  <br/>
   <small>Uma empresa é formada pelos seus processos, nossos softwares devem ser reflexos desses processos.</small>
 </p>
 
@@ -135,7 +136,7 @@ Affordance, é a qualidade que faz identificarmos a funcionalidade de um objeto 
 seja por intuição ou conhecimentos prévios.
 
 Nossas soluções de software são recheadas de Affordances, cada componente visual tem seu objetivo e o uso adequado deles
-faz toda a diferença. Exemplo: ícones, botões, links.
+faz toda a diferença. Exemplos: ícones, botões, e links.
 
 Uma usabilidade que pode ser óbvia para alguns não é para outros, por isso a importância de entendermos muito bem os
 usuários das nossas soluções. 
