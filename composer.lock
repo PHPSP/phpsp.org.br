@@ -2576,16 +2576,16 @@
         },
         {
             "name": "malukenho/mcbumpface",
-            "version": "1.1.3",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/malukenho/mcbumpface.git",
-                "reference": "bdf0ddd0f4f71430d14d3ca8e8492314931adff3"
+                "reference": "8d172d6935d7e0c1e79f244df5ed324909692a93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/malukenho/mcbumpface/zipball/bdf0ddd0f4f71430d14d3ca8e8492314931adff3",
-                "reference": "bdf0ddd0f4f71430d14d3ca8e8492314931adff3",
+                "url": "https://api.github.com/repos/malukenho/mcbumpface/zipball/8d172d6935d7e0c1e79f244df5ed324909692a93",
+                "reference": "8d172d6935d7e0c1e79f244df5ed324909692a93",
                 "shasum": ""
             },
             "require": {
@@ -2597,8 +2597,9 @@
                 "doctrine/coding-standard": "^8.2.0",
                 "ext-json": "*",
                 "ext-zip": "*",
-                "infection/infection": "^0.17.7",
-                "phpunit/phpunit": "^9.2.6"
+                "infection/infection": "^0.19.1",
+                "phpunit/phpunit": "^9.4.2",
+                "staabm/annotate-pull-request-from-checkstyle": "^1.4.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -2620,7 +2621,7 @@
                 }
             ],
             "description": "Bumping into packages",
-            "time": "2020-10-26T16:52:18+00:00"
+            "time": "2020-10-29T20:32:02+00:00"
         },
         {
             "name": "myclabs/deep-copy",
