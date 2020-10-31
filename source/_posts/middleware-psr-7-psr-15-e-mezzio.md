@@ -10,26 +10,32 @@ authorEmail: lc@leocavalcante.com
 Sou o maluco das etimologias, acho legal tentar entender a origem da palavra e que significado ela carrega, no caso de middleware o middle vem de "meio", "entre" e o ware é usado pra substantivos não-contáveis que é o caso do middle. A língua inglesa tem esse lance de substantivos contáveis e incontáveis.
 
 <p align="center"><img alt="Dicionário de Inglês Oxford" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/dictionary.jpg"></p>
+
 Não achei uma tradução muito legal, a Wikipédia chama de "cola de software", por exemplo, talvez porque só traduziu o _"software glue"_ da Wikipédia em inglês, mas pessoalmente eu diria: **meio de campo**.
 
 <p align="center"><img alt="Rivelino" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/rivelino.jpg"></p>
+
 ## Origem na ciência da computação.
 
 E a primeira vez que essa palavra foi usada, foi num paper sobre engenharia de software, apresentado numa conferência de ciência, organizado pela OTAN (NATO) em 1968; o paper tratava da relação do software com o hardware, de design de software, desenvolvimento, distribuição e o proposito que esse software estava cumprindo.
 
 <p align="center"><img alt="Logo da OTAN" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/nato.png"></p>
+
 Esse paper foi escrito por Peter Naur, turing award de 2005, conhecido pela BNF (Backus–Naur form) e pelo Brian Randell que é conhecido pela sua pesquisa em sistemas resilientes/tolerantes a falhas.
 
-<p align="center"><img alt="Peter Naur" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/peter-naur.jpg"></p>_Peter Naur_
+<p align="center"><img alt="Peter Naur" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/peter-naur.jpg"></p>
+_Peter Naur_
 
 E o termo middleware lá serviu para descrever uma camada que ficavam entre a aplicação (software) e a comunicação entre o sistema (hardware), que abstraia acesso ao sistema de arquivos exatamente, então o gerenciamento de arquivos não precisaria ser restrito numa aplicação toda vez que ela precisasse rodar num sistema diferente. - [https://ironick.typepad.com/ironick/2005/07/update_on_the_o.html](https://ironick.typepad.com/ironick/2005/07/update_on_the_o.html)
 
 <p align="center"><img alt="Paper com a palavra Middleware" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/paper.jpg"></p>
+
 ## Adapter pattern, é você?
 
 Você pode ter imediatamente associado esse comportamento ao Adapter pattern, mas a diferença fundamental é que o middleware não faz só uma tradução de interfaces, um middleware pode compor toda uma outra série de comportamentos, pode alterar a mensagem que é passada de um lado pro outro, pode interromper essa mensagem, passar pra outro ponto, enfim, não é só uma adaptação de APIs.
 
 <p align="center"><img alt="Adaptador de tomada" src="https://raw.githubusercontent.com/leocavalcante/phpsp.org.br/master/source/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/adapter.png"></p>
+
 ## Como é hoje.
 
 Nos anos 80 a estratégia ficou bem popular para lidar com sistemas legados, você podia evoluir parte dele e ainda se comunicar com as partes antigas através de um middleware.
@@ -39,6 +45,7 @@ Pelos anos 2000, o termo na área de sistemas distribuídos, foi amplamente usad
 Um dos usos para Middleware mais comuns hoje em dia é poder definir uma cadeia de componentes que vão ficar entre dois eventos. Na web, um bom exemplo pra esses eventos são receber uma requisição HTTP e devolver uma resposta HTTP.
 
 <p align="center"><img alt="Ilustração de Pipeline" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/pipeline.png"></p>
+
 ## PSR-7.
 
 Receber requisições HTTP e devolver respostas HTTP é basicamente o que define a web, conforme a Internet foi crescendo, ficando popular e acessível, as necessidades da web também escalaram de servir documentos para servir páginas dinâmicas e processar dados, para que web servers não precisassem ser recompilados com regras de negócio novas que façam isso, eles foram desenvolvidos para chamar scripts no servidor e o protocolo de comunicação entre o web server e esses scripts foi criado, batizado de CGI (Common Gateway Interface).
@@ -46,6 +53,7 @@ Receber requisições HTTP e devolver respostas HTTP é basicamente o que define
 No PHP, as informações sobre a requisição HTTP, que são enviadas pelo web server, são populadas pela SAPI (Server API) em globais mágicas que são acessíveis em qualquer parte do script.
 
 <p align="center"><img alt="Ilustração da Server API do PHP" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/sapi.png"></p>
+
 Até ai tá tudo legal, mas de novo, as coisas escalam, crescem e precisam evoluir nesse cenário novo, nesse caso é o próprio PHP, conforme ele foi sendo usado cada vez mais para aplicações mais complexas, surgiu a necessidade de organizar isso ao invés de depender e ter um alto-acoplamento em variáveis globais. Frameworks web para PHP começaram a adotar Orientação a Objetos e criar classes que representassem essa mensagem que vem numa requisição HTTP, informações sobre o que tem na query string, qual é o path, quais são os headers etc.
 
 Cada framework implementava isso de uma forma, cada um dava um nome e isso impedia a interoperabilidade entre componentes, a bagunça tomou forma e precisava ser arrumada e por isso um grupo formado por representantes dos maiores frameworks PHP decidiu recomendar alguns padrões para a comunidade seguir e termos consistência entre projetos PHP, desde estilo de código, até como namespaces e sistemas de arquivos seriam usados pelos autoloaders, interfaces para logs e uma dessas recomendações foi também: **interfaces em comum para mensagens HTTP** - [https://www.php-fig.org/psr/psr-7/](https://www.php-fig.org/psr/psr-7/)
@@ -93,6 +101,7 @@ Com essa interface podemos implementar bibliotecas com componentes de Middleware
 Casos interessantes para um middleware são por exemplo: algo que lide com CORS, autenticação, sessões, content-negotiation, cache e minificação de arquivos estáticos etc. Sem contar que sua própria regra de negócio pode ser componentizada através de middleware e você pode modularizar sua aplicação com uma ótima granularidade, até rodar ela em outro framework que também tenha suporte a middleware e por falar em framework com suporte a middleware:
 
 <p align="center"><img alt="Ilustração de componentes Middleware" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/middleware.png"></p>
+
 ## Mezzio.
 
 Mezzio é um framework envolta das bibliotecas _laminas/laminas-httphandlerrunner_ e _laminas/laminas-stratigility_, que é onde as implementações de PSR-7 e PSR-15 ficam; e ela trás toda facilidade que um framework geralmente entrega só que para trabalhar com middlewares.
@@ -110,9 +119,11 @@ composer create-project mezzio/mezzio-skeleton my-app
 Você ainda passar por um guia de instalação onde diz quais componentes quer que façam parte do seu projeto, isso é maravilho pra você manter algo conciso, por exemplo, se você vai fazer uma API, você não precisa de algo pra templating.
 
 <p align="center"><img alt="Screenshot da instalação da Mezzio" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/installer.png"></p>
+
 Outra coisa bem legal é notar como os componentes poder ser escolhidos e trocados, não só durante a instalação, mas a qualquer momento, graças as middlewares e isso reduz drasticamente o acoplamento da sua aplicação com o vendor lock-in de um framework em especifico, se quiser trocar o componente de rotas, você consegue, se quiser trocar o componente de tratamento de erros, você consegue e por ai vai.
 
 <p align="center"><img alt="Fluxo de dados na Mezzio" src="/assets/images/posts/middleware-psr-7-psr-15-e-mezzio/flow.png"></p>
+
 E esse desacoplamento é fundamento para implementar arquiteturas limpas, por exemplo a baseada em camadas como a Onion (cebola).
 
 A aplicação atua como uma "cebola"; no diagrama acima, a parte superior é a camada mais externa da cebola, enquanto a parte inferior é a mais interna.

@@ -8,7 +8,7 @@ $rewrite = '';
 while ($row = fgets($handle)) {
     if (preg_match('/^!\[(.*)\]\((.*)\)/', $row, $matches)) {
         [, $alt, $src] = $matches;
-        $row = "<p align=\"center\"><img alt=\"$alt\" src=\"$src\"></p>";
+        $row = "<p align=\"center\"><img alt=\"$alt\" src=\"$src\"></p>\n";
     }
 
     $rewrite .= $row;
