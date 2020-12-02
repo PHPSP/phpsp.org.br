@@ -7,19 +7,19 @@
         "watch": "yarn dev --watch"
     },
     "devDependencies": {
-        "browser-sync": "^2.26.7",
+        "browser-sync": "^2.26.13",
         "browser-sync-webpack-plugin": "^2.0.1",
         "bulma": "^0.9.1",
         "cross-env": "^7.0.2",
         "extra-watch-webpack-plugin": "^1.0.3",
         "hasbin": "^1.2.3",
-        "laravel-mix": "^5.0.4",
-        "node-cmd": "^3.0.0",
+        "laravel-mix": "^5.0.9",
+        "node-cmd": "^4.0.0",
         "on-build-webpack": "^0.1.0",
-        "sass": "^1.26.11",
+        "sass": "^1.29.0",
         "sass-loader": "10.*",
         "vue-template-compiler": "2.6.12",
-        "yargs": "^16.0.3"
+        "yargs": "^16.1.1"
     },
     "dependencies": {
         "lodash": "^4.17.13",
