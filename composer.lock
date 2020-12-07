@@ -642,26 +642,26 @@
         },
         {
             "name": "mnapoli/front-yaml",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mnapoli/FrontYAML.git",
-                "reference": "7602e0ffe84ca07b68865960d255d3ae9502e5d4"
+                "reference": "76baa8ca538e111bfe53ac49c6a512ec5ea2bf54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mnapoli/FrontYAML/zipball/7602e0ffe84ca07b68865960d255d3ae9502e5d4",
-                "reference": "7602e0ffe84ca07b68865960d255d3ae9502e5d4",
+                "url": "https://api.github.com/repos/mnapoli/FrontYAML/zipball/76baa8ca538e111bfe53ac49c6a512ec5ea2bf54",
+                "reference": "76baa8ca538e111bfe53ac49c6a512ec5ea2bf54",
                 "shasum": ""
             },
             "require": {
                 "erusev/parsedown": "~1.0",
-                "php": "^7.2",
+                "php": ">=7.3",
                 "symfony/yaml": "~2.1|^3.0|^4.0|^5.0"
             },
             "require-dev": {
                 "league/commonmark": "~1.4",
-                "phpunit/phpunit": "~8.5"
+                "phpunit/phpunit": "^9.4"
             },
             "type": "library",
             "autoload": {
@@ -673,7 +673,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-05-21T08:30:56+00:00"
+            "time": "2020-12-04T10:52:19+00:00"
         },
         {
             "name": "mockery/mockery",
