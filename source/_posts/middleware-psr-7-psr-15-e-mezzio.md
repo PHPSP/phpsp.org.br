@@ -104,7 +104,7 @@ Casos interessantes para um middleware são por exemplo: algo que lide com CORS,
 
 ## Mezzio.
 
-Mezzio é um framework envolta das bibliotecas _laminas/laminas-httphandlerrunner_ e _laminas/laminas-stratigility_, que é onde as implementações de PSR-7 e PSR-15 ficam; e ela trás toda facilidade que um framework geralmente entrega só que para trabalhar com middlewares.
+Mezzio é um framework envolta das bibliotecas _laminas/laminas-httphandlerrunner_ e _laminas/laminas-stratigility_, que é onde as implementações de PSR-7 e PSR-15 ficam; e ela traz toda facilidade que um framework geralmente entrega só que para trabalhar com middlewares.
 
 Coisas como rotas, injeção de dependência, templating, tratamento de erros etc, todos resolvidos através de middlewares e com total abertura pra você implementar e incluir suas próprias; inclusive, muitas delas você não precisa implementar do zero: [https://packagist.org/packages/middlewares/](https://packagist.org/packages/middlewares/)
 
