@@ -239,7 +239,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v7.30.0",
+            "version": "v7.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -286,16 +286,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v7.30.0",
+            "version": "v7.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "7ddcd4342c174e1be0e04f6011fea185d3c653c1"
+                "reference": "7d964384f0283bd7525ae7b5baa7ad32e5503b8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/7ddcd4342c174e1be0e04f6011fea185d3c653c1",
-                "reference": "7ddcd4342c174e1be0e04f6011fea185d3c653c1",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/7d964384f0283bd7525ae7b5baa7ad32e5503b8e",
+                "reference": "7d964384f0283bd7525ae7b5baa7ad32e5503b8e",
                 "shasum": ""
             },
             "require": {
@@ -326,11 +326,11 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2020-10-27T15:11:37+00:00"
+            "time": "2020-12-18T14:19:44+00:00"
         },
         {
             "name": "illuminate/events",
-            "version": "v7.30.0",
+            "version": "v7.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -375,7 +375,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v7.30.0",
+            "version": "v7.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -430,16 +430,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v7.30.0",
+            "version": "v7.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "f6daba7b74d849f854100ade05b952176e9cdf63"
+                "reference": "1c95b8f842308ff15a56d29d897d3bda29001f1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/f6daba7b74d849f854100ade05b952176e9cdf63",
-                "reference": "f6daba7b74d849f854100ade05b952176e9cdf63",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/1c95b8f842308ff15a56d29d897d3bda29001f1c",
+                "reference": "1c95b8f842308ff15a56d29d897d3bda29001f1c",
                 "shasum": ""
             },
             "require": {
@@ -488,11 +488,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2020-11-18T14:37:23+00:00"
+            "time": "2020-12-22T16:12:23+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v7.30.0",
+            "version": "v7.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -745,16 +745,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.42.0",
+            "version": "2.43.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d0463779663437392fe42ff339ebc0213bd55498"
+                "reference": "d32c57d8389113742f4a88725a170236470012e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d0463779663437392fe42ff339ebc0213bd55498",
-                "reference": "d0463779663437392fe42ff339ebc0213bd55498",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d32c57d8389113742f4a88725a170236470012e2",
+                "reference": "d32c57d8389113742f4a88725a170236470012e2",
                 "shasum": ""
             },
             "require": {
@@ -830,7 +830,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-28T14:25:28+00:00"
+            "time": "2020-12-17T20:55:32+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -1044,16 +1044,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "3e0564fb08d44a98bd5f1960204c958e57bd586b"
+                "reference": "47c02526c532fb381374dab26df05e7313978976"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/3e0564fb08d44a98bd5f1960204c958e57bd586b",
-                "reference": "3e0564fb08d44a98bd5f1960204c958e57bd586b",
+                "url": "https://api.github.com/repos/symfony/console/zipball/47c02526c532fb381374dab26df05e7313978976",
+                "reference": "47c02526c532fb381374dab26df05e7313978976",
                 "shasum": ""
             },
             "require": {
@@ -1134,7 +1134,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-28T11:24:18+00:00"
+            "time": "2020-12-18T08:03:05+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1202,16 +1202,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "fd8305521692f27eae3263895d1ef1571c71a78d"
+                "reference": "0b9231a5922fd7287ba5b411893c0ecd2733e5ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/fd8305521692f27eae3263895d1ef1571c71a78d",
-                "reference": "fd8305521692f27eae3263895d1ef1571c71a78d",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/0b9231a5922fd7287ba5b411893c0ecd2733e5ba",
+                "reference": "0b9231a5922fd7287ba5b411893c0ecd2733e5ba",
                 "shasum": ""
             },
             "require": {
@@ -1256,7 +1256,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-18T09:42:36+00:00"
+            "time": "2020-12-08T17:02:38+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1728,16 +1728,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "240e74140d4d956265048f3025c0aecbbc302d54"
+                "reference": "bd8815b8b6705298beaa384f04fabd459c10bedd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/240e74140d4d956265048f3025c0aecbbc302d54",
-                "reference": "240e74140d4d956265048f3025c0aecbbc302d54",
+                "url": "https://api.github.com/repos/symfony/process/zipball/bd8815b8b6705298beaa384f04fabd459c10bedd",
+                "reference": "bd8815b8b6705298beaa384f04fabd459c10bedd",
                 "shasum": ""
             },
             "require": {
@@ -1783,7 +1783,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-02T15:47:15+00:00"
+            "time": "2020-12-08T17:03:37+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -1863,16 +1863,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "40e975edadd4e32cd16f3753b3bad65d9ac48242"
+                "reference": "5bd67751d2e3f7d6f770c9154b8fbcb2aa05f7ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/40e975edadd4e32cd16f3753b3bad65d9ac48242",
-                "reference": "40e975edadd4e32cd16f3753b3bad65d9ac48242",
+                "url": "https://api.github.com/repos/symfony/string/zipball/5bd67751d2e3f7d6f770c9154b8fbcb2aa05f7ed",
+                "reference": "5bd67751d2e3f7d6f770c9154b8fbcb2aa05f7ed",
                 "shasum": ""
             },
             "require": {
@@ -1939,20 +1939,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T12:08:07+00:00"
+            "time": "2020-12-05T07:33:16+00:00"
         },
         {
             "name": "symfony/translation",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "52f486a707510884450df461b5a6429dd7a67379"
+                "reference": "a04209ba0d1391c828e5b2373181dac63c52ee70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/52f486a707510884450df461b5a6429dd7a67379",
-                "reference": "52f486a707510884450df461b5a6429dd7a67379",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/a04209ba0d1391c828e5b2373181dac63c52ee70",
+                "reference": "a04209ba0d1391c828e5b2373181dac63c52ee70",
                 "shasum": ""
             },
             "require": {
@@ -2029,7 +2029,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-28T11:24:18+00:00"
+            "time": "2020-12-08T17:03:37+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -2108,16 +2108,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "173a79c462b1c81e1fa26129f71e41333d846b26"
+                "reference": "13e7e882eaa55863faa7c4ad7c60f12f1a8b5089"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/173a79c462b1c81e1fa26129f71e41333d846b26",
-                "reference": "173a79c462b1c81e1fa26129f71e41333d846b26",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/13e7e882eaa55863faa7c4ad7c60f12f1a8b5089",
+                "reference": "13e7e882eaa55863faa7c4ad7c60f12f1a8b5089",
                 "shasum": ""
             },
             "require": {
@@ -2189,20 +2189,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-27T00:39:34+00:00"
+            "time": "2020-12-16T17:02:19+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "bb73619b2ae5121bbbcd9f191dfd53ded17ae598"
+                "reference": "290ea5e03b8cf9b42c783163123f54441fb06939"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/bb73619b2ae5121bbbcd9f191dfd53ded17ae598",
-                "reference": "bb73619b2ae5121bbbcd9f191dfd53ded17ae598",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/290ea5e03b8cf9b42c783163123f54441fb06939",
+                "reference": "290ea5e03b8cf9b42c783163123f54441fb06939",
                 "shasum": ""
             },
             "require": {
@@ -2261,20 +2261,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-28T10:57:20+00:00"
+            "time": "2020-12-08T17:02:38+00:00"
         },
         {
             "name": "tightenco/jigsaw",
-            "version": "v1.3.32",
+            "version": "v1.3.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tighten/jigsaw.git",
-                "reference": "92489992b79fbcdc79f729e3ac9df5e3bc95901e"
+                "reference": "2d73f5c20d0510ba16ffcc65639a844a1abea09d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tighten/jigsaw/zipball/92489992b79fbcdc79f729e3ac9df5e3bc95901e",
-                "reference": "92489992b79fbcdc79f729e3ac9df5e3bc95901e",
+                "url": "https://api.github.com/repos/tighten/jigsaw/zipball/2d73f5c20d0510ba16ffcc65639a844a1abea09d",
+                "reference": "2d73f5c20d0510ba16ffcc65639a844a1abea09d",
                 "shasum": ""
             },
             "require": {
@@ -2282,9 +2282,9 @@
                 "illuminate/support": "^7.0",
                 "illuminate/view": "^7.0",
                 "michelf/php-markdown": "^1.9",
-                "mnapoli/front-yaml": "^1.5",
+                "mnapoli/front-yaml": "^1.5|^1.8",
                 "mockery/mockery": "^1.0.0",
-                "php": "^7.2",
+                "php": "^7.2|^8.0",
                 "symfony/console": "^4.0|^5.0",
                 "symfony/process": "^4.0|^5.0",
                 "symfony/var-dumper": "^4.0|^5.0",
@@ -2294,7 +2294,7 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.12",
                 "mikey179/vfsstream": "^1.6",
-                "phpunit/phpunit": "~7.0"
+                "phpunit/phpunit": "~7.0|^9.3.3"
             },
             "bin": [
                 "jigsaw"
@@ -2330,7 +2330,7 @@
                 "site",
                 "static"
             ],
-            "time": "2020-12-04T14:54:59+00:00"
+            "time": "2020-12-22T21:11:07+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
