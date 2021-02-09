@@ -17,7 +17,7 @@
         "node-cmd": "^4.0.0",
         "on-build-webpack": "^0.1.0",
         "sass": "^1.32.6",
-        "sass-loader": "10.*",
+        "sass-loader": "11.*",
         "vue-template-compiler": "2.6.12",
         "yargs": "^16.2.0"
     },
