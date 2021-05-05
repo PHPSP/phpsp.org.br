@@ -19,7 +19,7 @@
         "sass": "^1.32.12",
         "sass-loader": "10.*",
         "vue-template-compiler": "2.6.12",
-        "yargs": "^16.2.0"
+        "yargs": "^17.0.1"
     },
     "dependencies": {
         "lodash": "^4.17.21",
