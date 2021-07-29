@@ -4799,10 +4799,10 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-node-cmd@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/node-cmd/-/node-cmd-4.0.0.tgz#a0187d9b779b59f1e8a70545ab8e8276a4b8c693"
-  integrity sha512-3OHy8KI8MuwADyugQRZBsaqe3c0r3yxQSoLsDBVk7vAjPmfG01512MPBQjfmBJxrH+2qURbiBf/ZyoimrhdA6A==
+node-cmd@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/node-cmd/-/node-cmd-5.0.0.tgz#a4a850b569e009bec0199a131c9db607144fdbc0"
+  integrity sha512-4sQTJmsS5uZKAPz/Df9fnIbmvOySfGdW+UreH4X5NcAOOpKjaE+K5wf4ehNBbZVPo0vQ36RkRnhhsXXJAT+Syw==
 
 node-forge@^0.10.0:
   version "0.10.0"

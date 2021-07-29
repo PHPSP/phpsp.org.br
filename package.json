@@ -14,7 +14,7 @@
         "extra-watch-webpack-plugin": "^1.0.3",
         "hasbin": "^1.2.3",
         "laravel-mix": "^5.0.9",
-        "node-cmd": "^4.0.0",
+        "node-cmd": "^5.0.0",
         "on-build-webpack": "^0.1.0",
         "sass": "^1.36.0",
         "sass-loader": "10.*",
