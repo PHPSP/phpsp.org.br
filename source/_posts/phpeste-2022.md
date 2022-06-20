@@ -42,7 +42,7 @@ As edições anteriores já visitaram João Pessoa (PB), Salvador (BA), Fortalez
 **Até o dia 30 de Junho de 2022 a organização do PHPeste 2022 receberá propostas de quem quiser apresentar alguma palestra ou oficina no evento.**
 
 <p align="center">
-  <img alt="Flyer de divulgação indicando a data 30/06/2022 como limite para submissões de atividades." src="/assets/images/posts/phpeste-2022/phpeste-flyer-submissao.jpeg" />
+  <img alt="Flyer de divulgação indicando a data 30/06/2022 como limite para submissões de atividades." src="/assets/images/posts/phpeste-2022/phpeste-flyer-submissao.jpeg" style="max-width: 500px" />
   <br />
   <small>Flyer de divulgação indicando a data 30/06/2022 como limite para submissões de atividades.</small>
 </p>
