@@ -41,6 +41,12 @@ As edições anteriores já visitaram João Pessoa (PB), Salvador (BA), Fortalez
 
 **Até o dia 30 de Junho de 2022 a organização do PHPeste 2022 receberá propostas de quem quiser apresentar alguma palestra ou oficina no evento.**
 
+<p align="center">
+  <img alt="Flyer de divulgação indicando a data 30/06/2022 como limite para submissões de atividades." src="/assets/images/posts/phpeste-2022/phpeste-flyer-submissao.jpeg" />
+  <br />
+  <small>Flyer de divulgação indicando a data 30/06/2022 como limite para submissões de atividades.</small>
+</p>
+
 É importante ressaltar que o PHPeste possui seu próprio [código de conduta](https://www.phpeste.org/code-of-conduct/). Eu vejo muita gente na comunidade resumir os códigos de conduta alheios com “não seja babaca”, mas isto não é suficiente! Vai lá de lá uma lida no código de conduta. É curto, rápido de ler e vai te ajudar a entender o que esperar deste evento.
 
 **Palestrantes do evento vão receber um auxílio da comunidade com estadia. E tradicionalmente a estadia com a galera do PHPeste é sempre muito massa!**
