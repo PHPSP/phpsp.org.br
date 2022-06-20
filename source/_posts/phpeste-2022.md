@@ -14,10 +14,18 @@ Para mais informações em tempo real, visite também o canal [PHPeste no Telegr
 
 <table>
   <tbody>
-    <td><strong>Quando?</strong></td><td>7, 8 e 9 de Outubro de 2022</td>
-    <td><strong>Onde?</strong></td><td>SEBRAE em Natal, Rio Grande do Norte, Brasil</td>
-    <td><strong>Quanto?</strong></td><td>**Divulgação ao fim de Junho 2022**</td>
-    <td><strong>Quem?</strong></td><td>Comunidades PHP do Nordeste brasileiro: Alagoas, Bahia, Ceará, Maranhão, Paraíba, Pernambuco, Piauí, Rio Grande do Norte e Sergipe.</td>
+    <tr>
+      <td><strong>Quando?</strong></td><td>7, 8 e 9 de Outubro de 2022</td>
+    </tr>
+    <tr>
+      <td><strong>Onde?</strong></td><td>SEBRAE em Natal, Rio Grande do Norte, Brasil</td>
+    </tr>
+    <tr>
+      <td><strong>Quanto?</strong></td><td>**Divulgação ao fim de Junho 2022**</td>
+    </tr>
+    <tr>
+      <td><strong>Quem?</strong></td><td>Comunidades PHP do Nordeste brasileiro: Alagoas, Bahia, Ceará, Maranhão, Paraíba, Pernambuco, Piauí, Rio Grande do Norte e Sergipe.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -60,10 +68,15 @@ Para mais informações sobre como patrocinar o evento, entre em contato diretam
 ## Linha do tempo
 
 `29 Maio 2022` ~~Data da conferência divulgada: 7, 8 e 9 de Outubro de 2022 🥳~~
+
 `2 Junho 2022` ~~Aberta a chamada para submissões de palestras e oficinas 🗣~~
+
 `16 Junho 2022` Prorrogada a chamada para submissões: serão aceitas até o dia 30/06/2022 🚨
+
 `30 Junho 2022` Primeiro lote de ingressos 🎫
+
 `11 Julho 2022` Divulgação da grade de palestrantes 📣
+
 `7 Outubro 2022` Muito PHP, cana, conhecimento e gente boa! 🐘
 
 ## Compartilhe!
