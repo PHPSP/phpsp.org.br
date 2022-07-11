@@ -1,8 +1,6 @@
 name: Lembrete do PHPSP+Pub
 
 on:
-  pull_request:
-    branches: [ "master" ]
   schedule:
     - cron: '0 10 1 */1 *' # At 10:00 on day-of-month 1 in every month.
     
@@ -29,7 +27,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Passando pra lembrar que toda segunda quinta-feira do mies rola o PHPSP + Pub :beers: :phpsp:, nosso evento mensal com breja, php, gente boa e networking."
+                    "text": "Passando pra lembrar que toda segunda quinta-feira do mês rola o PHPSP + Pub :beers: :phpsp:, nosso evento mensal com breja, php, gente boa e networking."
                   }
                 },
                 {
@@ -75,7 +73,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Passando pra lembrar que toda segunda quinta-feira do mies rola o PHPSP + Pub :beers: :phpsp:, nosso evento mensal com breja, php, gente boa e networking."
+                    "text": "Passando pra lembrar que toda segunda quinta-feira do mês rola o PHPSP + Pub :beers: :phpsp:, nosso evento mensal com breja, php, gente boa e networking."
                   }
                 },
                 {
