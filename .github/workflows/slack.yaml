@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Enviar lembrete ao canal General
-        id: slack
+        id: slack_general
         uses: slackapi/slack-github-action@v1.18.0
         with:
           # For posting a rich message using Block Kit
@@ -54,4 +54,50 @@ jobs:
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_GENERAL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+      - name: Enviar lembrete ao canal Eventos
+        id: slack_eventos
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
+          # For posting a rich message using Block Kit
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Dá-lhe manada :elephpant:!"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Passando pra lembrar que toda segunda quinta-feira do mies rola o PHPSP + Pub :beers: :phpsp:, nosso evento mensal com breja, php, gente boa e networking."
+                  }
+                },
+                {
+                  "type": "section",
+                  "block_id": "section567",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Bora fazer o RSVP lá no <https://www.meetup.com/php-sp/|meetup.com>, convidar uma galera e comparecer!"
+                  }
+                },
+                {
+                  "type": "section",
+                  "block_id": "section789",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "Te vejo lá :xablau:!"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_EVENTOS }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
