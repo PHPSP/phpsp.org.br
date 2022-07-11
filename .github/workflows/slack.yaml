@@ -15,14 +15,31 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                    "text": "Dá-lhe manada! :elephpant:! Quinta-feira agora vai rolar o PHPSP + Pub :beers: :phpsp:, nosso evento mensal com breja, php, gente boa e networking."
                   }
+                },
+                {
+                  "type": "section",
+                  "block_id": "section567",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Bora fazer o RSVP lá no <https://www.meetup.com/php-sp/|meetup.com>."
+                  }
+                },
+                {
+                  "type": "section",
+                  "block_id": "section789",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "Te vejo lá :xablau:!"
+                    }
+                  ]
                 }
               ]
             }
