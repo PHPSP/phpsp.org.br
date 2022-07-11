@@ -3,6 +3,8 @@ name: Lembrete do PHPSP+Pub
 on:
   pull_request:
     branches: [ "master" ]
+  schedule:
+    - cron: '0 10 1 */1 *' # At 10:00 on day-of-month 1 in every month.
     
 jobs:
   enviar_lembretes_slack:
@@ -20,7 +22,14 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Dá-lhe manada! :elephpant:! Quinta-feira agora vai rolar o PHPSP + Pub :beers: :phpsp:, nosso evento mensal com breja, php, gente boa e networking."
+                    "text": "Dá-lhe manada :elephpant:!"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Passando pra lembrar que toda segunda quinta-feira do mies rola o PHPSP + Pub :beers: :phpsp:, nosso evento mensal com breja, php, gente boa e networking."
                   }
                 },
                 {
@@ -28,7 +37,7 @@ jobs:
                   "block_id": "section567",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Bora fazer o RSVP lá no <https://www.meetup.com/php-sp/|meetup.com>."
+                    "text": "Bora fazer o RSVP lá no <https://www.meetup.com/php-sp/|meetup.com>, convidar uma galera e comparecer!"
                   }
                 },
                 {
