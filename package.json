@@ -18,12 +18,12 @@
         "on-build-webpack": "^0.1.0",
         "sass": "^1.53.0",
         "sass-loader": "10.*",
-        "vue-template-compiler": "2.7.4",
+        "vue-template-compiler": "2.7.5",
         "yargs": "^17.5.1"
     },
     "dependencies": {
         "lodash": "^4.17.21",
         "remove": "^0.1.5",
-        "vue": "2.7.4"
+        "vue": "2.7.5"
     }
 }
