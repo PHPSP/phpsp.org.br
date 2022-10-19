@@ -28,7 +28,7 @@
 <div class="card">
     <div class="card-content">
         <p class="subtitle">
-            Ajude-nos a divulgar e a criar mais e mais conteúdos interessantes do mundo PHP, colabore com conteúdos e com projetose ajude a evangelizar
+            Ajude-nos a divulgar e a criar mais e mais conteúdos interessantes do mundo PHP, colabore com conteúdos e com projetos e ajude a evangelizar
             o PHPSP!
         </p>
     </div>
