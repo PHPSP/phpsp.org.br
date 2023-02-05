@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="https://thephp.website/br/edicao/ola-php-eu-sou-um-engenheiro/" />
+    <title>PHPSP | Olá, PHP. Eu sou um Engenheiro.</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7974451-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-7974451-1');
+    </script>
+
+    <link rel="shortcut icon" href="/assets/images/phpsp/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=b46970f13028c511b4b2">
+    <script defer src="/assets/build/js/main.js?id=09bbc832a3d0ac409ec2"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
+            </a>
+
+                            <a class="navbar-item is-hidden-desktop" href="https://phpsp.org.br/feed.xml" target="_blank">
+                    <img src="/assets/images/thirdparty/rss.png"
+                         title="RSS" alt="RSS">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                         title="Twitter" alt="Twitter">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                         title="Slack" alt="Slack">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://t.me/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/telegram.png"
+                         title="Telegram" alt="Telegram">
+                </a>
+            
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuComunidade" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">A Comunidade</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item " href="/a-comunidade">
+                          <span>
+                            <strong>A Comunidade PHPSP</strong>
+                            <br>
+                            O que é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <a class="navbar-item " href="/quem-e-a-comunidade">
+                          <span>
+                            <strong>Quem é a Comunidade PHPSP</strong>
+                            <br>
+                            Quem é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta">
+                          <span>
+                            <strong>Código de Conduta</strong>
+                            <br>
+                            Codigo de conduta para a comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="/artigos">
+                    <span>Artigos</span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Eventos</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                                                <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP São Paulo</strong>
+                            <br>
+                            Eventos na cidade de SP
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-campinas/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Campinas</strong>
+                            <br>
+                            Eventos na cidade de Campinas
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-santos/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na cidade de Santos
+                          </span>
+                        </a>
+                        
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
+                          <span>
+                            <strong>Código de Conduta para Eventos</strong>
+                            <br>
+                            Codigo de conduta para a eventos da comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/php-the-right-way" target="_blank">
+                              <span>
+                                <strong>PHP The Right Way - BR</strong>
+                                <br>
+                                Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/quero-palestrar" target="_blank">
+                              <span>
+                                <strong>Quero Palestrar</strong>
+                                <br>
+                                Repositório de palestrantes e propostas de palestras para eventos de tecnologia
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/zf2-documentation-br" target="_blank">
+                              <span>
+                                <strong>ZF2 docs - BR</strong>
+                                <br>
+                                Tradução da Documentação Oficial do Zend Framework
+                              </span>
+                            </a>
+                                            </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://phpsp.org.br/feed.xml" target="_blank">
+                        <img src="/assets/images/thirdparty/rss.png"
+                             title="RSS" alt="RSS">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://github.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/GitHub-Mark-120px-plus.png"
+                             title="GitHub" alt="GitHub">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://twitter.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                             title="Twitter" alt="Twitter">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                             title="Slack" alt="Slack">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/" target="_blank">
+                        <img src="/assets/images/thirdparty/In-2C-128px-TM.png"
+                             title="LinkedIn" alt="LinkedIn">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://facebook.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/flogo_RGB_HEX-144.png"
+                             title="Facebook" alt="Facebook">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://t.me/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/telegram.png"
+                             title="Telegram" alt="Telegram">
+                    </a>
+                            </div>
+        </div>
+    </div>
+</nav>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">PHPSP </a></li>
+
+                    <li><a href="/artigos">Artigos</a></li>
+        
+        <li class="is-active"><a href="#" aria-current="page">Olá, PHP. Eu sou um Engenheiro.</a></li>
+    </ul>
+</nav>            <section class="section">
+        <div class="content">
+            <h1 class="title is-1">Olá, PHP. Eu sou um Engenheiro.</h1>
+            <p>
+                <small>
+                    por Níckolas Silva
+                    em 29/10/2019
+                </small>
+            </p>
+
+            <p><a href="https://thephp.website/en/issue/hello-php-i-am-an-engineer" rel="nofollow">Read in English</a> (link externo!)</p>
+<p>Eu escrevi este post pra você poder compartilhar toda vez que
+alguém lhe perguntar algo como:</p>
+<blockquote>
+<p><em>&quot;As pessoas ainda usam PHP?&quot;</em></p>
+</blockquote>
+<h2>TL;DR</h2>
+<p><strong>Você soa extremamente inexperiente quando ataca o PHP</strong> a cada
+oportunidade. Se você o faz, é melhor investir seu tempo tornando-se
+um(a) engenheiro(a) melhor. Provavelmente ainda há um looongo caminho
+a ser percorrido.</p>
+<p>Leia abaixo.</p>
+<h1>Olá, PHP. Eu sou um Engenheiro.</h1>
+<p>Eu escrevo este post um pouco depois da <code>CVE-2019-11043</code> ter se
+tornado popular. Sim, popular.</p>
+<p>Veja, tem uma enorme diferença entre desenvolvimento mainstream e
+desenvolvimento de software de verdade.</p>
+<p><code>CVE-2019-11043</code> na realidade é <a href="https://bugs.php.net/bug.php?id=78599" rel="nofollow">bug #78599</a>,
+reportado em setembro deste ano. O problema e sua prevenção estavam
+explícitos desde o começo, a correção e release vieram pouquíssimo
+depois. Na verdade, desenvolvedores(as) PHP já viram isso em 2010.
+Nós já sabíamos como evitar este bug.</p>
+<p>Por que eu cito este caso? <strong>Porque a internet é simplesmente muito
+barulhenta</strong>.</p>
+<p>Dá uma buscada por &quot;websites afetados pelo CVE-2019-11043&quot;. Vai lá!</p>
+<p>Algumas páginas inclusive descrevem o problema como uma falha
+baseada em &quot;buffer <strong>overflow</strong>&quot;.</p>
+<p>Parece a galera do RH tentando lembrar algumas palavras chave pra
+soar convincente o suficiente e chamar a gente pra tomar um café.
+(A propósito, muito agradecido, viu?)</p>
+<p>Fato é que, até o presente momento, pouquíssimos (ou nenhum) sites
+vieram a público reportar o quão horrível essa falha de segurança
+foi para eles. Na realidade, eu não ouvi falar de nenhum.</p>
+<p>Sabe por quê? <strong>PHP não é mainstream</strong>.</p>
+<p>Programadores(as) PHP são, de fato, capazes de fazer todo tipo de
+maluquisses com a linguagem. Bem como qualquer progrador(a) de
+qualquer outra linguagem.</p>
+<p>É só que depois de <strong>25 anos de PHP</strong> a gente aprendeu que não
+devemos.</p>
+<p>Em vez de somente aprender como escrever código ruim em diversas
+linguagens (que a gente também faz), optamos por formar o PHP e
+todo seu ecossistema a ficar um pouquinho melhor todos os dias.  </p>
+<h2>PHP é, de fato, uma linguagem pirata</h2>
+<p>Uma vez eu ouvi que PHP é uma linguagem pirata. E eu gosto demais
+dessa metáfora.</p>
+<p>PHP junta as melhores coisas de várias linguagens, compacta tudo
+num <strong>ambiente simples e de fácil utilização</strong> e aproveita seu
+poder entregando produtos incríveis de forma indescritívelmente
+rápida!</p>
+<p>Tantas palavras chave aqui, os(as) hipsters não vão entender de
+primeira. Deixa eu reorganizar pra eles(as).</p>
+<p><strong>Fácil. Entrega. Incrível. Produto. Rápido.</strong></p>
+<p>A coisa é que o PHP não está sendo vendido para as pessoas como
+a última bolacha do pacote. Mas sempre que tu pensa em
+desenvolvimento web, o <strong>php é simplesmente bom demais pra ser
+ignorado</strong>.</p>
+<p>Da prototipação à produção, o php é direto, fácil de entender e
+de encontrar/solucionar problemas. Sua comunidade é incrivelmente
+ativa, útil e esperta!</p>
+<p><strong>A comunidade PHP é FODA!</strong></p>
+<p><em>A sua linguagem favorita põe seu time a discutir por horas sobre
+os milhares coding styles proprietários ou a criar o próprio?</em></p>
+<p>A minha não. <a href="https://www.php-fig.org/psr/psr-1/" rel="nofollow">PSR-1</a>,
+<a href="https://www.php-fig.org/psr/psr-2/" rel="nofollow">PSR-2</a>,
+<a href="https://www.php-fig.org/psr/psr-4/" rel="nofollow">PSR-4</a>,
+e <a href="https://www.php-fig.org/psr/psr-12/" rel="nofollow">PSR-12</a> vieram da
+comunidade pra normalizar a forma como a gente escreve código
+e pronto. Junto de várias ferramentas maravilhosas pra reforçar
+e ajudar a manter essa forma unificada de escrever código.</p>
+<p>A gente tende a gastar menos tempo/dinheiro falando sobre onde
+colocar os nossos colchetes, e investimos melhor este tempo falando
+sobre produto, problemas e soluções.</p>
+<p><em>Quantos pacotes você instala pra conectar ao seu banco de dados?</em></p>
+<p>Quantos eu instalo? Um. O PHP.</p>
+<p>PHP vem com drivers oficiais e muito bem testados pra se conectar
+com vários bancos de dados relevantes e, se não for suficiente,
+extensões em C ou PHP estão também disponíveis.</p>
+<p><strong>Ah, mas PHP não consegue fazer isso ou aquilo</strong>.</p>
+<p>Tá, tô sabendo. A pergunta é: deveria? Deveria o PHP realmente
+entrar de vez com multi threading sem extensões, async/await
+direto na STDlib e annotations?</p>
+<p><strong>Será que realmente faz sentido?</strong> Pense no ecossistema PHP,
+no ciclo de vida, no foco e na audiência. É tão ruim assim que
+o PHP não venha com essas funcionalidades?</p>
+<p>A resposta, queridos(as) hipsters, é simplesmente: deixa a
+comunidade decidir.</p>
+<p>A principal ideia guiando o desenvolvimento da linguagem é que
+<strong>a gente sabe mais</strong>. Não eu, não os(as) desenvolvedores(as) php,
+não a comunidade PHP. <strong>Nós, comunidade, sabemos mais</strong>.</p>
+<p>Seja uma ideia, ferramenta ou configuração, a comunidade sabe mais.
+E para desenvolvedores(as) PHP isto é tão óbvio que eu me sinto
+desconfortável repetindo tanto. </p>
+<p>Digo, olha esse site! Totalmente criado com código da comunidade.
+Eu praticamente não escrevi nada, exceto pelo texto.</p>
+<p>Enquanto alguns tentam provar sua capacidade falando mal de
+outras linguagems, <strong>eu tô entregando valor com baixíssimo
+atrito.</strong></p>
+<p>Contribuidores(as), de qualquer linguagem de programação, são
+capazes de tornar este website melhor.</p>
+<p>Se você vier me dizer que o PHP é extremamente lento, eu não tenho
+nenhuma resposta melhor que &quot;vai aprender PHP&quot;. Eu posso até lhe
+oferecer ajuda se tu for bacana.</p>
+<p>Sabendo apenas o suficiente já lhe levaria a concluir o quão bobo
+é dizer sobre a performance da linguagem sem entender qual problema
+tu precisa resolver.</p>
+<p><strong>Não existe solução para problemas que não foram compreendidos.</strong></p>
+<blockquote>
+<p>Tá, mas tipo, PHP é extremamente lento enquanto linguagem.
+Pensa no conceito, php é simplesmente lento.</p>
+</blockquote>
+<p>* suspiro *</p>
+<h2>PHP é só mais uma ferramenta. É o <em>SEU TRABALHO</em> entender se é a adequada</h2>
+<p>Sério, se tu puder tomar pelo menos uma ideia desse texto contigo,
+escolhe essa daqui: <strong>como engenheiro(a), seu trabalho é encontrar
+o problema, identificar soluções e adotar a que se encaixa melhor</strong>.</p>
+<p>Não a melhor, não a cheia de firulas. A que se encaixa melhor!
+Tempo, dinheiro, recursos, manutenção, facilidade de aprendizado,
+performance...</p>
+<p>Aquela animação de transição é tão importante, ou o SEO fala mais
+alto para o seu negócio? Você realmente precisa manter estado pra
+mostrar um alerta pop up?</p>
+<p>Um software escrito em 20 dias que deverá ser reescrito em 12 meses
+soa melhor que outro escrito em 4 meses e reescrito em 2 anos?
+As vezes sim, as vezes não. As vezes refatoração constante é bem
+melhor. Conheça seu problema primeiro!</p>
+<p><strong>Isso também vale para engenheiros(as) php que fazem piada dos(as)
+especialistas Laravel.</strong> Eles estão construindo ferramentas incríveis,
+incrivelmente rápido e entregando um valor enorme. Eles também estão
+aprendendo a partir de seus erros e tornando seu ferramental muito
+melhor todos os dias!</p>
+<p><strong>Encontre a ferramenta pra resolver seu problema. Não o problema a
+ser resolvido pela sua ferramenta</strong>.</p>
+<p>Até o momento, em minha carreira, eu tenho a fortíssima convicção de
+que <strong>escrever código é a parte MAIS FÁCIL</strong>.</p>
+<p>Eu também já lutei por conta de linguagem de programação, mas não o
+faço mais. E espero que eu tenha lhe ajudado a chegar a mesma
+conclusão que eu cheguei:</p>
+<blockquote>
+<p>A boa engenharia de software acontece antes do software ser escrito.
+De preferência, sem sequer escrever software.</p>
+</blockquote>
+<p>Me levou um tempo pra perceber isto, mas a minha capacidade de analisar
+sistemas é extremamente importante pra evitar gastar recursos e a
+saúde das pessoas envolvidas. Eu simplesmente não consigo evoluir como
+engenheiro sem sequer tentar entender o impacto das minhas decisões
+enquanto engenheiro.</p>
+<p>Não é sobre sentimento, intuição ou gosto. É sobre solucionar problemas.
+Se você escuta &quot;PHP&quot; e tem imediatamente esse sentimento de que deve
+falar mal da linguagem, você ainda tem muito o que aprender.
+Você sabe disso, desenvolvedores(as) sênior sabem disso e o seu
+atual/futuro(a) chefe também sabe disso.</p>
+<p>Nós poderíamos ser uma grande e maravilhosa comunidade, movendo cada
+um em direção ao sucesso e falando sobre suas qualidades em vez de
+indivíduos suando para crescer tentando apontar os defeitos dos
+outros.</p>        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            
+            <h4 class="title is-4">Mais posts deste Autor</h4>
+    <div class="tile is-ancestor">
+                    <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/phpeste-2022">PHPeste 2022 em Natal, Rio Grande do Norte</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 20/06/2022</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/voce-achou-que-sabia-sobre-generators-php">Você achou que sabia sobre Generators no PHP</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 11/12/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/como-php-funciona-na-verdade">Como o PHP funciona na verdade</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 19/11/2019</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                            <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/tdd-com-php-na-vida-real">TDD na vida real com PHP</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 03/11/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/3-projetos-para-iniciar-no-hacktoberfest-2019">3 Projetos para Iniciar no Hacktoberfest 2019</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 09/10/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/5-bons-motivos-para-nao-usar-arrays-no-php-74">5 bons motivos para NÃO usar arrays no PHP 7.4</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 12/05/2019</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                    </div>
+        </div>
+    </section>
+        <div class="container has-text-centered">
+    <div class="notification">
+        Acha que esse conteúdo possui erros ou poderia ser aperfeiçoado?
+        <a href="https://github.com/phpsp/phpsp.org.br/blob/master/source/_posts/ola-php-eu-sou-um-engenheiro.md" title="Ajuste esse conteúdo!" target="_blank">Colabore!</a>
+    </div>
+</div>    </div>
+</section>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <div class="level is-small">
+            <div class="level-item">
+                <a href="https://php.net" target="_blank">
+                    <figure class="image is-128x128">
+                        <img src="/assets/images/sponsors/php.png" title="PHP.net">
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="level is-small">
+            <div class="level-item">
+            <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/azure.png" title="Microsoft Azure"
+                         alt="Microsoft Azure">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://imasters.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/imasters.png" title="iMasters"
+                         alt="iMasters">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://paypal.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/paypal.png" title="PayPal"
+                         alt="PayPal">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://www.locaweb.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/locaweb.png" title="LocaWeb"
+                         alt="LocaWeb">
+                </figure>
+            </a>
+        </div>
+    </div>
+<div class="level is-small">
+            <div class="level-item">
+            <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/phpstorm.png" title="PHPStorm"
+                         alt="PHPStorm">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://contaazul.com/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/contaazul.png" title="ContaAzul"
+                         alt="ContaAzul">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://devnaestrada.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/devnaestrada.png" title="Dev Na Estrada"
+                         alt="Dev Na Estrada">
+                </figure>
+            </a>
+        </div>
+    </div>
+
+        <hr>
+        <p>O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://github.com/phpsp/phpsp.org.br/graphs/contributors" target="_blank" title="Colaboradores do Site PHPSP.org">Comunidade PHPSP</a>.</p>
+        <p>O código deste site esta sob a licença <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="Licença MIT">MIT</a> e pode ser encontrado <a href="https://github.com/phpsp/phpsp.org.br/" target="_blank" title="Código Fonte do Site PHPSP.org.br">aqui</a>.</p>
+        <p>O conteúdo deste site esta sob a licença <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licença CC BY NC SA 4.0">CC BY NC SA 4.0</a>.</p>
+    </div>
+</footer>
+</html>

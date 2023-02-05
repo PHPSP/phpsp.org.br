@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="https://phpsp.org.br/artigos/react-php-conceitos-basicos-eventloop" />
+    <title>PHPSP | (React PHP) Conceitos básicos - EventLoop</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7974451-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-7974451-1');
+    </script>
+
+    <link rel="shortcut icon" href="/assets/images/phpsp/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=b46970f13028c511b4b2">
+    <script defer src="/assets/build/js/main.js?id=09bbc832a3d0ac409ec2"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
+            </a>
+
+                            <a class="navbar-item is-hidden-desktop" href="https://phpsp.org.br/feed.xml" target="_blank">
+                    <img src="/assets/images/thirdparty/rss.png"
+                         title="RSS" alt="RSS">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                         title="Twitter" alt="Twitter">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                         title="Slack" alt="Slack">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://t.me/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/telegram.png"
+                         title="Telegram" alt="Telegram">
+                </a>
+            
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuComunidade" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">A Comunidade</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item " href="/a-comunidade">
+                          <span>
+                            <strong>A Comunidade PHPSP</strong>
+                            <br>
+                            O que é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <a class="navbar-item " href="/quem-e-a-comunidade">
+                          <span>
+                            <strong>Quem é a Comunidade PHPSP</strong>
+                            <br>
+                            Quem é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta">
+                          <span>
+                            <strong>Código de Conduta</strong>
+                            <br>
+                            Codigo de conduta para a comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="/artigos">
+                    <span>Artigos</span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Eventos</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                                                <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP São Paulo</strong>
+                            <br>
+                            Eventos na cidade de SP
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-campinas/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Campinas</strong>
+                            <br>
+                            Eventos na cidade de Campinas
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-santos/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na cidade de Santos
+                          </span>
+                        </a>
+                        
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
+                          <span>
+                            <strong>Código de Conduta para Eventos</strong>
+                            <br>
+                            Codigo de conduta para a eventos da comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/php-the-right-way" target="_blank">
+                              <span>
+                                <strong>PHP The Right Way - BR</strong>
+                                <br>
+                                Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/quero-palestrar" target="_blank">
+                              <span>
+                                <strong>Quero Palestrar</strong>
+                                <br>
+                                Repositório de palestrantes e propostas de palestras para eventos de tecnologia
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/zf2-documentation-br" target="_blank">
+                              <span>
+                                <strong>ZF2 docs - BR</strong>
+                                <br>
+                                Tradução da Documentação Oficial do Zend Framework
+                              </span>
+                            </a>
+                                            </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://phpsp.org.br/feed.xml" target="_blank">
+                        <img src="/assets/images/thirdparty/rss.png"
+                             title="RSS" alt="RSS">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://github.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/GitHub-Mark-120px-plus.png"
+                             title="GitHub" alt="GitHub">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://twitter.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                             title="Twitter" alt="Twitter">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                             title="Slack" alt="Slack">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/" target="_blank">
+                        <img src="/assets/images/thirdparty/In-2C-128px-TM.png"
+                             title="LinkedIn" alt="LinkedIn">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://facebook.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/flogo_RGB_HEX-144.png"
+                             title="Facebook" alt="Facebook">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://t.me/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/telegram.png"
+                             title="Telegram" alt="Telegram">
+                    </a>
+                            </div>
+        </div>
+    </div>
+</nav>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">PHPSP </a></li>
+
+                    <li><a href="/artigos">Artigos</a></li>
+        
+        <li class="is-active"><a href="#" aria-current="page">(React PHP) Conceitos básicos - EventLoop</a></li>
+    </ul>
+</nav>            <section class="section">
+        <div class="content">
+            <h1 class="title is-1">(React PHP) Conceitos básicos - EventLoop</h1>
+            <p>
+                <small>
+                    por Níckolas Silva
+                    em 10/10/2018
+                </small>
+            </p>
+
+            <p>Este artigo é o primeiro de uma sequência que pretendo publicar aqui. Neste entenderemos o que é <a href="http://reactphp.org/" rel="nofollow">React PHP</a> e o que nos possibilita.
+Outra nota importante é: esta não é uma série introdutória. O foco está em entender como React funciona, deixando de lado introduções didáticas focadas em desenvolver uma aplicação de exemplo.  </p>
+<h3>Visão Geral</h3>
+<p>A palavra chave em React é <em>assíncrono</em>. Esta é a maior ideia por trás da coleção de bibliotecas que vemos consigo.
+PHP, por natureza, é dito &quot;bloqueante&quot;. Isto significa que cada procedimento só virá a ser executado após o anterior. Ilustrado na imagem (obrigado @gabrielcouto) e código: </p>
+<p><a href="http://dev.r3c.com.br/palestra-async-html/#/9" rel="nofollow"><img src="/assets/images/posts/React-PHP-Conceitos-básicos-–-EventLoop/blocking-io.png" alt="blocking-io" /></a></p>
+<pre><code class="language-php">echo 'Obtendo o arquivo...';
+// Executa somente após a linha 3
+$conteudo = file_get_contents('umArquivoPesado.txt');
+// Executa somente após a linha 5, e assim por diante...
+if ($conteudo) {
+    echo 'Arquivo obtido com sucesso! :)';
+}</code></pre>
+<p>Estamos de fato acostumados com este cenário. Porém isto passa a ser problemático quando <em>umArquivoPesado.txt</em> leva alguns segundos para ser carregado à memória.</p>
+<p>Esta mesma ideia se aplica às requisições a serviços dentro do código PHP, carregamento de configurações (XML, JSON, YAML...), acesso ao banco de dados e por aí vai. O ponto é: PHP bloqueia a cada comando executado e os comandos que fazem entrada/saída (acesso a disco, acesso a rede...) de dados tendem a ser mais demorados que comandos internos de processamento (um echo, um if, um cálculo...).</p>
+<p>React PHP vem com o intuito, justamente, de permitir que executemos pedaços de lógica em paralelo. Nada que não pudesse ser feito com PHP antes, mas React traz uma interface orientada a objetos muito bem organizada e que nos facilita esta utilização.  </p>
+<h3>EventLoop</h3>
+<p>Para tornar isto possível, React centraliza sua execução em um &quot;EventLoop&quot;, que nos permitirá alcançar a ilustração seguinte: </p>
+<p><a href="http://dev.r3c.com.br/palestra-async-html/#/21" rel="nofollow"><img src="/assets/images/posts/React-PHP-Conceitos-básicos-–-EventLoop/non-blocking-io.png" alt="non-blocking-io" /></a></p>
+<p>EventLoop nada mais é que um laço infinito (infinito até que seja interrompido ou que não possua mais processos a executar) de repetição que organiza e elege blocos de código (como são as funções) para execução. Em sua estrutura ele:</p>
+<ul>
+<li>Gerencia processos a executar (funções, callbacks...)</li>
+<li>Identifica atualizações sobre processos em paralelo</li>
+<li>Executa processos referentes aos processos em paralelo</li>
+</ul>
+<p>Com este modelo é possível executar procedimentos de entrada/saída (comumente demorados) em paralelo com a execução de tarefas de CPU. Abaixo exemplifico como o EventLoop gerencia os processos a serem executados:</p>
+<pre><code class="language-php">$loop = React\EventLoop\Factory::create();
+
+$numeros = range(0, 2);
+$letras = range('A', 'C');
+
+$callback01 = function () use (&amp;$numeros) {
+ echo current($numeros).' ';
+ next($numeros);
+};
+
+$callback02 = function () use (&amp;$letras) {
+ echo current($letras).' ';
+ next($letras);
+};
+
+$controle = function () use (&amp;$numeros, &amp;$letras, $loop) {
+ // Se lemos o ultimo número e a ultima letra, pare
+ if (!current($numeros) &amp;&amp; !current($letras)) {
+   $loop-&gt;stop();
+ }
+};
+
+$loop-&gt;addPeriodicTimer(1, $callback01);
+$loop-&gt;addPeriodicTimer(1, $callback02);
+$loop-&gt;addPeriodicTimer(1, $controle);
+
+// Inicia e executa o EventLoop
+$loop-&gt;run();
+
+// Saída esperada: 0 A B 1 C 2</code></pre>
+<p>Acima o EventLoop deverá ter executado, a cada um segundo, os processos <em>$callback01</em>, <em>$callback02</em> e <em>$controle</em>, sendo que este último identifica que o programa encerrou as leituras necessárias e solicita o fim da execução.
+É importante ressaltar que <em>$callback01</em>, <em>$callback02</em> e _$controle _não executaram em paralelo, mas o tempo de processamento destes é tão ínfimo que podemos ter esta impressão. Experimente mudar o tempo, em segundos, dos timers (linhas 23 a 25) para visualizar melhor como o EventLoop organiza e elege os processos a serem executados.  </p>
+<h3>Timers</h3>
+<p>No exemplo de código anterior vimos como funciona o método <em>addPeriodicTimer()</em>, que se fizessemos um paralelo com o JavaScript seria equiparado ao <em>setInterval()</em>. Temos também o equivalente ao <em>setTimeout()</em>, que com o React se refere como <em>addTimer()</em> como segue:</p>
+<pre><code class="language-php">$start = microtime(true);
+
+$timeout = $loop-&gt;addTimer(3, function () use ($start) {
+    $intervalo = sprintf('%0.2f s', microtime(true) - $start);
+    echo "[{$intervalo}] Timeout veio\n";
+});
+
+$interval = $loop-&gt;addPeriodicTimer(2, function () use ($start) {
+    $intervalo = sprintf('%.2f s', microtime(true) - $start);
+    echo "[{$intervalo}] Interval veio\n";
+});
+
+$loop-&gt;addTimer(15, function () use ($loop, $interval, $start) {
+    if ($loop-&gt;isTimerActive($interval)) {
+        $interval-&gt;cancel(); // Alias para $loop-&gt;cancelTimer($interval)
+        $intervalo = sprintf('%.2f s', microtime(true) - $start);
+
+        echo "[{$intervalo}] Interval infinito cancelado.\n";
+    }
+});
+
+/*
+Saída esperada:
+[2.00 s] Interval veio
+[3.00 s] Timeout veio
+[4.00 s] Interval veio
+[6.00 s] Interval veio
+[8.00 s] Interval veio
+[10.00 s] Interval veio
+[12.00 s] Interval veio
+[14.00 s] Interval veio
+[15.00 s] Interval infinito cancelado.
+*/</code></pre>
+<p>Analisando o código acima, deverá ser impresso uma única vez a frase &quot;Timeout veio&quot; após 3 segundos do início da execução do programa. E deverá ser impressa infinitamente a frase &quot;Interval veio&quot; a cada 2 segundos.
+Após 15 segundos de execução do programa realizamos uma ordem de cancelamento para o intervalo infinito caso ele esteja ativo perante o EventLoop. O EventLoop, portanto, não possuirá mais itens na fila de execução e encerra o programa na próxima iteração.  </p>
+<h3>Streams</h3>
+<p>Até o momento não vimos nenhuma execução que de fato fosse paralela, apenas trabalhamos com filas de execução muito bem organizadas e temporizadas.
+O EventLoop traz consigo uma abstração para lidar com <a href="http://php.net/manual/en/intro.stream.php" rel="nofollow">Streams</a> que, em php, podem ser trabalhados utilizando <a href="http://php.net/manual/en/class.streamwrapper.php" rel="nofollow">wrappers</a> e/ou <a href="http://php.net/manual/en/ref.stream.php" rel="nofollow">funções</a> e nenhum dos dois modelos é muito intuitivo.
+Precisamos sempre ter em mente que streams são encaixados em dois grupos: readable (de onde lemos dados) e writable (por onde escrevemos dados). Alguns tipos de streams se encaixam, inclusive, nos dois grupos.
+O EventLoop tratará Streams utilizando os métodos <em>addReadStream()</em> e <em>addWriteStream()</em>. Abaixo um exemplo de seu funcionamento:</p>
+<pre><code class="language-php">// Iniciando um server em localhost, porta 7171
+$serverSock = stream_socket_server('tcp://127.0.0.1:7171');
+
+// Aqui dizemos que ele não bloqueia execução
+stream_set_blocking($serverSock, 0);
+
+// Lista contendo todos os clientes conectados
+$clients = array();
+
+// Adicionamos um "leitor" que chamará o callback sempre que
+// $serverSock estiver pronto para leitura (quando alguém se conectar, neste caso)
+$loop-&gt;addReadStream($serverSock, function ($serverSock, $loop) use (&amp;$clients) {
+    $clientSock = stream_socket_accept($serverSock);
+    stream_set_blocking($clientSock, 0);
+
+    // Vamos identificar nossas conexões para entender melhor...
+    $username = false;
+
+    // Emite uma mensagem ao $clientSock que acabou de se conectar
+    fwrite($clientSock, "Diga-nos seu nome: ");
+
+    // Criamos também um buffer de leitura para o $clientSock
+    // Este executa a cada mensagem enviada pelo $clientSock
+    $loop-&gt;addReadStream($clientSock, function ($clientSock, $loop) use (&amp;$username, &amp;$clients) {
+
+        // $username == false -&gt; Ainda não autenticou-se
+        if (!$username &amp;&amp; $username = fgets($clientSock)) {
+            $username = trim($username);
+            fwrite($clientSock, "Bem-vindo, {$username}. Você está no chat maroto!\n\n");
+
+            // Adiciona à lista de clients conhecidos
+            $clients[] = $clientSock;
+        }
+
+        // Se já se identificou e enviou alguma mensagem, repasse
+        if ($username &amp;&amp; $text = fgets($clientSock)) {
+
+            // Busco TODOS os clients conhecidos, e redistribuo
+            // a mensagem $text para todos que não o remetente
+            foreach ($clients as $client) {
+                if ($client !== $clientSock) {
+                    fwrite($client, "[{$username}] {$text}");
+                }
+            }
+        }
+    });
+});</code></pre>
+<p>Esta aplicação pode ser testada, por exemplo, utilizando o programa &quot;telnet&quot;.
+<a href="/assets/images/posts/React-PHP-Conceitos-básicos-–-EventLoop/example.png"><img src="/assets/images/posts/React-PHP-Conceitos-básicos-–-EventLoop/example.png" alt="example" /></a></p>
+<p>Todo callback passado para <em>addReadStream()</em> será sempre executado quando aquele stream estiver pronto para leitura, e isto varia de acordo com o stream que estiver trabalhando: pode ser uma nova conexão recebida, ou uma mensagem recebida.
+De forma análoga, <em>addWriteStream()</em> executará os callbacks assim que o stream estiver preparado para escrita.  </p>
+<h3>Ticks</h3>
+<p>Por fim, talvez o mais importante, precisamos apresentar os Ticks dentro do EventLoop.
+Como dito anteriormente, o mecanismo do EventLoop não passa de um loop infinito. Literalmente, veja este trecho retirado de <a href="https://github.com/reactphp/event-loop/blob/master/src/StreamSelectLoop.php" rel="nofollow">React\EventLoop\StreamSelectLoop</a>:</p>
+<pre><code class="language-php">public function run()
+{
+    $this-&gt;running = true;
+
+    while ($this-&gt;running) {
+        // Lógica de organização de processos     
+    }
+}</code></pre>
+<p>Cada vez que entramos neste laço (linha 05) o EventLoop dispara filas de execução eleitas para aquela iteração (tick). Na implementação StreamSelectLoop, um tick inicia a execução (nesta ordem):</p>
+<ul>
+<li>Da fila <em>nextTickQueue</em></li>
+<li>Da fila <em>futureTickQueue</em></li>
+<li>Dos timers registrados (<em>addTimer()</em> e <em>addPeriodicTimer()</em>)</li>
+<li>Dos callbacks registrados para streams (<em>addReadStream()</em> e <em>addWriteStream()</em>)</li>
+</ul>
+<p>Podemos manipular as filas <em>nextTickQueue</em> e <em>futureTickQueue</em> através dos métodos <em>nextTick()</em> e <em>futureTick()</em>, respectivamente. Eles recebem funções (callable) como parâmetro:</p>
+<pre><code class="language-php">$loop-&gt;nextTick(function() {
+    echo "Next tick :D\n";
+});
+
+$loop-&gt;futureTick(function() {
+    echo "Future tick :D\n";
+});
+
+/* Saída esperada:
+Next tick :D
+Future tick :D
+*/</code></pre>
+<p>Eles realmente parecem fazer a mesma coisa, mas existe uma sutil difereça entre os dois:</p>
+<ul>
+<li>Next ticks executarão enquanto existirem callbacks em sua fila de execução</li>
+<li>Future ticks executarão somente os callbacks existentes na fila no momento em que foram inicializados</li>
+</ul>
+<p>O exemplo abaixo ilustra melhor esta diferença:</p>
+<pre><code class="language-php">function futureTick() {
+    echo "Future tick\n";
+    global $loop;
+
+    $loop-&gt;futureTick('futureTick');
+    $loop-&gt;stop();
+}
+
+$loop-&gt;futureTick('futureTick');
+
+// Saída esperada: Future tick&lt;/pre&gt;
+
+Este future tick envia a mesma função para a fila de future ticks assim que executa, depois solicita o fim do EventLoop. A função _futureTick()_, porém, executará uma unica vez, pois quando a fila de future ticks iniciou a execução, existia somente uma ocorrência para executar. Veja a diferença com os next ticks:
+
+&lt;pre class="lang:php decode:true"&gt;function nextTick() {
+    echo "Next tick\n";
+    global $loop;
+
+    $loop-&gt;nextTick('nextTick');
+    $loop-&gt;stop();
+}
+
+$loop-&gt;nextTick('nextTick');</code></pre>
+<p>Este programa entrará num loop infinito, pois ao fim de <em>nextTick()</em> esta função é enviada novamente para a fila de next ticks e esta fila executa enquanto existirem callbacks, independentemente do momento em que foram adicionados.  </p>
+<h3>Implementações de EventLoop</h3>
+<p>Se você notar, no início deste texto, instanciamos o EventLoop utilizando a <a href="https://github.com/reactphp/event-loop/blob/master/src/Factory.php" rel="nofollow">React\EventLoop\Factory</a>. Isto porque, atualmente, existem quatro implementações diferentes do EventLoop (todas devem respeitar a interface <a href="https://github.com/reactphp/event-loop/blob/master/src/LoopInterface.php" rel="nofollow">React\EventLoop\LoopInterface</a>) e a Factory irá instanciar o primeiro disponível. São as implementações:</p>
+<ul>
+<li>ExtEventLoop (Utiliza a extensão <a href="http://php.net/manual/en/book.event.php" rel="nofollow">Event</a>)</li>
+<li>LibEvLoop (Utiliza a extensão <a href="https://github.com/m4rw3r/php-libev" rel="nofollow">Libev</a>)</li>
+<li>LibEventLoop (Utiliza a extensão <a href="http://php.net/manual/en/book.libevent.php" rel="nofollow">LibEvent</a>)</li>
+<li>StreamSelectLoop (Não utiliza extensões)</li>
+</ul>
+<p>Destas, somente StreamSelectLoop funciona somente com PHP pois faz uso de _<a href="http://php.net/stream_select" rel="nofollow">stream_select()</a>_. O restante das implementações somente serão instanciadas quando a devida extensão existir.
+Em questão de performance, StreamSelect é a implementação menos perfeita. As outras implementações delegam a gerência de entrada/saída às extensões. A medição de performance, porém, dependerá do seu cenário de uso e, algumas vezes, pode ser mais interessante instanciar o EventLoop manualmente em vez de depender da Factory para escolher o melhor para você.  </p>
+<h3>Conclusão</h3>
+<p>Vimos aqui as funcionalidades básicas do EventLoop, como ele se comporta e como está desacoplado do restante das bibliotecas React.
+Através destas explicações você já será capaz de criar bibliotecas que interajam com o React, assim como desenvolver novas implementações de EventLoops, modificar existentes ou mesmo contribuir com melhorias neste pacote do projeto.</p>
+<hr />
+<p>Artigo originalmente criado em 31/12/2015.</p>        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            
+            <h4 class="title is-4">Mais posts deste Autor</h4>
+    <div class="tile is-ancestor">
+                    <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/phpeste-2022">PHPeste 2022 em Natal, Rio Grande do Norte</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 20/06/2022</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/voce-achou-que-sabia-sobre-generators-php">Você achou que sabia sobre Generators no PHP</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 11/12/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/como-php-funciona-na-verdade">Como o PHP funciona na verdade</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 19/11/2019</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                            <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/tdd-com-php-na-vida-real">TDD na vida real com PHP</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 03/11/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/ola-php-eu-sou-um-engenheiro">Olá, PHP. Eu sou um Engenheiro.</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 29/10/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/3-projetos-para-iniciar-no-hacktoberfest-2019">3 Projetos para Iniciar no Hacktoberfest 2019</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 09/10/2019</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                    </div>
+        </div>
+    </section>
+        <div class="container has-text-centered">
+    <div class="notification">
+        Acha que esse conteúdo possui erros ou poderia ser aperfeiçoado?
+        <a href="https://github.com/phpsp/phpsp.org.br/blob/master/source/_posts/React-PHP-Conceitos-básicos-–-EventLoop.md" title="Ajuste esse conteúdo!" target="_blank">Colabore!</a>
+    </div>
+</div>    </div>
+</section>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <div class="level is-small">
+            <div class="level-item">
+                <a href="https://php.net" target="_blank">
+                    <figure class="image is-128x128">
+                        <img src="/assets/images/sponsors/php.png" title="PHP.net">
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="level is-small">
+            <div class="level-item">
+            <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/azure.png" title="Microsoft Azure"
+                         alt="Microsoft Azure">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://imasters.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/imasters.png" title="iMasters"
+                         alt="iMasters">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://paypal.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/paypal.png" title="PayPal"
+                         alt="PayPal">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://www.locaweb.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/locaweb.png" title="LocaWeb"
+                         alt="LocaWeb">
+                </figure>
+            </a>
+        </div>
+    </div>
+<div class="level is-small">
+            <div class="level-item">
+            <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/phpstorm.png" title="PHPStorm"
+                         alt="PHPStorm">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://contaazul.com/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/contaazul.png" title="ContaAzul"
+                         alt="ContaAzul">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://devnaestrada.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/devnaestrada.png" title="Dev Na Estrada"
+                         alt="Dev Na Estrada">
+                </figure>
+            </a>
+        </div>
+    </div>
+
+        <hr>
+        <p>O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://github.com/phpsp/phpsp.org.br/graphs/contributors" target="_blank" title="Colaboradores do Site PHPSP.org">Comunidade PHPSP</a>.</p>
+        <p>O código deste site esta sob a licença <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="Licença MIT">MIT</a> e pode ser encontrado <a href="https://github.com/phpsp/phpsp.org.br/" target="_blank" title="Código Fonte do Site PHPSP.org.br">aqui</a>.</p>
+        <p>O conteúdo deste site esta sob a licença <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licença CC BY NC SA 4.0">CC BY NC SA 4.0</a>.</p>
+    </div>
+</footer>
+</html>

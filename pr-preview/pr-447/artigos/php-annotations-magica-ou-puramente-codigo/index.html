@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="https://phpsp.org.br/artigos/php-annotations-magica-ou-puramente-codigo" />
+    <title>PHPSP | PHP Annotations - Mágica ou puramente código?</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7974451-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-7974451-1');
+    </script>
+
+    <link rel="shortcut icon" href="/assets/images/phpsp/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=b46970f13028c511b4b2">
+    <script defer src="/assets/build/js/main.js?id=09bbc832a3d0ac409ec2"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
+            </a>
+
+                            <a class="navbar-item is-hidden-desktop" href="https://phpsp.org.br/feed.xml" target="_blank">
+                    <img src="/assets/images/thirdparty/rss.png"
+                         title="RSS" alt="RSS">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                         title="Twitter" alt="Twitter">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                         title="Slack" alt="Slack">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://t.me/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/telegram.png"
+                         title="Telegram" alt="Telegram">
+                </a>
+            
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuComunidade" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">A Comunidade</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item " href="/a-comunidade">
+                          <span>
+                            <strong>A Comunidade PHPSP</strong>
+                            <br>
+                            O que é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <a class="navbar-item " href="/quem-e-a-comunidade">
+                          <span>
+                            <strong>Quem é a Comunidade PHPSP</strong>
+                            <br>
+                            Quem é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta">
+                          <span>
+                            <strong>Código de Conduta</strong>
+                            <br>
+                            Codigo de conduta para a comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="/artigos">
+                    <span>Artigos</span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Eventos</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                                                <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP São Paulo</strong>
+                            <br>
+                            Eventos na cidade de SP
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-campinas/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Campinas</strong>
+                            <br>
+                            Eventos na cidade de Campinas
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-santos/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na cidade de Santos
+                          </span>
+                        </a>
+                        
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
+                          <span>
+                            <strong>Código de Conduta para Eventos</strong>
+                            <br>
+                            Codigo de conduta para a eventos da comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/php-the-right-way" target="_blank">
+                              <span>
+                                <strong>PHP The Right Way - BR</strong>
+                                <br>
+                                Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/quero-palestrar" target="_blank">
+                              <span>
+                                <strong>Quero Palestrar</strong>
+                                <br>
+                                Repositório de palestrantes e propostas de palestras para eventos de tecnologia
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/zf2-documentation-br" target="_blank">
+                              <span>
+                                <strong>ZF2 docs - BR</strong>
+                                <br>
+                                Tradução da Documentação Oficial do Zend Framework
+                              </span>
+                            </a>
+                                            </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://phpsp.org.br/feed.xml" target="_blank">
+                        <img src="/assets/images/thirdparty/rss.png"
+                             title="RSS" alt="RSS">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://github.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/GitHub-Mark-120px-plus.png"
+                             title="GitHub" alt="GitHub">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://twitter.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                             title="Twitter" alt="Twitter">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                             title="Slack" alt="Slack">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/" target="_blank">
+                        <img src="/assets/images/thirdparty/In-2C-128px-TM.png"
+                             title="LinkedIn" alt="LinkedIn">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://facebook.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/flogo_RGB_HEX-144.png"
+                             title="Facebook" alt="Facebook">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://t.me/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/telegram.png"
+                             title="Telegram" alt="Telegram">
+                    </a>
+                            </div>
+        </div>
+    </div>
+</nav>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">PHPSP </a></li>
+
+                    <li><a href="/artigos">Artigos</a></li>
+        
+        <li class="is-active"><a href="#" aria-current="page">PHP Annotations - Mágica ou puramente código?</a></li>
+    </ul>
+</nav>            <section class="section">
+        <div class="content">
+            <h1 class="title is-1">PHP Annotations - Mágica ou puramente código?</h1>
+            <p>
+                <small>
+                    por Joel Medeiros
+                    em 03/03/2020
+                </small>
+            </p>
+
+            <p>Nós como desenvolvedores buscamos a melhor forma de escrever código, para isso, utilizamos ferramentas, bibliotecas e pacotes para auxiliar nesse processo, mas nem sempre buscamos entender o que acontece nas entranhas desses códigos terceiros.</p>
+<p>Com a facilidade de um <code>composer require</code>, <code>brew install</code> ou <code>npm install</code> para instalar frameworks e bibliotecas que estão prontos para uso, não precisamos nos preocupar em como uma funcionalidade está sendo abstraída ou quais implementações ela segue, com isso, esse artigo busca desmistificar e compreender uma funcionalidade que é totalmente abstraída por bibliotecas e frameworks mas criticada por parte da comunidade, as <em>Mágicas Annotations</em>.</p>
+<h3>Antes de tudo, afinal o que é uma annotation?</h3>
+<p>Uma definição que trago para computação é:</p>
+<blockquote>
+<p>&quot;Alguma coisa que descreve o aspecto de um sujeito através de metadados em tempo de execução. Ou seja, os efeitos de uma Annotation sobre uma classe, método ou objeto somente são apenas no tempo em que é execudado&quot; — Baseado em <a href="https://www.slideshare.net/rdohms/annotations-in-php-they-exist/" rel="nofollow">&quot;Annotations in PHP: They Exist&quot; - Rafael Dohms</a>  </p>
+</blockquote>
+<p>Annotations também são conhecidas como <code>Decorators</code> e <code>Attributes</code> por outras linguagens como Python, Javascript, C# e Rust, na presente data, o PHP chama isso de <code>Annotations</code>.<br />
+Dessa forma, diferente do que muitos pensam, podemos afirmar que annotations não são comentários e sim <strong>metadados</strong>.
+Leia até o final para entender por que Annotations são <strong>metadados</strong> e não comentários como muitos pensam.</p>
+<h3>Qual o uso para Annotations?</h3>
+<p>No início, o XML era muito utilizado pelas linguagens de programação para mapeamento de metadados e comunicação entre máquinas na web, e em algum momento, desenvolvedores buscaram algum jeito fácil de ler metadados no código, e não apenas ter atributos de configurações, mas também transformar arquivos com metadados em objetos e parâmetros.  Com isso, no início do século, começaram a aparecer em diversas linguagens com essa funcionalidade, como por exemplo: </p>
+<ul>
+<li>Java que teve sua primeira <a href="https://jcp.org/en/jsr/detail?id=175" rel="nofollow">Request For Comments (RFC) a JSR-175</a> datada de 2002 com discussão <code>A Metadata Facility for the Java Programming Language</code> e posteriormente aprovada e implementada em 2004;</li>
+<li>Python em 2003 teve início da discussão de <code>Decorators for functions</code> com a <a href="https://www.python.org/dev/peps/pep-0318/" rel="nofollow">PEP 318</a> e aprovada e implementada em 2004; </li>
+<li>Rust teve atributos modelados como atributos em 2012 seguindo a <a href="https://www.ecma-international.org/publications/standards/Ecma-335.htm" rel="nofollow">ECMA-335</a>;</li>
+<li>C# com o .NET core 1.1 adicionou a interface para atributos em 2016; </li>
+</ul>
+<p>Hoje é utilizado para algumas coisas:</p>
+<ol>
+<li>Configuração</li>
+<li>Documentação de código  </li>
+<li>Alterar o comportamento de um objeto em tempo de execução.  </li>
+</ol>
+<h3>Como funciona?</h3>
+<p>Para que uma linguagem de programação possa utilizar dos recursos de uma annotation é necessário que ela tenha uma <strong>engine</strong> rodando &quot;por debaixo dos panos&quot; interpretando linguagem natural em instruções computacionais. Por exemplo a linguagem Java possui o JAPE (Java Annotation Patterns Engine) que é baseado em expressões regulares, que consiste em um conjunto de fases, cada uma das quais consiste em um conjunto de padrões e ações para &quot;traduzir&quot; linguagem natural em instruções da linguagem, como por exemplo definir um método com depreciado, sobrescrever uma classe, suprimir alertas e etc.</p>
+<p>Já o PHP não tem uma engine nativa para leitura de annotations :(</p>
+<p>Dentro do PHP Internals já houveram diversas discussões sobre incluir uma engine nativa para traduzir annotations, mas a comunidade acredita não ser necessária, houve inclusive em <a href="https://wiki.php.net/rfc/annotations" rel="nofollow">2010 uma proposta de RFC</a> declinada que tratava exatamente deste tema.</p>
+<p><strong>Então o PHP não tem annotations.</strong></p>
+<p><strong>Fim do artigo.</strong></p>
+<p>Pegadinha do malandro iê-ié!</p>
+<p>Engana-se quem pensou que o PHP não possui uma forma manipular metadata, pelo fato de não ter uma engine nativa, essa &quot;mágica&quot; é feita por meio de Reflections e parsers para conseguir extrair os metadados.</p>
+<h3>O que é uma Reflection?</h3>
+<blockquote>
+<p>&quot;É o processo na qual um programa de computador pode observar e modificar sua própria estrutura e comportamento em tempo de execução&quot;. — <a href="https://en.wikipedia.org/wiki/Reflection_(computer_programming)" rel="nofollow">Wikipedia</a>  </p>
+</blockquote>
+<p>Muitas linguagens que tem a funcionalidade de Reflection em seu core, possuem as três principais formas de seu uso, são elas instrospeção de tipo, invocação dinâmica e visualização de metadata, essa última é um tópico importante para entender como annotations funcionam dentro do PHP. Muita informação né? Vou simplificar para ficar mais claro:</p>
+<h4>Introspecção de tipo</h4>
+<p>É a habilidade de um programa examinar a si mesmo, por exemplo, quando você precisa validar o tipo de um objeto ou variável estaticamente.</p>
+<pre><code class="language-php">public function test($a): void {
+    if ($a instanceof MyClass) {
+        // do something
+    } 
+}</code></pre>
+<pre><code class="language-java">public void test(Object a) {
+    if (a instanceof MyClass) {
+        // do something
+    }
+}</code></pre>
+<pre><code class="language-csharp">public void test(Object a) {
+    if (a is MyClass)
+    {
+        // do something
+    }
+}
+</code></pre>
+<h4>Invocação dinâmica</h4>
+<p>O processo de acessar dinamicamente propriedades, métodos ou a classe de um objeto modificando o seu comportamento em tempo de execução:</p>
+<pre><code class="language-java">public class MyClass {
+    private String a = "Some value";
+}
+
+Class&lt;?&gt; myClass = MyClass.class;
+Object reflectionClass = myClass.newInstance();
+
+Field reflectionProperty = reflectionClass.getClass().
+            getDeclaredField("a");
+
+reflectionProperty.setAccessible(true);
+reflectionProperty.set(MyClass, "My modified parameter")
+
+System.out.println((String) reflectionProperty.get(reflectionClass));
+// My modified parameter</code></pre>
+<pre><code class="language-php">class MyClass {
+    private $a = 'Some value';
+
+    /**
+     * @return string
+     */
+    public function getA(): string {
+        return $this-&gt;a;
+    }
+}
+
+$myClass = new MyClass();
+$reflectionProperty = new ReflectionProperty(MyClass::class, 'a');
+
+/* It changes MyClass behavior in runtime */
+$reflectionProperty-&gt;setAccessible(true);
+$reflectionProperty-&gt;setValue(
+    $myClass, 
+    'My modified parameter'
+);
+
+var_dump($myClass-&gt;getA()); 
+// string(21) "My modified parameter"</code></pre>
+<h4>Visualização de metadata</h4>
+<p>É a capacidade de ler metadados de qualquer tipo de documento, como classes, tipos de parâmetros, atributos, métodos e seus parametros. Para PHP essa é a coisa mais importante que você precisa saber quando falamos sobre annotations, isso é usado para a leitura de metadados em <code>docblocks</code>:</p>
+<pre><code class="language-php">/** 
+* A test class
+*
+* @param  foo bar
+* @return baz
+*/
+class TestClass{}
+
+$reflectionClass = new ReflectionClass('TestClass');
+var_dump($reflectionClass-&gt;getDocComment());</code></pre>
+<p>O exemplo acima irá imprimir: </p>
+<pre><code>string(55) "/** 
+* A test class
+*
+* @param  foo bar
+* @return baz
+*/"</code></pre>
+<h3>Como Annotations funcionam no PHP?</h3>
+<p>Agora que você conhece os três principais tipos de Reflections (E espero que você tenha lido todos eles rs), no PHP , <strong>visualização de metadata</strong> é usado para reproduzir a funcionalidade de Annotations, através da aplicação de parsers baseados em expressões regulares, para transformar linguagem natural em linguagem computacional, ou seja, transforma metadados em variáveis, propriedades e classes por exemplo. Vejamos um simples exemplo da aplicação de expressões regulares para extrair metadata com PHP:</p>
+<pre><code class="language-php">/** 
+* A test class
+*
+* @param  foo bar
+* @return baz
+*/
+class TestClass{}
+
+$reflectionClass = new ReflectionClass('TestClass');
+$reflectionClassDocBlock = $reflectionClass-&gt;getDocComment();
+
+preg_match_all(
+    "#(@[a-zA-Z]+\s*[a-zA-Z0-9, ()_].*)#",
+    $reflectionClassDocBlock,
+    $matches,
+    PREG_PATTERN_ORDER
+);
+
+var_dump($matches);</code></pre>
+<p>O exemplo acima irá imprimir:</p>
+<pre><code>array(2) {
+  [0]=&gt;
+  array(2) {
+    [0]=&gt;
+    string(15) "@param foo bar
+"
+    [1]=&gt;
+    string(12) "@return baz
+"
+  }
+  [1]=&gt;
+  array(2) {
+    [0]=&gt;
+    string(15) "@param foo bar
+"
+    [1]=&gt;
+    string(12) "@return baz
+"
+  }
+}</code></pre>
+<blockquote>
+<p><strong>NOTE</strong>: Cada index do array <code>$match</code> tem uma parte de uma annotation e cada um é chamado de <code>token</code>, que pode representar a chamada de um método, configuração ou documentação. Esse processo de extrair informações de metadados e normalizá-los é chamado de <strong>tokenização</strong>.</p>
+</blockquote>
+<p>Você pode estar pensando, &quot;Mas que trabalhão para usar annotations!&quot;, não se preocupe, PHP tem uma ótima comunidade que já criou diversas bibliotecas para fazer esse trabalho para nós, eis algumas:</p>
+<p><a href="https://github.com/doctrine/annotations" rel="nofollow">Doctrine Annotations</a></p>
+<p><a href="https://github.com/phpDocumentor/phpDocumentor" rel="nofollow">PHP Documentor</a></p>
+<p><a href="https://github.com/php-annotations" rel="nofollow">PHP Annotations</a></p>
+<h3>Então são apenas comentários?</h3>
+<p>Analisando o core do PHP vemos duas diferenças em comentários, quando escrevemos comentários em uma única linha é interpretado como <code>T_COMMENT</code>, este é ignorado pela engine de cache do PHP, o <code>opcache</code>.</p>
+<p><code>T_COMMENT:</code></p>
+<pre><code class="language-php">// It is a comment
+/* It is a comment */
+# It is a comment
+/*
+ * It still is a comment
+ */</code></pre>
+<p>E quando temos um comentário multinível, é interpretado como <code>T_DOC_COMMENT</code>, este é lido e armazenado no cache do sistema, logo, pode ser lido em tempo de execução através do método <code>ReflectionClass::getDocComment()</code>.</p>
+<p><code>T_DOC_COMMENT:</code></p>
+<pre><code class="language-php">/**
+ * It is a doc comment
+ */</code></pre>
+<h3>Quem usa annotations?</h3>
+<p><a href="https://github.com/sebastianbergmann/phpunit" rel="nofollow">PHPUnit</a></p>
+<pre><code class="language-php">use PHPUnit\Framework\TestCase;
+
+/**
+ * @backupGlobals disabled
+ */
+class MyTest extends TestCase
+{
+    /**
+     * @backupGlobals enabled
+     */
+    public function testThatInteractsWithGlobalVariables()
+    {
+        // ...
+    }
+}</code></pre>
+<p><a href="https://github.com/doctrine/" rel="nofollow">Doctrine</a></p>
+<pre><code class="language-php">/** @Entity */
+class Message
+{
+    /** @Column(type="integer") */
+    private $id;
+    /** @Column(length=140) */
+    private $text;
+    /** @Column(type="datetime", name="posted_at") */
+    private $postedAt;
+}</code></pre>
+<p><a href="https://github.com/symfony" rel="nofollow">Symfony</a></p>
+<pre><code class="language-php">// src/Controller/BlogController.php
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+
+class BlogController extends AbstractController
+{
+    /**
+     * @Route("/blog", name="blog_list")
+     */
+    public function list()
+    {
+        // ...
+    }
+}</code></pre>
+<p>Bom agora que você entende o que são annotations, como elas funcionam e quem as usa, eis que surge a pergunta: </p>
+<h3>Por que usar annotations?</h3>
+<p>Prós</p>
+<ul>
+<li>
+<p>Não afeta a semântica do software, ou seja, você pode injetar comportamentos em um objeto sem ter que extender, implementar ou instanciar um novo objeto.</p>
+</li>
+<li>
+<p>É performático pois usa o cache do sistema, como vimos anteriormente, tudo é armazenado em cache e lido em tempo de execução, logo, temos um ganho considerável de performance em relação a leitura de arquivos em disco por exemplo.</p>
+</li>
+<li>
+<p>É fácil de ler o código, pois sem querer (ou querendo) você cria uma documentação do seu código dentro dos docblocks, além de poder utilizar ferramentas que leem docblocks para gerar páginas de documentação como <a href="https://github.com/phpDocumentor/phpDocumentor" rel="nofollow">PHPDocumentor</a>.</p>
+</li>
+<li>
+<p>Ajuda em processos de refatoração de código segregando informações estáticas e ajuda a atingir algumas práticas de clean code.</p>
+</li>
+</ul>
+<p>Contras</p>
+<ul>
+<li>
+<p>Por não afetar a semântica e poder injetar comportamentos em um objeto é mais difícil de debug e testes, devido ao fato de que se testa o objeto que usa as annotations e não é possível testar as annotations, portanto, tenha atenção de quais comportamentos você está inserindo em seus objetos para que no futuro isso não cause problemas de manutenabilidade.</p>
+</li>
+<li>
+<p>A alteração de &quot;comentários&quot; não deveria alterar o funcionamento de um software, com um olhar desapercebido ou inexperiente é possível confundir comentários com annotations e causar problemas ao software.</p>
+<blockquote>
+<p>Pensando nisso, <a href="https://wiki.php.net/rfc/attributes_v2" rel="nofollow">na mais recente RFC relacionada a Annotations (2020)</a>, a mesma funcionalidade é chamada de <strong>attribute</strong> por Benjamin Eberlei, onde propõe a utilização da formatação <code>&lt;&lt;...&gt;&gt;</code> ao invés da tradicional <code>/**...*/</code>, que segundo ele, reduz a confusão de comentários em código para iniciantes.</p>
+</blockquote>
+</li>
+</ul>
+<h3>Como usar annotations?</h3>
+<p>O PHP oferece apenas uma forma de consumo de metadata, o <code>doc-comments</code> como explicado anteriormente, mas há uma vasta quantidade de bibliotecas que são utilizadas para fazer o parser desses metadados e serem utilizados como por exemplo para representar mapeamento de objetos relacionados (ORM). </p>
+<p>Trago um exemplo simples utilizando a biblioteca <a href="https://github.com/doctrine/annotations" rel="nofollow">doctrine annotations</a>, para entender como aplicar ao nosso dia-a-dia. O objetivo desse exemplo é, extrair informações de annotations de uma classe.</p>
+<h3>Criando sua própria Annotation</h3>
+<p>Primeiro passo precisamos instalar a biblioteca <a href="https://github.com/doctrine/annotations" rel="nofollow">doctrine annotations</a> em nosso projeto, sugiro a utilização de <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">composer</a> para isso:</p>
+<pre><code>composer require doctrine/annotations</code></pre>
+<p>Após instalada, criaremos uma classe o qual será a annotation:</p>
+<pre><code class="language-php">namespace App\Annotation;
+
+/**
+ * Class Template
+ * @package App\Annotation
+ * @Annotation
+ */
+class Template
+{
+    public $label;
+    public $tag;
+
+    public function __construct(array $values)
+    {
+        $this-&gt;label = $values['label'];
+        $this-&gt;tag = $values['tag'];
+    }
+
+    public function getLabel()
+    {
+        return $this-&gt;label;
+    }
+
+    public function getTag()
+    {
+        return $this-&gt;tag;
+    }
+}</code></pre>
+<p>Na classe Template é definido que é uma annotation através do docblock <code>@Annotation</code>, esse doc-block é o que diz para a biblioteca qual classe deve ser usada como annotation, em seguida definimos que essa annotation recebe dois parametros <code>label</code> e <code>tag</code>.  </p>
+<p>Após definir a annotation é necessário criar outra classe que utilize essa annotation:</p>
+<pre><code class="language-php">namespace App\Template;
+
+use App\Annotation\Template as TemplateAnnotation;
+
+class AnimalTextTemplate
+{
+    /**
+     * @TemplateAnnotation(label="Characteristic 1", tag="characteristic1")
+     * @return string
+     */
+    public function getCharacteristic1()
+    {
+        return 'brown';
+    }
+
+    /**
+     * @TemplateAnnotation(label="Characteristic 2", tag="characteristic2")
+     * @return string
+     */
+    public function getCharacteristic2()
+    {
+        return 'lazy';
+    }
+
+    /**
+     * @TemplateAnnotation(label="Animal 1", tag="animal1")
+     * @return string
+     */
+    public function getAnimal1()
+    {
+        return 'fox';
+    }
+
+    /**
+     * @TemplateAnnotation(label="Animal 2", tag="animal2")
+     * @return string
+     */
+    public function getAnimal2()
+    {
+        return 'dog';
+    }
+}
+</code></pre>
+<p>Note que os valores declarados dentro dos parentes <code>(label="Characteristic 1", tag="characteristic1")</code> são os mesmos parametros recebidos no construtor da annotation.</p>
+<pre><code class="language-php">// App/Annotation/Template.php
+
+public function __construct(array $values)
+{
+    $this-&gt;label = $values['label'];
+    $this-&gt;tag = $values['tag'];
+}</code></pre>
+<p>O último passo é extrair os metadados dos atributos da classe (propriedades e métodos), para isso é utilizada a <a href="https://www.php.net/manual/pt_BR/class.reflectionclass.php" rel="nofollow">ReflectionClass</a> que tem função de reportar as informações de uma classe, ou seja, trazer um relatório da classe em objeto, deixando acessível todos os metadados da classe.</p>
+<pre><code class="language-php">$reflectionClass = new \ReflectionClass(AnimalTextTemplate::class);</code></pre>
+<p>Para buscar os metadados de um método de uma classe, é utilizado o método <code>getMethods()</code>.</p>
+<pre><code class="language-php">$reflectionClass-&gt;getMethods();</code></pre>
+<p>Por fim, cada método pode possuir mais de uma annotation, a classe  <code>AnnotationReader</code> é utilziada para fazer a distinção de qual metadado(annotation) deve ser buscado.</p>
+<pre><code class="language-php">
+use Doctrine\Common\Annotations\AnnotationReader;
+
+$annotationReader = new AnnotationReader();
+$annotationReader-&gt;getMethodAnnotation($reflectionMethod, Template::class);</code></pre>
+<p>Juntando todas as partes temos o seguinte código:</p>
+<pre><code class="language-php">
+use Doctrine\Common\Annotations\AnnotationReader;
+
+$reflectionClass = new \ReflectionClass(AnimalTextTemplate::class);
+$annotationReader = new AnnotationReader();
+
+$metatags = [];
+
+foreach ($reflectionClass-&gt;getMethods(\ReflectionMethod::IS_PUBLIC) as $reflectionMethod) {
+    if ($methodAnnotation = $annotationReader-&gt;getMethodAnnotation($reflectionMethod, Template::class)) {
+        $metatags[] = [
+            'tag' =&gt; "&lt;%{$methodAnnotation-&gt;getTag()}%&gt;",
+            'label' =&gt; $methodAnnotation-&gt;getLabel()
+        ];
+    }
+}
+
+var_dump($metatags);</code></pre>
+<p>O resultado é:</p>
+<pre><code>array(4) {
+  [0]=&gt;
+  array(2) {
+    ["tag"]=&gt;
+    string(19) "&lt;%characteristic1%&gt;"
+    ["label"]=&gt;
+    string(16) "Characteristic 1"
+  }
+  [1]=&gt;
+  array(2) {
+    ["tag"]=&gt;
+    string(19) "&lt;%characteristic2%&gt;"
+    ["label"]=&gt;
+    string(16) "Characteristic 2"
+  }
+  [2]=&gt;
+  array(2) {
+    ["tag"]=&gt;
+    string(11) "&lt;%animal1%&gt;"
+    ["label"]=&gt;
+    string(8) "Animal 1"
+  }
+  [3]=&gt;
+  array(2) {
+    ["tag"]=&gt;
+    string(11) "&lt;%animal2%&gt;"
+    ["label"]=&gt;
+    string(8) "Animal 2"
+  }
+}</code></pre>
+<h4>Agora você deve estar pensando, para que raios eu irei utilizar esse pedaço de código?</h4>
+<p>Annotations como dito anteriormente, tem um vasto mundo de uso, em minha experiência, utilizei esse trecho de código para gerar campos dinâmicos em uma interface do usuário, e estes campos eram processados dinamicamente de acordo com a implementação do método o qual demarca a annotation, onde as annotations(<code>TemplateAnnotation</code>) eram os parametros dinâmicos e os valores o retorno dos métodos. Esse exemplo de uso será explicado a seguir.</p>
+<h4>Possibilidade de uso</h4>
+<p>Dada uma interface com um campo de texto livre, foi disponibilizado para o usuário diversos campos dinâmicos, esse é o retorno do método anterior, o qual representa em <code>label</code> o campo que é exibido para o usuário, e em <code>tag</code> o valor que será incluído no texto realmente. </p>
+<pre><code>array(4) {
+  [0]=&gt;
+  array(2) {
+    ["tag"]=&gt;
+    string(19) "&lt;%characteristic1%&gt;"
+    ["label"]=&gt;
+    string(16) "Characteristic 1"
+  }
+  [1]=&gt;
+  array(2) {
+    ["tag"]=&gt;
+    string(19) "&lt;%characteristic2%&gt;"
+    ["label"]=&gt;
+    string(16) "Characteristic 2"
+  }
+  [2]=&gt;
+  array(2) {
+    ["tag"]=&gt;
+    string(11) "&lt;%animal1%&gt;"
+    ["label"]=&gt;
+    string(8) "Animal 1"
+  }
+  [3]=&gt;
+  array(2) {
+    ["tag"]=&gt;
+    string(11) "&lt;%animal2%&gt;"
+    ["label"]=&gt;
+    string(8) "Animal 2"
+  }
+}</code></pre>
+<p>Com isso o usuário pode digitar livremente o texto que quiser e incluir metadados no texto para que seja gerada uma nova string dinamicamente.</p>
+<blockquote>
+<p>A frase que será utilizada será a famosa frase escondida no Microsoft Word 2007:
+<code>The quick brown fox jumps over the lazy dog</code></p>
+</blockquote>
+<p>O campo preenchido pelo usuário com os metadados foi o seguinte:</p>
+<p><code>The quick &lt;%characteristic1%&gt; &lt;%animal1%&gt; jumps over the &lt;%characteristic2%&gt; &lt;%animal2%&gt;</code></p>
+<p>Como definido anteriormente, na classe <code>AnimalTextTemplate</code>, é necessário implementar que sempre ao encontrar as tags <code>animal1</code>, <code>animal2</code>, <code>characteristic1</code> e <code>characteristic2</code> seja retornado respectivamente <code>fox</code>, <code>dog</code>, <code>brown</code> e <code>lazy</code>. </p>
+<p>Através de um parser de código, são definidas as regras de como ler as annotations de uma classe. A regra utilizada será a expressão regular <code>"@\&lt;\%(.*?)\%\&gt;@"</code>, ou seja, será capturado todo o conteúdo que estiver dentro de <code>&lt;%%&gt;</code>.</p>
+<pre><code class="language-php">/**
+ * @param string $input
+ * @return array
+ */
+protected function getMetatags(string $input): array
+{
+    if (preg_match_all("@\&lt;\%(.*?)\%\&gt;@", $input, $match)) {
+        return $match;
+    }
+
+    return [];
+}</code></pre>
+<p>O resultado do método anterior, recebendo o input do usuário será o seguinte: </p>
+<pre><code>array(2) {
+  [0]=&gt;
+  array(4) {
+    [0]=&gt;
+    string(19) "&lt;%characteristic1%&gt;"
+    [1]=&gt;
+    string(11) "&lt;%animal1%&gt;"
+    [2]=&gt;
+    string(19) "&lt;%characteristic2%&gt;"
+    [3]=&gt;
+    string(11) "&lt;%animal2%&gt;"
+  }
+  [1]=&gt;
+  array(4) {
+    [0]=&gt;
+    string(15) "characteristic1"
+    [1]=&gt;
+    string(7) "animal1"
+    [2]=&gt;
+    string(15) "characteristic2"
+    [3]=&gt;
+    string(7) "animal2"
+  }
+}</code></pre>
+<p>No primeiro índice temos todas as metatags capturadas, no segundo, as tags nominadas. Com isso, é possível acessar a classe o qual definiu essas tags para extrair os metadados:</p>
+<pre><code class="language-php">use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * @param array $metadataKeys
+ * @return ArrayCollection
+ * @throws \Exception
+ */
+protected function getMetadata(array $metadataKeys): ArrayCollection
+{
+    $metadata = new ArrayCollection();
+
+    foreach ($metadataKeys as $metadataKey) {
+        $method = "get" . lcfirst(str_replace('_', '', ucwords(strtolower($metadataKey), '_')));
+
+        if (!method_exists($this, $method)) {
+            throw new \Exception("Method {$method} not implemented in " . get_class($this) . " class");
+        }
+
+        $metadata-&gt;set($metadataKey, $this-&gt;$method());
+    }
+
+    return $metadata;
+}</code></pre>
+<p>O output desse trecho de código irá nos trazer um conjunto de dados associados pela tag e seu real valor:</p>
+<pre><code>object(Doctrine\Common\Collections\ArrayCollection)#2 (1) {
+  ["elements":"Doctrine\Common\Collections\ArrayCollection":private]=&gt;
+  array(4) {
+    ["characteristic1"]=&gt;
+    string(5) "brown"
+    ["animal1"]=&gt;
+    string(3) "fox"
+    ["characteristic2"]=&gt;
+    string(4) "lazy"
+    ["animal2"]=&gt;
+    string(3) "dog"
+  }
+}</code></pre>
+<p>Com esses dados, podemos fazer uma simples regra de substituição de parametros e aplicar na string do usuário:</p>
+<pre><code class="language-php">use Doctrine\Common\Collections\ArrayCollection;
+
+$metatags = $this-&gt;getMetatags($input);
+$findBy = $metatags[0];
+$metadataKeys = $metatags[1];
+
+/** @var ArrayCollection $metadata */
+$metadata = $this-&gt;getMetadata($metadataKeys);
+
+$output = $input;
+
+foreach ($findBy as $key =&gt; $value) {
+    $metadataKey = $metadataKeys[$key];
+    if (!$metadata-&gt;containsKey($metadataKey)) {
+        continue;
+    }
+
+    $output = str_replace($value, $metadata-&gt;get($metadataKey), $output);
+}
+
+var_dump($output);</code></pre>
+<p>Output:</p>
+<pre><code>string(50) "The quick brown fox jumps over the lazy dog typing"</code></pre>
+<h3>Conclusão</h3>
+<p>O <em>PHP não possui</em> uma engine nativa de Annotations, mas a necessidade de uma é dispensável visto que temos acesso a todos os metadados de uma classe através da <code>ReflectionClass</code>, a função dos parsers nesse contexto é vital para que esses dados possam ser utilizados em nossos códigos.
+A vasta quantidade de bibliotecas para Docblock parsers disponíveis leva a compreender a decisão do PHP Internals de recusar a implantação de uma engine nativa para annotations.</p>
+<p>O uso de annotations é amplamente discutido em diversas comunidades e difundido por diversas ferramentas, mas seu uso não se limita apenas a essas &quot;magias&quot; das ferramentas, entendendo o seu uso e aplicabilidade serve também para resolver problemas do dia-a-dia. </p>
+<p>O código desse artigo encontra-se disponível em:</p>
+<p><a href="https://github.com/joelmedeiros/useful-annotations">https://github.com/joelmedeiros/useful-annotations</a></p>
+<h3>Referências</h3>
+<p><a href="https://docs.microsoft.com/pt-br/dotnet/api/system.runtime.interopservices._attribute?view=netframework-4.8" rel="nofollow">Attribute Interface - C#</a></p>
+<p><a href="https://doc.rust-lang.org/reference/attributes.html" rel="nofollow">Attributes - Rust</a></p>
+<p><a href="https://www.slideshare.net/rdohms/annotations-in-php-they-exist/138-Reflection" rel="nofollow">Annotations in PHP: They Exist - Rafael Dohms</a>  </p>
+<p><a href="https://www.ecma-international.org/publications/standards/Ecma-335.htm" rel="nofollow">ECMA-335 - Common Language Infrastructure (CLI)</a></p>
+<p><a href="https://dzone.com/articles/how-annotations-work-java" rel="nofollow">How Do Annotations Work in Java? - Yashwant Golecha</a></p>
+<p><a href="https://www.javatpoint.com/java-annotation" rel="nofollow">Java Annotations</a></p>
+<p><a href="http://tutorials.jenkov.com/java-reflection/private-fields-and-methods.html" rel="nofollow">Java Reflection - Private Fields and Methods</a></p>
+<p><a href="https://jcp.org/en/jsr/detail?id=175" rel="nofollow">JSR-175 - JSR 175: A Metadata Facility for the Java Programming Language</a></p>
+<p><a href="https://wiki.php.net/rfc/annotations_v2" rel="nofollow">PHP RFC: Annotations 2.0</a></p>
+<p><a href="https://wiki.php.net/rfc/attributes_v2" rel="nofollow">PHP RFC: Attributes 2.0</a></p>
+<p><a href="https://r.je/php-annotations-are-an-abomination" rel="nofollow">PHP: Annotations are an Abomination</a></p>
+<p><a href="https://www.python.org/dev/peps/pep-0318/" rel="nofollow">PEP 318 - Decorators for Functions and Methods</a></p>
+<p><a href="https://pt.slideshare.net/rafaeluchoa/reflections-15781359" rel="nofollow">Reflections - Rafael Uchôa</a></p>
+<p><a href="https://medium.com/a-young-devoloper/should-we-use-php-annotations-4efafea23334" rel="nofollow">Should we use PHP Annotations?</a></p>
+<p><a href="https://php-annotations.readthedocs.io/en/latest/UsingAnnotations.html" rel="nofollow">Understanding annotations</a></p>
+<p><a href="http://masnun.com/2012/08/12/using-annotations-in-php-with-doctrine-annotation-reader.html" rel="nofollow">USING ANNOTATIONS IN PHP WITH DOCTRINE ANNOTATION READER</a></p>        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            
+                    </div>
+    </section>
+        <div class="container has-text-centered">
+    <div class="notification">
+        Acha que esse conteúdo possui erros ou poderia ser aperfeiçoado?
+        <a href="https://github.com/phpsp/phpsp.org.br/blob/master/source/_posts/PHP-annotations:-Magica-ou-puramente-codigo-?.md" title="Ajuste esse conteúdo!" target="_blank">Colabore!</a>
+    </div>
+</div>    </div>
+</section>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <div class="level is-small">
+            <div class="level-item">
+                <a href="https://php.net" target="_blank">
+                    <figure class="image is-128x128">
+                        <img src="/assets/images/sponsors/php.png" title="PHP.net">
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="level is-small">
+            <div class="level-item">
+            <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/azure.png" title="Microsoft Azure"
+                         alt="Microsoft Azure">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://imasters.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/imasters.png" title="iMasters"
+                         alt="iMasters">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://paypal.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/paypal.png" title="PayPal"
+                         alt="PayPal">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://www.locaweb.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/locaweb.png" title="LocaWeb"
+                         alt="LocaWeb">
+                </figure>
+            </a>
+        </div>
+    </div>
+<div class="level is-small">
+            <div class="level-item">
+            <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/phpstorm.png" title="PHPStorm"
+                         alt="PHPStorm">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://contaazul.com/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/contaazul.png" title="ContaAzul"
+                         alt="ContaAzul">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://devnaestrada.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/devnaestrada.png" title="Dev Na Estrada"
+                         alt="Dev Na Estrada">
+                </figure>
+            </a>
+        </div>
+    </div>
+
+        <hr>
+        <p>O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://github.com/phpsp/phpsp.org.br/graphs/contributors" target="_blank" title="Colaboradores do Site PHPSP.org">Comunidade PHPSP</a>.</p>
+        <p>O código deste site esta sob a licença <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="Licença MIT">MIT</a> e pode ser encontrado <a href="https://github.com/phpsp/phpsp.org.br/" target="_blank" title="Código Fonte do Site PHPSP.org.br">aqui</a>.</p>
+        <p>O conteúdo deste site esta sob a licença <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licença CC BY NC SA 4.0">CC BY NC SA 4.0</a>.</p>
+    </div>
+</footer>
+</html>

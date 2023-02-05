@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="https://phpsp.org.br/artigos/laravel-middlewares" />
+    <title>PHPSP | Introdução a Middlewares com Laravel</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7974451-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-7974451-1');
+    </script>
+
+    <link rel="shortcut icon" href="/assets/images/phpsp/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=b46970f13028c511b4b2">
+    <script defer src="/assets/build/js/main.js?id=09bbc832a3d0ac409ec2"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
+            </a>
+
+                            <a class="navbar-item is-hidden-desktop" href="https://phpsp.org.br/feed.xml" target="_blank">
+                    <img src="/assets/images/thirdparty/rss.png"
+                         title="RSS" alt="RSS">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                         title="Twitter" alt="Twitter">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                         title="Slack" alt="Slack">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://t.me/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/telegram.png"
+                         title="Telegram" alt="Telegram">
+                </a>
+            
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuComunidade" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">A Comunidade</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item " href="/a-comunidade">
+                          <span>
+                            <strong>A Comunidade PHPSP</strong>
+                            <br>
+                            O que é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <a class="navbar-item " href="/quem-e-a-comunidade">
+                          <span>
+                            <strong>Quem é a Comunidade PHPSP</strong>
+                            <br>
+                            Quem é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta">
+                          <span>
+                            <strong>Código de Conduta</strong>
+                            <br>
+                            Codigo de conduta para a comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="/artigos">
+                    <span>Artigos</span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Eventos</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                                                <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP São Paulo</strong>
+                            <br>
+                            Eventos na cidade de SP
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-campinas/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Campinas</strong>
+                            <br>
+                            Eventos na cidade de Campinas
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-santos/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na cidade de Santos
+                          </span>
+                        </a>
+                        
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
+                          <span>
+                            <strong>Código de Conduta para Eventos</strong>
+                            <br>
+                            Codigo de conduta para a eventos da comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/php-the-right-way" target="_blank">
+                              <span>
+                                <strong>PHP The Right Way - BR</strong>
+                                <br>
+                                Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/quero-palestrar" target="_blank">
+                              <span>
+                                <strong>Quero Palestrar</strong>
+                                <br>
+                                Repositório de palestrantes e propostas de palestras para eventos de tecnologia
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/zf2-documentation-br" target="_blank">
+                              <span>
+                                <strong>ZF2 docs - BR</strong>
+                                <br>
+                                Tradução da Documentação Oficial do Zend Framework
+                              </span>
+                            </a>
+                                            </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://phpsp.org.br/feed.xml" target="_blank">
+                        <img src="/assets/images/thirdparty/rss.png"
+                             title="RSS" alt="RSS">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://github.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/GitHub-Mark-120px-plus.png"
+                             title="GitHub" alt="GitHub">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://twitter.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                             title="Twitter" alt="Twitter">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                             title="Slack" alt="Slack">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/" target="_blank">
+                        <img src="/assets/images/thirdparty/In-2C-128px-TM.png"
+                             title="LinkedIn" alt="LinkedIn">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://facebook.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/flogo_RGB_HEX-144.png"
+                             title="Facebook" alt="Facebook">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://t.me/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/telegram.png"
+                             title="Telegram" alt="Telegram">
+                    </a>
+                            </div>
+        </div>
+    </div>
+</nav>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">PHPSP </a></li>
+
+                    <li><a href="/artigos">Artigos</a></li>
+        
+        <li class="is-active"><a href="#" aria-current="page">Introdução a Middlewares com Laravel</a></li>
+    </ul>
+</nav>            <section class="section">
+        <div class="content">
+            <h1 class="title is-1">Introdução a Middlewares com Laravel</h1>
+            <p>
+                <small>
+                    por José Filho (Zé)
+                    em 07/02/2020
+                </small>
+            </p>
+
+            <p>Mesmo que você não saiba, quando você está utilizando um framework de mercado (aka Laravel/Symfony) você está usando e abusando de middlewares. Frameworks gostam de basear algumas (ou várias) regras em middlewares para deixar o código que você vê no dia-a-dia mais limpo, fluído, e isso é de fato uma das vantagens de se usar middlewares na design do seu sistema.</p>
+<h2>Mas você sabe de fato o que são middlewares?</h2>
+<p>Bom, basicamente um middleware é uma estrutura responsável por ficar entre (no meio: daí o nome <code>Middleware</code>) outras estruturas, sejam essas estruturas aplicações, hardware/software ou como ficou mais conhecido no nosso querido PHP <code>Http Requests</code>.</p>
+<p>A grosso modo um middleware é um caba doido que fica no meio das coisas e pode manipular o que está sendo passado entre essas coisas.</p>
+<p>Aquele seu vizinho que sua mãe contratou pra olhar toda vez que você saia de casa e avisá-la, é um middleware que ela colocou entre sua ação (sair de casa) e seu destino. Pense que em determinado momento teu vizinho pode ter achado estranha tua saída e te perguntando onde você está indo, tu responde que tá indo na casa de um amigo que sua mãe não gosta e teu vizinho te impede de ir... Bom, o middleware (vizinho chato) manipulou sua ação e não deixou que ela se propagasse.</p>
+<p>Deixando de lado esta analogia besta, podemos considerar middlewares coisas como: brokers, barramentos, e há até quem defenda que uma API é um middleware.</p>
+<p>Como eu falei lá em cima, um dos usos mais comuns em PHP para middlewares é em cima das <code>http requests</code>, principalmente após a integração das PSRs 7 e 15. Esse uso ficou popularizado porque você consegue fazer basicamente qualquer coisa com uma <code>request</code> antes que ela chegue ao seu controller ou até mesmo depois que ela sai do controller e será entregue em forma de <code>response</code> como veremos mais pra frente.</p>
+<h2>Exemplo de uso</h2>
+<p>O framework <a href="https://laravel.com" rel="nofollow">Laravel</a> dispensa apresentações e ele se utiliza bastante de middlewares. Provavelmente você já utilizou a facilidade de <code>Auth</code> do Laravel em uma rota para protegê-la e permitir apenas usuários logados ou até mesmo utilizou o middleware de <code>Cors</code>. Mas você sabia que através de middlewares dá pra fazer absolutamente qualquer coisa com o objeto <code>Request</code> antes mesmo dele cair no teu controller? Então bora saber agora!</p>
+<p>Vamos usar a própria autenticação nativa do Laravel como exemplo, pois acho que é o que a galera tem mais familiaridade.</p>
+<p>Basicamente um middleware no Laravel é uma classe que implementa um método público chamado <code>handle</code> e recebe dois parâmetros: <code>Request $request</code> e <code>Closure $next</code>, onde Request é o objeto da request que o Laravel monta pra gente (dentro do middleware temos a oportunidade de modificá-lo até) e Closure é uma closure (avá) responsável pra passar o middleware pro próximo responsável (outro middleware, um controller etc).</p>
+<p>Olha como é a implementação do <a href="https://github.com/illuminate/auth/blob/master/Middleware/Authenticate.php" rel="nofollow">middleware de autenticação</a> pelo próprio Laravel:</p>
+<pre><code>// classe Illuminate\Auth\Middleware\Authenticate
+    public function handle($request, Closure $next, ...$guards)
+    {
+        $this-&gt;authenticate($request, $guards);
+
+        return $next($request);
+    }
+
+    protected function authenticate($request, array $guards)
+    {
+        if (empty($guards)) {
+            $guards = [null];
+        }
+
+        foreach ($guards as $guard) {
+            if ($this-&gt;auth-&gt;guard($guard)-&gt;check()) {
+                return $this-&gt;auth-&gt;shouldUse($guard);
+            }
+        }
+
+        $this-&gt;unauthenticated($request, $guards);
+    }</code></pre>
+<p>Olha que sussi! O middleware &quot;intercepta&quot; a request recebendo os <code>$guards</code> da autenticação, faz a regra que ele quer no método <code>authenticate</code> e passa a request pra frente.</p>
+<p>Uma coisa que você pode ter notado é que além dos dois parâmetros que eu comentei que um middleware sempre irá receber, existe o <code>...$guards</code> ali, isso porque podemos enviar quantos parâmetros quisermos pra os middlewares e naturalmente eles virão após a Closure.</p>
+<p>Vamos criar um middleware nosso pra entender melhor como essa parada funciona.</p>
+<h2>Criando você mesmo um middleware no Laravel</h2>
+<p>Pra por a mão na massa vamos criar um middleware de <a href="https://pt.wikipedia.org/wiki/Honeypot" rel="nofollow">HoneyPot</a> bem simples mas que vai te dar uma ideia do poder do middleware.</p>
+<p>Pra criar um middleware no Laravel pode ser tanto via <code>artisan</code> ou criando você mesmo a classe e registrando-a. Vamo criar na mão memo e já era!</p>
+<p>Os middlewares ficam por default no namesapce <code>App\Http\Middleware</code> e é lá que vamos criar nossa classe. Vai ficar algo tipo assim:</p>
+<pre><code>// seu_projeto/app/Http/Middleware/HoneyPot.php
+&lt;?php
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Support\Facades\Request;
+
+/**
+ * Middleware responsável por desviar bots para outro servidor
+ */
+class HoneyPot
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        // cria uma regra para identificar se o usuário é um bot como por exemplo pegar o user-agent da request
+        // neste caso vamos supor que caso o User Agent seja vazio o usuário é um bot
+        if ($request-&gt;header('user-agent') === '') {
+            return redirect('https://raw.githubusercontent.com/zemirco/sf-city-lots-json/master/citylots.json');
+        }
+
+        return $next($request);
+    }
+}</code></pre>
+<p>O que estamos fazendo aqui? Estamos identificando se o usuário é um bot e se for ao invés de continuar o fluxo da nossa aplicação (usando <code>$next($request)</code>) vamos redirecionar esse bot para uma API bem pesada! Você pode navegar até o link do exemplo se quiser ou remover o <code>if</code> que eu adicionei e rodar o código mas eu não o faria xD</p>
+<p>Fácil né, fala tu?!</p>
+<p>Pois calma lá! Pra essa bruxaria funcionar precisamos tomar mais alguns passos com o Laravel.</p>
+<h2>Registrando um middleware</h2>
+<p>Como podemos ver na <a href="https://laravel.com/docs/6.x/middleware#registering-middleware" rel="nofollow">documentação oficial</a> do Laravel há basicamente duas formas para se registrar um middleware: globalmente e/ou atribuindo a rotas. Já dá pra imaginar pra que cada um serve, né? Middlewares globais serão executados em toda request que entrar pro Laravel, middlewares de rotas serão executados cada vez que a rota atribuída a ele for chamada. Aqui vamos usar a atribuição por rotas:</p>
+<pre><code>// Classe App\Http\Kernel
+
+protected $routeMiddleware = [
+    'auth' =&gt; \App\Http\Middleware\Authenticate::class,
+    'auth.basic' =&gt; \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+    'bindings' =&gt; \Illuminate\Routing\Middleware\SubstituteBindings::class,
+    'cache.headers' =&gt; \Illuminate\Http\Middleware\SetCacheHeaders::class,
+    'can' =&gt; \Illuminate\Auth\Middleware\Authorize::class,
+    'guest' =&gt; \App\Http\Middleware\RedirectIfAuthenticated::class,
+    'signed' =&gt; \Illuminate\Routing\Middleware\ValidateSignature::class,
+    'throttle' =&gt; \Illuminate\Routing\Middleware\ThrottleRequests::class,
+    'verified' =&gt; \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+    'honeypot' =&gt; \App\Http\Middleware\HoneyPot::class,
+];</code></pre>
+<p>Feito isso agora basta atribuirmos o middleware para a rota que queremos que ele seja executado:</p>
+<pre><code>// routes.php
+Route::get('seu/path', 'SeuQueridoController@index')-&gt;middleware('honeypot');</code></pre>
+<p>Já era! Agora você pega aquele bot vaaagabundo!</p>
+<p>Vale ressaltar que como quase tudo no Laravel existe mais de uma forma de se atribuir o middleware a uma rota, não deixe de checar a documentação que eu já linkei ali acima e ver outras formas de atribuição, como passar parâmetros igual o próprio Laravel passa as <code>$guards</code> do exemplo. E mais importante, divirta-se!</p>
+<h2>Conclusão</h2>
+<p>Middlewares podem ser bem úteis pra uma gama de coisas, como puderam perceber e vale lembrar também que podemos colocar quantos middlewares quisermos pra tratar nossa request:</p>
+<pre><code>Route::get('seu/path', 'SeuQueridoController@index')-&gt;middleware('auth', 'honeypot', 'logger');</code></pre>
+<p>Tudo vai da sua criatividade e espero eu que do seu bom senso também! Em breve vou criar um novo post falando sobre como middlewares podem ser úteis em refatorações de código legado e espero poder trazer uma visão mais ampla de mais essa ferramenta poderosa que podemos usar no nosso dia-a-dia.</p>        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            
+            <h4 class="title is-4">Mais posts deste Autor</h4>
+    <div class="tile is-ancestor">
+                    <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/phpsp-pub-fev-2020">PHPSP + PUB Fevereiro 2020</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 03/03/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/sobre-sair-de-um-emprego-que-nao-lhe-faz-bem">Sobre sair de um emprego que não lhe faz bem</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 27/02/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/5-dicas-para-escrever-um-bug-report">5 dicas para escrever um bom bug report</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 20/02/2020</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                            <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/implementando-cultura-qa">Implementando a cultura de Quality Assurance (QA)</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 10/02/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/ciclo-de-feedback-no-desenvolvimento-guiado-a-testes">Ciclo de Feedback no Desenvolvimento de Software Guiado a Testes</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 03/02/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/phpsp-pub-jan-2020">PHPSP + PUB Janeiro 2020</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 25/01/2020</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                    </div>
+        </div>
+    </section>
+        <div class="container has-text-centered">
+    <div class="notification">
+        Acha que esse conteúdo possui erros ou poderia ser aperfeiçoado?
+        <a href="https://github.com/phpsp/phpsp.org.br/blob/master/source/_posts/laravel-middlewares.md" title="Ajuste esse conteúdo!" target="_blank">Colabore!</a>
+    </div>
+</div>    </div>
+</section>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <div class="level is-small">
+            <div class="level-item">
+                <a href="https://php.net" target="_blank">
+                    <figure class="image is-128x128">
+                        <img src="/assets/images/sponsors/php.png" title="PHP.net">
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="level is-small">
+            <div class="level-item">
+            <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/azure.png" title="Microsoft Azure"
+                         alt="Microsoft Azure">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://imasters.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/imasters.png" title="iMasters"
+                         alt="iMasters">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://paypal.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/paypal.png" title="PayPal"
+                         alt="PayPal">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://www.locaweb.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/locaweb.png" title="LocaWeb"
+                         alt="LocaWeb">
+                </figure>
+            </a>
+        </div>
+    </div>
+<div class="level is-small">
+            <div class="level-item">
+            <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/phpstorm.png" title="PHPStorm"
+                         alt="PHPStorm">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://contaazul.com/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/contaazul.png" title="ContaAzul"
+                         alt="ContaAzul">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://devnaestrada.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/devnaestrada.png" title="Dev Na Estrada"
+                         alt="Dev Na Estrada">
+                </figure>
+            </a>
+        </div>
+    </div>
+
+        <hr>
+        <p>O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://github.com/phpsp/phpsp.org.br/graphs/contributors" target="_blank" title="Colaboradores do Site PHPSP.org">Comunidade PHPSP</a>.</p>
+        <p>O código deste site esta sob a licença <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="Licença MIT">MIT</a> e pode ser encontrado <a href="https://github.com/phpsp/phpsp.org.br/" target="_blank" title="Código Fonte do Site PHPSP.org.br">aqui</a>.</p>
+        <p>O conteúdo deste site esta sob a licença <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licença CC BY NC SA 4.0">CC BY NC SA 4.0</a>.</p>
+    </div>
+</footer>
+</html>

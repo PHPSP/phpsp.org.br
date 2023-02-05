@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="https://phpsp.org.br/artigos/web-apis-xml-ou-json" />
+    <title>PHPSP | Web APIs - XML ou JSON?</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7974451-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-7974451-1');
+    </script>
+
+    <link rel="shortcut icon" href="/assets/images/phpsp/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=b46970f13028c511b4b2">
+    <script defer src="/assets/build/js/main.js?id=09bbc832a3d0ac409ec2"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
+            </a>
+
+                            <a class="navbar-item is-hidden-desktop" href="https://phpsp.org.br/feed.xml" target="_blank">
+                    <img src="/assets/images/thirdparty/rss.png"
+                         title="RSS" alt="RSS">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                         title="Twitter" alt="Twitter">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                         title="Slack" alt="Slack">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://t.me/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/telegram.png"
+                         title="Telegram" alt="Telegram">
+                </a>
+            
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuComunidade" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">A Comunidade</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item " href="/a-comunidade">
+                          <span>
+                            <strong>A Comunidade PHPSP</strong>
+                            <br>
+                            O que é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <a class="navbar-item " href="/quem-e-a-comunidade">
+                          <span>
+                            <strong>Quem é a Comunidade PHPSP</strong>
+                            <br>
+                            Quem é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta">
+                          <span>
+                            <strong>Código de Conduta</strong>
+                            <br>
+                            Codigo de conduta para a comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="/artigos">
+                    <span>Artigos</span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Eventos</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                                                <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP São Paulo</strong>
+                            <br>
+                            Eventos na cidade de SP
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-campinas/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Campinas</strong>
+                            <br>
+                            Eventos na cidade de Campinas
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-santos/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na cidade de Santos
+                          </span>
+                        </a>
+                        
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
+                          <span>
+                            <strong>Código de Conduta para Eventos</strong>
+                            <br>
+                            Codigo de conduta para a eventos da comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/php-the-right-way" target="_blank">
+                              <span>
+                                <strong>PHP The Right Way - BR</strong>
+                                <br>
+                                Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/quero-palestrar" target="_blank">
+                              <span>
+                                <strong>Quero Palestrar</strong>
+                                <br>
+                                Repositório de palestrantes e propostas de palestras para eventos de tecnologia
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/zf2-documentation-br" target="_blank">
+                              <span>
+                                <strong>ZF2 docs - BR</strong>
+                                <br>
+                                Tradução da Documentação Oficial do Zend Framework
+                              </span>
+                            </a>
+                                            </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://phpsp.org.br/feed.xml" target="_blank">
+                        <img src="/assets/images/thirdparty/rss.png"
+                             title="RSS" alt="RSS">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://github.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/GitHub-Mark-120px-plus.png"
+                             title="GitHub" alt="GitHub">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://twitter.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                             title="Twitter" alt="Twitter">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                             title="Slack" alt="Slack">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/" target="_blank">
+                        <img src="/assets/images/thirdparty/In-2C-128px-TM.png"
+                             title="LinkedIn" alt="LinkedIn">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://facebook.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/flogo_RGB_HEX-144.png"
+                             title="Facebook" alt="Facebook">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://t.me/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/telegram.png"
+                             title="Telegram" alt="Telegram">
+                    </a>
+                            </div>
+        </div>
+    </div>
+</nav>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">PHPSP </a></li>
+
+                    <li><a href="/artigos">Artigos</a></li>
+        
+        <li class="is-active"><a href="#" aria-current="page">Web APIs - XML ou JSON?</a></li>
+    </ul>
+</nav>            <section class="section">
+        <div class="content">
+            <h1 class="title is-1">Web APIs - XML ou JSON?</h1>
+            <p>
+                <small>
+                    por Níckolas Silva
+                    em 15/10/2018
+                </small>
+            </p>
+
+            <p>É comum ver discussões sobre qual o melhor formato para representar dados e quase sempre caímos na mesma briga: XML vs JSON. Na realidade um dos maiores problemas com estas discussões é a generalização, estamos acostumados - assim espero - com a expressão &quot;não existe bala de prata&quot;. Pois é, ela não existe e exatamente por isso gostaria de estabelecer um foco aqui: Web APIs.
+Uma API (Application Programming Interface) tem como maior foco fornecer a capacidade de aplicações fora de seu domínio (geralmente terceiros) se utilizarem de suas capacidades. São conhecidas como Web API as que se baseiam no protocolo HTTP para transportar estas capacidades. Padrões comuns de arquitetura de Web APIs são o <a href="https://tools.ietf.org/html/rfc5531" title="RPC" rel="nofollow">RPC</a> e o <a href="http://www.computerworld.com/article/2552929/networking/representational-state-transfer--rest-.html" title="REST" rel="nofollow">REST</a>. </p>
+<h2>Uma breve introdução</h2>
+<p>Para que possamos chegar a algum consenso, vou indicar alguns itens que julgo importantes na produção e concessão de uma Web API:</p>
+<ul>
+<li>Usabilidade Considerando que uma Web API serve para ser utilizada por desenvolvedores - muitas vezes são terceiros, desconhecidos e dos mais diversos níveis - a usabilidade se faz importante para oferecer maior fluidez no desenvolvimento por estes. Considere aqui usabilidade como sendo a soma de fatores como organização, divisão de recursos, complexidade baixa de dados e a baixa e explícita burocaria - Autorização, tokenização... - se existente.</li>
+<li>Documentação Documentar é um bom começo para que entendamos as Web APIs - e APIs em geral, convenhamos - mundo afora. Além disso evita que passemos nosso precioso tempo de café no telefone, chat ou mesa do colega prestando suporte.</li>
+<li>Desempenho É bem difícil alguém reclamar do desempenho sem que passe pelos itens acima, o que não o torna menos importante. Respostas rápidas e de baixo custo - quanto menor o tamanho da requisição e resposta, melhor - são essenciais para uma vida longa e próspera das aplicações que utilizem da Web API.</li>
+</ul>
+<h2>Um pouco mais do mesmo</h2>
+<p>Em discussões sobre qual escolher alguns fatores genéricos são sempre trazidos a tona:</p>
+<ul>
+<li>
+<p>Tamanho (em bytes) das marcações Neste ponto o XML costuma sair na desvantagem, pois dizem que ele é muito &quot;verboso&quot;, ou seja, é muito burocrático na escrita se comparado ao JSON. O exemplo a seguir demonstra como seria representada uma pessoa com atributos nome e idade: <strong>XML</strong></p>
+<pre><code class="language-xml">&lt;pessoa&gt;
+    &lt;nome&gt;Nawarian Níckolas&lt;/nome&gt;
+    &lt;idade&gt;20&lt;/idade&gt;
+&lt;/pessoa&gt;</code></pre>
+<p><strong>JSON</strong></p>
+<pre><code class="language-json">{
+    "nome": "Nawarian Níckolas",
+    "idade": 20
+}</code></pre>
+<p>De fato JSON se mostrou eficaz com um número menor de caracteres, mas veja bem o item que segue.</p>
+</li>
+<li>Capacidade descritiva O que era desvantagem no tópico acima virou vantagem aqui! Notando os mesmos dois trechos de código acima fica nítido que a notação XML indica perfeitamente o que cada coisa significa. Sabe-se que tratamos de uma entidade específica (pessoa) e que os valores &quot;Nawarian Níckolas&quot; e &quot;20&quot; não são simplesmente nome e idade, são nome e idade de uma pessoa. Parece óbvio, mas na realidade não é. A notação JSON deixa muito a desejar neste quesito.</li>
+<li>Complexidade Bom, este item é citado mas muitas vezes raramente merece. Veja bem: XML possui uma capacidade descritiva muito alta (ele foi desenvolvido com este intuito) e consequentemente pode alcançar níveis de complexidade altíssimos. Mas nem sempre JSON vai conseguir suprir a mesma necessidade de complexidade com a mesma organização. E... não quero polemizar nem nada, mas se sua aplicação precisa de tanta complexidade assim será que compensa utilizar uma Web API?</li>
+<li>
+<p>Referências e DTD A marcação XML oferece de maneira mais sucinta de exibir links para outros documentos através de seus atributos. JSON também é capaz de fazer, mas note a diferença: <strong><strong>XML</strong></strong></p>
+<pre><code class="language-xml">&lt;pessoa href="http://umsite.com/pessoas/nawarian"&gt;
+    &lt;nome&gt;Nawarian Níckolas&lt;/nome&gt;
+    &lt;idade&gt;20&lt;/idade&gt;
+&lt;/pessoa&gt;</code></pre>
+<p><strong>JSON</strong></p>
+<pre><code class="language-json">{
+   "href": "http://umsite.com/pessoas/nawarian",
+   "pessoa": {
+       "nome": "Nawarian Níckolas",
+       "idade": 20
+   }
+}</code></pre>
+<p>Os dois resolveram o problema com sucesso, mas supondo que o link que pedi possui uma URI <strong>/pessoas/{identificador}</strong> o meu retorno deveria ser uma pessoa, concorda? No exemplo JSON eu devolvi um objeto que representa o retorno e somente retorno possui a identificação de pessoa - volte e leia novamente este trecho e os códigos se não entendeu. Parece bobo, mas observe o que segue: <strong>XML</strong></p>
+<pre><code class="language-xml">&lt;pessoa href="http://umsite.com/pessoas/nawarian"&gt;
+    &lt;nome&gt;Nawarian Níckolas&lt;/nome&gt;
+    &lt;idade&gt;20&lt;/idade&gt;
+    &lt;amigos&gt;
+        &lt;pessoa href="http://umsite.com/pessoas/cadinho"&gt;
+            &lt;nome&gt;Ricardo Ledo&lt;/nome&gt;
+        &lt;/pessoa&gt;
+    &lt;/amigos&gt;
+&lt;/pessoa&gt;</code></pre>
+<p><strong>JSON</strong></p>
+<pre><code class="language-json">{
+    "href": "http://umsite.com/pessoas/nawarian",
+    "pessoa": {
+        "nome": "Nawarian Níckolas",
+        "idade": 20,
+        "amigos": [
+            {
+                "href": "http://umsite.com/pessoas/cadinho",
+                "pessoa": {
+                    "nome": "Ricardo Ledo"
+                }
+            }
+        ]
+    }
+}</code></pre>
+<p>Segundo o formato anterior o item existente na lista <strong>amigos</strong> no formato JSON representa um objeto que referencia uma pessoa, não o objeto pessoa em si.
+&quot;Eu poderia colocar <strong>href</strong> dentro do objeto pessoa&quot;. De fato! Faria sentido? Lembre-se também que assim como <strong>href</strong> atributos <strong>proxima_pagina</strong>, <strong>pagina_anterior</strong> e afins se referem à resposta ao pedido, não ao resultado.
+De toda forma, é comum a prática de até mesmo no formato XML adicionar um elemento chamado <strong>root</strong> ou similar para representar a resposta da requisição.</p>
+<p>E o <a href="http://www.w3schools.com/xml/xml_dtd_intro.asp" title="DTD" rel="nofollow">DTD</a>?
+É, XML tem suporte ao DTD que particularmente julgo como sendo muito importante. É sempre bom lembrar que não são só navegadores os possíveis clientes de uma Web API, uma estrutura de dados bem definida e com validação torna-se indispensável.
+Mas JSON não tem? Não, mas pode ter... <a href="http://www.w3.org/TR/json-ld/" title="Em 16 de Janeiro de 2014 tornou-se recomendação da W3C" rel="nofollow">Em 16 de Janeiro de 2014 tornou-se recomendação da W3C</a> um formato chamado <a href="http://json-ld.org/" title="JSON-LD" rel="nofollow">JSON-LD</a> - JSON Linked Data. Uma maneira muito mais complexa - diria também completa - de ligar dados, significados e estruturas. Então esta desculpa não existe mais para favorecer o XML.</p>
+</li>
+<li>
+<p>Suporte e facilidades das linguagens Praticamente todas as linguagens mais difundidas possuem suporte tanto ao XML quanto ao JSON. E quase sempre, se não houver, há uma biblioteca ou outra que resolve o problema.
+A questão é que: estamos acostumados a consumir Web APIs através de aplicações baseadas em navegadores. Aqui reina o JavaScript e neste se consolida o JSON (JavaScript Object Notation). Seria bobeira utilizar XML em seu lugar!
+Seria mesmo? Quem aqui já mexeu com o DOM?</p>
+<pre><code>&lt;p&gt;Um paragrafo perdido...&lt;/p&gt;
+
+&lt;script&gt;
+    var p =document.getElementsByTagName( 'p' )[0];
+    p.innerHTML; // Um parágrafo perdido...
+&lt;/script&gt;</code></pre>
+<p>Poxa, jura que você nunca se tocou que o HTML segue a estrutura XML? E o JavaScript já trabalha assim com ele há anos!
+Mesmo assim a API de manipulação de XML (para documentos externos, não só o HTML da página) pode não estar disponível em todos os navegadores, necessitando uma biblioteca extra.
+O suporte, portanto, deveria seguir mais a necessidade da sua aplicação e a escolha aqui está muito ligada à sua capacidade de previsão de quem irá possivelmente consumir sua Web API.
+Um bom exemplo seria a implementação do <a href="http://xmpp.org/about-xmpp/technology-overview/bosh/" title="BOSH" rel="nofollow">BOSH</a> para troca de mensagens instantâneas utilizando <a href="http://xmpp.org/" title="XMPP" rel="nofollow">XMPP</a>. Ele funciona através de uma interface <a href="http://pt.wikipedia.org/wiki/Chamada_de_procedimento_remoto" title="RPC" rel="nofollow">RPC</a> e, por conta do protocolo de comunicação (XMPP), continua utilizando XML normalmente. E daí que é <a href="http://pt.wikipedia.org/wiki/Hypertext_Transfer_Protocol" title="HTTP" rel="nofollow">HTTP</a>? A marcação utilizada foi a que melhor atendeu o negócio (ao menos na época).</p>
+</li>
+<li>Estruturas de dados &quot;humanamente legíveis&quot;
+As duas estruturas de dados apresentadas clamam ser &quot;humanamente legíveis&quot;. Eu discordo muito disto e, até o presente momento, não me foi apresentada sequer uma estrutura de dados que não exigisse treinamento para que eu pudesse entender.
+Isto porque nem todo mundo sabe entender a linguagem da matemática, a semântica do alemão, a lógica dos kanjis japoneses ou a escala pentatonica na música. Não precisamos.
+Seres humanos não precisam entender estas estruturas de dados a menos que tenham necessidade delas em seu dia-a-dia. Seres humanos que têm necessidade de entender estas estruturas de dados terão de aprendê-las e quando isto ocorrer tanto o XML quanto o JSON serão naturalmente tão complicados ou tão simples quanto o nível de esforço de quem observa.</li>
+</ul>
+<p>Estes foram alguns apontamentos mais genéricos que podemos ver em diversas discussões acerca do tema. Espero que não tenha parado de ler antes de chegar aqui, eu quero ainda cutucar uma ferida...
+<strong>&quot;É óbvio que o XML é bem mais pesado que JSON&quot;</strong>
+É... nem tanto: Uma prática muito comum na otimização de transferência de dados pela Web é compactar os pacotes a serem transferidos. Esta prática consome um pouco mais de processamento, porém diminui razoavelmente o tamanho final da resposta.
+Os filtros de compactação comumente utilizados são gzip e Deflate.  Vamos fazer uma prova de conceito então!
+Para verificar o quão óbvia é a vantagem em tamanho (bytes) do JSON em relação ao XML eis abaixo uma aplicação simples. Estou utilizando a base de dados <a href="http://dev.mysql.com/doc/sakila/en/" title="sakila" rel="nofollow">sakila</a>, mais especificamente a tabela <strong>films</strong>. Que, atualmente, contém mil registros. Nesta aplicação, obtenho todos os registros e faço o teste entre JSON e XML antes e depois de executar uma compressão pelo filtro gzip.
+A estrutura da tabela <strong>films</strong> é a que segue: films( <span style="text-decoration: underline;">film_id</span>, title, description, release_year, language_id, original_language_id, rental_duration, rental_rate, length, repalcement_cost, rating, special_features, last_updates ).
+O primeiro registro desta tabela será então representado assim: <strong>XML</strong></p>
+<pre><code class="language-xml">&lt;entidade&gt;
+    &lt;film_id&gt;1&lt;/film_id&gt;
+    &lt;title&gt;ACADEMY DINOSAUR&lt;/title&gt;
+    &lt;description&gt;A Epic Drama of a Feminsit And a Mad Scientist who must Battle a Teacher in The Canadian Rockies&lt;/description&gt;
+    &lt;release_year&gt;2006&lt;/release_year&gt;
+    &lt;language_id&gt;1&lt;/language_id&gt;
+    &lt;original_language_id&gt;&lt;/original_language_id&gt;
+    &lt;rental_duration&gt;6&lt;/rental_duration&gt;
+    &lt;rental_rate&gt;0.99&lt;/rental_rate&gt;
+    &lt;length&gt;86&lt;/length&gt;
+    &lt;replacement_cost&gt;20.99&lt;/replacement_cost&gt;
+    &lt;rating&gt;PG&lt;/rating&gt;
+    &lt;special_features&gt;Deleted Scenes,Behind the Scenes&lt;/special_features&gt;
+    &lt;last_update&gt;2006-02-15 05:03:42&lt;/last_update&gt;
+&lt;/entidade&gt;</code></pre>
+<p><strong>JSON</strong></p>
+<pre><code class="language-json">{
+    "film_id":"1",
+    "title": "ACADEMY DINOSAUR",
+    "description":"A Epic Drama of a Feminsit And a Mad Scientist who must Battle a Teacher in The Canadian Rockies",
+    "release_year":"2006",
+    "language_id":"1",
+    "original_language_id":null,
+    "rental_duration":"6",
+    "rental_rate":"0.99",
+    "length":"86",
+    "replacement_cost":"20.99",
+    "rating":"PG",
+    "special_features":"Deleted Scenes,Behind the Scenes",
+    "last_update":"2006-02-15 05:03:42"
+}</code></pre>
+<p>Agora vamos coletar alguns dados brutos para podermos realizar algumas comparações. Para coletar estes dados escrevi um programa simples que realizará conversão e compactação dos registros nesta tabela <strong>films</strong> testando 1, 10 e 1000 registros nesta sequência. O código-fonte e máquina virtual deste teste podem ser encontrados <a href="https://github.com/nawarian/benchmark_xml_vs_json" title="aqui" rel="nofollow">aqui</a>, sinta-se livre para alterar o código e quintuplicar o número de registros se assim desejar. É sempre bom testar em maiores proporções e diferentes tipos de dados.
+<a href="https://drive.google.com/file/d/0BwCNs-cya0IQNDlza05SRTdpV2c/view?usp=sharing" rel="nofollow"><img src="https://lh5.googleusercontent.com/vVZzB6wcwrPrAxKNEdnKCl86UFehDo9_HDfJq36pmZbRi9QX7hqe9p0pShLv6nU4eTWgQA=w1896-h870" alt="https://drive.google.com/file/d/0BwCNs-cya0IQNDlza05SRTdpV2c/view?usp=sharing" rel="nofollow" /></a></p>
+<p>Conforme o primeiro teste, realizado com um registro, nota-se facilmente que JSON leva vantagem pois: alcança um gasto de tamanho (em bytes) menor em relação a XML tanto em sua forma pura quanto comprimido. O tempo de compressão dos dois equiparam-se pois foi realizado um arredondamento. Mas o intervalo de compressão é muito ínfimo e apenas aplicações muito específicas podem vir a necessitar de desempenho neste nível.
+No segundo teste temos um tempo de compressão semelhante ao primeiro, porém o primeiro choque: comprimindo a estrutura de dados XML temos um resultado mais satisfatório em comparação ao JSON e a diferença não foi pequena!
+No terceiro e ultimo teste, realizado com mil registros, temos uma exemplificação de como os valores antes citados se inverteram absurdamente. Há uma redução de aproximadamente 357 quilobytes (89,79%) para os registros em JSON, enquanto a redução com XML foi de 546 quilobytes (99,45%) com uma vantagem de 0,0039 segundos no tempo de compressão.
+Provavelmente este comportamento se dá por conta do <a href="http://www.gzip.org/deflate.html" title="algorítmo deflate" rel="nofollow">algorítmo deflate</a>, que identifica padrões na estrutura a ser compactada e os transforma de maneira proporcional. Lembrando apenas que a estrutura de TAGs que o XML se utiliza é claramente repetitiva e este fator não é tão obviamente encontrado na estrutura JSON.</p>
+<h2>Conclusão</h2>
+<p>Agora temos uma visão exposta de boa parte dos ideais apresentados e, se deixarmos o aspecto &quot;fã&quot; de lado, fica claro que:</p>
+<ul>
+<li>Ambos possuem vantagens semânticas, estéticas e de implementação.</li>
+<li>Tratando-se de transporte JSON possui uma pequena vantagem para poucos registros, mas conforme o número de registros cresce maior a vantagem da marcação XML.</li>
+<li>Em complexidade XML e JSON possuem a mesma capacidade: XML com sua estrutura de árvore e DTD e JSON com sua especificação JSON-LD.</li>
+<li>A manipulação, mesmo sendo uma ideia muito subjetiva, aparenta ser mais simples para JSON pois se baseia na estrutura chave-valor em vez da estrutura de árvore, muito mais complexa de interpretação (sob aspecto de uma estrutura lógica). Apesar disso, estamos num período em que se faz comum a programação de alto nível - como JavaScript, PHP, Java - e podemos contar com frameworks que abstraem e facilitam estes procedimentos.</li>
+</ul>
+<p>Mas pra quê escolher XML ou JSON na hora de desenvolver a aplicação? Por que não os dois?
+Afinal em alguns momentos ambos se sobressaem e uma junção bem definida destes pode gerar uma aplicação de desempenho talvez melhor do que a adoção de apenas um.
+Agora gostaria de saber a sua opnião nos comentários: e aí? XML ou JSON?</p>
+<hr />
+<p>Artigo originalmente criado em 13/03/2015.</p>        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            
+            <h4 class="title is-4">Mais posts deste Autor</h4>
+    <div class="tile is-ancestor">
+                    <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/phpeste-2022">PHPeste 2022 em Natal, Rio Grande do Norte</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 20/06/2022</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/voce-achou-que-sabia-sobre-generators-php">Você achou que sabia sobre Generators no PHP</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 11/12/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/como-php-funciona-na-verdade">Como o PHP funciona na verdade</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 19/11/2019</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                            <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/tdd-com-php-na-vida-real">TDD na vida real com PHP</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 03/11/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/ola-php-eu-sou-um-engenheiro">Olá, PHP. Eu sou um Engenheiro.</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 29/10/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/3-projetos-para-iniciar-no-hacktoberfest-2019">3 Projetos para Iniciar no Hacktoberfest 2019</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 09/10/2019</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                    </div>
+        </div>
+    </section>
+        <div class="container has-text-centered">
+    <div class="notification">
+        Acha que esse conteúdo possui erros ou poderia ser aperfeiçoado?
+        <a href="https://github.com/phpsp/phpsp.org.br/blob/master/source/_posts/Web-APIs:-XML-ou-JSON?.md" title="Ajuste esse conteúdo!" target="_blank">Colabore!</a>
+    </div>
+</div>    </div>
+</section>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <div class="level is-small">
+            <div class="level-item">
+                <a href="https://php.net" target="_blank">
+                    <figure class="image is-128x128">
+                        <img src="/assets/images/sponsors/php.png" title="PHP.net">
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="level is-small">
+            <div class="level-item">
+            <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/azure.png" title="Microsoft Azure"
+                         alt="Microsoft Azure">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://imasters.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/imasters.png" title="iMasters"
+                         alt="iMasters">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://paypal.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/paypal.png" title="PayPal"
+                         alt="PayPal">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://www.locaweb.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/locaweb.png" title="LocaWeb"
+                         alt="LocaWeb">
+                </figure>
+            </a>
+        </div>
+    </div>
+<div class="level is-small">
+            <div class="level-item">
+            <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/phpstorm.png" title="PHPStorm"
+                         alt="PHPStorm">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://contaazul.com/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/contaazul.png" title="ContaAzul"
+                         alt="ContaAzul">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://devnaestrada.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/devnaestrada.png" title="Dev Na Estrada"
+                         alt="Dev Na Estrada">
+                </figure>
+            </a>
+        </div>
+    </div>
+
+        <hr>
+        <p>O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://github.com/phpsp/phpsp.org.br/graphs/contributors" target="_blank" title="Colaboradores do Site PHPSP.org">Comunidade PHPSP</a>.</p>
+        <p>O código deste site esta sob a licença <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="Licença MIT">MIT</a> e pode ser encontrado <a href="https://github.com/phpsp/phpsp.org.br/" target="_blank" title="Código Fonte do Site PHPSP.org.br">aqui</a>.</p>
+        <p>O conteúdo deste site esta sob a licença <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licença CC BY NC SA 4.0">CC BY NC SA 4.0</a>.</p>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="https://phpsp.org.br/artigos/5-coisas-que-um-programador-php-precisa" />
+    <title>PHPSP | 5 coisas que um programador PHP precisa</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7974451-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-7974451-1');
+    </script>
+
+    <link rel="shortcut icon" href="/assets/images/phpsp/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=b46970f13028c511b4b2">
+    <script defer src="/assets/build/js/main.js?id=09bbc832a3d0ac409ec2"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
+            </a>
+
+                            <a class="navbar-item is-hidden-desktop" href="https://phpsp.org.br/feed.xml" target="_blank">
+                    <img src="/assets/images/thirdparty/rss.png"
+                         title="RSS" alt="RSS">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                         title="Twitter" alt="Twitter">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                         title="Slack" alt="Slack">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://t.me/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/telegram.png"
+                         title="Telegram" alt="Telegram">
+                </a>
+            
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuComunidade" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">A Comunidade</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item " href="/a-comunidade">
+                          <span>
+                            <strong>A Comunidade PHPSP</strong>
+                            <br>
+                            O que é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <a class="navbar-item " href="/quem-e-a-comunidade">
+                          <span>
+                            <strong>Quem é a Comunidade PHPSP</strong>
+                            <br>
+                            Quem é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta">
+                          <span>
+                            <strong>Código de Conduta</strong>
+                            <br>
+                            Codigo de conduta para a comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="/artigos">
+                    <span>Artigos</span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Eventos</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                                                <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP São Paulo</strong>
+                            <br>
+                            Eventos na cidade de SP
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-campinas/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Campinas</strong>
+                            <br>
+                            Eventos na cidade de Campinas
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-santos/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na cidade de Santos
+                          </span>
+                        </a>
+                        
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
+                          <span>
+                            <strong>Código de Conduta para Eventos</strong>
+                            <br>
+                            Codigo de conduta para a eventos da comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/php-the-right-way" target="_blank">
+                              <span>
+                                <strong>PHP The Right Way - BR</strong>
+                                <br>
+                                Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/quero-palestrar" target="_blank">
+                              <span>
+                                <strong>Quero Palestrar</strong>
+                                <br>
+                                Repositório de palestrantes e propostas de palestras para eventos de tecnologia
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/zf2-documentation-br" target="_blank">
+                              <span>
+                                <strong>ZF2 docs - BR</strong>
+                                <br>
+                                Tradução da Documentação Oficial do Zend Framework
+                              </span>
+                            </a>
+                                            </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://phpsp.org.br/feed.xml" target="_blank">
+                        <img src="/assets/images/thirdparty/rss.png"
+                             title="RSS" alt="RSS">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://github.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/GitHub-Mark-120px-plus.png"
+                             title="GitHub" alt="GitHub">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://twitter.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                             title="Twitter" alt="Twitter">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                             title="Slack" alt="Slack">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/" target="_blank">
+                        <img src="/assets/images/thirdparty/In-2C-128px-TM.png"
+                             title="LinkedIn" alt="LinkedIn">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://facebook.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/flogo_RGB_HEX-144.png"
+                             title="Facebook" alt="Facebook">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://t.me/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/telegram.png"
+                             title="Telegram" alt="Telegram">
+                    </a>
+                            </div>
+        </div>
+    </div>
+</nav>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">PHPSP </a></li>
+
+                    <li><a href="/artigos">Artigos</a></li>
+        
+        <li class="is-active"><a href="#" aria-current="page">5 coisas que um programador PHP precisa</a></li>
+    </ul>
+</nav>            <section class="section">
+        <div class="content">
+            <h1 class="title is-1">5 coisas que um programador PHP precisa</h1>
+            <p>
+                <small>
+                    por Augusto Pascutti
+                    em 24/10/2018
+                </small>
+            </p>
+
+            <p>Se você ganha a vida com PHP sabe o quanto sofremos por conta dos chamados &quot;sobrinhos&quot;, se você não sabe o que estou falando, termine de ler esse post e procure no Google que você vai entender do que estamos falando! Quem foi ao &quot;I Encontro|PHPSP&quot; sabe que um objetivo tão importante quanto unir a comunidade é levar mais conhecimento a ela, deixando claro que o PHP deixou a muito tempo de ser uma linguagem de programação para sites e entrou no ramo enterprise! </p>
+<p>Onde queremos chegar com tudo isso? Simples! O mal dos sobrinhos é que logo após seu &quot;Hello World!&quot; eles já se consideram programadores, e logicamente, as coisas não funcionam bem assim. Inspirado <a href="http://blog.calevans.com/2009/02/09/5-tools-every-php-developer-should-master/" rel="nofollow">num post do Cal Evans</a> (se você nunca ouviu falar nesse nome, google-for-it ! agora!) em que ele diz 5 ferramentas que um programador PHP precisa conhecer, nós dizemos mais: considere-se um programador somente se você conhecer PELO MENOS as cinco ferramentas abaixo! </p>
+<h2>5: Testes Unitários</h2>
+<p>Todo mundo bate nesta tecla, hoje temos ótimas soluções ( <a href="http://www.phpunit.de/" rel="nofollow">PHPUnit</a> e <a href="http://www.simpletest.org/" rel="nofollow">SimpleTest</a> ) para isso, todas muito maduras e largamente utilizadas. A vantagem de se desenvolver com o apoio dos testes de unidade ou até mesmo utilizando TDD (Test Driven Development) é notável e díficil de apresentar a quem nunca utilizou. No começo tudo pode parecer muito trabalhoso e inútil, mas com o tempo os testes unitários que você (teoricamente) &quot;perdeu tempo&quot; escrevendo se provam fiéis amigos do programador.</p>
+<h2>4: Debug</h2>
+<p>Debugar um código está bem longe de sair dando &quot;echo&quot; pelo código ! Isso vale para as mais rebuscadas técnicas que variam dessa, como por exemplo escrever uma função específica pra isso ou controlar isso através de alguma constante e/ou variável. O debug de um código consiste em ver o que existe na memória de execução do PHP em determinado momento do script, além de possíbilitar controlar o interpretador, parando, avançando a medida que for necessário ao programador. Existem - pra variar - muitas ferramentas pra isso: <a href="http://www.xdebug.org/" rel="nofollow">xDebug</a>, <a href="http://www.nusphere.com/products/php_debugger.htm" rel="nofollow">dbg</a>, <a href="http://www.zend.com/en/community/pdt" rel="nofollow">Zend_Debug</a>, etc ...</p>
+<h2>3: Modelo ER</h2>
+<p>Trabalhar com PHP invariavelmente significa trabalhar com um Banco de Dados assim como trabalhar com desenvolvimento de sistemas implica invariavelmente em constantes mudanças; é muito lógico no momento de criação de uma nova tabela a modelagem dela e os relacionamentos que ela possui dentro do sistema, mas e depois de 1 ano ? As pessoas mudam, amadurecem (ou não) e mudam o jeito de conceber as coisas, mas o banco de dados continua o mesmo e toda a lógica vai pro saco ! Por isso ter um diagrama de entidade-relacionamento do seu banco de dados pode ser crucial para o andamento de um projeto durante muito tempo, você não perde muito tempo fazendo isso e existem ainda várias ferramentas para ajudar!
+( Vamos atualizar a listagem das ferramentas para auxiliar na produão de MERs com o tempo ... )</p>
+<h2>2: Sistema de Controle de Versões</h2>
+<p>Não vamos perder muito tempo discutindo isso aqui, se você trabalha em equipe ou não, seja seu projeto gigante ou não: use! Além de manter todas as versões do seu projeto você têm um backup do código. Trabalhar com um sistema de controle de versão se equipara aos Testes de Unidade: você pode passar uma vida inteira sem eles, mas uma vez com eles, nunca mais sem eles!
+Existem diversas opções, as mais famosas: <a href="http://ximbiot.com/cvs/wiki/" rel="nofollow">CVS</a> (utilizado no desenvolvimento do PHP mas sendo migrado pro Subversion), <a href="http://subversion.tigris.org/" rel="nofollow">Subversion</a> (mais novo que o CVS e muito semelhante a ele), <a href="http://git-scm.com/" rel="nofollow">GIT</a> (feito pelo Linus Torvalds para o desenvolvimento do kernel do Linux)</p>
+<h2>1: (Um) Framework</h2>
+<p>Esse aqui vai gerar briga, mas a briga vale a pena. Primeiro: um CMS (Joomla, Drupal, etc) não é um framework ! Nunca foram e nunca serão, este não é o propósito deles. Um framework é um conjunto de ferramentas genérico que deve servir bem um programador fazendo um site e um fazendo um sistema de gerenciamento logístico de entrega de camisinhas musicais no sertão brasileiro!
+Você não precisa utilizar um framework em seus projetos, mas conhecer um ou mais frameworks ajuda em muito seu nível de desenvolvimento! Acredite: você não é o melhor programador que existe ! Existem muitos outros que pensam a mesma coisa! Um fato é que um framework possui muito conhecimento alheio agregado dentro do código, assim como muito teste em ambientes reais.
+Muitos pregam que a curva de aprendizado custa demais a empresa. Ora, se a empresa fizer um sistema a partir do zero, novos desenvolvedores também terão que aprender a utilizar as coisas existentes que provavelmente terão menos padrão, menos qualidade e muito menos teste. Outro motivo latente é a performance, uma besteira nós dizemos! Existem muitas formas de se obter performance sem ao menos mexer em uma linha de código, além de que a probabilidade de um framework criado por você ser mais lento do que um existente é bem grande!
+Enfim, utilizando ou não um framework no dia-a-dia; conhecer um ou mais é fundamental para o desenvolvimento profissional do programador! Existem MUITOS frameworks em PHP, vamos citar alguns:</p>
+<ul>
+<li><a href="http://www.cakephp.org/" rel="nofollow">CakePHP</a> (Rails do PHP)</li>
+<li><a href="http://framework.zend.com" rel="nofollow">Zend Framework</a></li>
+<li><a href="http://www.kohanaphp.com" rel="nofollow">Kohana</a> (baseado no <a href="http://www.codeigniter.com" rel="nofollow">CodeIgniter</a> mas somente para PHP5)</li>
+<li><a href="http://www.symfony-project.org/" rel="nofollow">Symphony</a></li>
+<li><a href="http://www.pradosoft.com/" rel="nofollow">Prado</a> (Event Driven Framework)</li>
+</ul>
+<h2>Conclusão</h2>
+<p>Programar vai muito além de simplimente saber escrever códigos. Um programador não é a pessoa que simplismente escreve o código para máquina interpretar e executar o que ele deseja, ele precisa fazer isso de forma legível para os demais programadores além de garantir que tudo continue funcionando perfeitamente. Todos os cinco itens citados acima contribuem exatemente pra isso!
+Tenha sempre em mente o que foi dito acima: você escreve para os outros e não para você! Raramente você vai escrever algo para esconder do resto do mundo, ou que não vá precisar da mão de alguém no código, mas se nada disse te convenceu, escreva os códigos pensando que o próximo que for dar manutenção no seu código pode ser um serial killer que sabe onde você mora! E outra; não existe nenhuma medida que diga seu nível em PHP. Atualmente a melhor delas é a Certificação da Zend, mas excluindo ela da lista, o que vai dizer se você é ou não é um bom programador é a opinião dos outros sobre seu código. Pense nisso na próxima vez em que você for programar!
+Notem também que IDEs nem entraram nos pontos, uma porque isso é uma discussão infindável e outra porque uma IDE não vai tornar você um melhor programador, ela com certeza vai te tornar um programador mais produtivo! Então escolha bem a sua!
+Contamos com suas opiniões sobre os asssuntos acima! E vamos indo rumo a des-sobrinhação  do PHP!</p>
+<hr />
+<p>Artigo originalmente criado em 17/02/2009.</p>        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            
+                    </div>
+    </section>
+        <div class="container has-text-centered">
+    <div class="notification">
+        Acha que esse conteúdo possui erros ou poderia ser aperfeiçoado?
+        <a href="https://github.com/phpsp/phpsp.org.br/blob/master/source/_posts/5-coisas-que-um-programador-PHP-precisa.md" title="Ajuste esse conteúdo!" target="_blank">Colabore!</a>
+    </div>
+</div>    </div>
+</section>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <div class="level is-small">
+            <div class="level-item">
+                <a href="https://php.net" target="_blank">
+                    <figure class="image is-128x128">
+                        <img src="/assets/images/sponsors/php.png" title="PHP.net">
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="level is-small">
+            <div class="level-item">
+            <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/azure.png" title="Microsoft Azure"
+                         alt="Microsoft Azure">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://imasters.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/imasters.png" title="iMasters"
+                         alt="iMasters">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://paypal.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/paypal.png" title="PayPal"
+                         alt="PayPal">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://www.locaweb.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/locaweb.png" title="LocaWeb"
+                         alt="LocaWeb">
+                </figure>
+            </a>
+        </div>
+    </div>
+<div class="level is-small">
+            <div class="level-item">
+            <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/phpstorm.png" title="PHPStorm"
+                         alt="PHPStorm">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://contaazul.com/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/contaazul.png" title="ContaAzul"
+                         alt="ContaAzul">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://devnaestrada.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/devnaestrada.png" title="Dev Na Estrada"
+                         alt="Dev Na Estrada">
+                </figure>
+            </a>
+        </div>
+    </div>
+
+        <hr>
+        <p>O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://github.com/phpsp/phpsp.org.br/graphs/contributors" target="_blank" title="Colaboradores do Site PHPSP.org">Comunidade PHPSP</a>.</p>
+        <p>O código deste site esta sob a licença <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="Licença MIT">MIT</a> e pode ser encontrado <a href="https://github.com/phpsp/phpsp.org.br/" target="_blank" title="Código Fonte do Site PHPSP.org.br">aqui</a>.</p>
+        <p>O conteúdo deste site esta sob a licença <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licença CC BY NC SA 4.0">CC BY NC SA 4.0</a>.</p>
+    </div>
+</footer>
+</html>

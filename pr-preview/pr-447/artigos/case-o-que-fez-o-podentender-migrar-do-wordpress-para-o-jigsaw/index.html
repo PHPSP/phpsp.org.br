@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="https://phpsp.org.br/artigos/case-o-que-fez-o-podentender-migrar-do-wordpress-para-o-jigsaw" />
+    <title>PHPSP | Case: O que fez o PODEntender migrar do Wordpress para o Jigsaw</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7974451-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-7974451-1');
+    </script>
+
+    <link rel="shortcut icon" href="/assets/images/phpsp/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=b46970f13028c511b4b2">
+    <script defer src="/assets/build/js/main.js?id=09bbc832a3d0ac409ec2"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
+            </a>
+
+                            <a class="navbar-item is-hidden-desktop" href="https://phpsp.org.br/feed.xml" target="_blank">
+                    <img src="/assets/images/thirdparty/rss.png"
+                         title="RSS" alt="RSS">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                         title="Twitter" alt="Twitter">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                         title="Slack" alt="Slack">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://t.me/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/telegram.png"
+                         title="Telegram" alt="Telegram">
+                </a>
+            
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuComunidade" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">A Comunidade</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item " href="/a-comunidade">
+                          <span>
+                            <strong>A Comunidade PHPSP</strong>
+                            <br>
+                            O que é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <a class="navbar-item " href="/quem-e-a-comunidade">
+                          <span>
+                            <strong>Quem é a Comunidade PHPSP</strong>
+                            <br>
+                            Quem é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta">
+                          <span>
+                            <strong>Código de Conduta</strong>
+                            <br>
+                            Codigo de conduta para a comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="/artigos">
+                    <span>Artigos</span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Eventos</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                                                <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP São Paulo</strong>
+                            <br>
+                            Eventos na cidade de SP
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-campinas/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Campinas</strong>
+                            <br>
+                            Eventos na cidade de Campinas
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-santos/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na cidade de Santos
+                          </span>
+                        </a>
+                        
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
+                          <span>
+                            <strong>Código de Conduta para Eventos</strong>
+                            <br>
+                            Codigo de conduta para a eventos da comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/php-the-right-way" target="_blank">
+                              <span>
+                                <strong>PHP The Right Way - BR</strong>
+                                <br>
+                                Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/quero-palestrar" target="_blank">
+                              <span>
+                                <strong>Quero Palestrar</strong>
+                                <br>
+                                Repositório de palestrantes e propostas de palestras para eventos de tecnologia
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/zf2-documentation-br" target="_blank">
+                              <span>
+                                <strong>ZF2 docs - BR</strong>
+                                <br>
+                                Tradução da Documentação Oficial do Zend Framework
+                              </span>
+                            </a>
+                                            </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://phpsp.org.br/feed.xml" target="_blank">
+                        <img src="/assets/images/thirdparty/rss.png"
+                             title="RSS" alt="RSS">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://github.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/GitHub-Mark-120px-plus.png"
+                             title="GitHub" alt="GitHub">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://twitter.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                             title="Twitter" alt="Twitter">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                             title="Slack" alt="Slack">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/" target="_blank">
+                        <img src="/assets/images/thirdparty/In-2C-128px-TM.png"
+                             title="LinkedIn" alt="LinkedIn">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://facebook.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/flogo_RGB_HEX-144.png"
+                             title="Facebook" alt="Facebook">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://t.me/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/telegram.png"
+                             title="Telegram" alt="Telegram">
+                    </a>
+                            </div>
+        </div>
+    </div>
+</nav>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">PHPSP </a></li>
+
+                    <li><a href="/artigos">Artigos</a></li>
+        
+        <li class="is-active"><a href="#" aria-current="page">Case: O que fez o PODEntender migrar do Wordpress para o Jigsaw</a></li>
+    </ul>
+</nav>            <section class="section">
+        <div class="content">
+            <h1 class="title is-1">Case: O que fez o PODEntender migrar do Wordpress para o Jigsaw</h1>
+            <p>
+                <small>
+                    por Níckolas Silva
+                    em 01/05/2019
+                </small>
+            </p>
+
+            <p>Quem me acompanha sabe que há alguns meses passei a integrar a equipe do <em>Maior Podcast em Linha Reta da América Latina e
+quiçá de Pernambuco</em>, o podcast de divulgação científica <a href="https://podentender.com" rel="nofollow">PODEntender</a>.</p>
+<p>Este podcast - como quase todos os outros - é um projeto independente e, naturalmente, de <strong>budget reduzido</strong>. Que me
+trouxe a encontrar um website todo fulêro em cima de <strong>Wordpress</strong>, vários <strong>plugins</strong> estranhos, um <strong>template muito
+limitado</strong> e uma <strong>hospedagem barata</strong> que permitia o site cair com <strong>15 usuários simultâneos</strong>.</p>
+<p>Para quem quer salvar a produção científica de um país de quase 210 milhões de habitantes, <strong>15 usuários
+simultâneos não é bem o que podemos chamar de &quot;limite confortável&quot;</strong>.</p>
+<h1>Início da análise</h1>
+<p>O site já estava pegando fogo, <strong>nenhuma falha era novidade</strong>. Então em vez de aplicar várias das possíveis medidas
+urgentes eu resolvi primeiro observar quais eram os problemas e oportunidades que existiam.</p>
+<p>A minha maior missão naquele momento era <strong>evitar que o site caísse com apenas 15 usuários</strong>. Com isto em mente
+encontrei algumas falhas interessantes no site que poderiam ser rapidamente corrigidas:</p>
+<ul>
+<li>Os arquivos não eram minificados</li>
+<li>O template carregava 8 arquivos CSS diferentes</li>
+<li>Várias fontes diferentes de JS sendo carregadas</li>
+<li>Um dos arquivos CSS era dinâmico, gerado pelo Wordpress (e levava 3 segundos para ser gerado)</li>
+<li>Não havia um mecanismo de caching para as páginas geradas</li>
+<li>Imagens de dimensões continentais e tamanho em média superior a 1 mega-byte</li>
+<li>JavaScript abusivamente pesado, diversas versões de jQuery na mesma página</li>
+<li>Nenhum dos recursos estava num CDN e todos eram processados pelo PHP antes de serem enviados ao browser</li>
+</ul>
+<p><strong>O site parecia um daqueles exemplos bizarros que o PokemãoBR dá em seus stand-ups</strong>.</p>
+<p>As tentativas de corrigir o cenário, porém, falharam miseravelmente.</p>
+<p><strong>Limitações de hospedagem</strong>, <strong>Wordpress</strong>, <strong>template</strong>, falha (falta) de <strong>processos da equipe</strong> interna que por
+vezes atualizava o template quando atualização ficava disponível, gerando um wipe em todas as alterações manuais.
+<strong>E é claro, não havia um sistema de versionamento...</strong></p>
+<h3>Primeira proposta: Utilizar o Cloudflare para caching e distribuição global</h3>
+<p>O serviço Cloudflare é muito bacana para projetos de baixo custo, pois mesmo a versão gratuita oferece funcionalidades
+incríveis como minificação de arquivos, caching, gerenciamento de DNS e por aí vai.</p>
+<p><strong>A intenção aqui era adicionar uma camada de caching</strong> nos recursos <code>css</code> e <code>js</code> do site para <strong>evitar</strong> que todas as
+bizarrices acima mencionadas <strong>fossem requisitadas mais de uma vez ao servidor</strong>. Desta forma eu <strong>esperava</strong>
+que a carga no servidor diminuísse e a gente conseguisse ao menos <strong>ver o site cair com menor frequência.</strong></p>
+<p>A migração levou 10 minutos no total. E para todo IP <strong>europeu</strong> que utilizei pra testar em diversas ferramentas, <strong>as
+métricas estavam incrivelmente boas</strong>. Foi felicidade instantânea!</p>
+<p>Minutos depois recebo a <strong>reclamação</strong> de usuários <strong>brasileiros</strong> que <strong>o site estava chorosamente lento</strong>. Desfazer a
+integração levou alguns segundos apenas, mas nada parecia fazer sentido!</p>
+<p><strong>Por que cargas d'água o site ficou mais lento no país onde o servidor está!?</strong></p>
+<p>Naturalmente eu não tinha acesso ao <code>ssh</code> do servidor para monitorar os logs de acesso e performance, mas pude notar que
+algumas páginas foram cacheadas com o conteúdo de resposta <code>erro 503</code> padrão da hospedagem.</p>
+<p><strong>O servidor provavelmente não aguentou sequer a negociação de conteúdo com o Cloudflare.</strong></p>
+<p>Além disso ao acessar o painel de administração do Wordpress uma barra preta é adicionada ao topo do site normal na
+navegação. Acabamos adicionando também esta barra preta no cache por acidente.</p>
+<p>Lições da vida...</p>
+<h3>Segunda proposta: Prover páginas estáticas para diminuir a carga e tempo de resposta</h3>
+<p>Ora, se <strong>o processamento está condenando a nossa infraestrutura</strong> vamos então acabar com ele! E foi com sangue nos
+olhos e muita força de vontade que eu comecei a desenvolver o primeiro protótipo do projeto
+<a href="https://github.com/podentender/estatista-deprecado" rel="nofollow">Estatista</a>.</p>
+<p>A intenção aqui era criar um <em>spider</em> que iria <strong>baixar o site inteiro</strong> e seus recursos, organizar em diretório físico
+e enviar ao Github Pages para que pudessemos oferecer este conteúdo num <strong>servidor gratuito</strong>, de <strong>ampla distribuição</strong>
+e que tinha <strong>chances bem menores de cair</strong>.</p>
+<p>Foi um projeto de final de semana interessante e que mudou de estrutura duas vezes por uma razão simples: <strong>péssimas
+decisões de design</strong>.</p>
+<p>Arrastando já há algumas semanas e sem resultados concretos, <strong>a situação do site começou a ficar cada vez mais
+crítica</strong> e quase todas <strong>as medidas de <em>branding</em> e <em>SEO</em></strong> que queríamos aplicar <strong>estavam bloqueadas pela situação</strong>.</p>
+<h3>Foi quando eu revisitei o repositório do <a href="https://phpsp.org.br">phpsp.org.br</a>...</h3>
+<p>O novo site do PHPSP estava não somente de cara mas de <a href="/artigos/jigsaw-netlify-e-o-novo-site-do-phpsp/">corpo novo</a> e
+esta nova infraestrutura do website trazia consigo um potencial de performance muito grande.</p>
+<p>Usando como base o <a href="http://jigsaw.tighten.co/" rel="nofollow">Jigsaw</a> para fazer o server side rendering o site passaria a ser gerado
+já de forma estática.</p>
+<p>Com arquivos <code>.html</code> em mãos eu poderia simplesmente publicar tudo com Github Pages e <strong>reduzir a zero o custo de
+infraestrutura</strong> com o site, <strong>diminuir o tempo de resposta</strong>, distribuir o site em diversos continentes com <strong>alta
+performance</strong> e voltar a <strong>utilizar o Cloudflare</strong> sem problemas.</p>
+<p>O potencial se confirmou para mim ao testar o site do phpsp com o <strong>Google Lighthouse</strong>:</p>
+<p>Uma pontuação de <strong>93/100</strong> no Google Lighthouse é um tanto impressionante. Considere que, no momento em que escrevo este
+post, o <strong>Facebook</strong> atinge um score de <strong>76/100</strong> no mesmo teste e categoria. O <strong>PODEntender</strong> estava em <strong>9/100</strong>,
+tadinho.</p>
+<p><img src="/assets/images/posts/Case-O-que-fez-o-PODEntender-migrar-do-Wordpress-para-o-Jigsaw/lighthouse-phpsp.png" alt="Resultado do Lighthouse apresentando 93/100 em Performance" /></p>
+<h2>Terceira proposta: vamos sair do Wordpress e gerar páginas estáticas!</h2>
+<p>Não me entenda mal: eu tenho várias ressalvas quanto ao Wordpress mas o vejo como uma ferramenta incrível <strong>se bem
+utilizada</strong>.</p>
+<p>O nosso contexto exigia uma solução menos robusta, com maior performance e custo reduzido. E de longe <strong>não estávamos
+fazendo bom uso do Wordpress</strong>.</p>
+<p>Inspirado pelo phpsp.org.br <strong>decidi migrar para um gerador estático</strong> de páginas e para uma hospedagem web que
+aguentasse o tranco.</p>
+<p>A decisão natural seria utilizar o Github Pages e, com ele, o gerador de sites <code>Jekyll</code> (ruby),
+pois já possui diversas integrações interessantes com este serviço.</p>
+<p>Ao mesmo tempo, o site do phpsp estava iniciando sua reformulação e precisaria de auxílio. O site acabou optando por uma
+ferramenta em php <strong>menos integrada</strong> e com <strong>menor variedade</strong> (por enquanto) <strong>de plugins</strong> disponíveis: o Jigsaw.</p>
+<p>Sem sombra de dúvidas decidi então seguir a deixa: o que eu desenvolver ao PODEntender será potencialmente útil
+ao phpsp. E assim a gente caminha juntos. 😉</p>
+<h1>E assim seguimos</h1>
+<p>Quatro meses depois renovando layout, migrando conteúdo, ajustando bugs, tomando certeza de que todas nossas integrações
+continuariam funcionando e um mês de beta testing, o <a href="https://podentender.com" rel="nofollow">novo site do PODEntender</a> está no ar.</p>
+<p>Os desafios que encontramos pelo caminho foram um tanto interessantes: de recuperar links do Google que apontavam a
+páginas antigas até manter o feed compatível com a versão anterior para o iTunes e Spotify. Com total certeza irei
+apresentar os problemas e soluções encontradas!</p>
+<p>Como não poderia deixar de ser, preciso encerrar este texto com métricas felizes!
+O site saiu de beta e entrou em produção há uma semana, coletou apenas elogios e atingiu a marca de <strong>98/100</strong> na
+métrica de performance do Lighthouse. Além de termos tido a oportunidade de corrigir o template para alcançar
+<strong>100/100</strong> em todas as outras métricas: Acessibilidade, Melhores Práticas e SEO. O <em>First Contentful Paint</em> que antes
+batia 15 segundos, agora se resolve em 0,8 segundos. </p>
+<p><img src="/assets/images/posts/Case-O-que-fez-o-PODEntender-migrar-do-Wordpress-para-o-Jigsaw/lighthouse-podentender.png" alt="Resultado do Lighthouse apresentando 98/100 em Performance" /></p>
+<p>Com total certeza ainda temos muito o que melhorar no projeto do podcast: funcionalidade, layout, seo. Mas o primeiro
+passo foi concluído e agora, sem que o website esteja em chamas, o PODEntender passa a caminhar junto do phpsp.org.br,
+propondo, desenvolvendo e compartilhando plugins e corrigindo problemas específicos da nossa plataforma.</p>
+<p>Se você estiver curioso(a) em como os nossos sites foram desenvolvidos ou tiver qualquer sugestão de melhoria, dá uma
+olhadinha no novo <a href="https://github.com/podentender/estatista" rel="nofollow">repositório do estatista no PODEntender</a> e no
+<a href="https://github.com/PHPSP/phpsp.org.br" rel="nofollow">repositório do blog phpsp.org.br</a>. Ambos projetos estão abertos no Github e
+contentes em receber a sua contribuição.</p>
+<p>Um xêro muito grande a todos e até a próxima!</p>        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            
+            <h4 class="title is-4">Mais posts deste Autor</h4>
+    <div class="tile is-ancestor">
+                    <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/phpeste-2022">PHPeste 2022 em Natal, Rio Grande do Norte</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 20/06/2022</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/voce-achou-que-sabia-sobre-generators-php">Você achou que sabia sobre Generators no PHP</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 11/12/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/como-php-funciona-na-verdade">Como o PHP funciona na verdade</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 19/11/2019</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                            <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/tdd-com-php-na-vida-real">TDD na vida real com PHP</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 03/11/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/ola-php-eu-sou-um-engenheiro">Olá, PHP. Eu sou um Engenheiro.</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 29/10/2019</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/3-projetos-para-iniciar-no-hacktoberfest-2019">3 Projetos para Iniciar no Hacktoberfest 2019</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 09/10/2019</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                    </div>
+        </div>
+    </section>
+        <div class="container has-text-centered">
+    <div class="notification">
+        Acha que esse conteúdo possui erros ou poderia ser aperfeiçoado?
+        <a href="https://github.com/phpsp/phpsp.org.br/blob/master/source/_posts/Case-O-que-fez-o-PODEntender-migrar-do-Wordpress-para-o-Jigsaw.md" title="Ajuste esse conteúdo!" target="_blank">Colabore!</a>
+    </div>
+</div>    </div>
+</section>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <div class="level is-small">
+            <div class="level-item">
+                <a href="https://php.net" target="_blank">
+                    <figure class="image is-128x128">
+                        <img src="/assets/images/sponsors/php.png" title="PHP.net">
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="level is-small">
+            <div class="level-item">
+            <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/azure.png" title="Microsoft Azure"
+                         alt="Microsoft Azure">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://imasters.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/imasters.png" title="iMasters"
+                         alt="iMasters">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://paypal.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/paypal.png" title="PayPal"
+                         alt="PayPal">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://www.locaweb.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/locaweb.png" title="LocaWeb"
+                         alt="LocaWeb">
+                </figure>
+            </a>
+        </div>
+    </div>
+<div class="level is-small">
+            <div class="level-item">
+            <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/phpstorm.png" title="PHPStorm"
+                         alt="PHPStorm">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://contaazul.com/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/contaazul.png" title="ContaAzul"
+                         alt="ContaAzul">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://devnaestrada.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/devnaestrada.png" title="Dev Na Estrada"
+                         alt="Dev Na Estrada">
+                </figure>
+            </a>
+        </div>
+    </div>
+
+        <hr>
+        <p>O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://github.com/phpsp/phpsp.org.br/graphs/contributors" target="_blank" title="Colaboradores do Site PHPSP.org">Comunidade PHPSP</a>.</p>
+        <p>O código deste site esta sob a licença <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="Licença MIT">MIT</a> e pode ser encontrado <a href="https://github.com/phpsp/phpsp.org.br/" target="_blank" title="Código Fonte do Site PHPSP.org.br">aqui</a>.</p>
+        <p>O conteúdo deste site esta sob a licença <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licença CC BY NC SA 4.0">CC BY NC SA 4.0</a>.</p>
+    </div>
+</footer>
+</html>

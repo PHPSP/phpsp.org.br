@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="https://phpsp.org.br/artigos/ciclo-de-feedback-no-desenvolvimento-guiado-a-testes" />
+    <title>PHPSP | Ciclo de Feedback no Desenvolvimento de Software Guiado a Testes</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7974451-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-7974451-1');
+    </script>
+
+    <link rel="shortcut icon" href="/assets/images/phpsp/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=b46970f13028c511b4b2">
+    <script defer src="/assets/build/js/main.js?id=09bbc832a3d0ac409ec2"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
+            </a>
+
+                            <a class="navbar-item is-hidden-desktop" href="https://phpsp.org.br/feed.xml" target="_blank">
+                    <img src="/assets/images/thirdparty/rss.png"
+                         title="RSS" alt="RSS">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                         title="Twitter" alt="Twitter">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                         title="Slack" alt="Slack">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://t.me/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/telegram.png"
+                         title="Telegram" alt="Telegram">
+                </a>
+            
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuComunidade" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">A Comunidade</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item " href="/a-comunidade">
+                          <span>
+                            <strong>A Comunidade PHPSP</strong>
+                            <br>
+                            O que é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <a class="navbar-item " href="/quem-e-a-comunidade">
+                          <span>
+                            <strong>Quem é a Comunidade PHPSP</strong>
+                            <br>
+                            Quem é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta">
+                          <span>
+                            <strong>Código de Conduta</strong>
+                            <br>
+                            Codigo de conduta para a comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="/artigos">
+                    <span>Artigos</span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Eventos</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                                                <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP São Paulo</strong>
+                            <br>
+                            Eventos na cidade de SP
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-campinas/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Campinas</strong>
+                            <br>
+                            Eventos na cidade de Campinas
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-santos/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na cidade de Santos
+                          </span>
+                        </a>
+                        
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
+                          <span>
+                            <strong>Código de Conduta para Eventos</strong>
+                            <br>
+                            Codigo de conduta para a eventos da comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/php-the-right-way" target="_blank">
+                              <span>
+                                <strong>PHP The Right Way - BR</strong>
+                                <br>
+                                Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/quero-palestrar" target="_blank">
+                              <span>
+                                <strong>Quero Palestrar</strong>
+                                <br>
+                                Repositório de palestrantes e propostas de palestras para eventos de tecnologia
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/zf2-documentation-br" target="_blank">
+                              <span>
+                                <strong>ZF2 docs - BR</strong>
+                                <br>
+                                Tradução da Documentação Oficial do Zend Framework
+                              </span>
+                            </a>
+                                            </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://phpsp.org.br/feed.xml" target="_blank">
+                        <img src="/assets/images/thirdparty/rss.png"
+                             title="RSS" alt="RSS">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://github.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/GitHub-Mark-120px-plus.png"
+                             title="GitHub" alt="GitHub">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://twitter.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                             title="Twitter" alt="Twitter">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                             title="Slack" alt="Slack">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/" target="_blank">
+                        <img src="/assets/images/thirdparty/In-2C-128px-TM.png"
+                             title="LinkedIn" alt="LinkedIn">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://facebook.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/flogo_RGB_HEX-144.png"
+                             title="Facebook" alt="Facebook">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://t.me/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/telegram.png"
+                             title="Telegram" alt="Telegram">
+                    </a>
+                            </div>
+        </div>
+    </div>
+</nav>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">PHPSP </a></li>
+
+                    <li><a href="/artigos">Artigos</a></li>
+        
+        <li class="is-active"><a href="#" aria-current="page">Ciclo de Feedback no Desenvolvimento de Software Guiado a Testes</a></li>
+    </ul>
+</nav>            <section class="section">
+        <div class="content">
+            <h1 class="title is-1">Ciclo de Feedback no Desenvolvimento de Software Guiado a Testes</h1>
+            <p>
+                <small>
+                    por José Filho (Zé)
+                    em 03/02/2020
+                </small>
+            </p>
+
+            <p>Ciclo de Feedback para desenvolvimento de Software guiado a Testes</p>
+<p>Feedback apesar de ainda -ao meu ver- não ser tão praticado no mercado brasileiro de desenvolvimento de Software
+é o ponto chave para um desenvolvimento com qualidade, seja ele a nível técnico, de gestão ou pessoal.</p>
+<p>Hoje vamos falar sobre os feedbacks que nosso próprio código pode nos dar sobre nosso trabalho enquanto pessoas desenvolvedoras de Software.</p>
+<p>Bom, muito provavelmente não fui eu quem inventou o nome <em>Ciclo de Feedback para desenvolvimento de Software</em> mas estou adicionando o <em>guiado a Testes</em>. Legal mas o que isso quer dizer? Quer dizer que, quando trabalhando no desenvolvimento de uma tarefa qualquer, que seja guiada a testes, nós temos que trabalhar em cima do feedback que os testes nos trazem e não com o pensamento de que temos apenas que codar a feature e adicionar testes para garanti-las. Realizar uma tarefa guiada a testes com esse pensamento é disperdiçar boa parte do potencial da abordagem do TDD.</p>
+<h2>Benefícios do TDD</h2>
+<p>Desenvolvimento guiado a testes tende a trazer diversos benefícios a nossa code base, por exemplo:</p>
+<p>I) Melhor design da nossa aplicação:</p>
+<ul>
+<li>Quando estamos falando de OOP, aplicar TDD irá guiar o design das nossas classes/interfaces. Se por acaso está difícil testar aquele método safado que você queria colocar um <code>new Classe()</code> dentro do método, é o seu teste te dizendo: tira esse <code>new</code> daí, rapaz! E a partir daí você irá refatorar (espero eu!) seu método para algo menos acoplado.
+Viu só? O teste guiou nosso design!</li>
+</ul>
+<p>II) Documentação viva:</p>
+<ul>
+<li>Seus testes, em teoria, deveriam formar uma espécie de documentação para seu software. E porque &quot;viva&quot;?
+Bom, eu particularmente nunca vi morto dar feedback muito menos quebrar! E pode ter certeza que hora ou outra seus testes irão fazer ambos!</li>
+</ul>
+<p>III) desenvolvimento guiado a testes pode antecipar desastres e provem feedback contínuo:</p>
+<ul>
+<li>Rodar sua suíte de testes toda vez que você termina de escrever sua última linha de código (e seus testes atuais estão passando) podem antecipar desastres como: exibir interfaces que foram violadas com a nova implementação; apontar falsos positivos (eu falei pá tu não confiar naquele teste!) etc...
+Neste artigo a ideia é focar justamente nos feedbacks que seus testes trazem continuamente, por isso proponho a fase de planejamento ao final de cada ciclo de iteração do TDD.</li>
+</ul>
+<p>O que seria esse ciclo? Ótima pergunta!</p>
+<p>Bom, um ciclo é definido pelo ato de realizar tarefas e quando atingimos o ponto de final desta tarefa iniciamos novamente o movimento do começo, realizando
+movimentos cíclicos.</p>
+<p>Para falar bonito, vamos pegar um gancho com o nosso amigo <strong>Kris Philippaerts</strong> logo em sua primeira resposta a uma entrevista concedida à <em>infoQ</em> em maio/2015.</p>
+<pre><code>InfoQ: Você pode nos explicar o você que quer dizer com ciclos de feedback no Scrum?
+
+Kris Philippaerts: Ciclos de feedback no Scrum, ou em qualquer outro processo empírico, 
+são períodos curtos de tempo recorrentes em que uma quantidade limitada de trabalho/informação é processada.
+Ao final de cada ciclo, paramos de trabalhar e nos permitimos inspecionar o trabalho e melhorar o processo para o próximo ciclo. 
+Um exemplo típico de ciclos de feedback é o ciclo de qualidade de Deming: Plan-Do-Check-Act (PDCA).</code></pre>
+<p><em>Pô Zé, mas aí você está falando sobre Scrum e eu vim ler sobre testes, cara!</em></p>
+<p>Calma rapaz, vamos transpor isso para nosso cenário de pessoas praticantes de TDD!</p>
+<p>**PS: Recentemente nosso amigo <a href="https://twitter.com/nawarian" rel="nofollow">@nawarian</a> escreveu sobre TDD <a href="https://phpsp.org.br/artigos/tdd-com-php-na-vida-real/">aqui</a> no nosso blog! E lá ele explica muito bem sobre o ciclo do TDD, então não irei me repetir aqui, corre lá e vorta cá depois!</p>
+<p>Vamos focar nesta parte <em>&quot;...períodos curtos de tempo recorrentes em que uma quantidade limitada de trabalho/informação é processada.
+Ao final de cada ciclo, paramos de trabalhar e nos permitimos inspecionar o trabalho e melhorar o processo para o próximo ciclo...&quot;</em></p>
+<p>Fez mais sentido agora? Vamos usar o ciclo PDCA aplicado ao TDD então.</p>
+<h2>O ciclo PDCA e sua aplicação no TDD</h2>
+<p>Quando seguimos os passos do TDD (red -&gt; green -&gt; refactor) estamos nos encaixando em Do (fazer), Check (conferir), Act (refactor). E a partir de agora, ao invés de sairmos escrevendo testes igual doido, só pra passar aquele pedacinho de código que pensamos em implementar, vamos usar o <strong>Plan</strong> antes (e consequentemente depois também, afinal, é um ciclo).</p>
+<p><em>Não vou entrar na questão de planejamento de tasks pois não é o foco do artigo mas recomendo fortemente ao menos uma leitura sobre o assunto</em></p>
+<p>Ao planejar nossa task, vamos tentar pensar em como ela se comportará em acordo com nosso ecossistema, quais efeitos colaterais posso estar produzindo ao escrever esse trecho de código, se estou fazendo uma manutenção como vou facilitar para o próximo a manter esse código etc etc.</p>
+<p>Feito isso passamos para o planejamento do nosso código em sí e no nosso caso começando pelos testes. O ciclo red -&gt; green -&gt; refactor não mudará em nada, minha proposta é:
+a cada iteração deste ciclo - ao invés de apenas voltar para o testes na hora do refactor - pare um pouco e planeje novamente, tente olhar um pouco mais de fora e entender o que essa adição de código fez com seu sistema e NÃO RODE APENAS O TESTE DAS CLASSES QUE VOCÊ ESTÁ IMPLEMENTANDO AGORA! Ao fazer isso você está atrasando o feedback de alguma merda que deu!</p>
+<p>Neste planejamento desconfie dos seus testes e dos testes da sua suíte! Passou tudo? Tente dar uma olhada ao redor e veja se a cobertura e testes está realmente cobrindo possíveis casos de bug ou estão só testando aquele <code>$this-&gt;assertEquals(1, 1)</code>.</p>
+<p>Na fase de planejamento é onde podemos aproveitar todo o potencial do TDD pois podemos olhar com calma os resultados das fases anteriores e começar a agir novamente (neste caso: Do): Será que preciso refatorar este namespace? Será que ficou claro o que estou fazendo aqui? Meu teste está de alguma forma documentando essa parte do sistema? Faça esse tipo de pergunta na fase de planejamento e serás mais feliz futuramente.</p>
+<h2>Por que adicionar mais uma etapa a um ciclo já &quot;bem definido&quot;?</h2>
+<p>Mas porque trazer esta abordagem para o desenvolvimento guiado a testes? Simples!</p>
+<p>Nos últimos anos tenho visto muito conteúdo sobre testes e pouco sobre os reais benefícios do testes... Isso me fez perceber que tem muita gente fazendo testes por fazer, para cobrir aquele trecho de código que nem ele mesmo acredita que tá certo e precisa de um teste pra dizer isso!</p>
+<p>Parece grosseria mas é verdade, o desenvolvimento guiado a testes não é apenas para adicionar no seu CI um relatório com gráfico bonitinho de coverage alto e sim pra guiar seu desenvolvimento, caraio! Então use este potencial!</p>
+<p>O ciclo mais conhecido como red -&gt; green -&gt; refactor (na minha opinião) ficou muito viciado e estamos apenas &quot;codando igual loucos&quot;, quando vemos o teste ficando verde ao invés de voltarmos ao refactor e fazer a parada direito muitas vezes deixamos lá daquele jeito pra não ter mais trabalho.</p>
+<h2>Conclusão</h2>
+<p>Adicione uma fase extra de planejamento no seu ciclo de desenvolvimento guiado a testes e melhore de fato sua code base!</p>        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            
+            <h4 class="title is-4">Mais posts deste Autor</h4>
+    <div class="tile is-ancestor">
+                    <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/phpsp-pub-fev-2020">PHPSP + PUB Fevereiro 2020</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 03/03/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/sobre-sair-de-um-emprego-que-nao-lhe-faz-bem">Sobre sair de um emprego que não lhe faz bem</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 27/02/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/5-dicas-para-escrever-um-bug-report">5 dicas para escrever um bom bug report</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 20/02/2020</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                            <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/implementando-cultura-qa">Implementando a cultura de Quality Assurance (QA)</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 10/02/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/laravel-middlewares">Introdução a Middlewares com Laravel</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 07/02/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/phpsp-pub-jan-2020">PHPSP + PUB Janeiro 2020</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 25/01/2020</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                    </div>
+        </div>
+    </section>
+        <div class="container has-text-centered">
+    <div class="notification">
+        Acha que esse conteúdo possui erros ou poderia ser aperfeiçoado?
+        <a href="https://github.com/phpsp/phpsp.org.br/blob/master/source/_posts/ciclo-de-feedback-no-desenvolvimento-guiado-a-testes.md" title="Ajuste esse conteúdo!" target="_blank">Colabore!</a>
+    </div>
+</div>    </div>
+</section>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <div class="level is-small">
+            <div class="level-item">
+                <a href="https://php.net" target="_blank">
+                    <figure class="image is-128x128">
+                        <img src="/assets/images/sponsors/php.png" title="PHP.net">
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="level is-small">
+            <div class="level-item">
+            <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/azure.png" title="Microsoft Azure"
+                         alt="Microsoft Azure">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://imasters.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/imasters.png" title="iMasters"
+                         alt="iMasters">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://paypal.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/paypal.png" title="PayPal"
+                         alt="PayPal">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://www.locaweb.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/locaweb.png" title="LocaWeb"
+                         alt="LocaWeb">
+                </figure>
+            </a>
+        </div>
+    </div>
+<div class="level is-small">
+            <div class="level-item">
+            <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/phpstorm.png" title="PHPStorm"
+                         alt="PHPStorm">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://contaazul.com/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/contaazul.png" title="ContaAzul"
+                         alt="ContaAzul">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://devnaestrada.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/devnaestrada.png" title="Dev Na Estrada"
+                         alt="Dev Na Estrada">
+                </figure>
+            </a>
+        </div>
+    </div>
+
+        <hr>
+        <p>O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://github.com/phpsp/phpsp.org.br/graphs/contributors" target="_blank" title="Colaboradores do Site PHPSP.org">Comunidade PHPSP</a>.</p>
+        <p>O código deste site esta sob a licença <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="Licença MIT">MIT</a> e pode ser encontrado <a href="https://github.com/phpsp/phpsp.org.br/" target="_blank" title="Código Fonte do Site PHPSP.org.br">aqui</a>.</p>
+        <p>O conteúdo deste site esta sob a licença <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licença CC BY NC SA 4.0">CC BY NC SA 4.0</a>.</p>
+    </div>
+</footer>
+</html>
