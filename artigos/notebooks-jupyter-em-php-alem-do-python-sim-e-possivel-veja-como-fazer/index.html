@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="https://rogeriopradoj.com/2019/05/13/notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer//" />
+    <title>PHPSP | Notebooks Jupyter em PHP, além do Python? Sim, é possível: veja como fazer!</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7974451-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-7974451-1');
+    </script>
+
+    <link rel="shortcut icon" href="/assets/images/phpsp/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=b46970f13028c511b4b2">
+    <script defer src="/assets/build/js/main.js?id=09bbc832a3d0ac409ec2"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
+            </a>
+
+                            <a class="navbar-item is-hidden-desktop" href="https://phpsp.org.br/feed.xml" target="_blank">
+                    <img src="/assets/images/thirdparty/rss.png"
+                         title="RSS" alt="RSS">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                         title="Twitter" alt="Twitter">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                         title="Slack" alt="Slack">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://t.me/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/telegram.png"
+                         title="Telegram" alt="Telegram">
+                </a>
+            
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuComunidade" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">A Comunidade</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item " href="/a-comunidade">
+                          <span>
+                            <strong>A Comunidade PHPSP</strong>
+                            <br>
+                            O que é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <a class="navbar-item " href="/quem-e-a-comunidade">
+                          <span>
+                            <strong>Quem é a Comunidade PHPSP</strong>
+                            <br>
+                            Quem é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta">
+                          <span>
+                            <strong>Código de Conduta</strong>
+                            <br>
+                            Codigo de conduta para a comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="/artigos">
+                    <span>Artigos</span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Eventos</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                                                <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP São Paulo</strong>
+                            <br>
+                            Eventos na cidade de SP
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-campinas/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Campinas</strong>
+                            <br>
+                            Eventos na cidade de Campinas
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-santos/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na cidade de Santos
+                          </span>
+                        </a>
+                        
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
+                          <span>
+                            <strong>Código de Conduta para Eventos</strong>
+                            <br>
+                            Codigo de conduta para a eventos da comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/php-the-right-way" target="_blank">
+                              <span>
+                                <strong>PHP The Right Way - BR</strong>
+                                <br>
+                                Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/quero-palestrar" target="_blank">
+                              <span>
+                                <strong>Quero Palestrar</strong>
+                                <br>
+                                Repositório de palestrantes e propostas de palestras para eventos de tecnologia
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/zf2-documentation-br" target="_blank">
+                              <span>
+                                <strong>ZF2 docs - BR</strong>
+                                <br>
+                                Tradução da Documentação Oficial do Zend Framework
+                              </span>
+                            </a>
+                                            </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://phpsp.org.br/feed.xml" target="_blank">
+                        <img src="/assets/images/thirdparty/rss.png"
+                             title="RSS" alt="RSS">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://github.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/GitHub-Mark-120px-plus.png"
+                             title="GitHub" alt="GitHub">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://twitter.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                             title="Twitter" alt="Twitter">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                             title="Slack" alt="Slack">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/" target="_blank">
+                        <img src="/assets/images/thirdparty/In-2C-128px-TM.png"
+                             title="LinkedIn" alt="LinkedIn">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://facebook.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/flogo_RGB_HEX-144.png"
+                             title="Facebook" alt="Facebook">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://t.me/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/telegram.png"
+                             title="Telegram" alt="Telegram">
+                    </a>
+                            </div>
+        </div>
+    </div>
+</nav>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">PHPSP </a></li>
+
+                    <li><a href="/artigos">Artigos</a></li>
+        
+        <li class="is-active"><a href="#" aria-current="page">Notebooks Jupyter em PHP, além do Python? Sim, é possível: veja como fazer!</a></li>
+    </ul>
+</nav>            <section class="section">
+        <div class="content">
+            <h1 class="title is-1">Notebooks Jupyter em PHP, além do Python? Sim, é possível: veja como fazer!</h1>
+            <p>
+                <small>
+                    por Rogério Prado de Jesus
+                    em 13/05/2019
+                </small>
+            </p>
+
+            <figure><img title="Sim, é possível!" src="/assets/images/posts/2019-05-13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer/13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer-01.png" alt="Capa do artigo, contendo o título 'Notebooks Jupyter em PHP, além do Python? Sim, é possível: veja como fazer!' em letras brancas, sobre fundo vermelho estilizado com formas geométricas pretas, além do link para o site da publicação original https://rogeriopradoj.com em letras pretas"><figcaption>Sim, é possível!</figcaption></figure>
+<p>Fala pessoal, tudo bem?</p>
+<p>É muito comum durante nossa jornada de cursos no tema de Big Data, Analytics, Data Science, IA e afins sermos apresentados à plataforma Jupyter e aos seus notebooks, não é mesmo?</p>
+<blockquote>
+<p><a href="https://jupyter.org/" rel="nofollow">Jupyter</a>: The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.</p>
+</blockquote>
+<p>E, acredito que se você já mexeu nessa plataforma, o padrão é usar a linguagem de programação Python, certo? Talvez R também? E se te disser que é possível usar várias outras também? Sim, durante a escrita deste artigo, 2019/MAI, já são mais de 40 linguagens suportadas. E o mais impressionante: o PHP é sim uma dessas linguagens suportadas no Jupyter Notebook!</p>
+<p>Vamos conhecer então como fazer?</p>
+<h3>Primeiro: tenha o Jupyter disponível</h3>
+<p>A maneira mais simples que conheço no Windows é tendo o Anaconda disponível. Você consegue mais informações acessando o site oficial: <a href="https://www.anaconda.com/distribution/">https://www.anaconda.com/distribution/</a></p>
+<blockquote>
+<p><a href="https://www.anaconda.com/" rel="nofollow">Anaconda</a>: The World's Most Popular Python/R Data Science Platform</p>
+</blockquote>
+<h3>Tenha o PHP e o Composer com as dependências instaladas</h3>
+<p>Em <a href="https://windows.php.net/">https://windows.php.net/</a> você consegue pegar a última versão disponível do PHP. Para as coisas funcionarem você precisa pelo menos da versão PHP 7.2+. Vale a pena colocar a pasta do binário do php.exe na sua variável de ambiente PATH, assim, você pode chamar o comando php de qualquer terminal. Talvez te ajude: a versão que usei aqui no meu computador é a PHP 7.2.7 NTS x64.</p>
+<p>É necessário também ter instalado o gerenciador de dependências Composer. Mais informações no site oficial, <a href="https://getcomposer.org/">https://getcomposer.org/</a>. Se instalar ele certinho, vai poder ter o comando composer disponível de qualquer terminal.</p>
+<p>E, por último, é necessário que você tenha no PHP a extensão ZMQ. Para isso:</p>
+<ul>
+<li>baixe no site da extensão PECL, <a href="https://pecl.php.net/package/zmq/1.1.3/windows">https://pecl.php.net/package/zmq/1.1.3/windows</a>, a versão correspondente ao que você tem no seu computador (no meu caso, baixei a &quot;7.2 Non Thread Safe (NTS) x64&quot;). Quer saber qual sua versão do php? É fácil: no terminal, digite: <code>php -v</code>.</li>
+<li>na mesma pasta onde tem o arquivo php.exe, descompacte o arquivo libzmq.dll</li>
+<li>na pasta ext, descompacte o arquivo php_zmq.dll</li>
+<li>inclua no fim do seu arquivo php.ini a declaração <code>extension=php_zmq.dll</code></li>
+</ul>
+<p>Não sabe onde fica o arquivo php.ini? É fácil descobrir: só digitar no terminal: <code>php --ini</code>. </p>
+<p>Foi na pasta e não achou um arquivo php.ini? Tranquilo: faça uma cópia do arquivo php.ini-development como php.ini. E depois edite esse php.ini.</p>
+<p>Quer confirmar se a extensão ZMQ está instalada? Na linha de comando, pode executar o seguinte comando para mostrar todas as extensões disponíveis: <code>php -m</code>.</p>
+<h3>Instale o componente Jupyter-PHP (o kernel de PHP para o Jupyter)</h3>
+<p>No site oficial, <a href="https://litipk.github.io/Jupyter-PHP-Installer/">https://litipk.github.io/Jupyter-PHP-Installer/</a>, tem mais informações. Em resumo:</p>
+<ul>
+<li>baixar o instalador .phar, <a href="https://litipk.github.io/Jupyter-PHP-Installer/dist/jupyter-php-installer.phar">https://litipk.github.io/Jupyter-PHP-Installer/dist/jupyter-php-installer.phar</a>;</li>
+<li>entrar na pasta onde baixou, pelo terminal, e executar: <code>php jupyter-php-installer.phar install</code>.</li>
+</ul>
+<figure><img title="Resultado da instalação do Juptyer-notebook" src="/assets/images/posts/2019-05-13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer/13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer-03.png" alt="Tela de um terminal/prompt de comando com fundo preto, contendo a linha executada para instalação do jupyter-notebook no computador em letras cinzas, e a mensagem de sucesso 'The Jupyter-PHP kernel has been successfully installed.' em letras verdes"><figcaption>Resultado da instalação</figcaption></figure>
+<p>E é isso! Se tiver problemas com o Composer não acessando a URL do Packagist, pode dar uma olhada nesse projeto aqui, <a href="https://github.com/rogeriopradoj/cntlm-proxy-windows">https://github.com/rogeriopradoj/cntlm-proxy-windows</a>, lá tem mais instruções!</p>
+<h3>Agora é só usar!</h3>
+<p>Pronto, é só reiniciar o seu Jupyter, e quando for criar um Notebook, vai ter lá a opção de escolher PHP também (além dos outros que você já tinha, tipo o Python 3).</p>
+<p>Aqui vai um exemplo:</p>
+<figure><img title="Um exemplo de Jupyter Notebook usando o kernel PHP" src="/assets/images/posts/2019-05-13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer/13-notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer-02.png" alt="Tela de um navegador com uma URL de Jupyter Notebook aberta usando o kernel PHP, com alguns exemplos de código PHP sendo executados, como exemplo a função 'echo', de impressão na tela, e a função 'phpversion()', que mostra a versão do PHP que está sendo executada"><figcaption>Um exemplo de Jupyter Notebook usando o kernel PHP</figcaption></figure>
+<p>Se quiser testar no seu próprio ambiente, é só baixar em <a href="https://gist.github.com/rogeriopradoj/75a7e8ba3f58734c8510bd8f42d3e335">https://gist.github.com/rogeriopradoj/75a7e8ba3f58734c8510bd8f42d3e335</a>.</p>
+<p>É isso, pessoal!</p>
+<h3>Mas por que usar PHP nesse mundo??? Não era para estarmos focando mais em Python, R e outras?</h3>
+<p>Acho muito que é questão parecida com o que eu via no passado quando estava bastante envolvido com comunidades e Meetups, e já ouvia assim: &quot;poxa, Golang seria uma opção muito melhor para IA, por ser mais rápida, etc etc&quot;. Mas o Python já tinha ganhado a briga pois os algoritmos matemáticos todos já tinham sido implementados nele, e em Golang não&quot;.</p>
+<p>Hoje, pela pesquisa rápida que fiz, Golang ainda não tem ecossistema que se compara ao de R ou Python... <a href="https://news.ycombinator.com/item?id=16883877">https://news.ycombinator.com/item?id=16883877</a>. Mas, não quer dizer que não tenha suas vantagens, né?</p>
+<p>Especificamente do PHP, quais pontos positivos acredito em também usá-lo para ML e afins, aqui lá no &quot;Banco X&quot;:</p>
+<ul>
+<li>linguagem madura, e cada vez mais rápida desde a versão 7.0 (hoje está na 7.3): <a href="https://kinsta.com/pt/blog/benchmarks-definitivos-do-php/">https://kinsta.com/pt/blog/benchmarks-definitivos-do-php/</a></li>
+<li>ótimo ecossistema, ainda ativa (e muito! ) , utilizada por diversas grandes empresas, suporte da comunidade e de muitos players, seja para integrações e também para infra</li>
+<li>ainda é a mais usada de toda a web (79% em 2019/MAI, <a href="https://w3techs.com/technologies/overview/programming_language/all">https://w3techs.com/technologies/overview/programming_language/all</a>)</li>
+<li>é uma das plataformas oficialmente homologada no &quot;Banco X&quot;</li>
+<li>tem suporte em toda a infra do &quot;Banco X&quot; atual (desde os servidores IIS com Fastcgi ou Linux Apache nos ambientes descentralizados, ou mesmo da infra de Openshift, Docker etc. do ambiente centralizado)</li>
+<li>vai permitir que os colegas que já tenham um certo domínio do PHP e seu ecossistema de usar esse conhecimento para esse novo mundo do Data Science, Analytics, IA, Machine Learning etc.</li>
+</ul>
+<p>E você, o que anda fazendo aí na sua área? Bora testar mais essa opção?</p>
+<p>O mais importante é: compartilhe o que está fazendo, assim todos podemos ganhar e a empresa também!</p>
+<p>Até a próxima, e podem me chamar para conversar em todos os canais, ok!</p>
+<p>Abraços!</p>
+<hr />
+<p>Este artigo foi publicado originalmente em <a href="https://rogeriopradoj.com/" rel="nofollow">RogerioPradoJ.com</a>.</p>        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            
+                    </div>
+    </section>
+        <div class="container has-text-centered">
+    <div class="notification">
+        Acha que esse conteúdo possui erros ou poderia ser aperfeiçoado?
+        <a href="https://github.com/phpsp/phpsp.org.br/blob/master/source/_posts/notebooks-jupyter-em-php-alem-do-python-sim-e-possivel-veja-como-fazer.md" title="Ajuste esse conteúdo!" target="_blank">Colabore!</a>
+    </div>
+</div>    </div>
+</section>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <div class="level is-small">
+            <div class="level-item">
+                <a href="https://php.net" target="_blank">
+                    <figure class="image is-128x128">
+                        <img src="/assets/images/sponsors/php.png" title="PHP.net">
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="level is-small">
+            <div class="level-item">
+            <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/azure.png" title="Microsoft Azure"
+                         alt="Microsoft Azure">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://imasters.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/imasters.png" title="iMasters"
+                         alt="iMasters">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://paypal.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/paypal.png" title="PayPal"
+                         alt="PayPal">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://www.locaweb.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/locaweb.png" title="LocaWeb"
+                         alt="LocaWeb">
+                </figure>
+            </a>
+        </div>
+    </div>
+<div class="level is-small">
+            <div class="level-item">
+            <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/phpstorm.png" title="PHPStorm"
+                         alt="PHPStorm">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://contaazul.com/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/contaazul.png" title="ContaAzul"
+                         alt="ContaAzul">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://devnaestrada.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/devnaestrada.png" title="Dev Na Estrada"
+                         alt="Dev Na Estrada">
+                </figure>
+            </a>
+        </div>
+    </div>
+
+        <hr>
+        <p>O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://github.com/phpsp/phpsp.org.br/graphs/contributors" target="_blank" title="Colaboradores do Site PHPSP.org">Comunidade PHPSP</a>.</p>
+        <p>O código deste site esta sob a licença <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="Licença MIT">MIT</a> e pode ser encontrado <a href="https://github.com/phpsp/phpsp.org.br/" target="_blank" title="Código Fonte do Site PHPSP.org.br">aqui</a>.</p>
+        <p>O conteúdo deste site esta sob a licença <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licença CC BY NC SA 4.0">CC BY NC SA 4.0</a>.</p>
+    </div>
+</footer>
+</html>

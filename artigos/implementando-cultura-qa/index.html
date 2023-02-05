@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="canonical" href="https://phpsp.github.io/phpsp.org.br/artigos/implementando-cultura-qa" />
+    <title>PHPSP | Implementando a cultura de Quality Assurance (QA)</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7974451-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-7974451-1');
+    </script>
+
+    <link rel="shortcut icon" href="/assets/images/phpsp/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=b46970f13028c511b4b2">
+    <script defer src="/assets/build/js/main.js?id=09bbc832a3d0ac409ec2"></script>
+</head>
+<body>
+<section id="app" class="section">
+    <div class="container">
+        <nav id="navbar" class="navbar has-shadow is-spaced is-fixed-top">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/assets/images/phpsp/phpsp.png" title="PHPSP" alt="PHPSP">
+            </a>
+
+                            <a class="navbar-item is-hidden-desktop" href="https://phpsp.org.br/feed.xml" target="_blank">
+                    <img src="/assets/images/thirdparty/rss.png"
+                         title="RSS" alt="RSS">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://twitter.com/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                         title="Twitter" alt="Twitter">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                         title="Slack" alt="Slack">
+                </a>
+                            <a class="navbar-item is-hidden-desktop" href="https://t.me/phpsp" target="_blank">
+                    <img src="/assets/images/thirdparty/telegram.png"
+                         title="Telegram" alt="Telegram">
+                </a>
+            
+            <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuComunidade"
+                 onclick="document.querySelector('.navbar-menu').classList.toggle('is-active'); document.querySelector('.navbar-burger').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuComunidade" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">A Comunidade</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item " href="/a-comunidade">
+                          <span>
+                            <strong>A Comunidade PHPSP</strong>
+                            <br>
+                            O que é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <a class="navbar-item " href="/quem-e-a-comunidade">
+                          <span>
+                            <strong>Quem é a Comunidade PHPSP</strong>
+                            <br>
+                            Quem é a Comunidade PHPSP
+                          </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta">
+                          <span>
+                            <strong>Código de Conduta</strong>
+                            <br>
+                            Codigo de conduta para a comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="/artigos">
+                    <span>Artigos</span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Eventos</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                                                <a class="navbar-item" href="https://www.meetup.com/php-sp/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP São Paulo</strong>
+                            <br>
+                            Eventos na cidade de SP
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-campinas/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Campinas</strong>
+                            <br>
+                            Eventos na cidade de Campinas
+                          </span>
+                        </a>
+                                                <a class="navbar-item" href="https://www.meetup.com/phpsp-santos/events/" target="_blank">
+                          <span>
+                            <strong>PHPSP Santos</strong>
+                            <br>
+                            Eventos na cidade de Santos
+                          </span>
+                        </a>
+                        
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item " href="/codigo-de-conduta-para-eventos">
+                          <span>
+                            <strong>Código de Conduta para Eventos</strong>
+                            <br>
+                            Codigo de conduta para a eventos da comunidade
+                          </span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">Como Contribuir</span>
+                    <div id="moreDropdown" class="navbar-dropdown">
+                        <a class="navbar-item" href="/como-contribuir">
+                            <span>
+                                <strong>Como contribuir?</strong>
+                                <br>
+                                Que contribuir com a comunidade PHP e não sabe como? Saiba mais!
+                              </span>
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <p class="navbar-item"><strong>Projetos apoiados pelo PHPSP:</strong></p>
+
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/php-the-right-way" target="_blank">
+                              <span>
+                                <strong>PHP The Right Way - BR</strong>
+                                <br>
+                                Uma referência rápida de melhores práticas de PHP, renomados padrões de código e links para tutoriais competentes pela Web
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/quero-palestrar" target="_blank">
+                              <span>
+                                <strong>Quero Palestrar</strong>
+                                <br>
+                                Repositório de palestrantes e propostas de palestras para eventos de tecnologia
+                              </span>
+                            </a>
+                                                    <a class="navbar-item is-white-space-normal" href="https://github.com/PHPSP/zf2-documentation-br" target="_blank">
+                              <span>
+                                <strong>ZF2 docs - BR</strong>
+                                <br>
+                                Tradução da Documentação Oficial do Zend Framework
+                              </span>
+                            </a>
+                                            </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-end">
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://phpsp.org.br/feed.xml" target="_blank">
+                        <img src="/assets/images/thirdparty/rss.png"
+                             title="RSS" alt="RSS">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://github.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/GitHub-Mark-120px-plus.png"
+                             title="GitHub" alt="GitHub">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://twitter.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/Twitter_Social_Icon_Circle_Color.png"
+                             title="Twitter" alt="Twitter">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://bit.ly/vem-pro-slack-phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/SlackAppIcon.png"
+                             title="Slack" alt="Slack">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/" target="_blank">
+                        <img src="/assets/images/thirdparty/In-2C-128px-TM.png"
+                             title="LinkedIn" alt="LinkedIn">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://facebook.com/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/flogo_RGB_HEX-144.png"
+                             title="Facebook" alt="Facebook">
+                    </a>
+                                    <a class="navbar-item is-hidden-touch is-hidden-desktop-only"
+                       href="https://t.me/phpsp" target="_blank">
+                        <img src="/assets/images/thirdparty/telegram.png"
+                             title="Telegram" alt="Telegram">
+                    </a>
+                            </div>
+        </div>
+    </div>
+</nav>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="/">PHPSP </a></li>
+
+                    <li><a href="/artigos">Artigos</a></li>
+        
+        <li class="is-active"><a href="#" aria-current="page">Implementando a cultura de Quality Assurance (QA)</a></li>
+    </ul>
+</nav>            <section class="section">
+        <div class="content">
+            <h1 class="title is-1">Implementando a cultura de Quality Assurance (QA)</h1>
+            <p>
+                <small>
+                    por José Filho (Zé)
+                    em 10/02/2020
+                </small>
+            </p>
+
+            <p>Muito se fala sobre qualidade, controle de qualidade, testes etc. Quando ouvimos estes termos muitos associam esta responsabilidade a um profissional de qualidade, aquela pessoa que testa sua aplicação e fala que tá tudo errado! Brincadeira viu, pessoa de QA!?</p>
+<p>O profissional de QA é realmente uma peça fundamental para garantir a qualidade do software e trazer uma visão diferenciada sobre o produto para o time de desenvolvimento afinal ele (teoricamete) não está enviesado como o time de desenvolvimento pode estar.</p>
+<p>Mas será que você já parou pra pensar em como a cultura em torno disso foi criada na sua organização? Não adianta nada ter um excelente profissional de QA a disposição e não ter um manifesto bem definido ou mesmo sem dar abertura para que este profissional possa atuar e realmente trazer sua expertise pra dentro do software que estamos construindo (ou mantendo).</p>
+<p>Neste sentido me proponho a trazer alguns pontos bacanas à serem discutidos quando estiver pensando em implementar a cultura e QA em sua organização.</p>
+<h2>Reportar bug não é falar mal da pessoa desenvolvedora!</h2>
+<p>Uma das funções mais comuns de um profissional de QA é o <em>bug report</em> e é aqui que muita treta começa! </p>
+<p>Dependendo de como começou o movimento de bug report por parte do time de qualidade e como isso é feito, o time de desenvolvimento pode entender o report como uma ofensa, algo impositivo ou pessoal.
+Por isso é muito importante pensar em como será feito o bug report e a linguagem a ser usada. Então aqui vai umas dicas rápidas!</p>
+<h2>Tudo começa com um bom bug report</h2>
+<p>Parece tarefa fácil relatar um bug, certo? Chama o amiguinho e fala &quot;bicho, não tá funfando aquele treco ali que você fez!&quot; e bora voltar para o trampo normalmente, é claro...</p>
+<p>Escrever um bug report afeta não só o entendimento do bug por parte do desenvolvimento quanto a motivação para desenvolver uma tratativa. Receber um report que não está claro, não há passos para reprodução e ainda por cima apontando culpados desmotiva qualquer um a realizar qualquer bug fix.
+Ao relatar um bug procure ser impessoal, destacar o ponto falho bem como o cenário esperado e não ser opinativo (ex: eu acho que deveria ser assim), procure sempre se basear em fatos e não opiniões na hora do report.</p>
+<h2>Então Quality Assurance se resume a bugs?</h2>
+<p>Essa associação é muito comum, uma vez que é pela mão do profissional de QA que passa a maioria dos bugs e é este profissional que tem, em sua fase de descoberta, a responsabilidade de procurar e reportar bugs.</p>
+<p>Pode não parecer óbvio para todos mas o profissinal de QA também está muito mais atrelado ao desenvolvimento e ao produto do que você imagina.</p>
+<p>Com o passar do tempo é natural que o profissional de QA entenda melhor que ninguém os fluxos da aplicação e a importância destes para o negócio, também é muito comum -principalmente QA focado em automação, por saber um pouco mais de código mesmo- que este profissional se preocupe em como algo é desenvolvido ou como será corrigido e este com certeza é o melhor dos mundos!</p>
+<p>É importante criar a mentalidade de que QA não é apenas encontrar e reportar bugs. Em determinados momentos este profissional passará a entender o que é melhor ou não entrar agora na esteira de desenvolvimento, participará da criação de novas features etc, basicamente este profissional terá todo o potencial para se tornar o guardião das galáxias! Digo... O guardião do produto em questão.</p>
+<p>Este ponto com certeza é o que qualquer empresa gostaria de atingir e pra conseguí-lo o primeiro passo é este que estou tentando apresentar a vocês: <strong>cultura</strong>.</p>
+<h2>Qualidade e desenvolvimento trabalham juntos</h2>
+<p>Sem o desenvolvimento não existe QA e sem QA o desenvolvimento está muitas vezes enviesado em seu contexto atual estando suscetível a bugs ou até mesmo a esquecer uma regra ou outra. A ideia é quebrar a barreira que as vezes um profissional forma do outro e entender que ambos trabalham juntos! Seja estando no mesmo time ou em times separados é importante criar um ambiente em que as partes possam cooperar, trabalhar em conjunto.</p>
+<p>Aqui mais uma vez a comunicação se faz primordial! Vejo muita empresa ainda deixando ambos muito distantes um do outro, o processo para assegurar a qualidade deve ser dinâmico e iterativo, assim como o desenvolvimento, então porque não ambos falarem a mesma língua e participarem dos mesmos rituais? Se por acaso sua organização faz uso de alguma metodologia ágil, inclua QA e desenvolvimento nas mesmas cerimônias e procure deixar ambos sempre alinhados tenho certeza que o impacto disso será muito positivo.</p>
+<h2>Escreva um manifesto</h2>
+<p>Ninguém gosta de imposições e no desenvolvimento de software não podia ser diferente. Quando for pensar em como estruturar a área de qualidade, junte-se com os principais envolvidos e escreva um manifesto.</p>
+<p>Usando <a href="https://agilemanifesto.org/iso/ptbr/manifesto.html" rel="nofollow">manifesto ágil</a> como referência: ninguém chegou num determinado momento e impôs agilidade goela abaixo! O manifesto foi criado por pessoas e com o passar do tempo foi ganhando experiência/maturidade.</p>
+<p>Procure fazer o mesmo na sua organização e entenda a dor de cada um e se realmente é a área de QA que vai resolver essa dor, não implemente por implementar e deixe o profissional isolado, tomando pancada sozinho...</p>
+<p>Um manifesto não é algo escrito em pedra, escreva-o agora e o revisite de tempos em tempos, talvez marque reuniões exporádicas com os envolvidos (inclusive com o profissional de QA que passou a fazer parte da organização pós-manifesto) e atualize conforme a cultura for evoluindo e lições vão sendo aprendidas.</p>
+<p>E se algo deste texto pôde contribuir para o manifesto de qualidade da sua organização me dê um ping no <a href="https://twitter.com/jose_filho_dev" rel="nofollow">Twitter</a> e deixe-me saber!</p>        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            
+            <h4 class="title is-4">Mais posts deste Autor</h4>
+    <div class="tile is-ancestor">
+                    <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/phpsp-pub-fev-2020">PHPSP + PUB Fevereiro 2020</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 03/03/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/sobre-sair-de-um-emprego-que-nao-lhe-faz-bem">Sobre sair de um emprego que não lhe faz bem</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 27/02/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/5-dicas-para-escrever-um-bug-report">5 dicas para escrever um bom bug report</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 20/02/2020</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                            <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/laravel-middlewares">Introdução a Middlewares com Laravel</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 07/02/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/ciclo-de-feedback-no-desenvolvimento-guiado-a-testes">Ciclo de Feedback no Desenvolvimento de Software Guiado a Testes</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 03/02/2020</small>
+    </p>
+</article>            </div>
+                                <div class="tile is-parent is-4">
+                <article class="tile is-child box">
+    <p class="title">
+        <a href="/artigos/phpsp-pub-jan-2020">PHPSP + PUB Janeiro 2020</a>
+    </p>
+    <p class="subtitle">
+        <small> em</small>
+        <small> 25/01/2020</small>
+    </p>
+</article>            </div>
+                </div>
+    <div class="tile is-ancestor">
+                    </div>
+        </div>
+    </section>
+        <div class="container has-text-centered">
+    <div class="notification">
+        Acha que esse conteúdo possui erros ou poderia ser aperfeiçoado?
+        <a href="https://github.com/phpsp/phpsp.org.br/blob/master/source/_posts/implementando-cultura-qa.md" title="Ajuste esse conteúdo!" target="_blank">Colabore!</a>
+    </div>
+</div>    </div>
+</section>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <div class="level is-small">
+            <div class="level-item">
+                <a href="https://php.net" target="_blank">
+                    <figure class="image is-128x128">
+                        <img src="/assets/images/sponsors/php.png" title="PHP.net">
+                    </figure>
+                </a>
+            </div>
+        </div>
+
+        <div class="level is-small">
+            <div class="level-item">
+            <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/azure.png" title="Microsoft Azure"
+                         alt="Microsoft Azure">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://imasters.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/imasters.png" title="iMasters"
+                         alt="iMasters">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://paypal.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/paypal.png" title="PayPal"
+                         alt="PayPal">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://www.locaweb.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/locaweb.png" title="LocaWeb"
+                         alt="LocaWeb">
+                </figure>
+            </a>
+        </div>
+    </div>
+<div class="level is-small">
+            <div class="level-item">
+            <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/phpstorm.png" title="PHPStorm"
+                         alt="PHPStorm">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://contaazul.com/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/contaazul.png" title="ContaAzul"
+                         alt="ContaAzul">
+                </figure>
+            </a>
+        </div>
+            <div class="level-item">
+            <a href="https://devnaestrada.com.br/" target="_blank">
+                <figure class="image is-128x128">
+                    <img src="/assets/images/sponsors/devnaestrada.png" title="Dev Na Estrada"
+                         alt="Dev Na Estrada">
+                </figure>
+            </a>
+        </div>
+    </div>
+
+        <hr>
+        <p>O site <strong>PHPSP.org.br</strong> foi criado pela <a href="https://github.com/phpsp/phpsp.org.br/graphs/contributors" target="_blank" title="Colaboradores do Site PHPSP.org">Comunidade PHPSP</a>.</p>
+        <p>O código deste site esta sob a licença <a href="http://opensource.org/licenses/mit-license.php" target="_blank" title="Licença MIT">MIT</a> e pode ser encontrado <a href="https://github.com/phpsp/phpsp.org.br/" target="_blank" title="Código Fonte do Site PHPSP.org.br">aqui</a>.</p>
+        <p>O conteúdo deste site esta sob a licença <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Licença CC BY NC SA 4.0">CC BY NC SA 4.0</a>.</p>
+    </div>
+</footer>
+</html>
