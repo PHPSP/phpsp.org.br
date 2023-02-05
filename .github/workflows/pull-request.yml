@@ -1,4 +1,16 @@
-on: [pull_request]
+name: Tests and Preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   tests:
@@ -21,3 +33,8 @@ jobs:
 
       - name: Build
         run: docker-compose run --rm -T web yarn production
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./build_production/
