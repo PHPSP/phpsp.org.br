@@ -1,27 +1,29 @@
 {
     "private": true,
     "scripts": {
-        "local": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --env=local --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "staging": "cross-env NODE_ENV=staging node_modules/webpack/bin/webpack.js --progress --hide-modules --env=staging --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --env=production --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "dev": "npm run local",
-        "watch": "npm run local -- --watch"
+        "build": "webpack --progress --hide-modules --env=$NODE_ENV --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "production": "cross-env NODE_ENV=production yarn build",
+        "dev": "cross-env NODE_ENV=development yarn build",
+        "watch": "yarn dev --watch"
     },
     "devDependencies": {
-        "browser-sync": "^2.23.6",
-        "browser-sync-webpack-plugin": "^2.0.1",
-        "bulma": "^0.7.1",
-        "cross-env": "^3.2.3",
+        "browser-sync": "^2.27.12",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "bulma": "^0.9.4",
+        "cross-env": "^7.0.3",
+        "extra-watch-webpack-plugin": "^1.0.3",
         "hasbin": "^1.2.3",
-        "laravel-mix": "^2.0.0",
-        "node-cmd": "^3.0.0",
+        "laravel-mix": "^5.0.9",
+        "node-cmd": "^4.0.0",
         "on-build-webpack": "^0.1.0",
-        "webpack-watch": "^0.2.0",
-        "yargs": "^4.6.0"
+        "sass": "^1.58.3",
+        "sass-loader": "10.*",
+        "vue-template-compiler": "2.7.14",
+        "yargs": "^17.7.1"
     },
     "dependencies": {
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.21",
         "remove": "^0.1.5",
-        "vue": "^2.5.17"
+        "vue": "2.7.14"
     }
 }

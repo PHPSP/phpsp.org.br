@@ -5,7 +5,7 @@ let command = require('node-cmd');
 let AfterWebpack = require('on-build-webpack');
 let BrowserSync = require('browser-sync');
 let BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-let Watch = require('webpack-watch');
+let ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
 
 let browserSyncInstance;
 let env = argv.e || argv.env || 'local';
@@ -23,15 +23,15 @@ module.exports = {
     }),
 
     watch: function(paths) {
-        return new Watch({
-            options: { ignoreInitial: true },
-            paths: paths,
+        return new ExtraWatchWebpackPlugin({
+            files: paths,
         })
     },
 
     browserSync: function(proxy) {
         return new BrowserSyncPlugin({
             notify: false,
+            open: false,
             port: port,
             proxy: proxy,
             server: proxy ? null : { baseDir: 'build_' + env + '/' },

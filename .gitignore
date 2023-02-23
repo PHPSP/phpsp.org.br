@@ -1,5 +1,5 @@
-/build_local/
-/build_production/
+/build_*/
 /node_modules/
 /vendor/
 .idea
+/source/assets/build/

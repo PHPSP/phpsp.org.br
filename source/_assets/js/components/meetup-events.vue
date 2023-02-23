@@ -6,7 +6,10 @@
             </div>
             <div class="message-body">
                 <p>
-                    <strong>Onde:</strong> <span>{{ item.venue.name}}</span>.<br>
+                    <strong>Onde:</strong> 
+		    <span v-if="item.venue">{{ item.venue.name }}</span>
+		    <span v-else>Online (Clique <a href="https://www.youtube.com/user/phpsp1" target="_blank">aqui</a>)</span>.
+		    <br>
                     <strong>Quando:</strong> <span>{{ item.local_date }} @ {{ item.local_time}}</span>.<br>
                     <strong>{{ item.yes_rsvp_count }} Confirmados</strong> <span><a :href="item.link" target="_blank">RSVP?</a></span>.
                 </p>
@@ -63,7 +66,7 @@
                             });
                         });
 
-                        this.items = ordered.sort((a, b) => (a.time > b.time) ? 1 : 0).slice(0, this.quantity + 1);
+                        this.items = ordered.sort((a,b) => (a.time > b.time) ? 1 : ((b.time > a.time) ? -1 : 0)).slice(0, this.quantity + 1);
                     }
                 )
                 .catch(console.log);

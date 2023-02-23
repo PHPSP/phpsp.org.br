@@ -1,5 +1,6 @@
+@foreach($page->sponsors->chunk(4) as $sponsors)
 <div class="level is-small">
-    @foreach( $page->sponsors as $sponsor)
+    @foreach($sponsors as $sponsor)
         <div class="level-item">
             <a href="{{ $sponsor->url }}" target="_blank">
                 <figure class="image is-128x128">
@@ -10,3 +11,4 @@
         </div>
     @endforeach
 </div>
+@endforeach

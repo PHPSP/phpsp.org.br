@@ -1,4 +1,10 @@
 @import './node_modules/bulma/bulma.sass';
+@import 'breadcrumb/main';
+
+.container {
+  width: 100%;
+  max-width: 982px;
+}
 
 .is-white-space-normal {
   white-space: normal !important;
@@ -6,4 +12,8 @@
 
 .has-zebra-content article:nth-child(even) div.message-header{
   background-color: #0a0a0a !important;
+}
+
+.article-item:hover {
+  color: #3273dc
 }

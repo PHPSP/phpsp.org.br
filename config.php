@@ -1,6 +1,9 @@
 <?php
 
+use TightenCo\Jigsaw\PageVariable;
+
 return [
+    'language' => 'pt-BR',
     'baseUrl' => 'http://localhost:3000/',
     'meetup' => [
         'baseUrl' => 'https://yp3o7jx9t2.execute-api.sa-east-1.amazonaws.com/dev/',
@@ -22,6 +25,17 @@ return [
                 return str_slug($page->getFilename());
             },
             'contribute_prefix' => '_contents/',
+            'sitemap' => [
+                'location' => function (PageVariable $page) {
+                    // Adiciona o sufixo "/" para evitar redirecionamentos
+                    return $page->getUrl() . '/';
+                },
+                'lastModified' => function (PageVariable $page) {
+                    $date = new DateTime();
+                    return $date->setTimestamp($page->createdAt);
+                },
+                'changeFrequency' => 'yearly',
+            ],
         ],
         'posts' => [
             'extends' => '_layouts.post',
@@ -32,6 +46,17 @@ return [
             },
             'sort' => '-createdAt',
             'contribute_prefix' => '_posts/',
+            'sitemap' => [
+                'location' => function (PageVariable $page) {
+                    // Adiciona o sufixo "/" para evitar redirecionamentos
+                    return $page->getUrl() . '/';
+                },
+                'lastModified' => function (PageVariable $page) {
+                    $date = new DateTime();
+                    return $date->setTimestamp($page->createdAt);
+                },
+                'changeFrequency' => 'monthly',
+            ],
         ],
     ],
     'links' => [
@@ -39,6 +64,11 @@ return [
             'title' => 'GitHub',
             'img' => '/assets/images/thirdparty/GitHub-Mark-120px-plus.png',
             'url' => 'https://github.com/phpsp',
+        ],
+        'rss' => [
+            'title' => 'RSS',
+            'img' => '/assets/images/thirdparty/rss.png',
+            'url' => 'https://phpsp.org.br/feed.xml',
         ],
         'twitter' => [
             'title' => 'Twitter',
@@ -48,25 +78,30 @@ return [
         'slack' => [
             'title' => 'Slack',
             'img' => '/assets/images/thirdparty/SlackAppIcon.png',
-            'url' => 'https://bit.ly/vemproslackphpsp',
+            'url' => 'https://bit.ly/vem-pro-slack-phpsp',
         ],
         'linkedin' => [
             'title' => 'LinkedIn',
             'img' => '/assets/images/thirdparty/In-2C-128px-TM.png',
-            'url' => 'https://www.linkedin.com/groups/PHPSP-Grupo-Desenvolvedores-PHP-S%C3%A3o-1808119',
+            'url' => 'https://www.linkedin.com/company/phpsp---php-user-group-in-s-o-paulo/',
         ],
         'facebook' => [
             'title' => 'Facebook',
             'img' => '/assets/images/thirdparty/flogo_RGB_HEX-144.png',
-            'url' => 'https://facebook.com/sao.paulo.elephants',
+            'url' => 'https://facebook.com/phpsp',
+        ],
+        'telegram' => [
+            'title' => 'Telegram',
+            'img' => '/assets/images/thirdparty/telegram.png',
+            'url' => 'https://t.me/phpsp',
         ],
     ],
     'links_header' => [
         'mobile' => [
-            'github', 'twitter', 'slack',
+            'rss', 'twitter', 'slack', 'telegram',
         ],
         'desktop' => [
-            'github', 'twitter', 'slack', 'linkedin', 'facebook',
+            'rss', 'github', 'twitter', 'slack', 'linkedin', 'facebook', 'telegram',
         ],
     ],
     'branches' => [

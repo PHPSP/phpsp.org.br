@@ -2,7 +2,7 @@
 createdAt: 2018-10-15
 title: Web APIs - XML ou JSON?
 author: Níckolas Silva
-authorEmail: nawarian@gmail.com
+authorEmail: nickolas@nawarian.xyz
 ---
 
 É comum ver discussões sobre qual o melhor formato para representar dados e quase sempre caímos na mesma briga: XML vs JSON. Na realidade um dos maiores problemas com estas discussões é a generalização, estamos acostumados - assim espero - com a expressão "não existe bala de prata". Pois é, ela não existe e exatamente por isso gostaria de estabelecer um foco aqui: Web APIs.
