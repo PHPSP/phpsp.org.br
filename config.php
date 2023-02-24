@@ -180,4 +180,10 @@ return [
             'url' => 'https://github.com/PHPSP/zf2-documentation-br',
         ],
     ],
+    'toc' => [
+        'min_items_to_display' => 5,
+        'max_items_to_display' => 15,
+        'min_heading_level' => 1,
+        'max_heading_level' => 4,
+    ],
 ];
