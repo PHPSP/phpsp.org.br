@@ -10,8 +10,9 @@ jobs:
     steps:
       - name: Enviar lembrete ao canal General
         id: slack_general
-        uses: slackapi/slack-github-action@v1.18.0
+        uses: slackapi/slack-github-action@v1.23.0
         with:
+          channel-id: '#general'
           # For posting a rich message using Block Kit
           payload: |
             {
@@ -56,8 +57,9 @@ jobs:
 
       - name: Enviar lembrete ao canal Eventos
         id: slack_eventos
-        uses: slackapi/slack-github-action@v1.18.0
+        uses: slackapi/slack-github-action@v1.23.0
         with:
+          channel-id: '#eventos'
           # For posting a rich message using Block Kit
           payload: |
             {
