@@ -17,3 +17,20 @@
 .article-item:hover {
   color: #3273dc
 }
+
+p.success,p.warning,p.info {
+  padding: 15px;
+  border-radius: 10px;
+}
+
+p.success {
+  background-color: #d5efc2;
+}
+
+p.warning {
+  background-color: #fff7e5;
+}
+
+p.info {
+  background-color: #d9edf7;
+}

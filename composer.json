@@ -4,12 +4,12 @@
   "description": "PHPSP Website - Site estático gerado via Jigsaw",
   "require": {
     "php": ">=7.2",
-    "tightenco/jigsaw": "^v1.3.31",
-    "mnapoli/front-yaml": "^1.7.0",
+    "tightenco/jigsaw": "^v1.3.45",
+    "mnapoli/front-yaml": "^1.8.0",
     "podentender/sitemap-generator": "^0.1.0",
     "erusev/parsedown-extra": "^0.8.1",
     "erusev/parsedown": "^1.7.4",
-    "laravel/helpers": "^v1.4.0"
+    "laravel/helpers": "^v1.6.0"
   },
   "autoload": {
     "psr-4": {
@@ -24,7 +24,12 @@
     }
   ],
   "require-dev": {
-    "malukenho/mcbumpface": "^1.1.5",
-    "phpunit/phpunit": "^9.4.3"
+    "malukenho/mcbumpface": "^1.2.0",
+    "phpunit/phpunit": "^9.6.5"
+  },
+  "config": {
+    "allow-plugins": {
+      "malukenho/mcbumpface": true
+    }
   }
 }
