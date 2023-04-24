@@ -1,11 +1,16 @@
 @import './node_modules/bulma/bulma.sass';
 @import 'breadcrumb/main';
 
-.container {
-  width: 100%;
-  max-width: 982px;
+// Overwrite bulma css
+.section {
+  padding: 1rem 0.5rem;
+
+  @include from(1024px) {
+    padding: 3rem 1.5rem;
+  }
 }
 
+// Custom css
 .is-white-space-normal {
   white-space: normal !important;
 }
