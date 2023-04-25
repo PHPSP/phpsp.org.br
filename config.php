@@ -181,9 +181,9 @@ return [
         ],
     ],
     'toc' => [
-        'min_items_to_display' => 5,
+        'min_items_to_display' => 3,
         'max_items_to_display' => 15,
         'min_heading_level' => 1,
-        'max_heading_level' => 4,
+        'max_heading_level' => 3,
     ],
 ];
