@@ -28,6 +28,12 @@ RUN apt-get update -qq \
   && apt-get clean
 # End Project dependencies installation
 
+# Start locale configuration
+RUN sed -i -e 's/# pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/' /etc/locale.gen \
+  && dpkg-reconfigure --frontend=noninteractive locales \
+  && update-locale LANG=pt_BR.UTF-8
+# End locale configuration
+
 # Start creation of non-root user
 ARG UID=1000
 ARG GID=1000
@@ -42,12 +48,6 @@ RUN groupmod -g ${GID} www-data \
 
 USER www-data:www-data
 # End creation of non-root user
-
-# Start locale configuration
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
-  && dpkg-reconfigure --frontend=noninteractive locales \
-  && update-locale LANG=pt_BR.UTF-8
-# End locale configuration
 
 WORKDIR /var/app
 EXPOSE 3000
