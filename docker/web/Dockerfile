@@ -22,10 +22,17 @@ RUN apt-get update -qq \
   zip \
   unzip \
   libzip-dev \
+  locales \
   && docker-php-ext-install \
   zip \
   && apt-get clean
 # End Project dependencies installation
+
+# Start locale configuration
+RUN sed -i -e 's/# pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/' /etc/locale.gen \
+  && dpkg-reconfigure --frontend=noninteractive locales \
+  && update-locale LANG=pt_BR.UTF-8
+# End locale configuration
 
 # Start creation of non-root user
 ARG UID=1000
