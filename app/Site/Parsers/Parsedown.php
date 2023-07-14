@@ -9,10 +9,21 @@ class Parsedown extends BaseParsedown
 {
     private $internalHostName;
 
+    private $visitedHeaders = [];
+
+    /**
+     * @throws \Exception
+     */
     public function __construct(string $internalHostName)
     {
         parent::__construct();
         $this->internalHostName = $internalHostName;
+    }
+
+    public function text($text)
+    {
+        $this->visitedHeaders = [];
+        return parent::text($text);
     }
 
     /**
@@ -61,5 +72,69 @@ class Parsedown extends BaseParsedown
         $isNotSubdomain = strpos(strtolower($parsedUrl['host']), strtolower($parsedInternalHostUrl['host'])) == false;
 
         return $isNotSubdomain;
+    }
+
+    protected function blockHeader($Line)
+    {
+        $Block = parent::blockHeader($Line);
+
+        if (!isset($Block)) {
+            return null;
+        }
+
+        if (!isset($Block['element']['attributes'])) {
+            $Block['element']['attributes'] = [];
+        }
+
+        // Gera um slug amigável para o título
+        $slug = $this->slugify($Block['element']['text']);
+
+        // Se já existe o mesmo título, colocamos um "-2", "-3", ..., no final
+        $headerAlreadyExists = isset($this->visitedHeaders[$slug]);
+        if (!$headerAlreadyExists) {
+            $this->visitedHeaders[$slug] = 1;
+        }
+        $Block['element']['attributes']['id'] = $slug;
+        if ($headerAlreadyExists) {
+            $Block['element']['attributes']['id'] .= "-{$this->visitedHeaders[$slug]}";
+        }
+        $this->visitedHeaders[$slug]++;
+
+        $header = $Block['element']['text'];
+        $Block['element']['handler'] = 'elements';
+        $Block['element']['text'] = [];
+        $Block['element']['text'][] = [
+            'name' => 'span',
+            'handler' => 'line',
+            'text' => $header,
+            'attributes' => [
+                'class' => 'header-span',
+            ],
+        ];
+        $Block['element']['text'][] = [
+            'name' => 'a',
+            'handler' => 'line',
+            'text' => '¶',
+            'attributes' => [
+                'href' => "#{$Block['element']['attributes']['id']}",
+                'class' => 'pilcrow',
+            ],
+        ];
+
+        return $Block;
+    }
+
+    private function slugify(string $text): string
+    {
+        return \trim(
+            \preg_replace(
+                '/[^a-z0-9_\-]+/',
+                '-',
+                \mb_strtolower(
+                    \iconv('utf-8', 'us-ascii//TRANSLIT', $text)
+                )
+            ),
+            '-'
+        );
     }
 }

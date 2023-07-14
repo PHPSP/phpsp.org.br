@@ -1,11 +1,16 @@
 @import './node_modules/bulma/bulma.sass';
 @import 'breadcrumb/main';
 
-.container {
-  width: 100%;
-  max-width: 982px;
+// Overwrite bulma css
+.section {
+  padding: 1rem 0.5rem;
+
+  @include from(1024px) {
+    padding: 3rem 1.5rem;
+  }
 }
 
+// Custom css
 .is-white-space-normal {
   white-space: normal !important;
 }
@@ -16,4 +21,80 @@
 
 .article-item:hover {
   color: #3273dc
+}
+
+p.success,p.warning,p.info {
+  padding: 15px;
+  border-radius: 10px;
+}
+
+p.success {
+  background-color: #d5efc2;
+}
+
+p.warning {
+  background-color: #fff7e5;
+}
+
+p.info {
+  background-color: #d9edf7;
+}
+
+$base-navbar-height: 3.25rem;
+$navbar-padding-vertical: 1rem;
+$navbar-padding-horizontal: 2rem;
+$navbarHeight: $base-navbar-height;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc($navbarHeight + 10px); // 3.25rem da navbar + 10px gutter
+}
+
+/* Posts */
+#toc > div {
+  position: sticky;
+  top: calc($navbarHeight + 10px);
+  height: calc(100vh - ($navbarHeight + 20px));
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#toc > .box > ul {
+  margin: 0 -0.5em;
+}
+
+#toc a {
+  color: $grey;
+}
+#toc a:is(:hover, :focus) {
+  color: $grey-dark;
+}
+#toc a.active {
+  color: $grey-darker;
+}
+span.header-span {
+  vertical-align: middle;
+}
+
+a.pilcrow {
+  visibility: hidden;
+  font-size: 0.7em;
+  font-weight: normal;
+  color: $grey-light;
+}
+
+h1:is(:hover, :focus) > a.pilcrow,
+h2:is(:hover, :focus) > a.pilcrow,
+h3:is(:hover, :focus) > a.pilcrow,
+h4:is(:hover, :focus) > a.pilcrow,
+h5:is(:hover, :focus) > a.pilcrow,
+h6:is(:hover, :focus) > a.pilcrow {
+  visibility: visible;
+}
+
+@include desktop {
+  $navbarHeight: $base-navbar-height + 2 * $navbar-padding-vertical;
+  #toc > div {
+    top: calc($navbarHeight + 20px);
+    height: calc(100vh - ($navbarHeight + 40px));
+  }
 }
