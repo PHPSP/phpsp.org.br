@@ -1,5 +1,5 @@
 ---
-createdAt: 2023-01-16
+createdAt: 2023-07-14
 title: 'Slim, possivelmente o framework ideal para quem vem do Golang'
 author: Joubert RedRat
 authorEmail: eu+github@redrat.com.br
