@@ -1,2 +1,0 @@
-Sitemap: https://phpsp.org.br/sitemap-posts.xml
-Sitemap: https://phpsp.org.br/sitemap-contents.xml
