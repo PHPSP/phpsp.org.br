@@ -21,4 +21,4 @@ Minha experiência no PUB (PHPSP).
 
   Voltando sobre o Pub, infelizmente não são todos que eu consigo comparecer, mas sempre que posso eu corro ao máximo para poder ir quando tem, os dois últimos em específico que foi no dia 08/06 que tive a oportunidade de conversar pela primeira vez com o Marcel e trocar uma ideia bem legal e no dia 13/06, que foi bem único pra mim, pois eu revi pessoalmente meu mentor Nawarian depois de muito tempo e tive também a oportunidade de conhecer e trocar ideia com outros Devs super acessíveis e acolhedores que me incluíram nas conversas e mesmo não falando muito e só ouvindo eu pude absorver muito conhecimento e apoio da Comunidade em meu início de carreira.  Por fim, me sinto muito abençoada e agradecida por ser tão bem recebida e acolhida nessa comunidade incrível ao qual eu já me sinto parte e espero de coração poder receber acolher outros Devs que vão chegar também. E aí embaixo vai uma foto que se tornou bem especial pra mim e que eu estou bem à vontade também e menos envergonhada kkkk. 
 
-![Alt text](pub-phpsp.jpeg)
+![Alt text](/assets/images/posts/minha-experiencia-no-pub-phpsp.jpeg)
