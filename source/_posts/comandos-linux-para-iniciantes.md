@@ -18,7 +18,7 @@ Ex: `/home/user/Documents/Projetos/Portfólio-Eli`
 Ex: Supondo que o usuário queira gerar cinco arquivos de texto, ele pode criá-los usando o comando da seguinte forma: 
 `touch texto1 texto2 texto3 texto4 texto5`
 ou também:
-`touch index.html -> para criar um arquivo vazio com o formato html`.
+`touch index.html` -> para criar um arquivo vazio com o formato html.
 
 ![Alt text](/assets/images/posts/comando-linux-para-iniciantes-phpsp/comando-touch1.jpeg)
 
@@ -44,13 +44,13 @@ Porém ainda há arquivos que não apareçem nos resultados por conta de eles se
 ## cd (Change Directory): Usado para navegar entre as pastas. 
 Ex: podemos acessar um diretório ao digitar o comando cd seguido do caminho desejado.
 `cd /home/user/Documents`
-E se quiser voltar para o diretório em que estava antes, basta inserir `cd .. /home/user/Documents cd -
-/usr/share`.
+E se quiser voltar para o diretório em que estava antes, basta inserir `cd .. /home/user/Documents` ou 
+ `cd -/usr/share`.
 
 ![Alt text](/assets/images/posts/comando-linux-para-iniciantes-phpsp/comando-cd.jpeg)
 
 ## clear
-Dependendo do processo e da quantidade de tarefas no terminal, a tela pode ficar cheia de informações, e às vezes, o iniciante reinicia o programa para limpá-la. Se você costuma fazer isso, experimente digitar o comando `clear ou Ctrl + L` (sem qualquer complemento) para resolver o problema.
+Dependendo do processo e da quantidade de tarefas no terminal, a tela pode ficar cheia de informações, e às vezes, o iniciante reinicia o programa para limpá-la. Se você costuma fazer isso, experimente digitar o comando `clear` ou `Ctrl + L` (sem qualquer complemento) para resolver o problema.
 Antes:
 
 ![Alt text](/assets/images/posts/comando-linux-para-iniciantes-phpsp/comando-clear1.jpeg)
@@ -61,7 +61,7 @@ Depois com o comando clear (Ctrl+L)
 
 
 ## mkdir (make directory): Usado para criar uma pasta dentro do terminal 
-Ex: `elissandra@elissandra-Lenovo-IdeaPad-S400:~$ mkdir artigo`
+Ex: `mkdir artigo`
 
 ![Alt text](/assets/images/posts/comando-linux-para-iniciantes-phpsp/comando-mkdir.jpeg)
 
