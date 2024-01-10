@@ -106,4 +106,4 @@ Utilizado para abrir o vscode ou abrir na mesma pasta que está sendo utilizada 
 
 Permite terminar a sessão existente no terminal. Executar após terminar atividades. (Fecha o terminal)
 
-Por fim, há tantos outros comandos legais que eu gostaria de mostrar, mas esticaria muito a leitura, espero que tenham curtido! Até mais :)
+Por fim, há tantos outros comandos legais que eu gostaria de mostrar, mas esticaria muito a leitura, espero que tenham curtido! Até mais ^^
