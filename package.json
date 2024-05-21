@@ -9,7 +9,7 @@
     "devDependencies": {
         "browser-sync": "^2.29.3",
         "browser-sync-webpack-plugin": "^2.3.0",
-        "bulma": "^0.9.4",
+        "bulma": "^1.0.1",
         "cross-env": "^7.0.3",
         "extra-watch-webpack-plugin": "^1.0.3",
         "hasbin": "^1.2.3",
