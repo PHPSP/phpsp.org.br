@@ -1,0 +1,40 @@
+name: Tests and Preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build docker image
+        run: docker-compose build --build-arg UID=$(id -u) --build-arg GID=$(id -g) web
+
+      - name: Install composer dependencies
+        run: docker-compose run --rm -T web composer install --no-interaction --no-progress
+
+      - name: Tests
+        run: docker-compose run --rm -T web ./vendor/bin/phpunit tests/
+
+      - name: Install node dependencies
+        run: docker-compose run --rm -T web yarn install
+
+      - name: Build
+        run: docker-compose run --rm -T web yarn production
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./build_production/
